@@ -8,7 +8,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
-public class middlestrike()
+public class MiddleStrike()
     : TheMiddleNurseFatherOutisCard(1,
         CardType.Attack, CardRarity.Basic,
         TargetType.AnyEnemy)
@@ -19,12 +19,12 @@ public class middlestrike()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext); 
         Modsounds.Stompvfx.Play();
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3);
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

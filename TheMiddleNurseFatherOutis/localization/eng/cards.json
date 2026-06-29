@@ -1,4 +1,4 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLESTRIKE.description": "Deal {Damage:diff()} damage.",
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLESTRIKE.title": "Strike"
+  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STRIKE.description": "Deal 6 {Damage:diff()} damage.",
+  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STRIKE.title": "Strike"
 }

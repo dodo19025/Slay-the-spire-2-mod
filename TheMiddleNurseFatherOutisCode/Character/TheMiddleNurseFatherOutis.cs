@@ -27,11 +27,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<middlestrike>(),
-        ModelDb.Card<middlestrike>(),
-        ModelDb.Card<middlestrike>(),
-        ModelDb.Card<middlestrike>(),
-        ModelDb.Card<middlestrike>()
+
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
