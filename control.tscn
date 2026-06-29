@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1w4j4wftyay5"]
+
+[ext_resource type="Texture2D" uid="uid://ch46bco05l0fv" path="res://TheMiddleNurseFatherOutisCode/Character/outis_idle.png" id="1_0fbet"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0fbet")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.2499998, -10.656249)
+scale = Vector2(0.02387449, 0.01987272)
+sprite_frames = SubResource("SpriteFrames_uchyk")
+
+[node name="CenterPos" type="Marker2D" parent="."]
+
+[node name="Bounds" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -6.0
+offset_top = -22.0
+offset_right = 11.0
+
+[node name="IntentPosition" type="Marker2D" parent="."]
+position = Vector2(0, -1)
