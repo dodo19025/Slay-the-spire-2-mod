@@ -61,7 +61,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="TheMiddleNurseFatherOutis\images\card_portraits\big\"/>
         <Folder Include="TheMiddleNurseFatherOutis\images\powers\big\"/>
         <Folder Include="TheMiddleNurseFatherOutis\images\relics\big\"/>
     </ItemGroup>
