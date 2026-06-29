@@ -31,12 +31,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         ModelDb.Card<middlestrike>(),
         ModelDb.Card<middlestrike>(),
         ModelDb.Card<middlestrike>(),
-        ModelDb.Card<middlestrike>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>(),
-        ModelDb.Card<DefendIronclad>()
+        ModelDb.Card<middlestrike>()
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
