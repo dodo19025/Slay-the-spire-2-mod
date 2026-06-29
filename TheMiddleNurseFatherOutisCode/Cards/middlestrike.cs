@@ -19,7 +19,7 @@ public class middlestrike()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CommonActions.CardAttack(this, play, 1, vfx:"vfx/vfx_attack_slash", )
+        CommonActions.CardAttack(this, play, 1, vfx:"vfx/vfx_attack_slash" )
     }
 
     protected override void OnUpgrade()
