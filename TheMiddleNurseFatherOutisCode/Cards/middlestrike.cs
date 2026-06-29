@@ -19,7 +19,8 @@ public class middlestrike()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target, vfx: "TheMiddleNurseFatherOutisCode/vfx/stompvfx.ogg").Execute(choiceContext);
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        Modsounds.Stompvfx.Play();
     }
 
     protected override void OnUpgrade()
