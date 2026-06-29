@@ -43,6 +43,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         ModelDb.Relic<SealedSword>()
     ];
     
+    //Note1
     public override NCreatureVisuals? CreateCustomVisuals()
     {
         return NodeFactory<NCreatureVisuals>.CreateFromScene("res://TheMiddleNurseFatherOutisCode/Character/middle_outis.tscn");
