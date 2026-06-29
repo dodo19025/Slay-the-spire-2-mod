@@ -58,6 +58,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         override all the other methods that define those assets.
         These are just some of the simplest assets, given some placeholders to differentiate your character with.
         You don't have to, but you're suggested to rename these images. */
+    
+    //NOTE 1 2 AND 3
     public override Control CustomIcon
     {
         get
