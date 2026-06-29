@@ -66,6 +66,10 @@
         <Folder Include="TheMiddleNurseFatherOutis\images\relics\big\"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="TheMiddleNurseFatherOutisCode\vfx\stompvfx.ogg" />
+    </ItemGroup>
+
     <Target Name="CheckDependencyPaths">
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"

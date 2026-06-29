@@ -19,11 +19,11 @@ public class middlestrike()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CommonActions.CardAttack(this, play, 1, vfx:"vfx/vfx_attack_slash" )
+        await CommonActions.CardAttack(this, play.Target, vfx: "TheMiddleNurseFatherOutisCode/vfx/stompvfx.ogg").Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
     {
-
+        DynamicVars.Damage.UpgradeValueBy(3);
     }
 }
