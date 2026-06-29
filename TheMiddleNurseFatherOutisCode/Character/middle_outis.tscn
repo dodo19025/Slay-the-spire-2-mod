@@ -181,7 +181,6 @@ animations = [{
 animation = &"idle"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7behi"]
-graph_offset = Vector2(-359.47278, 28.536621)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cbpno")
 nodes/Animation/position = Vector2(52.66796, 143.42937)
 node_connections = [&"output", 0, &"Animation"]
@@ -230,6 +229,36 @@ states/idle/position = Vector2(675, 112)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_kqovg"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2")]
 graph_offset = Vector2(0, -39.875908)
 
+[sub_resource type="Animation" id="Animation_qfqs4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_uchyk")]
+}
+
+[sub_resource type="Animation" id="Animation_dr2y8"]
+resource_name = "attack"
+
 [sub_resource type="Animation" id="Animation_7j5qr"]
 resource_name = "idle"
 length = 1.3
@@ -257,36 +286,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [SubResource("SpriteFrames_uchyk"), SubResource("SpriteFrames_uchyk")]
-}
-
-[sub_resource type="Animation" id="Animation_dr2y8"]
-resource_name = "attack"
-
-[sub_resource type="Animation" id="Animation_qfqs4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [13]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_uchyk")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
@@ -333,3 +332,4 @@ parameters/die/blend_position = Vector2(0, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_tn668")
 }
+speed_scale = 0.6
