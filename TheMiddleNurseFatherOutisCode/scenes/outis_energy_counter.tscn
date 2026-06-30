@@ -20,6 +20,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 6.283185307179586]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Layer2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.13333334, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_txljk"]
 length = 0.001
@@ -30,6 +42,18 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Layer2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -72,11 +96,11 @@ offset_bottom = 40.0
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -4.0
-offset_right = 395.0
-offset_bottom = 392.0
-scale = Vector2(0.32, 0.32)
+offset_left = -71.53525
+offset_top = -89.92136
+offset_right = 324.46475
+offset_bottom = 306.07864
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_txljk")
 
 [node name="RotationLayers" type="Control" parent="."]
@@ -86,30 +110,33 @@ offset_bottom = 128.0
 
 [node name="Layer3" type="TextureRect" parent="RotationLayers"]
 layout_mode = 0
-offset_left = -142.0
-offset_top = -154.0
-offset_right = 261.96527
-offset_bottom = 242.0
-scale = Vector2(0.32, 0.32)
+offset_left = -175.53523
+offset_top = -201.92136
+offset_right = 228.43004
+offset_bottom = 194.07864
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(204, 220.025)
 texture = ExtResource("4_1lrd6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RotationLayers/Layer3"]
+[node name="Layer2" type="TextureRect" parent="RotationLayers"]
+layout_mode = 0
+offset_left = -69.53525
+offset_top = -86.92136
+offset_right = 326.46475
+offset_bottom = 309.07864
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yp1hp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RotationLayers"]
+root_node = NodePath("../Layer3")
 libraries = {
 &"": SubResource("AnimationLibrary_yp1hp")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="RotationLayers/Layer3"]
+[node name="AnimationTree" type="AnimationTree" parent="RotationLayers"]
+root_node = NodePath("../Layer3")
 tree_root = SubResource("AnimationNodeStateMachine_6cyoe")
 anim_player = NodePath("../AnimationPlayer")
-
-[node name="Layer2" type="TextureRect" parent="RotationLayers"]
-layout_mode = 0
-offset_top = -3.0
-offset_right = 396.0
-offset_bottom = 393.0
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("2_yp1hp")
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
 
@@ -117,7 +144,10 @@ texture = ExtResource("2_yp1hp")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "
-"
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 64.0
+offset_bottom = 56.0
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
