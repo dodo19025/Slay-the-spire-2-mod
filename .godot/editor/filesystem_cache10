@@ -10,7 +10,7 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782513169::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1782823638
+::res://bin/ExportRelease/net9.0/publish/::1782824255
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1782813384::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutis/::1782513714
 mod_image.png::CompressedTexture2D::7816964582732999583::1782513113::1782513714::1::::<><><>0<>0<>cee8eb0dd0f95c911e3ef2bc8a742fed<>res://.godot/imported/mod_image.png-145af5e9ba411ccba81919cbf55b41a9.ctex::
@@ -115,9 +115,9 @@ seal0idle40.png::CompressedTexture2D::964049638487474307::1782754697::1782754697
 StringExtensions.cs::CSharpScript::4900159974993874380::1782513135::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Potions/::1782513714
 TheMiddleNurseFatherOutisPotion.cs::CSharpScript::5195854931568897929::1782513113::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Powers/::1782823616
+::res://TheMiddleNurseFatherOutisCode/Powers/::1782824252
 FirstSealRemovedPower.cs::CSharpScript::2993649039625702634::1782823214::0::1::::<><><>0<>0<><>::
-RisingFeverPower.cs::CSharpScript::5510309105554054230::1782823616::0::1::::<><><>0<>0<><>::
+RisingFeverPower.cs::CSharpScript::5510309105554054230::1782824252::0::1::::<><><>0<>0<><>::
 SecondSealRemovedPower.cs::CSharpScript::9083415500331521664::1782823214::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisPower.cs::CSharpScript::9187379787938785095::1782513135::0::1::::<><><>0<>0<><>::
 VulnerableNextTurn.cs::CSharpScript::2736436971627580012::1782813057::0::1::::<><><>0<>0<><>::

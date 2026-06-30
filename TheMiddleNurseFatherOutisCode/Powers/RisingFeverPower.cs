@@ -38,13 +38,23 @@ public class RisingFeverPower()
         CardModel? cardSource)
     {
         int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
-        if (FeverAmount <= 0 && applier.IsPlayer)
+        if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
         {
            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                 base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null);
            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
                base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
            Stage += 1;
+           if (Stage == 1)
+           {
+               await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+           }
+
+           if (Stage == 2)
+           {
+               await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
+               await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+           }
         }
 
                 
