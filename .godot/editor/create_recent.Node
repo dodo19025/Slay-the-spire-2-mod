@@ -1,5 +1,7 @@
+VideoStreamPlayer
+AspectRatioContainer
 AnimationPlayer
 AnimationTree
-Marker2D
-Control
 AnimatedSprite2D
+Control
+Marker2D
