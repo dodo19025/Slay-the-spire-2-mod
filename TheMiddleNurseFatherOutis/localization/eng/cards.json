@@ -2,7 +2,7 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STRIKE.description": "Deal {Damage:diff()} damage.",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STRIKE.title": "Strike",
 
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain [gold]{Block:diff()}[/gold] Block.",
+  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",

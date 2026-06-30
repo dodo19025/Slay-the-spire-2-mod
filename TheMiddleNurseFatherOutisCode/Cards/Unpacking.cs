@@ -18,10 +18,11 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     TargetType.AnyEnemy)
 {
     private const string _Power = "Power";
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
     {
         new DamageVar(4m, ValueProp.Move),
-        new DynamicVar("Power", 1m)
+        new DynamicVar("Power", 1m),
+        new DynamicVar("FeverLost", 1m)
     });
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -37,7 +38,9 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
             base.Owner.Creature, this);
+        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
         Modsounds.Swordvfx.Play();
+        
     }
 
     protected override void OnUpgrade()
