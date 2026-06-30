@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="TheMiddleNurseFatherOutis"
 config/features=PackedStringArray("4.5", "C#", "Mobile")
-config/icon="res://TheMiddleNurseFatherOutis/mod_image.png"
+config/icon="res://TheMiddleNurseFatherOutis/outis_image.png"
 
 [display]
 
