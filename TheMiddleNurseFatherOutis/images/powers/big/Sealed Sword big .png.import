@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv76qca20un4u"
-path="res://.godot/imported/outis_image.png-1fdbbf262ac0859d7f7c7d4887a9a733.ctex"
+uid="uid://cdcfkdgh2im3j"
+path="res://.godot/imported/Sealed Sword big .png-3178dd9583420bfc19e5bb3a5dd5bfd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutis/outis_image.png"
-dest_files=["res://.godot/imported/outis_image.png-1fdbbf262ac0859d7f7c7d4887a9a733.ctex"]
+source_file="res://TheMiddleNurseFatherOutis/images/powers/big/Sealed Sword big .png"
+dest_files=["res://.godot/imported/Sealed Sword big .png-3178dd9583420bfc19e5bb3a5dd5bfd1.ctex"]
 
 [params]
 
