@@ -19,7 +19,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 {
     public const string CharacterId = "TheMiddleNurseFatherOutis";
 
-    public static readonly Color Color = new("ffffff");
+    public static readonly Color Color = new("D938BD");
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
@@ -72,8 +72,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     }
     
 
-    public override string CustomIconTexturePath => "character_icon_char_name.png".CharacterUiPath();
+    public override string CustomIconTexturePath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_themiddlenursefatheroutis_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "map_marker_char_name.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "map_marker_themiddlenursefatheroutis.png".CharacterUiPath();
 }
