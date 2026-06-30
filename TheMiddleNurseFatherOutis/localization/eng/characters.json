@@ -1,16 +1,16 @@
 {
   "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.aromaPrinciple": "Lore",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.banter.alive.endTurnPing": "Co-op hurry up end turn ping message",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.banter.alive.endTurnPing": "I'm losing my patience.",
   "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.banter.dead.endTurnPing": "...",
   "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.cardsModifierDescription": "__ cards will now appear in rewards and shops.",
   "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.cardsModifierTitle": "__ Cards",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.description": "Character Selection\nScreen Description",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.eventDeathPrevention": "Co-op survival line",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.goldMonologue": "Line spoken when obtaining a large amount of gold",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.possessiveAdjective": "his/her/its",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounObject": "him/her/it",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounPossessive": "his/hers/its",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounSubject": "he/she/it",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.title": "The TheMiddleNurseFatherOutis",
-  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.titleObject": "The TheMiddleNurseFatherOutis"
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.description": "A Great sister of the Middle who's growth is something she only dictates\nFights like a brute, preferring brawn",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.eventDeathPrevention": "...",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.goldMonologue": "I should pick up some comics for my princess with this!",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.possessiveAdjective": "her",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounObject": "her",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounPossessive": "hers",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.pronounSubject": "she",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.title": "The TheMiddleNurseFather Outis",
+  "THEMIDDLENURSEFATHEROUTIS-THE_MIDDLE_NURSE_FATHER_OUTIS.titleObject": "The TheMiddleNurseFather Outis"
 }

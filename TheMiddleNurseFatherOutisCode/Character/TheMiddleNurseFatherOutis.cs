@@ -31,6 +31,10 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         ModelDb.Card<MiddleStrike>(),
         ModelDb.Card<MiddleStrike>(),
         ModelDb.Card<MiddleStrike>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>()
 
     ];
 
