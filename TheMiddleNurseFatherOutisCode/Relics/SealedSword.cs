@@ -25,10 +25,9 @@ public class SealedSword()
 	private const string _RisingFeverStartKey = "RisingFever";
 	private const string _EnergyNextTurnStartKey = "EnergyNextTurn";
 
-	protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
+	protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
 	{
 		new DynamicVar("RisingFever", 1m),
-		new DynamicVar("EnergyNextTurn", 1m),
 		new DynamicVar("SwordStage0", 1m)
 	}); //Made for values to be easily changable
 
@@ -46,21 +45,14 @@ public class SealedSword()
 			Flash();
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["RisingFever"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
+			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
+				base.DynamicVars["SwordStage0"].BaseValue, base.Owner.Creature, null);
 		}
 		
 	}
 	
 
-	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
-		Creature? dealer, CardModel? cardSource)
-	{
-		if (dealer != base.Owner.Creature && target.IsPlayer && result.WasBlockBroken)
-		{
-			Flash();
-			await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, base.Owner.Creature,
-				base.DynamicVars["EnergyNextTurn"].BaseValue, base.Owner.Creature, null);
-		}
-	}
+
 
 	//protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<RisingFeverPower>(), HoverTipFactory.Static(StaticHoverTip.Block),HoverTipFactory.FromPower<StrengthPower>()];
 }

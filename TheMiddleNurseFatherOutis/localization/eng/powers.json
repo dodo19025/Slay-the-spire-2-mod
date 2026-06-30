@@ -7,6 +7,10 @@
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.smartDescription": "Gain 1 [red]Vulnerable[/red] next turn",
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.title": "Vulnerable Next Turn",
 
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when struck twice",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when struck twice",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.title": "Sealed Sword",
+  
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "FirstSealRemovedPower",
