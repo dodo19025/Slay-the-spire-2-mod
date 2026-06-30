@@ -13,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OutisBigEnergy" type="Sprite2D" parent="."]
+position = Vector2(1, -7)
 texture = ExtResource("1_txljk")
 
 [node name="RotationLayers" type="Control" parent="."]
@@ -20,10 +21,11 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="OutisBigEnergy2" type="Sprite2D" parent="RotationLayers"]
+position = Vector2(0, -7)
+texture = ExtResource("4_1lrd6")
+
 [node name="OutisBigEnergy3" type="Sprite2D" parent="RotationLayers"]
-position = Vector2(0, 4)
+position = Vector2(-1, 0)
 texture = ExtResource("2_yp1hp")
 offset = Vector2(0, -5)
-
-[node name="OutisBigEnergy2" type="Sprite2D" parent="RotationLayers"]
-texture = ExtResource("4_1lrd6")
