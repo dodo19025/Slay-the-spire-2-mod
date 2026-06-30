@@ -47,15 +47,19 @@ public class RisingFeverPower()
            Stage += 1;
         }
 
-        switch (Stage)
+        if (Stage == 1)
         {
-            case 1:
-                await PowerCmd.Apply<Powers.FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-                break;
-            case 2:
-                await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-                break;
+            await PowerCmd.Apply<Powers.FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
         }
+        else if (Stage == 2)
+        {
+            await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+        }
+
+                
+            
+               
+        
 
     }
 }
