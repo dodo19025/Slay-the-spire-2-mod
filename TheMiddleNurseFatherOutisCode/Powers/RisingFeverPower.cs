@@ -47,15 +47,6 @@ public class RisingFeverPower()
            Stage += 1;
         }
 
-        if (Stage == 1)
-        {
-            await PowerCmd.Apply<Powers.FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-        }
-        else if (Stage == 2)
-        {
-            await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-        }
-
                 
             
                
