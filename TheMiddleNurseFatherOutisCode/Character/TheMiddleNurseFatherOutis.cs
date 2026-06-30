@@ -52,8 +52,9 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         
     }
     public override string CustomCharacterSelectBg => "res://TheMiddleNurseFatherOutisCode/scenes/char_select_bg_themiddlenursefatheroutis.tscn";
-    
 
+    public override string CustomEnergyCounterPath =>
+        "res://TheMiddleNurseFatherOutisCode/scenes/outis_energy_counter.tscn";
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheMiddleNurseFatherOutisRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<TheMiddleNurseFatherOutisPotionPool>();

@@ -5,6 +5,8 @@
 [node name="Themiddlenursefatheroutis" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_right = 2560.0
+offset_bottom = 1200.0
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 0
@@ -15,10 +17,10 @@ offset_bottom = 1181.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_left = 226.0
-offset_top = 141.0
-offset_right = 2786.0
-offset_bottom = 1359.0
+offset_left = 380.0
+offset_top = 75.0
+offset_right = 2940.0
+offset_bottom = 1275.0
 stream = ExtResource("1_uaxfl")
 autoplay = true
 loop = true

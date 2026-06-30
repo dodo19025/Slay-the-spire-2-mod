@@ -10,5 +10,5 @@ public class TheMiddleNurseFatherOutisPotionPool : CustomPotionPoolModel
 
 
     public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
-    public override string TextEnergyIconPath => "charui/text_energy.png".ImagePath();
+    public override string TextEnergyIconPath => "charui/outis_text_energy.png".ImagePath();
 }
