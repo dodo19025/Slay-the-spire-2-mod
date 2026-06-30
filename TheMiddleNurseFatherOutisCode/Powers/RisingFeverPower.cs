@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using System.Diagnostics;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -25,13 +26,14 @@ public class RisingFeverPower()
     [
         HoverTipFactory.FromPower<StrengthPower>()
     ];
-
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
         new DynamicVar("RisingFeverReapply", 2m),
         new DynamicVar("StrengthGain", 1m)
     });
 
+    public int Stage = 0;
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
@@ -42,7 +44,18 @@ public class RisingFeverPower()
                 base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null);
            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
                base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
+           Stage += 1;
         }
-        
+
+        switch (Stage)
+        {
+            case 1:
+                await PowerCmd.Apply<Powers.FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                break;
+            case 2:
+                await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                break;
+        }
+
     }
 }

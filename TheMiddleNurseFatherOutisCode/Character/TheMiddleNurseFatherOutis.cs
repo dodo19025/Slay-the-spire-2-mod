@@ -24,6 +24,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Feminine;
     public override int StartingHp => 85;
+    
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
