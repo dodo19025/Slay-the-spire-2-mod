@@ -1,8 +1,8 @@
+AnimationPlayer
 Control
 Node2D
 VideoStreamPlayer
 AspectRatioContainer
-AnimationPlayer
 AnimationTree
 AnimatedSprite2D
 Marker2D
