@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -51,7 +52,7 @@ public class SealedSword()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource)
 	{
-		if (result.WasBlockBroken)
+		if (result.WasBlockBroken && target is Player)
 		{
 			Flash();
 			await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, base.Owner.Creature,
