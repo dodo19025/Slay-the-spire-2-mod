@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdvqbtp3glsx"
-path="res://.godot/imported/sealed_sword_power.png-ded5b2eb83a2570e2ec5bf689893d623.ctex"
+uid="uid://c1m7dmadml6y"
+path="res://.godot/imported/sealed_sword_power.png-b8b570692753340e62b0c087bec0ddc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutis/images/powers/sealed_sword_power.png"
-dest_files=["res://.godot/imported/sealed_sword_power.png-ded5b2eb83a2570e2ec5bf689893d623.ctex"]
+source_file="res://TheMiddleNurseFatherOutis/images/powers/big/sealed_sword_power.png"
+dest_files=["res://.godot/imported/sealed_sword_power.png-b8b570692753340e62b0c087bec0ddc3.ctex"]
 
 [params]
 

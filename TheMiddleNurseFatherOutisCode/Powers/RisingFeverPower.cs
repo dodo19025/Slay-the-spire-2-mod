@@ -47,13 +47,14 @@ public class RisingFeverPower()
            Stage += 1;
            if (Stage == 1)
            {
+               await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
            }
 
            if (Stage == 2)
            {
                await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-               await PowerCmd.Apply<Powers.SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+               await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
            }
         }
 

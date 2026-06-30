@@ -28,6 +28,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
+        HoverTipFactory.FromPower<StrengthPower>(),
         HoverTipFactory.FromPower<VulnerableNextTurn>(),
         HoverTipFactory.FromPower<VulnerablePower>()
     ];
