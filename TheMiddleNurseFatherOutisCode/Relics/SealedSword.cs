@@ -52,7 +52,7 @@ public class SealedSword()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource)
 	{
-		if (result.WasBlockBroken && target is Player)
+		if (dealer != base.Owner.Creature && target.IsPlayer && result.WasBlockBroken)
 		{
 			Flash();
 			await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, base.Owner.Creature,
