@@ -1,5 +1,6 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -34,13 +35,14 @@ public class RisingFeverPower()
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        int FeverAmount = applier.GetPowerAmount<RisingFeverPower>();
-        if (FeverAmount <= 0)
+        int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
+        if (FeverAmount <= 0 && applier.IsPlayer)
         {
            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                 base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null);
            await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
                base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
         }
+        
     }
 }
