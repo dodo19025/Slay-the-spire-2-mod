@@ -15,10 +15,10 @@ offset_bottom = 1181.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 3.0
-offset_right = 1932.0
-offset_bottom = 1079.0
+offset_left = 226.0
+offset_top = 141.0
+offset_right = 2786.0
+offset_bottom = 1359.0
 stream = ExtResource("1_uaxfl")
 autoplay = true
 loop = true
