@@ -5,6 +5,6 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain [gold]{Block:diff()}[/gold] Block.",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal{Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking"
 }
