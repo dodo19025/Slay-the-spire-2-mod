@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://42sjmq5lhueo"]
+[gd_scene load_steps=10 format=3 uid="uid://42sjmq5lhueo"]
 
 [ext_resource type="Texture2D" uid="uid://bdhkx05hwsasc" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy.png" id="1_txljk"]
 [ext_resource type="Texture2D" uid="uid://bm0ofai3gvcy5" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_3.png" id="2_yp1hp"]
@@ -15,10 +15,10 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 40),
+"times": PackedFloat32Array(-0.0666666, 40),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.017453292519943295, 6.283185307179586]
+"values": [0.0, 6.283185307179586]
 }
 
 [sub_resource type="Animation" id="Animation_txljk"]
@@ -33,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [4.7822022]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yp1hp"]
@@ -42,38 +42,82 @@ _data = {
 &"Rotation": SubResource("Animation_03op3")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cidii"]
+animation = &"Rotation"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1lrd6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6cyoe"]
+states/Rotation/node = SubResource("AnimationNodeAnimation_cidii")
+states/Rotation/position = Vector2(349, 100)
+transitions = ["Start", "Rotation", SubResource("AnimationNodeStateMachineTransition_1lrd6")]
+
 [node name="OutisEnergyCounter" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1792.0
+offset_bottom = -952.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(64, 64)
 
-[node name="OutisBigEnergy" type="Sprite2D" parent="."]
-position = Vector2(1.800003, -8.199997)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_txljk")
-
-[node name="RotationLayers" type="Control" parent="."]
+[node name="Layers" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="OutisBigEnergy2" type="Sprite2D" parent="RotationLayers"]
-position = Vector2(2.0000002, 5)
-rotation = 4.7822022
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_1lrd6")
-offset = Vector2(2, -20)
+[node name="Layer1" type="TextureRect" parent="Layers"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 395.0
+offset_bottom = 392.0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_txljk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RotationLayers/OutisBigEnergy2"]
+[node name="RotationLayers" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="Layer3" type="TextureRect" parent="RotationLayers"]
+layout_mode = 0
+offset_left = -142.0
+offset_top = -154.0
+offset_right = 261.96527
+offset_bottom = 242.0
+scale = Vector2(0.32, 0.32)
+pivot_offset = Vector2(204, 220.025)
+texture = ExtResource("4_1lrd6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RotationLayers/Layer3"]
 libraries = {
 &"": SubResource("AnimationLibrary_yp1hp")
 }
 
-[node name="OutisBigEnergy3" type="Sprite2D" parent="RotationLayers"]
-position = Vector2(3, -1)
-scale = Vector2(0.5, 0.5)
+[node name="AnimationTree" type="AnimationTree" parent="RotationLayers/Layer3"]
+tree_root = SubResource("AnimationNodeStateMachine_6cyoe")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="Layer2" type="TextureRect" parent="RotationLayers"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 396.0
+offset_bottom = 393.0
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("2_yp1hp")
-offset = Vector2(0, -5)
+
+[node name="EnergyVfxBack" type="Node2D" parent="."]
+
+[node name="EnergyVfxFront" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "
+"

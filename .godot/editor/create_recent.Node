@@ -1,8 +1,10 @@
+AnimationTree
 AnimationPlayer
+TextureRect
+Label
 Control
 Node2D
 VideoStreamPlayer
 AspectRatioContainer
-AnimationTree
 AnimatedSprite2D
 Marker2D
