@@ -8,7 +8,7 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782513169::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1782811016
+::res://bin/ExportRelease/net9.0/publish/::1782811168
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1782810801::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutis/::1782513714
 mod_image.png::CompressedTexture2D::7816964582732999583::1782513113::1782513714::1::::<><><>0<>0<>cee8eb0dd0f95c911e3ef2bc8a742fed<>res://.godot/imported/mod_image.png-145af5e9ba411ccba81919cbf55b41a9.ctex::
@@ -111,8 +111,8 @@ TheMiddleNurseFatherOutisPotion.cs::CSharpScript::5195854931568897929::178251311
 ::res://TheMiddleNurseFatherOutisCode/Powers/::1782571075
 RisingFeverPower.cs::CSharpScript::5510309105554054230::1782570205::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisPower.cs::CSharpScript::9187379787938785095::1782513135::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Relics/::1782810985
-SealedSword.cs::CSharpScript::4746811683842282374::1782810985::0::1::::<><><>0<>0<><>::
+::res://TheMiddleNurseFatherOutisCode/Relics/::1782811151
+SealedSword.cs::CSharpScript::4746811683842282374::1782811151::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisRelic.cs::CSharpScript::194360154058807062::1782513135::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/vfx/::1782770013
 stompvfx.ogg::AudioStreamOggVorbis::1668554444802508429::1782769522::1782770013::1::::<><><>0<>0<>bf1d42ea82256773873fddddd7fb943c<>res://.godot/imported/stompvfx.ogg-79badab1a6724cc1a72c6e52369efade.oggvorbisstr::

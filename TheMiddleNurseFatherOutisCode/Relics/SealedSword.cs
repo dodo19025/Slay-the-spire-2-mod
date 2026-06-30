@@ -34,7 +34,8 @@ public class SealedSword()
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
-		HoverTipFactory.FromPower<RisingFeverPower>(), HoverTipFactory.Static(StaticHoverTip.Block),
+		HoverTipFactory.FromPower<RisingFeverPower>(), 
+		HoverTipFactory.Static(StaticHoverTip.Block),
 		HoverTipFactory.FromPower<StrengthPower>()
 	]; //Get the hover tips from the Json file and display it on the relic
 
@@ -48,6 +49,7 @@ public class SealedSword()
 		}
 		
 	}
+	
 
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource)
