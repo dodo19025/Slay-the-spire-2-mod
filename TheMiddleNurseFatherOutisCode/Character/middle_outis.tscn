@@ -1,9 +1,7 @@
 [gd_scene load_steps=66 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
-[ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame1.png" id="1_hiydp"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
-[ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame2.png" id="2_k171a"]
 [ext_resource type="Texture2D" uid="uid://mt0lj5e4fh8c" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle3.png" id="3_hiydp"]
 [ext_resource type="Texture2D" uid="uid://dqcb58q5chv1p" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle4.png" id="4_k171a"]
 [ext_resource type="Texture2D" uid="uid://by5m3vwvilan6" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle5.png" id="5_cbpno"]
@@ -42,19 +40,21 @@
 [ext_resource type="Texture2D" uid="uid://8rgu5n85pq4l" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle38.png" id="38_5wetr"]
 [ext_resource type="Texture2D" uid="uid://boocqrbmr6mmx" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle39.png" id="39_n261v"]
 [ext_resource type="Texture2D" uid="uid://ny80y0g0ejqp" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle40.png" id="40_ynoyo"]
+[ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame1.png" id="41_hiydp"]
+[ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame2.png" id="42_k171a"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbpno"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_hiydp")
+"texture": ExtResource("41_hiydp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_k171a")
+"texture": ExtResource("42_k171a")
 }],
 "loop": true,
-"name": &"AttackSeal0",
-"speed": 1.0
+"name": &"attack",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,12 +178,20 @@ animations = [{
 "texture": ExtResource("40_ynoyo")
 }],
 "loop": true,
-"name": &"Idleseal0",
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7behi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"0SealAttack",
 "speed": 5.0
 }]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7behi"]
-animation = &"0SealAttack"
+animation = &"attack"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bnts3"]
 nodes/Animation/node = SubResource("AnimationNodeAnimation_7behi")
@@ -200,7 +208,7 @@ node_connections = [&"output", 0, &"Animation"]
 animation = &"idle"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7behi"]
-graph_offset = Vector2(-17.909103, -17.090912)
+graph_offset = Vector2(-15.620964, 17.836472)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cbpno")
 nodes/Animation/position = Vector2(52.66796, 143.42937)
 node_connections = [&"output", 0, &"Animation"]
@@ -235,66 +243,118 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
-states/Start/position = Vector2(407, 100)
+states/Start/position = Vector2(363, 112)
 states/attack/node = SubResource("AnimationNodeBlendTree_bnts3")
-states/attack/position = Vector2(793, -33)
+states/attack/position = Vector2(819, -1)
 states/cast/node = SubResource("AnimationNodeBlendSpace2D_hvcm0")
-states/cast/position = Vector2(852, 190.24825)
+states/cast/position = Vector2(819, 228.24825)
 states/die/node = SubResource("AnimationNodeBlendSpace2D_hiydp")
-states/die/position = Vector2(661, 211.24825)
+states/die/position = Vector2(533, 228.24825)
 states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
-states/hurt/position = Vector2(566, -42)
+states/hurt/position = Vector2(533, -1)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
 states/idle/position = Vector2(675, 112)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_kqovg"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2")]
-graph_offset = Vector2(0, -39.875908)
+graph_offset = Vector2(0, -63.324474)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:frame")
+tracks/0/path = NodePath("Visuals/1Sealanimations:sprite_frames")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [13]
+"update": 0,
+"values": [SubResource("SpriteFrames_7behi")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:sprite_frames")
+tracks/1/path = NodePath("Visuals/1Sealanimations:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("SpriteFrames_uchyk")]
+"update": 0,
+"values": [0]
 }
-
-[sub_resource type="Animation" id="Animation_dr2y8"]
-resource_name = "attack"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno")]
+}
+
+[sub_resource type="Animation" id="Animation_7j5qr"]
+resource_name = "idle"
+length = 1.32
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334, 0.9666667, 1, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2666668, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:sprite_frames")
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+
+[sub_resource type="Animation" id="Animation_hiydp"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -304,68 +364,10 @@ tracks/1/keys = {
 "values": []
 }
 
-[sub_resource type="Animation" id="Animation_7j5qr"]
-resource_name = "idle"
-length = 1.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334, 0.9666667, 1, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2666668, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 36, 37, 38, 39, 39, 0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.033333335, 1.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_uchyk"), SubResource("SpriteFrames_uchyk")]
-}
-
-[sub_resource type="Animation" id="Animation_abd36"]
-resource_name = "0SealAttack"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:sprite_frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10000001),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_uchyk"), SubResource("SpriteFrames_uchyk")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
-&"0SealAttack": SubResource("Animation_abd36"),
 &"RESET": SubResource("Animation_qfqs4"),
-&"attack": SubResource("Animation_dr2y8"),
+&"attack": SubResource("Animation_hiydp"),
 &"idle": SubResource("Animation_7j5qr")
 }
 
@@ -375,12 +377,33 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Visuals" type="AnimatedSprite2D" parent="."]
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="0Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
 position = Vector2(7.9999905, -215.99998)
 scale = Vector2(0.67268616, 0.6761905)
-sprite_frames = SubResource("SpriteFrames_uchyk")
-animation = &"Idleseal0"
-speed_scale = 0.5
+sprite_frames = SubResource("SpriteFrames_cbpno")
+animation = &"idle"
+
+[node name="1Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(-28.49999, -217.50003)
+scale = Vector2(0.8083334, 0.79499996)
+sprite_frames = SubResource("SpriteFrames_7behi")
+animation = &"0SealAttack"
+
+[node name="AnimationTree" type="AnimationTree" parent="Visuals"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_scoei")
+anim_player = NodePath("../AnimationPlayer")
+parameters/cast/blend_position = Vector2(0, 0)
+parameters/die/blend_position = Vector2(0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_tn668")
+}
+speed_scale = 0.6
 
 [node name="CenterPos" type="Marker2D" parent="."]
 position = Vector2(51, -182)
@@ -394,15 +417,3 @@ offset_bottom = -2.0
 
 [node name="IntentPosition" type="Marker2D" parent="."]
 position = Vector2(61, -174)
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_scoei")
-anim_player = NodePath("../AnimationPlayer")
-parameters/cast/blend_position = Vector2(0, 0)
-parameters/die/blend_position = Vector2(0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_tn668")
-}
-speed_scale = 0.6
