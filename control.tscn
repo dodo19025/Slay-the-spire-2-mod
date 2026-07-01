@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1w4j4wftyay5"]
 
-[ext_resource type="Texture2D" uid="uid://ch46bco05l0fv" path="res://TheMiddleNurseFatherOutisCode/Character/outis_idle.png" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://ch46bco05l0fv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/outis_idle.png" id="1_0fbet"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
 animations = [{

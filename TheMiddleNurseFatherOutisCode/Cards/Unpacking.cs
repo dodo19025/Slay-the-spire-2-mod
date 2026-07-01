@@ -41,7 +41,6 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
             base.Owner.Creature, this);
         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
-        Modsounds.Swordvfx.Play();
         
     }
 
