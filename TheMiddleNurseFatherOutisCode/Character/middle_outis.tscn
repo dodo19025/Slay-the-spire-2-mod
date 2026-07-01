@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=68 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
@@ -54,6 +54,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
 "speed": 5.0
 }, {
 "frames": [{
@@ -188,6 +193,11 @@ animations = [{
 "loop": true,
 "name": &"0SealAttack",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7behi"]
@@ -202,7 +212,15 @@ node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hiydp"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hiydp"]
+animation = &"hurt"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_k171a"]
+graph_offset = Vector2(-162.6146, 56.143066)
+nodes/output/position = Vector2(340, 100)
+nodes/animation/node = SubResource("AnimationNodeAnimation_hiydp")
+nodes/animation/position = Vector2(100, 80)
+node_connections = [&"output", 0, &"animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cbpno"]
 animation = &"idle"
@@ -251,7 +269,7 @@ states/cast/position = Vector2(819, 228.24825)
 states/die/node = SubResource("AnimationNodeBlendSpace2D_hiydp")
 states/die/position = Vector2(533, 228.24825)
 states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
-states/hurt/position = Vector2(533, -1)
+states/hurt/position = Vector2(539, -1)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
 states/idle/position = Vector2(675, 112)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_kqovg"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2")]
@@ -307,6 +325,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [SubResource("SpriteFrames_cbpno")]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
 
 [sub_resource type="Animation" id="Animation_7j5qr"]
 resource_name = "idle"
@@ -336,9 +366,22 @@ tracks/1/keys = {
 "update": 1,
 "values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
 
 [sub_resource type="Animation" id="Animation_hiydp"]
 resource_name = "attack"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -346,10 +389,10 @@ tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.033333335, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0, 1, 0]
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -363,11 +406,27 @@ tracks/1/keys = {
 "update": 1,
 "values": []
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+
+[sub_resource type="Animation" id="Animation_k171a"]
+resource_name = "hurt"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
 &"RESET": SubResource("Animation_qfqs4"),
 &"attack": SubResource("Animation_hiydp"),
+&"hurt": SubResource("Animation_k171a"),
 &"idle": SubResource("Animation_7j5qr")
 }
 
@@ -380,7 +439,7 @@ offset_bottom = 40.0
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="0Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
-position = Vector2(7.9999905, -215.99998)
+position = Vector2(-1, -220)
 scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_cbpno")
 animation = &"idle"
@@ -389,21 +448,7 @@ animation = &"idle"
 position = Vector2(-28.49999, -217.50003)
 scale = Vector2(0.8083334, 0.79499996)
 sprite_frames = SubResource("SpriteFrames_7behi")
-animation = &"0SealAttack"
-
-[node name="AnimationTree" type="AnimationTree" parent="Visuals"]
-root_node = NodePath("../..")
-tree_root = SubResource("AnimationNodeStateMachine_scoei")
-anim_player = NodePath("../AnimationPlayer")
-parameters/cast/blend_position = Vector2(0, 0)
-parameters/die/blend_position = Vector2(0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_tn668")
-}
-speed_scale = 0.6
+animation = &"new_animation"
 
 [node name="CenterPos" type="Marker2D" parent="."]
 position = Vector2(51, -182)
@@ -417,3 +462,15 @@ offset_bottom = -2.0
 
 [node name="IntentPosition" type="Marker2D" parent="."]
 position = Vector2(61, -174)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_scoei")
+anim_player = NodePath("../AnimationPlayer")
+parameters/cast/blend_position = Vector2(0, 0)
+parameters/die/blend_position = Vector2(0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tn668")
+}
+speed_scale = 0.6
