@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://42sjmq5lhueo"]
+[gd_scene load_steps=11 format=3 uid="uid://42sjmq5lhueo"]
 
 [ext_resource type="Texture2D" uid="uid://bdhkx05hwsasc" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy.png" id="1_txljk"]
 [ext_resource type="Texture2D" uid="uid://bm0ofai3gvcy5" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_3.png" id="2_yp1hp"]
@@ -78,6 +78,8 @@ states/Rotation/node = SubResource("AnimationNodeAnimation_cidii")
 states/Rotation/position = Vector2(349, 100)
 transitions = ["Start", "Rotation", SubResource("AnimationNodeStateMachineTransition_1lrd6")]
 
+[sub_resource type="FontVariation" id="FontVariation_03op3"]
+
 [node name="OutisEnergyCounter" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -148,5 +150,14 @@ offset_left = -8.0
 offset_top = -12.0
 offset_right = 64.0
 offset_bottom = 56.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.8557185, 0.36021084, 0.9040618, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = SubResource("FontVariation_03op3")
+theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 vertical_alignment = 1
