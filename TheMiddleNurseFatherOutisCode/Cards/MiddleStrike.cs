@@ -20,7 +20,6 @@ public class MiddleStrike()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext); 
-        Modsounds.Stompvfx.Play();
     }
 
     protected override void OnUpgrade()
