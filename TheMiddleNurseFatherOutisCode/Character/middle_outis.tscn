@@ -200,6 +200,7 @@ node_connections = [&"output", 0, &"Animation"]
 animation = &"idle"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7behi"]
+graph_offset = Vector2(-17.909103, -17.090912)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cbpno")
 nodes/Animation/position = Vector2(52.66796, 143.42937)
 node_connections = [&"output", 0, &"Animation"]
@@ -378,7 +379,7 @@ offset_bottom = 40.0
 position = Vector2(7.9999905, -215.99998)
 scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_uchyk")
-animation = &"AttackSeal0"
+animation = &"Idleseal0"
 speed_scale = 0.5
 
 [node name="CenterPos" type="Marker2D" parent="."]
