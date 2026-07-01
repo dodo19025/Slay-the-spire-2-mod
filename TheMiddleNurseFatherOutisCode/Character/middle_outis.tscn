@@ -591,6 +591,12 @@ scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_cbpno")
 animation = &"idle"
 
+[node name="0Sealanimations2" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(-8, -170)
+scale = Vector2(0.67268616, 0.6761905)
+sprite_frames = SubResource("SpriteFrames_cbpno")
+animation = &"hurt"
+
 [node name="1Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
 position = Vector2(-28.49999, -217.50003)
 scale = Vector2(0.8083334, 0.79499996)
@@ -602,8 +608,8 @@ position = Vector2(51, -182)
 
 [node name="Bounds" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -163.0
-offset_top = -440.0
+offset_left = -143.0
+offset_top = -340.0
 offset_right = 169.0
 offset_bottom = -2.0
 
