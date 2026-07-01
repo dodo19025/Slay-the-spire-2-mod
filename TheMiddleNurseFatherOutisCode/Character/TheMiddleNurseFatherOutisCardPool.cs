@@ -17,7 +17,7 @@ public class TheMiddleNurseFatherOutisCardPool : CustomCardPoolModel
     so it may take some experimentation to find a color you like.
     Generally they should be values between 0 and 1. */
     public override float H => 0.67f; //Hue; changes the color.
-    public override float S => 0.067f; //Saturation
+    public override float S => 0.37f; //Saturation
     public override float V => 0.791f; //Brightness
 
     //Alternatively, leave these values at 1 and provide a custom frame image.
