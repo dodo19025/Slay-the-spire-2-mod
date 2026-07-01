@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq60l4e3fomg7"
-valid=false
+uid="uid://bvf2thmn25pmt"
+path="res://.godot/imported/0seal_hurt.png-07492baf0a131622bb63a1c5d6e095a9.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_hurt.png"
+source_file="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_hurt.png"
+dest_files=["res://.godot/imported/0seal_hurt.png-07492baf0a131622bb63a1c5d6e095a9.ctex"]
 
 [params]
 

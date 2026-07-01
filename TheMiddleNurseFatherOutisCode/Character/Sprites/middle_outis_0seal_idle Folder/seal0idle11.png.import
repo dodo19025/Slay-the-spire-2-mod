@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decoty8w03nds"
-valid=false
+uid="uid://pxnjcyc5qgm"
+path="res://.godot/imported/seal0idle11.png-950c75325cd409d441e85a887942089e.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle11.png"
+source_file="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle11.png"
+dest_files=["res://.godot/imported/seal0idle11.png-950c75325cd409d441e85a887942089e.ctex"]
 
 [params]
 
