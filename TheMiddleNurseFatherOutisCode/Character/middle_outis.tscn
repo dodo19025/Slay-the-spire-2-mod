@@ -1,7 +1,9 @@
-[gd_scene load_steps=62 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=66 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
+[ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame1.png" id="1_hiydp"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
+[ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_attack/0seal_attack_frame2.png" id="2_k171a"]
 [ext_resource type="Texture2D" uid="uid://mt0lj5e4fh8c" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle3.png" id="3_hiydp"]
 [ext_resource type="Texture2D" uid="uid://dqcb58q5chv1p" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle4.png" id="4_k171a"]
 [ext_resource type="Texture2D" uid="uid://by5m3vwvilan6" path="res://TheMiddleNurseFatherOutisCode/Character/middle_outis_0seal_idle Folder/seal0idle5.png" id="5_cbpno"]
@@ -43,6 +45,17 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uchyk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hiydp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k171a")
+}],
+"loop": true,
+"name": &"AttackSeal0",
+"speed": 1.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_bnts3")
@@ -169,7 +182,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7behi"]
+animation = &"0SealAttack"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bnts3"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_7behi")
+nodes/Animation/position = Vector2(100, 80)
+node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hvcm0"]
 
@@ -258,6 +277,31 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dr2y8"]
 resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_7j5qr"]
 resource_name = "idle"
@@ -288,8 +332,37 @@ tracks/1/keys = {
 "values": [SubResource("SpriteFrames_uchyk"), SubResource("SpriteFrames_uchyk")]
 }
 
+[sub_resource type="Animation" id="Animation_abd36"]
+resource_name = "0SealAttack"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_uchyk"), SubResource("SpriteFrames_uchyk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
+&"0SealAttack": SubResource("Animation_abd36"),
 &"RESET": SubResource("Animation_qfqs4"),
 &"attack": SubResource("Animation_dr2y8"),
 &"idle": SubResource("Animation_7j5qr")
@@ -305,8 +378,7 @@ offset_bottom = 40.0
 position = Vector2(7.9999905, -215.99998)
 scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_uchyk")
-animation = &"Idleseal0"
-frame = 13
+animation = &"AttackSeal0"
 speed_scale = 0.5
 
 [node name="CenterPos" type="Marker2D" parent="."]
