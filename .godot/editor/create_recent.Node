@@ -1,8 +1,8 @@
+AnimatedSprite2D
 CanvasModulate
 ShaderGlobalsOverride
 AudioStreamPlayer2D
 Node2D
-AnimatedSprite2D
 Sprite2D
 AnimationTree
 AnimationPlayer

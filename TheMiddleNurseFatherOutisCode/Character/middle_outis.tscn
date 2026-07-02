@@ -1,50 +1,66 @@
-[gd_scene load_steps=74 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=92 format=3 uid="uid://bjcefei8wccv5"]
 
-[ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
-[ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
+[ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
+[ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
 [ext_resource type="Texture2D" uid="uid://bsroi4ofnnnat" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/Death/LCB_Sinner_Outis_Dead_Sprite.png" id="3_7behi"]
-[ext_resource type="Texture2D" uid="uid://mt0lj5e4fh8c" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle3.png" id="3_hiydp"]
+[ext_resource type="Texture2D" uid="uid://mt0lj5e4fh8c" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle3.png" id="3_hiydp"]
+[ext_resource type="Texture2D" uid="uid://wxgbidebh7tw" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_cast/0sealcast1.png" id="3_kqovg"]
 [ext_resource type="Texture2D" uid="uid://bvf2thmn25pmt" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_hurt.png" id="4_7behi"]
-[ext_resource type="Texture2D" uid="uid://dqcb58q5chv1p" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle4.png" id="4_k171a"]
-[ext_resource type="Texture2D" uid="uid://by5m3vwvilan6" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle5.png" id="5_cbpno"]
-[ext_resource type="Texture2D" uid="uid://cyy8jrikhypmf" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle6.png" id="6_7behi"]
-[ext_resource type="Texture2D" uid="uid://mu52y4lxsgci" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle7.png" id="7_abd36"]
-[ext_resource type="Texture2D" uid="uid://djg533cfn2snf" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle8.png" id="8_ysrfp"]
-[ext_resource type="Texture2D" uid="uid://dj4c1pxg11cju" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle9.png" id="9_qesqh"]
-[ext_resource type="Texture2D" uid="uid://c4xrt2txxf1vy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle10.png" id="10_0hmwr"]
-[ext_resource type="Texture2D" uid="uid://pxnjcyc5qgm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle11.png" id="11_varnv"]
-[ext_resource type="Texture2D" uid="uid://b6giwv43venok" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle12.png" id="12_0ydgc"]
-[ext_resource type="Texture2D" uid="uid://dr480opw7sbjm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle13.png" id="13_w7ghx"]
-[ext_resource type="Texture2D" uid="uid://dr7iqgo37l42k" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle14.png" id="14_kqovg"]
-[ext_resource type="Texture2D" uid="uid://csmhmcxtgnwk" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle15.png" id="15_kfil2"]
-[ext_resource type="Texture2D" uid="uid://6psjyvsoma52" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle16.png" id="16_scoei"]
-[ext_resource type="Texture2D" uid="uid://b58xpvufsq1pj" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle17.png" id="17_7j5qr"]
-[ext_resource type="Texture2D" uid="uid://b668jbkl8dfhp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle18.png" id="18_dr2y8"]
-[ext_resource type="Texture2D" uid="uid://vj62gg5tr37o" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle19.png" id="19_qfqs4"]
-[ext_resource type="Texture2D" uid="uid://s0nygs5ut0e3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle20.png" id="20_tn668"]
-[ext_resource type="Texture2D" uid="uid://5btapkdjjq3p" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle21.png" id="21_r1cvp"]
-[ext_resource type="Texture2D" uid="uid://nwmrhitintfp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle22.png" id="22_b5p8l"]
-[ext_resource type="Texture2D" uid="uid://caayws2vyw5n3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle23.png" id="23_a86yh"]
-[ext_resource type="Texture2D" uid="uid://cls4nc18ro767" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle24.png" id="24_sf0ay"]
-[ext_resource type="Texture2D" uid="uid://50cd4641waho" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle25.png" id="25_7kclq"]
-[ext_resource type="Texture2D" uid="uid://dsa8xddfwbmko" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle26.png" id="26_jcrun"]
-[ext_resource type="Texture2D" uid="uid://b1nqkq3ks51ka" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle27.png" id="27_ql2bq"]
-[ext_resource type="Texture2D" uid="uid://dhorq1mm83ldy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle28.png" id="28_lmrp7"]
-[ext_resource type="Texture2D" uid="uid://dr0h6cemcuia2" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle29.png" id="29_p8qmv"]
-[ext_resource type="Texture2D" uid="uid://chnmers8ttud7" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle30.png" id="30_v25i4"]
-[ext_resource type="Texture2D" uid="uid://c3swxc8jxxd84" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle31.png" id="31_r67eq"]
-[ext_resource type="Texture2D" uid="uid://bep6i80bxi0v" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle32.png" id="32_fbs3d"]
-[ext_resource type="Texture2D" uid="uid://d3p3g5n3dorfs" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle33.png" id="33_ysfwc"]
-[ext_resource type="Texture2D" uid="uid://c20jgyukfcmx0" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle34.png" id="34_t3sqt"]
-[ext_resource type="Texture2D" uid="uid://bpkowt4cy0tvy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle35.png" id="35_nblus"]
-[ext_resource type="Texture2D" uid="uid://deotltlevq6na" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle36.png" id="36_j1lwk"]
-[ext_resource type="Texture2D" uid="uid://4n2pyh57yldo" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle37.png" id="37_bgxip"]
-[ext_resource type="Texture2D" uid="uid://8rgu5n85pq4l" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle38.png" id="38_5wetr"]
-[ext_resource type="Texture2D" uid="uid://boocqrbmr6mmx" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle39.png" id="39_n261v"]
-[ext_resource type="Texture2D" uid="uid://ny80y0g0ejqp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_idle Folder/seal0idle40.png" id="40_ynoyo"]
-[ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_attack/0seal_attack_frame1.png" id="41_hiydp"]
-[ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/middle_outis_0seal_attack/0seal_attack_frame2.png" id="42_k171a"]
+[ext_resource type="Texture2D" uid="uid://dqcb58q5chv1p" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle4.png" id="4_k171a"]
+[ext_resource type="Texture2D" uid="uid://cm5i7deqb7bst" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_cast/0sealcast2.png" id="4_kfil2"]
+[ext_resource type="Texture2D" uid="uid://by5m3vwvilan6" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle5.png" id="5_cbpno"]
+[ext_resource type="Texture2D" uid="uid://cyy8jrikhypmf" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle6.png" id="6_7behi"]
+[ext_resource type="Texture2D" uid="uid://mu52y4lxsgci" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle7.png" id="7_abd36"]
+[ext_resource type="Texture2D" uid="uid://djg533cfn2snf" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle8.png" id="8_ysrfp"]
+[ext_resource type="Texture2D" uid="uid://dj4c1pxg11cju" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle9.png" id="9_qesqh"]
+[ext_resource type="Texture2D" uid="uid://c4xrt2txxf1vy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle10.png" id="10_0hmwr"]
+[ext_resource type="Texture2D" uid="uid://pxnjcyc5qgm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle11.png" id="11_varnv"]
+[ext_resource type="Texture2D" uid="uid://b6giwv43venok" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle12.png" id="12_0ydgc"]
+[ext_resource type="Texture2D" uid="uid://dr480opw7sbjm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle13.png" id="13_w7ghx"]
+[ext_resource type="Texture2D" uid="uid://dr7iqgo37l42k" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle14.png" id="14_kqovg"]
+[ext_resource type="Texture2D" uid="uid://csmhmcxtgnwk" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle15.png" id="15_kfil2"]
+[ext_resource type="Texture2D" uid="uid://6psjyvsoma52" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle16.png" id="16_scoei"]
+[ext_resource type="Texture2D" uid="uid://b58xpvufsq1pj" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle17.png" id="17_7j5qr"]
+[ext_resource type="Texture2D" uid="uid://b668jbkl8dfhp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle18.png" id="18_dr2y8"]
+[ext_resource type="Texture2D" uid="uid://vj62gg5tr37o" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle19.png" id="19_qfqs4"]
+[ext_resource type="Texture2D" uid="uid://s0nygs5ut0e3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle20.png" id="20_tn668"]
+[ext_resource type="Texture2D" uid="uid://5btapkdjjq3p" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle21.png" id="21_r1cvp"]
+[ext_resource type="Texture2D" uid="uid://nwmrhitintfp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle22.png" id="22_b5p8l"]
+[ext_resource type="Texture2D" uid="uid://caayws2vyw5n3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle23.png" id="23_a86yh"]
+[ext_resource type="Texture2D" uid="uid://cls4nc18ro767" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle24.png" id="24_sf0ay"]
+[ext_resource type="Texture2D" uid="uid://50cd4641waho" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle25.png" id="25_7kclq"]
+[ext_resource type="Texture2D" uid="uid://dsa8xddfwbmko" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle26.png" id="26_jcrun"]
+[ext_resource type="Texture2D" uid="uid://b1nqkq3ks51ka" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle27.png" id="27_ql2bq"]
+[ext_resource type="Texture2D" uid="uid://dhorq1mm83ldy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle28.png" id="28_lmrp7"]
+[ext_resource type="Texture2D" uid="uid://dr0h6cemcuia2" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle29.png" id="29_p8qmv"]
+[ext_resource type="Texture2D" uid="uid://chnmers8ttud7" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle30.png" id="30_v25i4"]
+[ext_resource type="Texture2D" uid="uid://c3swxc8jxxd84" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle31.png" id="31_r67eq"]
+[ext_resource type="Texture2D" uid="uid://bep6i80bxi0v" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle32.png" id="32_fbs3d"]
+[ext_resource type="Texture2D" uid="uid://d3p3g5n3dorfs" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle33.png" id="33_ysfwc"]
+[ext_resource type="Texture2D" uid="uid://c20jgyukfcmx0" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle34.png" id="34_t3sqt"]
+[ext_resource type="Texture2D" uid="uid://bpkowt4cy0tvy" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle35.png" id="35_nblus"]
+[ext_resource type="Texture2D" uid="uid://deotltlevq6na" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle36.png" id="36_j1lwk"]
+[ext_resource type="Texture2D" uid="uid://4n2pyh57yldo" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle37.png" id="37_bgxip"]
+[ext_resource type="Texture2D" uid="uid://8rgu5n85pq4l" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle38.png" id="38_5wetr"]
+[ext_resource type="Texture2D" uid="uid://boocqrbmr6mmx" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle39.png" id="39_n261v"]
+[ext_resource type="Texture2D" uid="uid://ny80y0g0ejqp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle40.png" id="40_ynoyo"]
+[ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_attack/0seal_attack_frame1.png" id="41_hiydp"]
+[ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_attack/0seal_attack_frame2.png" id="42_k171a"]
 [ext_resource type="AudioStream" uid="uid://x1i33g6ow8mb" path="res://TheMiddleNurseFatherOutisCode/vfx/stompvfx.ogg" id="44_cbpno"]
+[ext_resource type="Texture2D" uid="uid://ctoh6005ervc8" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_sword/0seal_sword_spritesheet1.png" id="45_ysrfp"]
+[ext_resource type="Texture2D" uid="uid://cittqq46dcydp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/04.png" id="46_0ydgc"]
+[ext_resource type="AudioStream" uid="uid://d1ii0hjmbx1e8" path="res://TheMiddleNurseFatherOutisCode/vfx/swordvfx.ogg" id="47_qesqh"]
+[ext_resource type="Texture2D" uid="uid://b1tx826cfh1pa" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/6.png" id="47_w7ghx"]
+[ext_resource type="Texture2D" uid="uid://c6ywmk5ao0iqq" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/7.png" id="48_kqovg"]
+[ext_resource type="Texture2D" uid="uid://4yy5jnxsxjrm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/8.png" id="49_kfil2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hmwr"]
+atlas = ExtResource("45_ysrfp")
+region = Rect2(0, 0, 750, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_varnv"]
+atlas = ExtResource("45_ysrfp")
+region = Rect2(750, 0, 750, 1500)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cbpno"]
 animations = [{
@@ -59,10 +75,16 @@ animations = [{
 "name": &"attack",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kqovg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kfil2")
+}],
 "loop": true,
 "name": &"cast",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -204,6 +226,34 @@ animations = [{
 "loop": false,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hmwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_varnv")
+}],
+"loop": true,
+"name": &"swordattack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_0ydgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_w7ghx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kqovg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_kfil2")
+}],
+"loop": true,
+"name": &"unpacking",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7behi"]
@@ -227,7 +277,13 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_7behi")
 nodes/Animation/position = Vector2(100, 80)
 node_connections = [&"output", 0, &"Animation"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7behi"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_scoei"]
+animation = &"cast"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7j5qr"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_scoei")
+nodes/Animation/position = Vector2(128, 127)
+node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_abd36"]
 animation = &"die"
@@ -255,6 +311,17 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_cbpno")
 nodes/Animation/position = Vector2(52.66796, 143.42937)
 node_connections = [&"output", 0, &"Animation"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ydgc"]
+animation = &"swordattack"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_w7ghx"]
+nodes/output/position = Vector2(440, 200)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_0ydgc")
+nodes/Animation/position = Vector2(158.12282, 174.22792)
+node_connections = [&"output", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dr2y8"]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ysrfp"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qesqh"]
@@ -278,10 +345,16 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqovg"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_scoei"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7j5qr"]
 advance_mode = 0
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfil2"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qfqs4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tn668"]
 switch_mode = 2
 advance_mode = 2
 
@@ -290,15 +363,19 @@ states/End/position = Vector2(1132, 121)
 states/Start/position = Vector2(363, 112)
 states/attack/node = SubResource("AnimationNodeBlendTree_bnts3")
 states/attack/position = Vector2(819, -1)
-states/cast/node = SubResource("AnimationNodeStateMachine_7behi")
-states/cast/position = Vector2(819, 219.24825)
+states/cast/node = SubResource("AnimationNodeBlendTree_7j5qr")
+states/cast/position = Vector2(787, 197.36267)
 states/die/node = SubResource("AnimationNodeBlendTree_ysrfp")
-states/die/position = Vector2(528, 219.24825)
+states/die/position = Vector2(530, 220.24825)
 states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
 states/hurt/position = Vector2(475, 9)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
 states/idle/position = Vector2(675, 112)
-transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_kqovg"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2")]
+states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
+states/swordattack/position = Vector2(645, 2.362667)
+states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
+states/unpacking/position = Vector2(878, 79.36267)
+transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668")]
 graph_offset = Vector2(0, -49.637333)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
@@ -421,6 +498,7 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cbpno"]
 resource_name = "cast"
+length = 0.45
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -428,10 +506,10 @@ tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": []
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -440,10 +518,22 @@ tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": []
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"cast", &"cast"]
 }
 
 [sub_resource type="Animation" id="Animation_kqovg"]
@@ -567,6 +657,101 @@ tracks/2/keys = {
 "values": [&"idle", &"idle"]
 }
 
+[sub_resource type="Animation" id="Animation_dr2y8"]
+resource_name = "swordattack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"swordattack", &"swordattack"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("47_qesqh")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_scoei"]
+resource_name = "unpackingseal0"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"unpacking", &"unpacking"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
 &"RESET": SubResource("Animation_qfqs4"),
@@ -574,7 +759,9 @@ _data = {
 &"cast": SubResource("Animation_cbpno"),
 &"die": SubResource("Animation_kqovg"),
 &"hurt": SubResource("Animation_k171a"),
-&"idle": SubResource("Animation_7behi")
+&"idle": SubResource("Animation_7behi"),
+&"swordattack": SubResource("Animation_dr2y8"),
+&"unpackingseal0": SubResource("Animation_scoei")
 }
 
 [node name="Control" type="Control"]
