@@ -360,13 +360,13 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
-states/Start/position = Vector2(363, 112)
+states/Start/position = Vector2(367, 112)
 states/attack/node = SubResource("AnimationNodeBlendTree_bnts3")
 states/attack/position = Vector2(819, -1)
 states/cast/node = SubResource("AnimationNodeBlendTree_7j5qr")
 states/cast/position = Vector2(787, 197.36267)
 states/die/node = SubResource("AnimationNodeBlendTree_ysrfp")
-states/die/position = Vector2(530, 220.24825)
+states/die/position = Vector2(560, 210.24825)
 states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
 states/hurt/position = Vector2(475, 9)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
