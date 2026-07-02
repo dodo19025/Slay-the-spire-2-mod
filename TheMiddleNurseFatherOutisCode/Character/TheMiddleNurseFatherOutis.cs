@@ -17,6 +17,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
  
 public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 {
+    
     public const string CharacterId = "TheMiddleNurseFatherOutis";
 
     public static readonly Color Color = new("D938BD");
