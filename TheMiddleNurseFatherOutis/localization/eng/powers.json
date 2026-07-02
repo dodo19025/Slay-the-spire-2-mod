@@ -1,6 +1,6 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "When expiring:\nLose a Sword Seal\nGain 1 [gold]Strength[/gold]",
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "When expiring:\nLose a Sword Seal\nGain 1 [gold]Strength[/gold]",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Lose a Sword Seal when this expires",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Lose a Sword Seal when this expires",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.title": "Rising Fever",
 
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.description": "Gain 1 [red]Vulnerable[/red] next turn",

@@ -22,10 +22,6 @@ public class RisingFeverPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
-    [
-        HoverTipFactory.FromPower<StrengthPower>()
-    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
@@ -42,8 +38,8 @@ public class RisingFeverPower()
         {
            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                 base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null);
-           await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
-               base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
+           //await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
+               //base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null); UNCOMMENT THIS WHEN YOU'RE ADDING IT ON FEVER 3
            Stage += 1;
            if (Stage == 1)
            {
