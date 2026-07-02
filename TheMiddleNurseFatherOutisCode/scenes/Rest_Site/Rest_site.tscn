@@ -7,6 +7,7 @@
 [node name="OutisRestSite" type="Node2D"]
 
 [node name="Visual" type="Sprite2D" parent="."]
+position = Vector2(168, -192)
 texture = ExtResource("1_aib78")
 
 [node name="Control" type="Control" parent="."]
