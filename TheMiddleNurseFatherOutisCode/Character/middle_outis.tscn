@@ -372,7 +372,7 @@ states/idle/position = Vector2(675, 112)
 states/legattack/node = SubResource("AnimationNodeBlendTree_bnts3")
 states/legattack/position = Vector2(819, -1)
 states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
-states/swordattack/position = Vector2(645, 2.362667)
+states/swordattack/position = Vector2(645, -1)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
 states/unpacking/position = Vector2(878, 79.36267)
 transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668")]
@@ -440,61 +440,6 @@ tracks/4/keys = {
 "update": 1,
 "values": [&"idle"]
 }
-
-[sub_resource type="Animation" id="Animation_hiydp"]
-resource_name = "attack"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"attack", &"attack"]
-}
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("44_cbpno")
-}],
-"times": PackedFloat32Array(0.06666667)
-}
-tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cbpno"]
 resource_name = "cast"
@@ -752,14 +697,69 @@ tracks/2/keys = {
 "values": [&"unpacking", &"unpacking"]
 }
 
+[sub_resource type="Animation" id="Animation_hiydp"]
+resource_name = "attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"attack", &"attack"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("44_cbpno")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/3/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
 &"RESET": SubResource("Animation_qfqs4"),
-&"attack": SubResource("Animation_hiydp"),
 &"cast": SubResource("Animation_cbpno"),
 &"die": SubResource("Animation_kqovg"),
 &"hurt": SubResource("Animation_k171a"),
 &"idle": SubResource("Animation_7behi"),
+&"legattack": SubResource("Animation_hiydp"),
 &"swordattack": SubResource("Animation_dr2y8"),
 &"unpackingseal0": SubResource("Animation_scoei")
 }

@@ -14,9 +14,9 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
         {
             if (cardPlay.Card.Keywords.Contains(FervourKeyWord.Fervour))
             {
-                await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordattack", 0.05f);
+                await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
             }
-            else
+            else if(!cardPlay.Card.Keywords.Contains(FervourKeyWord.Fervour))
             {
                 await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
             }
