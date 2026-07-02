@@ -269,14 +269,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7behi"]
-animation = &"attack"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bnts3"]
-nodes/Animation/node = SubResource("AnimationNodeAnimation_7behi")
-nodes/Animation/position = Vector2(100, 80)
-node_connections = [&"output", 0, &"Animation"]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_scoei"]
 animation = &"cast"
 
@@ -309,6 +301,14 @@ animation = &"idle"
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7behi"]
 nodes/Animation/node = SubResource("AnimationNodeAnimation_cbpno")
 nodes/Animation/position = Vector2(52.66796, 143.42937)
+node_connections = [&"output", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7behi"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_bnts3"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_7behi")
+nodes/Animation/position = Vector2(100, 80)
 node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ydgc"]
@@ -361,8 +361,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
 states/Start/position = Vector2(367, 112)
-states/attack/node = SubResource("AnimationNodeBlendTree_bnts3")
-states/attack/position = Vector2(819, -1)
 states/cast/node = SubResource("AnimationNodeBlendTree_7j5qr")
 states/cast/position = Vector2(787, 197.36267)
 states/die/node = SubResource("AnimationNodeBlendTree_ysrfp")
@@ -371,11 +369,13 @@ states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
 states/hurt/position = Vector2(475, 9)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
 states/idle/position = Vector2(675, 112)
+states/legattack/node = SubResource("AnimationNodeBlendTree_bnts3")
+states/legattack/position = Vector2(819, -1)
 states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
 states/swordattack/position = Vector2(645, 2.362667)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
 states/unpacking/position = Vector2(878, 79.36267)
-transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668")]
+transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668")]
 graph_offset = Vector2(0, -49.637333)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
@@ -578,7 +578,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_k171a"]
 resource_name = "hurt"
-length = 0.2
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -598,7 +598,7 @@ tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
@@ -610,7 +610,7 @@ tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.00048436984, 0.2),
+"times": PackedFloat32Array(0, 0.00048436984, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [&"hurt", &"hurt", &"hurt"]
