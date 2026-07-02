@@ -8,7 +8,7 @@ namespace TheMiddleNurseFatherOutis;
 
 public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
 {
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
         if (cardPlay.Card.Type == CardType.Attack)
         {
@@ -16,7 +16,7 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
             {
                 CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordattack", 0.05f);
             }
-            if (cardPlay.Card.Keywords.Contains(FervourKeyWord.Fervour) == false)
+            else
             {
                 CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
             }
