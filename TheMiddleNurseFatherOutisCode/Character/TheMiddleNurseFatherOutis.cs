@@ -55,6 +55,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override string CustomEnergyCounterPath =>
         "res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn";
+    
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheMiddleNurseFatherOutisRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<TheMiddleNurseFatherOutisPotionPool>();
