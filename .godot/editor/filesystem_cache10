@@ -8,14 +8,14 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782840176::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783019109
+::res://bin/ExportRelease/net9.0/publish/::1783019553
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783019109::0::1::::<><><>0<>0<><>::
 ::res://sfx/::1783014950
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
 unpacking.ogg::AudioStreamOggVorbis::5075394195146813966::1783014946::1783014950::1::::<><><>0<>0<>d61edb9a7023428d715b699278f26bb9<>res://.godot/imported/unpacking.ogg-4f010ff75f6ab1e5768e0360a7ec42a1.oggvorbisstr::
-::res://Singeltons and functions/::1783012694
-attack animation change.cs::CSharpScript::4444720152221452739::1783012694::0::1::::<><><>0<>0<><>::
+::res://Singeltons and functions/::1783019523
+attack animation change.cs::CSharpScript::4444720152221452739::1783019523::0::1::::<><><>0<>0<><>::
 FervourKeyWord.cs::CSharpScript::-1::1783009420::0::1::::<><><>0<>0<><>::
 powerupanimcheck.cs::CSharpScript::1900847031924800448::1783008022::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutis/::1782827222
@@ -177,7 +177,7 @@ outis_big_energy_2.png::CompressedTexture2D::3709612596399708594::1782850416::17
 outis_big_energy_3.gd::GDScript::5946907423354170277::1782850144::0::1::::<>Sprite2D<><>0<>0<><>::
 outis_big_energy_3.png::CompressedTexture2D::3281155231708712798::1782850425::1782984451::1::::<><><>0<>0<>ff607db74780c90853305625adb569de<>res://.godot/imported/outis_big_energy_3.png-0864224d69aa545b5609b6f75a467d70.ctex::
 outis_energy_counter.tscn::PackedScene::2092324299252626702::1782984451::0::1::::<><><>0<>0<><>::uid://bdhkx05hwsasc::::res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy.png<>uid://bm0ofai3gvcy5::::res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy_3.png<>uid://bs371o1esrn35::::res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy_2.png
-::res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/::1783019038
+::res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/::1783019233
 NSelectionReticle.gd::GDScript::1690197955793766142::1783018646::0::1::::<>Control<><>0<>0<><>::
-Rest_site.tscn::PackedScene::1539206794885911636::1783019038::0::1::::<><><>0<>0<><>::uid://bix6krvxtlqgv::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/rest_sprite2.png<>uid://4lr8cqxwr4r2::::res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Selection_Reticle.tscn<>uid://d35k23wn1be43::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/Extra/combat_reticle.png
+Rest_site.tscn::PackedScene::1539206794885911636::1783019233::0::1::::<><><>0<>0<><>::uid://bix6krvxtlqgv::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/rest_sprite2.png<>uid://4lr8cqxwr4r2::::res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Selection_Reticle.tscn<>uid://d35k23wn1be43::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/Extra/combat_reticle.png
 Selection_Reticle.tscn::PackedScene::2059275871712175513::1783017489::0::1::::<><><>0<>0<><>::
