@@ -58,6 +58,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override string CustomRestSiteAnimPath => "res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Rest_site.tscn";
 
+    public override Color MapDrawingColor => new("D938BD");
     public override Color EnergyLabelOutlineColor => new("D938BD");
 
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
