@@ -36,6 +36,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         ModelDb.Card<Middle_Defend>(),
         ModelDb.Card<Middle_Defend>(),
         ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Subroutine>(),
         ModelDb.Card<Unpacking>()
 
     ];
@@ -52,7 +53,6 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         
     }
     public override string CustomCharacterSelectBg => "res://TheMiddleNurseFatherOutisCode/scenes/char_select_bg_themiddlenursefatheroutis.tscn";
-
     public override string CustomEnergyCounterPath =>
         "res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn";
 
@@ -77,7 +77,6 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
             return icon;
         }
     }
-    
 
     public override string CustomIconTexturePath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
