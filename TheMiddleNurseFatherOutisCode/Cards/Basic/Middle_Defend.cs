@@ -12,7 +12,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 public class Middle_Defend()
     : TheMiddleNurseFatherOutisCard(1,
-        CardType.Attack, CardRarity.Basic,
+        CardType.Skill, CardRarity.Basic,
         TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(5m, ValueProp.Move)];
