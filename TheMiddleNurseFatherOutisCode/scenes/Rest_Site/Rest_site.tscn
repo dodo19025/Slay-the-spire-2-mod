@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://v6urm0s6cjya"]
+
+[ext_resource type="Texture2D" uid="uid://bix6krvxtlqgv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/rest_sprite2.png" id="1_aib78"]
+[ext_resource type="PackedScene" uid="uid://4lr8cqxwr4r2" path="res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Selection_Reticle.tscn" id="2_be2mr"]
+[ext_resource type="Texture2D" uid="uid://d35k23wn1be43" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/Extra/combat_reticle.png" id="3_a0l7p"]
+
+[node name="OutisRestSite" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("1_aib78")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SelectionRetical" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_left = -337.0
+offset_top = -289.0
+offset_right = 341.0
+offset_bottom = 409.0
+pivot_offset = Vector2(126, 84)
+
+[node name="SelectionReticle" parent="Control/SelectionRetical" instance=ExtResource("2_be2mr")]
+layout_mode = 1
+
+[node name="Border" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 139.0
+offset_right = 32.0
+offset_bottom = 231.0
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border"]
+self_modulate = Color(0, 0, 0, 0.5)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 104.0
+offset_bottom = 107.0
+mouse_filter = 2
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Border2" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 139.0
+offset_right = 704.0
+offset_bottom = 231.0
+rotation = 1.5707964
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border2"]
+self_modulate = Color(0, 0, 0, 0.5)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.9999924
+offset_right = 104.0
+offset_bottom = 106.99999
+mouse_filter = 2
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Border3" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+layout_mode = 0
+offset_left = -52.0
+offset_top = 611.0
+offset_right = 32.0
+offset_bottom = 703.0
+rotation = -1.5707964
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border3"]
+self_modulate = Color(0, 0, 0, 0.5)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 104.0
+offset_bottom = 107.0
+mouse_filter = 2
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Border4" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 611.0
+offset_right = 704.0
+offset_bottom = 703.0
+rotation = 3.1415927
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border4"]
+self_modulate = Color(0, 0, 0, 0.5)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 104.0
+offset_bottom = 107.0
+mouse_filter = 2
+texture = ExtResource("3_a0l7p")
+expand_mode = 1
+
+[node name="Hitbox" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = -287.0
+offset_top = -285.0
+offset_right = 342.0
+offset_bottom = 375.0
+pivot_offset = Vector2(296, 415.948)
+
+[node name="ThoughtBubbleRight" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 50.0
+offset_top = -18.0
+offset_right = 50.0
+offset_bottom = -18.0
+
+[node name="ThoughtBubbleLeft" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = -200.0
+offset_top = -19.0
+offset_right = -200.0
+offset_bottom = -19.0
