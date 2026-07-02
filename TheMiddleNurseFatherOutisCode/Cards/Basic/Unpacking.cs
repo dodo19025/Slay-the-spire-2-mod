@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Potions;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.GameInfo.Objects;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
@@ -25,6 +26,10 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         new DynamicVar("FeverLost", 1m)
     });
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+       FervourKeyWord.Fervour
+    ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),

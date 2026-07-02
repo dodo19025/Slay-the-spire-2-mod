@@ -36,7 +36,6 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         ModelDb.Card<Middle_Defend>(),
         ModelDb.Card<Middle_Defend>(),
         ModelDb.Card<Middle_Defend>(),
-        ModelDb.Card<Subroutine>(),
         ModelDb.Card<Unpacking>()
 
     ];
