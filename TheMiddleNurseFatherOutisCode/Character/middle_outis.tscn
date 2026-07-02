@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=95 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
@@ -321,7 +321,7 @@ nodes/Animation/position = Vector2(158.12282, 174.22792)
 node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kqovg"]
-animation = &"unpackingseal0"
+animation = &"unpacking"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dr2y8"]
 nodes/Animation/node = SubResource("AnimationNodeAnimation_kqovg")
@@ -364,6 +364,13 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqovg"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfil2"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
 states/Start/position = Vector2(367, 112)
@@ -380,8 +387,8 @@ states/legattack/position = Vector2(819, -1)
 states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
 states/swordattack/position = Vector2(645, -1)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
-states/unpacking/position = Vector2(878, 79.36267)
-transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668")]
+states/unpacking/position = Vector2(882, 116.63733)
+transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2")]
 graph_offset = Vector2(0, -49.637333)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
@@ -663,46 +670,6 @@ tracks/3/keys = {
 }
 tracks/3/use_blend = true
 
-[sub_resource type="Animation" id="Animation_scoei"]
-resource_name = "unpackingseal0"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26666668),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.39999998),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.39999998),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"unpacking", &"unpacking"]
-}
-
 [sub_resource type="Animation" id="Animation_hiydp"]
 resource_name = "attack"
 length = 0.6
@@ -758,6 +725,46 @@ tracks/3/keys = {
 }
 tracks/3/use_blend = true
 
+[sub_resource type="Animation" id="Animation_scoei"]
+resource_name = "unpackingseal0"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"unpacking", &"unpacking"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
 &"RESET": SubResource("Animation_qfqs4"),
@@ -767,7 +774,7 @@ _data = {
 &"idle": SubResource("Animation_7behi"),
 &"legattack": SubResource("Animation_hiydp"),
 &"swordattack": SubResource("Animation_dr2y8"),
-&"unpackingseal0": SubResource("Animation_scoei")
+&"unpacking": SubResource("Animation_scoei")
 }
 
 [node name="Control" type="Control"]
