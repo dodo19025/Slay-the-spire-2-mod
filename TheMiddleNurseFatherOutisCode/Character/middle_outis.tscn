@@ -46,13 +46,13 @@
 [ext_resource type="Texture2D" uid="uid://ny80y0g0ejqp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle40.png" id="40_ynoyo"]
 [ext_resource type="Texture2D" uid="uid://dq44rkgfb4rwm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_attack/0seal_attack_frame1.png" id="41_hiydp"]
 [ext_resource type="Texture2D" uid="uid://b4kln16p4sqjk" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_attack/0seal_attack_frame2.png" id="42_k171a"]
-[ext_resource type="AudioStream" uid="uid://x1i33g6ow8mb" path="res://TheMiddleNurseFatherOutisCode/vfx/stompvfx.ogg" id="44_cbpno"]
 [ext_resource type="Texture2D" uid="uid://ctoh6005ervc8" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_sword/0seal_sword_spritesheet1.png" id="45_ysrfp"]
 [ext_resource type="Texture2D" uid="uid://cittqq46dcydp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/04.png" id="46_0ydgc"]
-[ext_resource type="AudioStream" uid="uid://d1ii0hjmbx1e8" path="res://TheMiddleNurseFatherOutisCode/vfx/swordvfx.ogg" id="47_qesqh"]
 [ext_resource type="Texture2D" uid="uid://b1tx826cfh1pa" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/6.png" id="47_w7ghx"]
 [ext_resource type="Texture2D" uid="uid://c6ywmk5ao0iqq" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/7.png" id="48_kqovg"]
 [ext_resource type="Texture2D" uid="uid://4yy5jnxsxjrm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/8.png" id="49_kfil2"]
+[ext_resource type="AudioStream" uid="uid://b6umvj11my06i" path="res://sfx/sword.ogg" id="52_kqovg"]
+[ext_resource type="AudioStream" uid="uid://umin75gooukk" path="res://sfx/Stomp.ogg" id="53_kfil2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hmwr"]
 atlas = ExtResource("45_ysrfp")
@@ -617,7 +617,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_dr2y8"]
 resource_name = "swordattack"
-length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -625,7 +624,7 @@ tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.23333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -664,15 +663,15 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("47_qesqh")
+"stream": ExtResource("52_kqovg")
 }],
-"times": PackedFloat32Array(0.1)
+"times": PackedFloat32Array(0.16666667)
 }
 tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hiydp"]
 resource_name = "attack"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -719,9 +718,9 @@ tracks/3/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("44_cbpno")
+"stream": ExtResource("53_kfil2")
 }],
-"times": PackedFloat32Array(0.06666667)
+"times": PackedFloat32Array(0)
 }
 tracks/3/use_blend = true
 
