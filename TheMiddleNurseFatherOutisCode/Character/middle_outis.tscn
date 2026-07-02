@@ -726,7 +726,7 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_scoei"]
 resource_name = "unpackingseal0"
-length = 0.4
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -734,7 +734,7 @@ tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26666668),
+"times": PackedFloat32Array(0, 0.16666667, 0.4, 0.6333333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
@@ -746,7 +746,7 @@ tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.39999998),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
@@ -758,7 +758,7 @@ tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.39999998),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"unpacking", &"unpacking"]
