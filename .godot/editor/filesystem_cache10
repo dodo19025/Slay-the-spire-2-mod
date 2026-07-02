@@ -8,10 +8,11 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782840176::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783009451
+::res://bin/ExportRelease/net9.0/publish/::1783010495
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783008272::0::1::::<><><>0<>0<><>::
-::res://Singeltons and functions/::1783009420
+::res://Singeltons and functions/::1783010487
 FervourKeyWord.cs::CSharpScript::1188701228233224997::1783009420::0::1::::<><><>0<>0<><>::
+FervourSwordattackanim.cs::CSharpScript::2419606373618541861::1783010428::0::1::::<><><>0<>0<><>::
 powerupanimcheck.cs::CSharpScript::1900847031924800448::1783008022::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutis/::1782827222
 mod_image.png::CompressedTexture2D::3928357394007599922::1782826949::1782827222::1::::<><><>0<>0<>a6f3338f5dfbb9248ea2e634b527f303<>res://.godot/imported/mod_image.png-145af5e9ba411ccba81919cbf55b41a9.ctex::
@@ -54,10 +55,10 @@ sealed_sword_outline.png::CompressedTexture2D::2808261636630653303::1782571025::
 relic.png::CompressedTexture2D::8663117661599846571::1782513113::1782513714::1::::<><><>0<>0<>6fe809b34bfc782e63d96117a76af902<>res://.godot/imported/relic.png-e75261016069bd5c6bb9c4b27d0a2568.ctex::
 sealed_sword.png::CompressedTexture2D::4817897136256058049::1782810638::1782810804::1::::<><><>0<>0<>893698c768fc3fa545469bbe6d1b09d6<>res://.godot/imported/sealed_sword.png-d5c99eeeb206dbb29504df98e2c6ba25.ctex::
 ::res://TheMiddleNurseFatherOutis/localization/::1782513113
-::res://TheMiddleNurseFatherOutis/localization/eng/::1783008665
+::res://TheMiddleNurseFatherOutis/localization/eng/::1783009715
 ancients.json::JSON::-1::1782811301::0::1::::<><><>0<>0<><>::
-cards.json::JSON::-1::1782815504::0::1::::<><><>0<>0<><>::
-card_keywords.json::JSON::-1::1783008665::0::1::::<><><>0<>0<><>::
+cards.json::JSON::-1::1783009679::0::1::::<><><>0<>0<><>::
+card_keywords.json::JSON::-1::1783009715::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1782810338::0::1::::<><><>0<>0<><>::
 powers.json::JSON::-1::1782937469::0::1::::<><><>0<>0<><>::
 relics.json::JSON::-1::1782920579::0::1::::<><><>0<>0<><>::
