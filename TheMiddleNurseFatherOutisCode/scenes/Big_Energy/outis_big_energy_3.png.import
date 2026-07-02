@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm0ofai3gvcy5"
-path="res://.godot/imported/outis_big_energy_3.png-9287351436787ec91d86b33ac9999e8a.ctex"
+path="res://.godot/imported/outis_big_energy_3.png-0864224d69aa545b5609b6f75a467d70.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_3.png"
-dest_files=["res://.godot/imported/outis_big_energy_3.png-9287351436787ec91d86b33ac9999e8a.ctex"]
+source_file="res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy_3.png"
+dest_files=["res://.godot/imported/outis_big_energy_3.png-0864224d69aa545b5609b6f75a467d70.ctex"]
 
 [params]
 

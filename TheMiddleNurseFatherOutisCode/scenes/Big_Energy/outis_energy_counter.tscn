@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://42sjmq5lhueo"]
 
-[ext_resource type="Texture2D" uid="uid://bdhkx05hwsasc" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy.png" id="1_txljk"]
-[ext_resource type="Texture2D" uid="uid://bm0ofai3gvcy5" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_3.png" id="2_yp1hp"]
-[ext_resource type="Texture2D" uid="uid://bs371o1esrn35" path="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_2.png" id="4_1lrd6"]
+[ext_resource type="Texture2D" uid="uid://bdhkx05hwsasc" path="res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy.png" id="1_txljk"]
+[ext_resource type="Texture2D" uid="uid://bm0ofai3gvcy5" path="res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy_3.png" id="2_yp1hp"]
+[ext_resource type="Texture2D" uid="uid://bs371o1esrn35" path="res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy_2.png" id="4_1lrd6"]
 
 [sub_resource type="Animation" id="Animation_txljk"]
 length = 0.001

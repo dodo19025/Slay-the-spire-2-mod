@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs371o1esrn35"
-path="res://.godot/imported/outis_big_energy_2.png-a09ffaae523484672d6a2c02193c6f2e.ctex"
+uid="uid://bdhkx05hwsasc"
+path="res://.godot/imported/outis_big_energy.png-8d1ebff24159df05a5f1a3ad7d2d9dfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutisCode/scenes/outis_big_energy_2.png"
-dest_files=["res://.godot/imported/outis_big_energy_2.png-a09ffaae523484672d6a2c02193c6f2e.ctex"]
+source_file="res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_big_energy.png"
+dest_files=["res://.godot/imported/outis_big_energy.png-8d1ebff24159df05a5f1a3ad7d2d9dfc.ctex"]
 
 [params]
 
