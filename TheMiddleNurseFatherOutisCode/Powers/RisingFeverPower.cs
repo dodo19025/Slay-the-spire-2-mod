@@ -40,6 +40,7 @@ public class RisingFeverPower()
             {
                 CanvasItem visualzeroseal = (Owner.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
                 CanvasItem visualoneseal = (Owner.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
+                CanvasItem visualtwoseal = (Owner.GetCreatureNode()!.Body.GetNode("2Sealanimations") as CanvasItem)!;
                 
                 int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
                 if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
@@ -54,13 +55,18 @@ public class RisingFeverPower()
                         Modsounds.unpacking0.Play();
                         visualzeroseal.Visible = false;
                         visualoneseal.Visible = true;
-                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.2f);
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
                         await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
                     }
 
                     if (Stage == 2)
                     {
+                        Modsounds.unpacking0.Play();
+                        visualoneseal.Visible = false;
+                        visualtwoseal.Visible = true;
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
+                        await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 0.4f);
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
                     }

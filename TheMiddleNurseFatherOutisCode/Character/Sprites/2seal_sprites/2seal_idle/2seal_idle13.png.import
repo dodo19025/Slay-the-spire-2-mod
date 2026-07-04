@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx0hg71evqc22"
-path="res://.godot/imported/1seal_hurt.png-508d689fb759b02761fbdcc3cbcb5868.ctex"
+uid="uid://dmrxh4uy7qt1q"
+path="res://.godot/imported/2seal_idle13.png-a98828597a0f81f26a015ad4bd7e9b5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_hurt.png"
-dest_files=["res://.godot/imported/1seal_hurt.png-508d689fb759b02761fbdcc3cbcb5868.ctex"]
+source_file="res://TheMiddleNurseFatherOutisCode/Character/Sprites/2seal_sprites/2seal_idle/2seal_idle13.png"
+dest_files=["res://.godot/imported/2seal_idle13.png-a98828597a0f81f26a015ad4bd7e9b5c.ctex"]
 
 [params]
 
