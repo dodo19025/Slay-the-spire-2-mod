@@ -1,4 +1,4 @@
-[gd_scene load_steps=250 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=260 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
@@ -157,7 +157,9 @@
 [ext_resource type="Texture2D" uid="uid://dxw35clfxbxsd" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_attack/3seal_attack1.png" id="152_tpffy"]
 [ext_resource type="Texture2D" uid="uid://dco58o1hlgcos" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_attack/3seal_attack2.png" id="153_ocfsn"]
 [ext_resource type="Texture2D" uid="uid://ckjhqo2ed0is0" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_hurt/3seal_hurt.png" id="154_0pke6"]
+[ext_resource type="Texture2D" uid="uid://bduw5xahj4l7w" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_cast/3seal_cast1.png" id="154_8inar"]
 [ext_resource type="Texture2D" uid="uid://dh5bfcrtbddq3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_idle/3seal_idle1.png" id="155_fdo7q"]
+[ext_resource type="Texture2D" uid="uid://bj0htak6tecj3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_cast/3seal_cast2.png" id="155_xoaet"]
 [ext_resource type="Texture2D" uid="uid://c0jdc2kmapyxe" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_idle/3seal_idle2.png" id="156_isdv4"]
 [ext_resource type="Texture2D" uid="uid://dnqtsvpyytg0o" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_idle/3seal_idle3.png" id="157_8inar"]
 [ext_resource type="Texture2D" uid="uid://fiokj4uuqkni" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_idle/3seal_idle4.png" id="158_xoaet"]
@@ -199,8 +201,11 @@
 [ext_resource type="Texture2D" uid="uid://80n1y1xx87u0" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_idle/3seal_idle40.png" id="194_7t6km"]
 [ext_resource type="Texture2D" uid="uid://c75r6gr0btn3d" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_unpacking/3seal_unpacking1.png" id="195_r8vct"]
 [ext_resource type="Texture2D" uid="uid://cnue8qyvo72kd" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_unpacking/3seal_unpacking2.png" id="196_6wh8l"]
+[ext_resource type="Texture2D" uid="uid://bjo51lf0btdcs" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_swordlattack/3seal_swordlattack1.png" id="197_hhqih"]
 [ext_resource type="Texture2D" uid="uid://cywxh2igil16e" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_unpacking/3seal_unpacking3.png" id="197_i687y"]
 [ext_resource type="Texture2D" uid="uid://yhgqm5rwum0d" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_unpacking/3seal_unpacking4.png" id="198_8vo4w"]
+[ext_resource type="Texture2D" uid="uid://bdv1srwvqko43" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/3seal_sprites/3seal_swordlattack/3seal_swordlattack2.png" id="198_k723c"]
+[ext_resource type="AudioStream" uid="uid://crdgsowdf5rax" path="res://sfx/swordfire.ogg" id="206_lx06v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hmwr"]
 atlas = ExtResource("45_ysrfp")
@@ -818,6 +823,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("154_8inar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_xoaet")
+}],
+"loop": true,
+"name": &"cast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_7behi")
 }],
 "loop": true,
@@ -959,6 +975,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("197_hhqih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_k723c")
+}],
+"loop": true,
+"name": &"swordLattack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("195_r8vct")
 }, {
 "duration": 1.0,
@@ -1035,6 +1062,15 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_0ydgc")
 nodes/Animation/position = Vector2(158.12282, 174.22792)
 node_connections = [&"output", 0, &"Animation"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qroos"]
+animation = &"swordlattack"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_l7wlh"]
+graph_offset = Vector2(101.83708, 139.41348)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_qroos")
+nodes/Animation/position = Vector2(40, 140)
+node_connections = [&"output", 0, &"Animation"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kqovg"]
 animation = &"unpacking"
 
@@ -1093,6 +1129,13 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qkwjs"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_22a5r"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
 states/Start/position = Vector2(367, 112)
@@ -1110,9 +1153,11 @@ states/sunglasses/node = SubResource("AnimationNodeBlendTree_0pke6")
 states/sunglasses/position = Vector2(418, 171.91202)
 states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
 states/swordattack/position = Vector2(645, -1)
+states/swordlattack/node = SubResource("AnimationNodeBlendTree_l7wlh")
+states/swordlattack/position = Vector2(941, 36.797928)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
 states/unpacking/position = Vector2(881, 121)
-transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2"), "idle", "sunglasses", SubResource("AnimationNodeStateMachineTransition_fdo7q"), "sunglasses", "idle", SubResource("AnimationNodeStateMachineTransition_isdv4")]
+transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2"), "idle", "sunglasses", SubResource("AnimationNodeStateMachineTransition_fdo7q"), "sunglasses", "idle", SubResource("AnimationNodeStateMachineTransition_isdv4"), "idle", "swordlattack", SubResource("AnimationNodeStateMachineTransition_qkwjs"), "swordlattack", "idle", SubResource("AnimationNodeStateMachineTransition_22a5r")]
 graph_offset = Vector2(0, -50.202072)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
@@ -1368,6 +1413,42 @@ tracks/8/path = NodePath("Visuals/2Sealaniamtions:animation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"cast", &"cast"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/3Sealanimations:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.19690968),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/3Sealanimations:sprite_frames")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_q8r7p"), SubResource("SpriteFrames_q8r7p")]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/3Sealanimations:animation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.45),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1632,6 +1713,42 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"hurt", &"hurt"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/3Sealanimations:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/3Sealanimations:animation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"hurt", &"hurt"]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/3Sealanimations:sprite_frames")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_q8r7p"), SubResource("SpriteFrames_q8r7p")]
 }
 
 [sub_resource type="Animation" id="Animation_7behi"]
@@ -2275,6 +2392,76 @@ tracks/3/keys = {
 }
 tracks/3/use_blend = true
 
+[sub_resource type="Animation" id="Animation_d25i7"]
+resource_name = "swordlattack"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/3Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/3Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_q8r7p"), SubResource("SpriteFrames_q8r7p")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/3Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"swordLattack", &"swordLattack"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("206_lx06v")
+}],
+"times": PackedFloat32Array(0.26666668)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("52_kqovg")
+}],
+"times": PackedFloat32Array(0.16666667)
+}
+tracks/4/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
 &"RESET": SubResource("Animation_qfqs4"),
@@ -2285,6 +2472,7 @@ _data = {
 &"legattack": SubResource("Animation_hiydp"),
 &"sunglasses": SubResource("Animation_8inar"),
 &"swordattack": SubResource("Animation_dr2y8"),
+&"swordlattack": SubResource("Animation_d25i7"),
 &"unpacking": SubResource("Animation_scoei")
 }
 
