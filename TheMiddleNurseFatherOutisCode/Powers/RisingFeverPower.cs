@@ -41,7 +41,7 @@ public class RisingFeverPower()
                 CanvasItem visualzeroseal = (Owner.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
                 CanvasItem visualoneseal = (Owner.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
                 CanvasItem visualtwoseal = (Owner.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
-                CanvasItem visualthreeseal = (Owner.GetCreatureNode()!.Body.GetNode("3Sealaniamtions") as CanvasItem)!;
+                CanvasItem visualthreeseal = (Owner.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
                 
                 int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
                 if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)

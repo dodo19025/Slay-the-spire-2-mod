@@ -12,7 +12,7 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
     
     public override async Task BeforeCardPlayed(CardPlay cardPlay)
     {
-        CanvasItem visualthreeseal = (cardPlay.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealaniamtions") as CanvasItem)!;
+        CanvasItem visualthreeseal = (cardPlay.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
         if (cardPlay.Card.Type == CardType.Attack && cardPlay.Card.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
             if (cardPlay.Card.Keywords.Contains(FervourKeyWord.Fervour))
