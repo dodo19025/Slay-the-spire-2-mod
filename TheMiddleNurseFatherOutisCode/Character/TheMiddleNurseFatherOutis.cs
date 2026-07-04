@@ -61,6 +61,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override Color MapDrawingColor => new("D938BD");
     public override Color EnergyLabelOutlineColor => new("D938BD");
 
+    public override string CustomMerchantAnimPath =>
+        "res://TheMiddleNurseFatherOutisCode/scenes/Merchant/Outis_Merchant.tscn";
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheMiddleNurseFatherOutisRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<TheMiddleNurseFatherOutisPotionPool>();
