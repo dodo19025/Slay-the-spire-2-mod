@@ -63,13 +63,23 @@ public class RisingFeverPower()
 
                     if (Stage == 2)
                     {
-                        Modsounds.unpacking1.Play();
+                        Modsounds.unpacking2.Play();
                         visualoneseal.Visible = false;
                         visualtwoseal.Visible = true;
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                    }
+
+                    if (Stage == 3)
+                    {
+                        Modsounds.unpacking1.Play();
+                        visualtwoseal.Visible = false;
+                        visualthreeseal.Visible = true;
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
+                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
+                        await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner, 1m,base.Owner, null );
                     }
                 }
 
