@@ -52,9 +52,9 @@ public class RisingFeverPower()
                     if (Stage == 1)
                     {
                         Modsounds.unpacking0.Play();
-                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.2f);
                         visualzeroseal.Visible = false;
                         visualoneseal.Visible = true;
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.2f);
                         await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
                     }

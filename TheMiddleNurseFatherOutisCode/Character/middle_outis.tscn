@@ -1022,7 +1022,6 @@ offset_bottom = 40.0
 
 [node name="0Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-8, -170)
 scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_cbpno")
@@ -1030,6 +1029,7 @@ animation = &"idle"
 
 [node name="1Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-8, -170)
 scale = Vector2(0.673, 0.673)
 sprite_frames = SubResource("SpriteFrames_i8qct")
@@ -1049,7 +1049,6 @@ offset_bottom = -2.0
 position = Vector2(5, -166)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_scoei")
 anim_player = NodePath("../AnimationPlayer")
 
