@@ -26,8 +26,8 @@ public class RisingFeverPower()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("RisingFeverReapply", 2m),
-        new DynamicVar("StrengthGain", 1m)
+        new DynamicVar("RisingFeverReapply", 1m), //change this to two for testing lol
+        new DynamicVar("StrengthGain", 3m)
     });
 
     public int Stage = 0;
@@ -46,10 +46,7 @@ public class RisingFeverPower()
                 int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
                 if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
                 {
-                    await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
-                        base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null); //reapplies rising fever to 2
-                    //await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
-                    //base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null); UNCOMMENT THIS WHEN YOU'RE ADDING IT ON FEVER 3
+
                     Stage += 1;
                     if (Stage == 1)
                     {
@@ -57,8 +54,11 @@ public class RisingFeverPower()
                         visualzeroseal.Visible = false;
                         visualoneseal.Visible = true;
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
-                        await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
+                            base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner,
+                            null); //reapplies rising fever to 2
+                        await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m, base.Owner, null);
+                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m, base.Owner, null);
                     }
 
                     if (Stage == 2)
@@ -68,8 +68,11 @@ public class RisingFeverPower()
                         visualtwoseal.Visible = true;
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
-                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
+                            base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner,
+                            null); //reapplies rising fever to 2
+                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m, base.Owner, null);
+                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m, base.Owner, null);
                     }
 
                     if (Stage == 3)
@@ -78,11 +81,12 @@ public class RisingFeverPower()
                         visualtwoseal.Visible = false;
                         visualthreeseal.Visible = true;
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
-                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-                        await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, -1m, base.Owner, null);
+                        await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner, 1m, base.Owner, null);
+                        await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
+                            base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
                     }
                 }
-
             }
         }
     }
