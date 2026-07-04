@@ -58,7 +58,6 @@ public class RisingFeverPower()
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
                         await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-                        Stage = 2;
                     }
 
                     if (Stage == 2)
