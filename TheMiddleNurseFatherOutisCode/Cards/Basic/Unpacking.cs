@@ -44,7 +44,11 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
             base.Owner.Creature, this);
-        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
+        if (Owner.Creature.HasPower<RisingFeverPower>())
+        {
+            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
+        }
+
         
     }
 
