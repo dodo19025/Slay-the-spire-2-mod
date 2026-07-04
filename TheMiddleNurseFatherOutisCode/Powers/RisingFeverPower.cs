@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -33,33 +34,39 @@ public class RisingFeverPower()
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
-        if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
+        if (power == this)
         {
-           await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
-                base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null);
-           //await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
-               //base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null); UNCOMMENT THIS WHEN YOU'RE ADDING IT ON FEVER 3
-           Stage += 1;
-           if (Stage == 1)
-           {
-               Modsounds.unpacking0.Play();
-               await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.2f);
-               await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-               await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-           }
-
-           if (Stage == 2)
-           {
-               await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
-               await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
-           }
-        }
-
+            if (Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
+            {
+                CanvasItem visualzeroseal = (Owner.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
+                CanvasItem visualoneseal = (Owner.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
                 
-            
-               
-        
+                int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
+                if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
+                {
+                    await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
+                        base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner, null); //reapplies rising fever to 2
+                    //await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
+                    //base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null); UNCOMMENT THIS WHEN YOU'RE ADDING IT ON FEVER 3
+                    Stage += 1;
+                    if (Stage == 1)
+                    {
+                        Modsounds.unpacking0.Play();
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.2f);
+                        visualzeroseal.Visible = false;
+                        visualoneseal.Visible = true;
+                        await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m,base.Owner, null );
+                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                    }
 
+                    if (Stage == 2)
+                    {
+                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m,base.Owner, null );
+                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m,base.Owner, null );
+                    }
+                }
+
+            }
+        }
     }
 }

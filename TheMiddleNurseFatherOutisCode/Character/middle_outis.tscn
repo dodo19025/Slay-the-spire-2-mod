@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://bjcefei8wccv5"]
+[gd_scene load_steps=135 format=3 uid="uid://bjcefei8wccv5"]
 
 [ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_bnts3"]
 [ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_hvcm0"]
@@ -51,8 +51,48 @@
 [ext_resource type="Texture2D" uid="uid://b1tx826cfh1pa" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/6.png" id="47_w7ghx"]
 [ext_resource type="Texture2D" uid="uid://c6ywmk5ao0iqq" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/7.png" id="48_kqovg"]
 [ext_resource type="Texture2D" uid="uid://4yy5jnxsxjrm" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/0seal_sprites/middle_outis_0seal_unpacking/8.png" id="49_kfil2"]
+[ext_resource type="Texture2D" uid="uid://d0bom1to672h6" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle1.png" id="52_emj0u"]
 [ext_resource type="AudioStream" uid="uid://b6umvj11my06i" path="res://sfx/sword.ogg" id="52_kqovg"]
+[ext_resource type="Texture2D" uid="uid://bc26wj0lalfar" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle2.png" id="53_kcc2q"]
 [ext_resource type="AudioStream" uid="uid://umin75gooukk" path="res://sfx/Stomp.ogg" id="53_kfil2"]
+[ext_resource type="Texture2D" uid="uid://btoyky5qqital" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle3.png" id="54_quo2s"]
+[ext_resource type="Texture2D" uid="uid://c3a1mxp2ib3fq" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle4.png" id="55_bfw4h"]
+[ext_resource type="Texture2D" uid="uid://bfdghmauj5q2r" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle5.png" id="56_b36jg"]
+[ext_resource type="Texture2D" uid="uid://bs0le1jqijons" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle6.png" id="57_8ntxl"]
+[ext_resource type="Texture2D" uid="uid://c2sol4t71n3kh" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle7.png" id="58_eupxi"]
+[ext_resource type="Texture2D" uid="uid://bge21ml3ftf0q" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle8.png" id="59_oq8yh"]
+[ext_resource type="Texture2D" uid="uid://dvyeulwkbp0ox" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle9.png" id="60_1h67x"]
+[ext_resource type="Texture2D" uid="uid://byh00twl30jgw" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle10.png" id="61_dpiqb"]
+[ext_resource type="Texture2D" uid="uid://csgel3ql6jnah" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle11.png" id="62_xgsde"]
+[ext_resource type="Texture2D" uid="uid://bb6841et2hvme" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle12.png" id="63_ku6yh"]
+[ext_resource type="Texture2D" uid="uid://c4vjar2qg8oa3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle13.png" id="64_y1kae"]
+[ext_resource type="Texture2D" uid="uid://vmredyieiiak" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle14.png" id="65_taj6g"]
+[ext_resource type="Texture2D" uid="uid://b68kxq0dt2fd0" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle15.png" id="66_f0fio"]
+[ext_resource type="Texture2D" uid="uid://b4qd1wsi3w2nx" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle16.png" id="67_7p6nt"]
+[ext_resource type="Texture2D" uid="uid://c0b57yeqbwot1" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle17.png" id="68_6hp75"]
+[ext_resource type="Texture2D" uid="uid://crjclrrh8o4iu" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle18.png" id="69_5ksww"]
+[ext_resource type="Texture2D" uid="uid://i2fucs0oxwmj" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle19.png" id="70_poyd2"]
+[ext_resource type="Texture2D" uid="uid://bbek2g2mafa0v" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle20.png" id="71_bk6rp"]
+[ext_resource type="Texture2D" uid="uid://dv1m6udxfp4aw" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle21.png" id="72_dueuu"]
+[ext_resource type="Texture2D" uid="uid://ysgky0rpq7cr" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle22.png" id="73_ganke"]
+[ext_resource type="Texture2D" uid="uid://bdsrq7ovlea8j" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle23.png" id="74_vkdxd"]
+[ext_resource type="Texture2D" uid="uid://24wvjvkyef7g" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle24.png" id="75_ywmtg"]
+[ext_resource type="Texture2D" uid="uid://8pm68t3lktq1" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle25.png" id="76_1qm37"]
+[ext_resource type="Texture2D" uid="uid://50drfhxbxaqp" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle26.png" id="77_o6f4b"]
+[ext_resource type="Texture2D" uid="uid://bjwye1qbeww6h" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle27.png" id="78_oqris"]
+[ext_resource type="Texture2D" uid="uid://vibbveekhr0u" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle28.png" id="79_v4m4x"]
+[ext_resource type="Texture2D" uid="uid://jg87vhvd5ev3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle29.png" id="80_i5nac"]
+[ext_resource type="Texture2D" uid="uid://7dlymkamexxa" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle30.png" id="81_7dv6b"]
+[ext_resource type="Texture2D" uid="uid://cdptvcheyex63" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle31.png" id="82_5bgbd"]
+[ext_resource type="Texture2D" uid="uid://biopk2x6xt1to" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle32.png" id="83_c5r8y"]
+[ext_resource type="Texture2D" uid="uid://dt57xm0ikptre" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle33.png" id="84_od3rp"]
+[ext_resource type="Texture2D" uid="uid://dwctirgflx08u" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle34.png" id="85_a5t8w"]
+[ext_resource type="Texture2D" uid="uid://pgoem4k4iqd3" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle35.png" id="86_yqurs"]
+[ext_resource type="Texture2D" uid="uid://fvci24fnb0vh" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle36.png" id="87_0l8sd"]
+[ext_resource type="Texture2D" uid="uid://d3hnp240hs47h" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle37.png" id="88_0doga"]
+[ext_resource type="Texture2D" uid="uid://d0c7snwr0xm00" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle38.png" id="89_0ajea"]
+[ext_resource type="Texture2D" uid="uid://cjlefvxvn2uc7" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle39.png" id="90_3xg0m"]
+[ext_resource type="Texture2D" uid="uid://b5mcjjortb8o" path="res://TheMiddleNurseFatherOutisCode/Character/Sprites/1seal_sprites/1seal_idle/1seal_idle40.png" id="91_801q1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hmwr"]
 atlas = ExtResource("45_ysrfp")
@@ -225,7 +265,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 50.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -256,16 +296,164 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7behi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i8qct"]
 animations = [{
 "frames": [],
 "loop": true,
-"name": &"0SealAttack",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [],
 "loop": true,
-"name": &"new_animation",
+"name": &"cast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7behi")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_emj0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_kcc2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_quo2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_bfw4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_b36jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_8ntxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_eupxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_oq8yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_1h67x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_dpiqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_xgsde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ku6yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_y1kae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_taj6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_f0fio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_7p6nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_6hp75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_5ksww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_poyd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_bk6rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_dueuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ganke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_vkdxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ywmtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_1qm37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_o6f4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_oqris")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_v4m4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_i5nac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_7dv6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_5bgbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_c5r8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_od3rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_a5t8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_yqurs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_0l8sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0doga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_0ajea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_3xg0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_801q1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"swordattack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"unpacking",
 "speed": 5.0
 }]
 
@@ -396,58 +584,70 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/1Sealanimations:sprite_frames")
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [SubResource("SpriteFrames_7behi")]
+"update": 1,
+"values": [0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/1Sealanimations:frame")
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0]
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [&"idle"]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/3/path = NodePath("Visuals/1Sealanimations:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("SpriteFrames_cbpno")]
+"values": [0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/4/path = NodePath("Visuals/1Sealanimations:sprite_frames")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_i8qct")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/1Sealanimations:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -614,60 +814,42 @@ tracks/2/keys = {
 "update": 1,
 "values": [&"idle", &"idle"]
 }
-
-[sub_resource type="Animation" id="Animation_dr2y8"]
-resource_name = "swordattack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"swordattack", &"swordattack"]
-}
-tracks/3/type = "audio"
+tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/path = NodePath("Visuals/1Sealanimations:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("52_kqovg")
-}],
-"times": PackedFloat32Array(0.16666667)
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70157933, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334, 0.9666667, 1, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2666668, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
 }
-tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/1Sealanimations:sprite_frames")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_i8qct"), SubResource("SpriteFrames_i8qct")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/1Sealanimations:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"idle"]
+}
 
 [sub_resource type="Animation" id="Animation_hiydp"]
 resource_name = "attack"
@@ -721,6 +903,60 @@ tracks/3/keys = {
 "stream": ExtResource("53_kfil2")
 }],
 "times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_dr2y8"]
+resource_name = "swordattack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/0Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/0Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_cbpno"), SubResource("SpriteFrames_cbpno")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/0Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"swordattack", &"swordattack"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("52_kqovg")
+}],
+"times": PackedFloat32Array(0.16666667)
 }
 tracks/3/use_blend = true
 
@@ -785,19 +1021,22 @@ offset_bottom = 40.0
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="0Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+visible = false
 position = Vector2(-8, -170)
 scale = Vector2(0.67268616, 0.6761905)
 sprite_frames = SubResource("SpriteFrames_cbpno")
 animation = &"idle"
 
 [node name="1Sealanimations" type="AnimatedSprite2D" parent="Visuals"]
-position = Vector2(-28.49999, -217.50003)
-scale = Vector2(0.8083334, 0.79499996)
-sprite_frames = SubResource("SpriteFrames_7behi")
-animation = &"0SealAttack"
+unique_name_in_owner = true
+position = Vector2(-8, -170)
+scale = Vector2(0.673, 0.673)
+sprite_frames = SubResource("SpriteFrames_i8qct")
+animation = &"idle"
 
 [node name="CenterPos" type="Marker2D" parent="."]
-position = Vector2(51, -182)
+position = Vector2(3, -158)
 
 [node name="Bounds" type="Control" parent="."]
 anchors_preset = 0
@@ -807,9 +1046,10 @@ offset_right = 169.0
 offset_bottom = -2.0
 
 [node name="IntentPosition" type="Marker2D" parent="."]
-position = Vector2(61, -174)
+position = Vector2(5, -166)
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_scoei")
 anim_player = NodePath("../AnimationPlayer")
 
