@@ -1677,6 +1677,7 @@ sprite_frames = SubResource("SpriteFrames_i8qct")
 animation = &"idle"
 
 [node name="2Sealaniamtions" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-22.000006, -170)
 scale = Vector2(0.673, 0.673)
