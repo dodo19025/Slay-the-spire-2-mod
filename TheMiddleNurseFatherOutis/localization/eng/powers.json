@@ -1,18 +1,18 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Lose a Sword Seal when this expires",
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Lose a Sword Seal when this expires",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Lose a Sword Seal when this expires.",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Lose a Sword Seal when this expires.",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.title": "Rising Fever",
 
-  "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.description": "Gain 1 [red]Vulnerable[/red] next turn",
-  "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.smartDescription": "Gain 1 [red]Vulnerable[/red] next turn",
+  "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.description": "Gain 1 [red]Vulnerable[/red] next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.smartDescription": "Gain 1 [red]Vulnerable[/red] next turn.",
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.title": "Vulnerable Next Turn",
 
-  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks",
-  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks.",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks.",
   "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.title": "Sealed Sword",
   
-  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "",
-  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "",
+  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "Gain 2 [gold]Rising Fever[/gold]\nDraw 1 card for each third attack played this turn.",
+  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain 2 [gold]Rising Fever[/gold]\nDraw 1 card for each third attack played this turn.",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "First Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "",
@@ -21,5 +21,9 @@
 
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "",
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "",
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn"
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn",
+
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning Creatures take damage at the end of their turn, each turn Burn is reduced by [blue]1[/blue]",
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [gold]Burn[/gold] by [blue]1[/blue]",
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn"
 }
