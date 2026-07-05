@@ -38,13 +38,13 @@ public class FirstSealRemovedPower()
                 base.DynamicVars["CardsLeft"].BaseValue--;
             }
 
-            firsttimegained = false;
+            firsttimegained = false; //so it doesn't count the unlseaing towards the number
             InvokeDisplayAmountChanged();
             if (base.DynamicVars["CardsLeft"].BaseValue <= 0)
             {
                 Flash();
-                await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner.Player);
-                base.DynamicVars["CardsLeft"].BaseValue = _baseCardsLeft;
+                await CardPileCmd.Draw(choiceContext, 1m, base.Owner.Player);
+                base.DynamicVars["CardsLeft"].BaseValue = 2m;
                 InvokeDisplayAmountChanged();
             }
         }

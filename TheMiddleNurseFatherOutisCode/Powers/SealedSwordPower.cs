@@ -30,7 +30,6 @@ public class SealedSwordPower()
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<StrengthPower>()
     ];
     
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,

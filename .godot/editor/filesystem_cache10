@@ -8,10 +8,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782840176::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783284198
+::res://bin/ExportRelease/net9.0/publish/::1783284346
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783019109::0::1::::<><><>0<>0<><>::
-::res://sfx/::1783283772
-glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783284203::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1783284203
+glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783284350::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1783172607::1783172608::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -338,9 +338,9 @@ combat_reticle.png::CompressedTexture2D::9187137897194051406::1782829367::178301
 StringExtensions.cs::CSharpScript::4900159974993874380::1782513135::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Potions/::1782513714
 TheMiddleNurseFatherOutisPotion.cs::CSharpScript::5195854931568897929::1782513113::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Powers/::1783283988
+::res://TheMiddleNurseFatherOutisCode/Powers/::1783284330
 BurnPower.cs::CSharpScript::7251735830549931068::1783282522::0::1::::<><><>0<>0<><>::
-FirstSealRemovedPower.cs::CSharpScript::2993649039625702634::1783283988::0::1::::<><><>0<>0<><>::
+FirstSealRemovedPower.cs::CSharpScript::2993649039625702634::1783284330::0::1::::<><><>0<>0<><>::
 LaevateinnPower.cs::CSharpScript::3712267392411101780::1783182312::0::1::::<><><>0<>0<><>::
 RisingFeverPower.cs::CSharpScript::5510309105554054230::1783283763::0::1::::<><><>0<>0<><>::
 SealedSwordPower.cs::CSharpScript::1171115322555191321::1783279108::0::1::::<><><>0<>0<><>::
