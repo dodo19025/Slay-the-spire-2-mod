@@ -26,7 +26,7 @@ public class FirstSealRemovedPower()
 
     public override int DisplayAmount => base.DynamicVars["CardsLeft"].IntValue;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("CardsLeft", 2m)]; //change to 5 when final
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("CardsLeft", 5m)]; //change to 5 when final
     
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -44,7 +44,7 @@ public class FirstSealRemovedPower()
             {
                 Flash();
                 await CardPileCmd.Draw(choiceContext, 1m, base.Owner.Player);
-                base.DynamicVars["CardsLeft"].BaseValue = 2m;
+                base.DynamicVars["CardsLeft"].BaseValue = 5m;
                 InvokeDisplayAmountChanged();
             }
         }

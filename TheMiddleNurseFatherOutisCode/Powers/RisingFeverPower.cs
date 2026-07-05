@@ -26,7 +26,7 @@ public class RisingFeverPower()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("RisingFeverReapply", 2m), //change this to two for testing lol
+        new DynamicVar("RisingFeverReapply", 2m), 
         new DynamicVar("StrengthGain", 3m)
     });
 
