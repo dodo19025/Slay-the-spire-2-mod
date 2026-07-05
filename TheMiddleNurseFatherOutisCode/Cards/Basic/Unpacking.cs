@@ -23,7 +23,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     {
         new DamageVar(4m, ValueProp.Move),
         new DynamicVar("Power", 1m),
-        new DynamicVar("FeverLost", 1m)
+        new DynamicVar("FeverLost", 2m) //CHANGE TO ONE IN FINAL VERSION
     });
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
