@@ -31,12 +31,14 @@ public class FirstSealRemovedPower()
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Owner == base.Owner.Player)
+        if (cardPlay.Card.Owner == base.Owner.Player && cardPlay.Card.Type == CardType.Attack)
         {
             if (!firsttimegained)
             {
                 base.DynamicVars["CardsLeft"].BaseValue--;
             }
+
+            firsttimegained = false;
             InvokeDisplayAmountChanged();
             if (base.DynamicVars["CardsLeft"].BaseValue <= 0)
             {
