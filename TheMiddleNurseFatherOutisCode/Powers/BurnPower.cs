@@ -1,12 +1,16 @@
 ﻿using System.Drawing;
 using BaseLib.Hooks;
+using BaseLib.Patches.UI;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using Color = Godot.Color;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
@@ -19,6 +23,21 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
+    public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
+    {
+        return [new HealthBarForecastSegment(base.Amount, new Color(247, 170, 45), HealthBarForecastDirection.FromRight)];
+    }
+    
+    private bool IsBurnLethal() //compares this creature's current health with the amount of burn it has
+    {
+        if (base.Amount <= 0)
+        {
+            return false; //jsut a sfety measure or whatever
+        }
+
+        return base.Amount >= base.Owner.CurrentHp; //compares the burn amount with health, if it's larger than or equal then returns true
+        //otherwise return false
+    }
     public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(base.Owner))
@@ -33,6 +52,15 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
         else
         {
             await Cmd.CustomScaledWait(0.1f, 0.25f);
+        }
+    }
+
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
+    {
+        if (power == this)
+        {
+            
         }
     }
 }

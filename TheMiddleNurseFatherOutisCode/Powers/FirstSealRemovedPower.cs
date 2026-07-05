@@ -13,5 +13,10 @@ public class FirstSealRemovedPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
+    private const int _baseCardsLeft = 5;
     
+    private const string _cardsLeftKey = "CardsLeft";
+    
+
+
 }

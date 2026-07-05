@@ -12,9 +12,9 @@ public class powerupanimcheck() : CustomSingletonModel(HookType.Combat)
 {
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Type == CardType.Power)
+        if (cardPlay.Card.Type == CardType.Power &&  cardPlay.Card.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
-            await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "cast", 0.05f);
+            await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "cast", 0.2f);
         }
         
     }

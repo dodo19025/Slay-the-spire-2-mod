@@ -7,12 +7,12 @@
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.smartDescription": "Gain 1 [red]Vulnerable[/red] next turn.",
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.title": "Vulnerable Next Turn",
 
-  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks.",
-  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain 1 [gold]Rising Fever[/gold]\nGain 1 energy next turn when your [gold]Block[/gold] breaks.",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain [blue]1[/blue] [gold]Rising Fever[/gold]\nGain [blue]1[/blue] energy next turn when your [gold]Block[/gold] breaks.",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain [blue]1[/blue] [gold]Rising Fever[/gold]\nGain [blue]1[/blue] {energyPrefix:energyIcons(1)} next turn when your [gold]Block[/gold] breaks.",
   "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.title": "Sealed Sword",
   
-  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "Gain 2 [gold]Rising Fever[/gold]\nDraw 1 card for each third attack played this turn.",
-  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain 2 [gold]Rising Fever[/gold]\nDraw 1 card for each third attack played this turn.",
+  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card for every [blue]5[/blue] attacks you play.",
+  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card after you play {Amount:plural:[blue]{}[/blue] attack| [blue]{}[/blue] attacks}.",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "First Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "",
