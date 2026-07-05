@@ -26,11 +26,7 @@ public class PaybackPower()
     [
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
-
-    protected override object? InitInternalData()
-    {
-        return base.InitInternalData();
-    }
+    
 
     private bool DidPayback = false;
     
@@ -44,9 +40,10 @@ public class PaybackPower()
         DamageResult damageResult = command.Results.SelectMany((List<DamageResult> r) => r).FirstOrDefault((DamageResult r) => r.Receiver == base.Owner);
         if (damageResult.UnblockedDamage != 0 || damageResult != null)
         {
-            await DamageCmd.Attack(base.Amount).Targeting(command.Attacker).WithAttackerAnim("legattack",0.2f).Execute(choiceContext);
+            await DamageCmd.Attack(base.Amount).Targeting(command.Attacker).Execute(choiceContext);
             Modsounds.legattack.Play();
             DidPayback = true;
+            //WithAttackerAnim("legattack",0.2f)
         }
     }
 

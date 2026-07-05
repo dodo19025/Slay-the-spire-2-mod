@@ -20,11 +20,18 @@ public static class PaybackCmd
             {
                 amount = CurrentBlock; //if the amount of payback gained is less than block, then current block becomes the amount gained
             }
+            
 
            await CreatureCmd.LoseBlock(creature, amount); //consumes block equal to payback
            await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // Gains equal amounts payback power
         }
         
     }
-    
+
+    public static async Task AdditionalPayback(this Creature creature, PlayerChoiceContext choiceContext,
+        Decimal amount, Creature? applier = null, CardModel? cardSource = null)
+    {
+        await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // unconditional paybackgain
+    }
+
 }

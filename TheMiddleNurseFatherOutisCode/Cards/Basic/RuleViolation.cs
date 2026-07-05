@@ -38,7 +38,8 @@ public class RuleViolation()
         {
             AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
         }
-        Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["PaybackAmount"].BaseValue + AdditionalPayback,Owner.Creature, this);
+        Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["PaybackAmount"].BaseValue,Owner.Creature, this);
+        Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
