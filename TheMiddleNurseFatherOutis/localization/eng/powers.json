@@ -8,7 +8,7 @@
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.title": "Vulnerable Next Turn",
 
   "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.description": "Gain [blue]1[/blue] [gold]Rising Fever[/gold]\nGain [blue]1[/blue] energy next turn when your [gold]Block[/gold] breaks.",
-  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain [blue]1[/blue] [gold]Rising Fever[/gold]\nGain [blue]1[/blue] {energyPrefix:energyIcons(1)} next turn when your [gold]Block[/gold] breaks.",
+  "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.smartDescription": "Gain [blue]1[/blue] [gold]Rising Fever[/gold]\nGain {energyPrefix:energyIcons(1)} next turn when your [gold]Block[/gold] breaks.",
   "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.title": "Sealed Sword",
   
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card for every [blue]5[/blue] attacks you play.",

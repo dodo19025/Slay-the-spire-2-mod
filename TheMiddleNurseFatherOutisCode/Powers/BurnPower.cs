@@ -23,9 +23,10 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
+    public Color burncolor = new Color("#f7681b");
     public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
-        return [new HealthBarForecastSegment(base.Amount, new Color(247, 170, 45), HealthBarForecastDirection.FromRight)];
+        return [new HealthBarForecastSegment(base.Amount, burncolor, HealthBarForecastDirection.FromRight)];
     }
     
     private bool IsBurnLethal() //compares this creature's current health with the amount of burn it has
@@ -54,13 +55,5 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
             await Cmd.CustomScaledWait(0.1f, 0.25f);
         }
     }
-
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
-        CardModel? cardSource)
-    {
-        if (power == this)
-        {
-            
-        }
-    }
+    
 }

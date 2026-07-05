@@ -1,4 +1,8 @@
-﻿using MegaCrit.Sts2.Core.Entities.Powers;
+﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
@@ -13,10 +17,32 @@ public class FirstSealRemovedPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
-    private const int _baseCardsLeft = 5;
+    private const int _baseCardsLeft = 2; //change to 5 when final
     
     private const string _cardsLeftKey = "CardsLeft";
-    
 
+    public override int DisplayAmount => base.DynamicVars["CardsLeft"].IntValue;
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("CardsLeft", 2m)]; //change to 5 when final
+
+    protected override object InitInternalData()
+    {
+        return base.InitInternalData();
+    }
+
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (cardPlay.Card.Owner == base.Owner.Player)
+        {
+            base.DynamicVars["CardsLeft"].BaseValue--;
+            InvokeDisplayAmountChanged();
+            if (base.DynamicVars["CardsLeft"].BaseValue <= 0)
+            {
+                Flash();
+                await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner.Player);
+                base.DynamicVars["CardsLeft"].BaseValue = _baseCardsLeft;
+                InvokeDisplayAmountChanged();
+            }
+        }
+    }
 }
