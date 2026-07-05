@@ -38,6 +38,7 @@ public class RisingFeverPower()
         {
             if (Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
             {
+                int FeverAmountCorrection = 0;
                 CanvasItem visualzeroseal = (Owner.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
                 CanvasItem visualoneseal = (Owner.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
                 CanvasItem visualtwoseal = (Owner.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
@@ -46,9 +47,9 @@ public class RisingFeverPower()
                 int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
                 if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
                 {
-                    if (FeverAmount < 0)
+                    if (FeverAmount <= 0) //fix for if it's negative
                     {
-                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,(FeverAmount * -1),  base.Owner, null); //so you can't cheese unseal stages, it sets the fever amount to 0
+                        FeverAmountCorrection += (FeverAmount * -1);
                     }
                     Stage += 1;
                     if (Stage == 1)
@@ -58,7 +59,7 @@ public class RisingFeverPower()
                         visualoneseal.Visible = true;
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
-                            base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner,
+                            base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
                             null); //reapplies rising fever to 2
                         await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner, -1m, base.Owner, null);
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, 1m, base.Owner, null);
@@ -72,7 +73,7 @@ public class RisingFeverPower()
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
-                            base.DynamicVars["RisingFeverReapply"].BaseValue, base.Owner,
+                            base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
                             null); //reapplies rising fever to 2
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner, -1m, base.Owner, null);
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, 1m, base.Owner, null);
