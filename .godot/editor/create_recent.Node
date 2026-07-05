@@ -1,8 +1,8 @@
+Control
 AnimatedSprite2D
 AnimationTree
 AnimationPlayer
 Node2D
-Control
 TextureRect
 Sprite2D
 AudioStreamPlayer2D

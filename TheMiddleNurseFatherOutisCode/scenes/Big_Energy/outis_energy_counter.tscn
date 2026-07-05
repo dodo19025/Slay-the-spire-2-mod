@@ -91,6 +91,17 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(64, 64)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RotationLayers/Layer3")
+libraries = {
+&"": SubResource("AnimationLibrary_yp1hp")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../RotationLayers/Layer3")
+tree_root = SubResource("AnimationNodeStateMachine_6cyoe")
+anim_player = NodePath("../AnimationPlayer")
+
 [node name="Layers" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -128,17 +139,6 @@ offset_right = 326.46475
 offset_bottom = 309.07864
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yp1hp")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RotationLayers"]
-root_node = NodePath("../Layer3")
-libraries = {
-&"": SubResource("AnimationLibrary_yp1hp")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="RotationLayers"]
-root_node = NodePath("../Layer3")
-tree_root = SubResource("AnimationNodeStateMachine_6cyoe")
-anim_player = NodePath("../AnimationPlayer")
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
 

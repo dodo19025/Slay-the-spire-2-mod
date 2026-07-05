@@ -40,8 +40,8 @@ public class PaybackPower()
         DamageResult damageResult = command.Results.SelectMany((List<DamageResult> r) => r).FirstOrDefault((DamageResult r) => r.Receiver == base.Owner);
         if (damageResult.UnblockedDamage != 0 || damageResult != null)
         {
-            await DamageCmd.Attack(base.Amount).Targeting(command.Attacker).Execute(choiceContext);
-            Modsounds.legattack.Play();
+            //await DamageCmd.Attack(base.Amount).Targeting(command.Attacker).Execute(choiceContext);
+            //Modsounds.legattack.Play();
             DidPayback = true;
             //WithAttackerAnim("legattack",0.2f)
         }

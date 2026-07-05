@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1783287299
+::res://::1783295689
 control.tscn::PackedScene::6644946034916093662::1782919363::0::1::::<><><>0<>0<><>::uid://ch46bco05l0fv::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/outis_idle.png
 export_presets.cfg::TextFile::-1::1782513113::0::1::::<><><>0<>0<><>::
 middle_outis.tscn::PackedScene::3474415728702640043::1782919363::0::1::::<><><>0<>0<><>::uid://ch46bco05l0fv::::res://TheMiddleNurseFatherOutisCode/Character/Sprites/outis_idle.png
@@ -8,10 +8,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1782840176::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783294864
+::res://bin/ExportRelease/net9.0/publish/::1783295544
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783294006::0::1::::<><><>0<>0<><>::
-::res://sfx/::1783294009
-glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783294870::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1783295790
+glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783295794::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1783172607::1783172608::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -344,8 +344,8 @@ StringExtensions.cs::CSharpScript::4900159974993874380::1782513135::0::1::::<><>
 TheMiddleNurseFatherOutisPotion.cs::CSharpScript::5195854931568897929::1782513113::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Powers/::1783287284
 TheMiddleNurseFatherOutisPower.cs::CSharpScript::9187379787938785095::1782513135::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Powers/Card Powers/::1783294779
-PaybackPower.cs::CSharpScript::6314271510800556234::1783294779::0::1::::<><><>0<>0<><>::
+::res://TheMiddleNurseFatherOutisCode/Powers/Card Powers/::1783295526
+PaybackPower.cs::CSharpScript::6314271510800556234::1783295526::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Powers/Generic Powers/::1783287284
 BurnPower.cs::CSharpScript::7251735830549931068::1783282522::0::1::::<><><>0<>0<><>::
 VulnerableNextTurn.cs::CSharpScript::2736436971627580012::1782813057::0::1::::<><><>0<>0<><>::
@@ -355,8 +355,8 @@ LaevateinnPower.cs::CSharpScript::3712267392411101780::1783182312::0::1::::<><><
 RisingFeverPower.cs::CSharpScript::5510309105554054230::1783286427::0::1::::<><><>0<>0<><>::
 SealedSwordPower.cs::CSharpScript::1171115322555191321::1783284412::0::1::::<><><>0<>0<><>::
 SecondSealRemovedPower.cs::CSharpScript::9083415500331521664::1782823214::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Relics/::1783282680
-SealedSword.cs::CSharpScript::4746811683842282374::1783282680::0::1::::<><><>0<>0<><>::
+::res://TheMiddleNurseFatherOutisCode/Relics/::1783295254
+SealedSword.cs::CSharpScript::4746811683842282374::1783295254::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisRelic.cs::CSharpScript::194360154058807062::1782513135::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/scenes/::1783159343
 char_select_bg_themiddlenursefatheroutis.tscn::PackedScene::3558554428643597497::1782985516::0::1::::<><><>0<>0<><>::uid://ccwcwrv0uvnvr::::res://TheMiddleNurseFatherOutisCode/Character/Background_video/The_House_of_Spiders_The_Middle_Nursefather_Outis_Uptie_III_Animation.ogv
