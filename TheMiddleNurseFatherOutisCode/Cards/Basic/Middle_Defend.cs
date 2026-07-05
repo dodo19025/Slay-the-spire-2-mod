@@ -26,7 +26,6 @@ public class Middle_Defend()
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await CreatureCmd.LoseBlock(Owner.Creature, 3m);
     }
 
     protected override void OnUpgrade()

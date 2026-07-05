@@ -19,6 +19,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     TargetType.AnyEnemy)
 {
     private const string _Power = "Power";
+    private const string _FeverLost = "FeverLost";
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
     {
         new DamageVar(4m, ValueProp.Move),

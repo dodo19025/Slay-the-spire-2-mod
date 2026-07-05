@@ -18,7 +18,7 @@ public class FirstSealRemovedPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
-    private const int _baseCardsLeft = 2; //change to 5 when final
+    private const int _baseCardsLeft = 5; 
 
     private bool firsttimegained = true;
     
