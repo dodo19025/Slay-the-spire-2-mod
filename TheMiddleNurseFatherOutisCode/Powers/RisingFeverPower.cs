@@ -46,7 +46,10 @@ public class RisingFeverPower()
                 int FeverAmount = base.Owner.GetPowerAmount<RisingFeverPower>();
                 if (FeverAmount <= 0 && applier.IsPlayer && Stage < 3)
                 {
-
+                    if (FeverAmount < 0)
+                    {
+                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,(FeverAmount * -1),  base.Owner, null); //so you can't cheese unseal stages, it sets the fever amount to 0
+                    }
                     Stage += 1;
                     if (Stage == 1)
                     {
