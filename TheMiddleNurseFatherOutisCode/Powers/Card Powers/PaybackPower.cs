@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
@@ -30,21 +31,21 @@ public class PaybackPower()
 
     private bool DidPayback = false;
     
-    public override async Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
+    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+        Creature? dealer, CardModel? cardSource)
     {
-        if (command.Attacker == base.Owner || command.TargetSide != base.Owner.Side ||
-            !command.DamageProps.IsPoweredAttack())
+        if (dealer == base.Owner || dealer.Side == base.Owner.Side ||
+            !props.IsPoweredAttack())
         {
             return;
         }
-        DamageResult damageResult = command.Results.SelectMany((List<DamageResult> r) => r).FirstOrDefault((DamageResult r) => r.Receiver == base.Owner);
-        if (damageResult.UnblockedDamage != 0 || damageResult != null)
-        {
-            //await DamageCmd.Attack(base.Amount).Targeting(command.Attacker).Execute(choiceContext);
+        if(target.IsPlayer && result.UnblockedDamage > 0)
+            await DamageCmd.Attack(base.Amount).Targeting(dealer).Execute(choiceContext);
             //Modsounds.legattack.Play();
             DidPayback = true;
+            MainFile.Logger.Info("Did Payback");
             //WithAttackerAnim("legattack",0.2f)
-        }
+
     }
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
