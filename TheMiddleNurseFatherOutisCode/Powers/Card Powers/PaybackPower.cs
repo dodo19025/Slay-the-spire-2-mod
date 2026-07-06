@@ -35,8 +35,7 @@ public class PaybackPower()
         DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
-        if (dealer == base.Owner || dealer.Side == base.Owner.Side ||
-            !props.IsPoweredAttack())
+        if (dealer != null && (dealer == base.Owner || dealer.Side == base.Owner.Side || !props.IsPoweredAttack()))
         {
             return;
         }
@@ -45,7 +44,7 @@ public class PaybackPower()
         {
 
             await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.05f);
-            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered, base.Owner, null, null);
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             await Cmd.CustomScaledWait(0.15f, 0.25f);
             DidPayback = true;
             MainFile.Logger.Info("Did Payback");

@@ -35,7 +35,7 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
         {
             return;
         }
-        await CreatureCmd.Damage(choiceContext, base.Owner,base.Amount,ValueProp.Unpowered,null,null,null);
+        //await CreatureCmd.Damage(choiceContext, base.Owner,base.Amount,ValueProp.Unpowered,null,null,null);
         if (base.Owner.IsAlive)
         {
             await PowerCmd.Decrement(this);
