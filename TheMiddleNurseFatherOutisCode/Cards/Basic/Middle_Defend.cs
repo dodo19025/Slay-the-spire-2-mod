@@ -12,7 +12,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))] //adds this to the card pool
-public class Middle_Defend()
+public abstract class Middle_Defend()
     : TheMiddleNurseFatherOutisCard(1,
         CardType.Skill, CardRarity.Basic,
         TargetType.Self)

@@ -10,7 +10,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public class VulnerableNextTurn()
+public abstract class VulnerableNextTurn()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>

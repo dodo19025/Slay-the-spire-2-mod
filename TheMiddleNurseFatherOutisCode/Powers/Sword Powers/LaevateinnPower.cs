@@ -5,7 +5,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
 
-public class LaevateinnPower()
+public abstract class LaevateinnPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>

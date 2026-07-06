@@ -14,7 +14,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public class RisingFeverPower()
+public abstract class RisingFeverPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
@@ -57,6 +57,7 @@ public class RisingFeverPower()
                         Modsounds.unpacking0.Play();
                         visualzeroseal.Visible = false;
                         visualoneseal.Visible = true;
+                        await Cmd.CustomScaledWait(0.1f, 0.25f);
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 0.4f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                             base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
@@ -70,7 +71,9 @@ public class RisingFeverPower()
                         Modsounds.unpacking2.Play();
                         visualoneseal.Visible = false;
                         visualtwoseal.Visible = true;
+                        await Cmd.CustomScaledWait(0.1f, 0.25f);
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
+                        await Cmd.CustomScaledWait(0.1f, 0.25f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                             base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
@@ -84,6 +87,7 @@ public class RisingFeverPower()
                         Modsounds.unpacking1.Play();
                         visualtwoseal.Visible = false;
                         visualthreeseal.Visible = true;
+                        await Cmd.CustomScaledWait(0.1f, 0.25f);
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, -1m, base.Owner, null);
                         await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner, 1m, base.Owner, null);

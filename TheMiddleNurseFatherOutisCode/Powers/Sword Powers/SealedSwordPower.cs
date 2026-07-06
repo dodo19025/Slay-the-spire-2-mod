@@ -12,7 +12,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public class SealedSwordPower()
+public abstract class SealedSwordPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>

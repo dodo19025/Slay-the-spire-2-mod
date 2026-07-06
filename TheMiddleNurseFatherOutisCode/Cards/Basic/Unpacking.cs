@@ -14,7 +14,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
-public class Unpacking() : TheMiddleNurseFatherOutisCard(
+public abstract class Unpacking() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {

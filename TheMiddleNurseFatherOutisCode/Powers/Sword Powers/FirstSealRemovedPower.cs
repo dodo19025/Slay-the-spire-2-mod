@@ -9,7 +9,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public class FirstSealRemovedPower()
+public abstract class FirstSealRemovedPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
@@ -26,7 +26,7 @@ public class FirstSealRemovedPower()
 
     public override int DisplayAmount => base.DynamicVars["CardsLeft"].IntValue;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("CardsLeft", 5m)]; //change to 5 when final
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DynamicVar("CardsLeft", 5m)]; 
     
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
