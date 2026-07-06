@@ -39,8 +39,9 @@ public class PaybackPower()
         {
             return;
         }
-        if(target.IsPlayer && result.UnblockedDamage > 0)
-            await DamageCmd.Attack(base.Amount).Targeting(dealer).Execute(choiceContext);
+
+        if (target.IsPlayer && result.UnblockedDamage > 0)
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,null,null);
             //Modsounds.legattack.Play();
             DidPayback = true;
             MainFile.Logger.Info("Did Payback");
