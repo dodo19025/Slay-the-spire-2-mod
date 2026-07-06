@@ -23,10 +23,10 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
-    public Color burncolor = new Color("#f7681b");
+    public Color Burncolor = new Color("#f7681b");
     public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
-        return [new HealthBarForecastSegment(base.Amount, burncolor, HealthBarForecastDirection.FromRight)];
+        return [new HealthBarForecastSegment(base.Amount, Burncolor, HealthBarForecastDirection.FromRight)];
     }
     
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
@@ -35,7 +35,7 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
         {
             return;
         }
-        //await CreatureCmd.Damage(choiceContext, base.Owner,base.Amount,ValueProp.Unpowered,null,null,null);
+        await CreatureCmd.Damage(choiceContext, base.Owner,base.Amount,ValueProp.Unpowered,null,null,null);
         if (base.Owner.IsAlive)
         {
             await PowerCmd.Decrement(this);
