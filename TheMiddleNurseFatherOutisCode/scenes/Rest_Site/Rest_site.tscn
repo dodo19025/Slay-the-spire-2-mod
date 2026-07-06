@@ -118,10 +118,10 @@ expand_mode = 1
 
 [node name="Hitbox" type="Control" parent="Control"]
 anchors_preset = 0
-offset_left = -287.0
-offset_top = -285.0
-offset_right = 342.0
-offset_bottom = 375.0
+offset_left = -259.0
+offset_top = -384.0
+offset_right = 370.0
+offset_bottom = 276.0
 pivot_offset = Vector2(296, 415.948)
 
 [node name="ThoughtBubbleRight" type="Control" parent="Control"]
