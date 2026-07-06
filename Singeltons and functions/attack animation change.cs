@@ -19,17 +19,17 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
             {
                 if (visualthreeseal.Visible)
                 {
-                    CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordlattack", 0.05f);
+                    await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordlattack", 0.05f);
                 }
                 else if (!visualthreeseal.Visible)
                 {
-                    CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordattack", 0.05f);
+                    await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "swordattack", 0.05f);
                 }
 
             }
             else if(!cardPlay.Card.Keywords.Contains(FervourKeyWord.Fervour))
             {
-                 CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
+                 await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
             }
         }
     }

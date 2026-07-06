@@ -53,7 +53,7 @@ public class PaybackPower()
     {
         if (DidPayback)
         {
-            PowerCmd.Remove(this);
+            await PowerCmd.Remove(this);
             DidPayback = false;
         }
     }
