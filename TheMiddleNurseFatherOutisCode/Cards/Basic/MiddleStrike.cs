@@ -1,10 +1,12 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
@@ -21,7 +23,13 @@ public abstract class MiddleStrike()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext); 
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        if (play.Target != null)
+        {
+            await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
+                base.Owner.Creature, this);
+        }
+
     }
 
     protected override void OnUpgrade()

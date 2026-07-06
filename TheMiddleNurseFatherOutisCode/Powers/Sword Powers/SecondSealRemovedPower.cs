@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
@@ -30,6 +31,11 @@ public abstract class SecondSealRemovedPower()
         new DynamicVar("BurnApplyLeft", 3m),
         new DynamicVar("BurnApplication", 2m)
     });
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BurnPower>(),
+    ];
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
