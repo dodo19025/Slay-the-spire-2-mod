@@ -12,7 +12,7 @@
   "THEMIDDLENURSEFATHEROUTIS-SEALED_SWORD_POWER.title": "Sealed Sword",
   
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.description": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card for every [blue]5[/blue] attacks you play.",
-  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card after you play{CardsLeft:plural:[blue]{}[/blue] attack| [blue]{}[/blue] attacks}.",
+  "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card after you play{CardsLeft:plural:[blue]{}[/blue] attack|[blue]{}[/blue] attacks}.",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "First Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "",

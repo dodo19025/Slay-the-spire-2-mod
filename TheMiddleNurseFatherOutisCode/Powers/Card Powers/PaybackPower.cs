@@ -30,8 +30,9 @@ public class PaybackPower()
     
 
     private bool DidPayback = false;
-    
-    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+
+    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target,
+        DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
         if (dealer == base.Owner || dealer.Side == base.Owner.Side ||
@@ -40,15 +41,17 @@ public class PaybackPower()
             return;
         }
 
-        if (target.IsPlayer && result.UnblockedDamage > 0)
-            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner,null,null);
-            await Cmd.CustomScaledWait(0.15f, 0.25f);
+        if (target.IsPlayer && result.UnblockedDamage > 0 && dealer != null)
+        {
+
             await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.05f);
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered, base.Owner, null, null);
+            await Cmd.CustomScaledWait(0.15f, 0.25f);
             DidPayback = true;
             MainFile.Logger.Info("Did Payback");
+        }
     }
-
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (DidPayback)
         {
@@ -57,3 +60,4 @@ public class PaybackPower()
         }
     }
 }
+

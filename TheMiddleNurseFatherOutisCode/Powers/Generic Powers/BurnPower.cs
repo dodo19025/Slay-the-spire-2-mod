@@ -29,17 +29,7 @@ public class BurnPower() : TheMiddleNurseFatherOutisPower
         return [new HealthBarForecastSegment(base.Amount, burncolor, HealthBarForecastDirection.FromRight)];
     }
     
-    private bool IsBurnLethal() //compares this creature's current health with the amount of burn it has
-    {
-        if (base.Amount <= 0)
-        {
-            return false; //jsut a sfety measure or whatever
-        }
-
-        return base.Amount >= base.Owner.CurrentHp; //compares the burn amount with health, if it's larger than or equal then returns true
-        //otherwise return false
-    }
-    public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(base.Owner))
         {
