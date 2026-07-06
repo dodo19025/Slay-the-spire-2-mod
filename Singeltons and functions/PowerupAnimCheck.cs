@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 
 namespace TheMiddleNurseFatherOutis;
 
-public class powerupanimcheck() : CustomSingletonModel(HookType.Combat)
+public class PowerupAnimCheck() : CustomSingletonModel(HookType.Combat)
 {
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {

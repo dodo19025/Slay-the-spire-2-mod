@@ -41,12 +41,11 @@ public class PaybackPower()
         }
 
         if (target.IsPlayer && result.UnblockedDamage > 0)
-            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,null,null);
-            //Modsounds.legattack.Play();
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner,null,null);
+            await Cmd.CustomScaledWait(0.15f, 0.25f);
+            await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.05f);
             DidPayback = true;
             MainFile.Logger.Info("Did Payback");
-            //WithAttackerAnim("legattack",0.2f)
-
     }
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

@@ -25,8 +25,8 @@ public class RuleViolation()
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PaybackPower>(),
-        HoverTipFactory.FromPower<StrengthPower>(),
-        HoverTipFactory.Static(StaticHoverTip.Block)
+        HoverTipFactory.Static(StaticHoverTip.Block),
+        HoverTipFactory.FromPower<StrengthPower>()
     ];
     
     protected override async Task OnPlay(
