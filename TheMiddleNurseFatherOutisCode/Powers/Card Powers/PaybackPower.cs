@@ -43,7 +43,7 @@ public class PaybackPower()
         if (target.IsPlayer && result.UnblockedDamage > 0)
         {
             
-            await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.05f);
+            await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.2f);
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             await Cmd.CustomScaledWait(0.15f, 0.25f);
             _didPayback = true;

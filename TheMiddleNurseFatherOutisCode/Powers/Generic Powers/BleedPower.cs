@@ -84,10 +84,17 @@ public class BleedPower()
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack())
+        if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack() && target != null)
         {
             await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
-            await PowerCmd.ModifyAmount(choiceContext, this, -CalculateBleedLost(base.Amount), null, null);
+            if (base.Owner.IsAlive)
+            {
+                await PowerCmd.ModifyAmount(choiceContext, this, -CalculateBleedLost(base.Amount), null, null);
+            }
+            else
+            {
+                await Cmd.CustomScaledWait(0.1f, 0.25f);
+            }
         }
 
     }
