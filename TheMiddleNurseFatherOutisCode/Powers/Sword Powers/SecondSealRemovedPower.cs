@@ -53,7 +53,7 @@ public class SecondSealRemovedPower()
 
                 foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
                 {
-                    await PowerCmd.Apply<Powers.BurnPower>(choiceContext, hittableEnemy, 1m, base.Owner, null);
+                    await PowerCmd.Apply<UnsealedSearingBlade>(choiceContext, hittableEnemy, base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
                 } 
                 
                 base.DynamicVars["BurnApplyLeft"].BaseValue = 3m;

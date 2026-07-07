@@ -29,5 +29,9 @@
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn.",
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.title": "Payback"
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.title": "Payback",
+
+  "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.description": "Gain [red]Burn[/red]",
+  "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.smartDescription": "Gain [blue]{Amount}[/blue] [red]Burn[/red]",
+  "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.title": "Unsealed Searing Blade"
 }
