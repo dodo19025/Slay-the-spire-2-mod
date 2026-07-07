@@ -65,7 +65,7 @@ public class BleedPower()
 
             }
         }
-        MainFile.Logger.Info("Damage To be Taken [0]", TotalDamageToBeTaken);
+        MainFile.Logger.Info("Damage To be Taken >", TotalDamageToBeTaken);
         MainFile.Logger.Info(TotalDamageToBeTaken.ToString());
         return TotalDamageToBeTaken;
     }

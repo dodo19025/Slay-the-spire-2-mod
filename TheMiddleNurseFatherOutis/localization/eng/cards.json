@@ -9,5 +9,12 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nGain additional [gold]Payback[/gold] Equal to [gold]Strength[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!"
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
+
+
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target block by damage dealt.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
+
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage twice.\nApply ",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!"
 }

@@ -70,7 +70,7 @@ public class RisingFeverPower()
                         Modsounds.unpacking2.Play();
                         visualoneseal.Visible = false;
                         visualtwoseal.Visible = true;
-                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
+                        await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 3f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                             base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
