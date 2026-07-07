@@ -28,7 +28,7 @@ public abstract class MiddleStrike()
         {
             await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
                 base.Owner.Creature, this);
-        }
+        }//remember to remove thsi lol
 
     }
 
