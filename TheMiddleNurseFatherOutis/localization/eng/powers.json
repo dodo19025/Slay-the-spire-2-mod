@@ -15,8 +15,8 @@
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card after you play {CardsLeft:plural:[blue]{}[/blue] attack|[blue]{}[/blue] attacks}.",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "First Seal Removed",
 
-  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "Every [blue]3[/blue] times you apply [red]Burn[/red], apply [blue]2[/blue] [red]Burn[/red] to ALL enemies",
-  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Every {BurnApplyLeft:plural:[blue]{}[/blue] time|[blue]{}[/blue] times} you apply [red]Burn[/red], apply [blue]{BurnApplication:diff()}[/blue] [red]Burn[/red] to ALL enemies",
+  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "Every [blue]3[/blue] times you apply [red]Burn[/red], apply [blue]2[/blue] [red]Burn[/red] to ALL enemies.",
+  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Every {BurnApplyLeft:plural:[blue]{}[/blue] time|[blue]{}[/blue] times} you apply [red]Burn[/red], apply [blue]{BurnApplication:diff()}[/blue] [red]Burn[/red] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.title": "Second Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "",
@@ -27,7 +27,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [gold]Burn[/gold] by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn",
 
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn",
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn",
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.title": "Payback"
 }

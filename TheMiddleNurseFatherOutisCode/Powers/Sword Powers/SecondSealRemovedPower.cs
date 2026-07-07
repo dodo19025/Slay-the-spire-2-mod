@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
@@ -28,7 +29,7 @@ public class SecondSealRemovedPower()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("BurnApplyLeft", 3m),
+        new DynamicVar("BurnApplyLeft", 3m), //cahnge this back to 3 after testing
         new DynamicVar("BurnApplication", 2m)
     });
     
@@ -36,11 +37,12 @@ public class SecondSealRemovedPower()
     [
         HoverTipFactory.FromPower<BurnPower>(),//
     ];
-
+    
+    
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        if (power is BurnPower && applier == base.Owner && !(amount <= 0))
+        if (power is BurnPower && applier == base.Owner && !(amount <= 0) && cardSource != null)
         {
             base.DynamicVars["BurnApplyLeft"].BaseValue--;
             InvokeDisplayAmountChanged();
@@ -48,15 +50,18 @@ public class SecondSealRemovedPower()
             if (base.DynamicVars["BurnApplyLeft"].BaseValue <= 0)
             {
                 Flash();
+
                 foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
                 {
-                    await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
-                } //teehee
+                    await PowerCmd.Apply<Powers.BurnPower>(choiceContext, hittableEnemy, 1m, base.Owner, null);
+                } 
                 
                 base.DynamicVars["BurnApplyLeft"].BaseValue = 3m;
                 InvokeDisplayAmountChanged();
+                
             }
 
         }
+        
     }
 }
