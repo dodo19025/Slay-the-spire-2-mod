@@ -24,17 +24,19 @@ public class UnsealedSearingBlade()
         new DynamicVar("AppliedThisTurn", 0m), //cahnge this back to 3 after testing
     });
 
-    public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
     {
         await PowerCmd.Apply<BurnPower>(new ThrowingPlayerChoiceContext(), base.Owner, base.Amount - base.DynamicVars["AppliedThisTurn"].BaseValue,applier,null);
         base.DynamicVars["AppliedThisTurn"].BaseValue += Amount;
     }
-
+    
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(base.Owner))
         {
             PowerCmd.Remove(this);
+            base.DynamicVars["AppliedThisTurn"].BaseValue = 0;
         }
     }
 }

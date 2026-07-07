@@ -39,7 +39,8 @@ public class SecondSealRemovedPower()
     ];
     
     
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
+        decimal amount, Creature? applier,
         CardModel? cardSource)
     {
         if (power is BurnPower && applier == base.Owner && !(amount <= 0) && cardSource != null)
@@ -50,18 +51,18 @@ public class SecondSealRemovedPower()
             if (base.DynamicVars["BurnApplyLeft"].BaseValue <= 0)
             {
                 Flash();
-
                 foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
                 {
-                    await PowerCmd.Apply<UnsealedSearingBlade>(choiceContext, hittableEnemy, base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
-                } 
-                
+
+                    await PowerCmd.Apply<UnsealedSearingBlade>(choiceContext, hittableEnemy,
+                        base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null); //applies burn via temp power
+                }
                 base.DynamicVars["BurnApplyLeft"].BaseValue = 3m;
                 InvokeDisplayAmountChanged();
-                
+
             }
 
         }
-        
+
     }
 }

@@ -15,8 +15,8 @@
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold]\nDraw [blue]1[/blue] card after you play {CardsLeft:plural:[blue]{}[/blue] attack|[blue]{}[/blue] attacks}.",
   "THEMIDDLENURSEFATHEROUTIS-FIRST_SEAL_REMOVED_POWER.title": "First Seal Removed",
 
-  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "Every [blue]3[/blue] times you apply [red]Burn[/red], apply [blue]2[/blue] [red]Burn[/red] to ALL enemies.",
-  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Every {BurnApplyLeft:plural:[blue]{}[/blue] time|[blue]{}[/blue] times} you apply [red]Burn[/red], apply [blue]{BurnApplication:diff()}[/blue] [red]Burn[/red] to ALL enemies.",
+  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.description": "Every [blue]3[/blue] times you apply [red]Burn[/red] using cards, apply [blue]2[/blue] [red]Burn[/red] to ALL enemies.",
+  "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Every {BurnApplyLeft:plural:[blue]{}[/blue] time|[blue]{}[/blue] times} you apply [red]Burn[/red] using cards, apply [blue]{BurnApplication:diff()}[/blue] [red]Burn[/red] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.title": "Second Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "",
