@@ -42,7 +42,7 @@ public class SealedSword()
 		if(room is CombatRoom)
 		{
 			Flash();
-			await PowerCmd.Apply<SecondSealRemovedPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
+			await PowerCmd.Apply<LaevateinnPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["SwordStage0"].BaseValue, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["RisingFever"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1

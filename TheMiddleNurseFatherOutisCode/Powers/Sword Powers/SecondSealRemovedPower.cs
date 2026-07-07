@@ -35,7 +35,7 @@ public class SecondSealRemovedPower()
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<BurnPower>(),//
+        HoverTipFactory.FromPower<BurnPower>()//
     ];
     
     

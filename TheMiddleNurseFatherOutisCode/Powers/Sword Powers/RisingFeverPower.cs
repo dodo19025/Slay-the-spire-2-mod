@@ -87,8 +87,6 @@ public class RisingFeverPower()
                         await CreatureCmd.TriggerAnim(base.Owner, "unpacking", 2f);
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner, -1m, base.Owner, null);
                         await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner, 1m, base.Owner, null);
-                        await PowerCmd.Apply<StrengthPower>(choiceContext, base.Owner,
-                            base.DynamicVars["StrengthGain"].BaseValue, base.Owner, null);
                     }
                 }
             }
