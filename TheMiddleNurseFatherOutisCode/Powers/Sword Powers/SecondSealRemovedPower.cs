@@ -34,7 +34,7 @@ public abstract class SecondSealRemovedPower()
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<BurnPower>(),
+        HoverTipFactory.FromPower<BurnPower>(),//
     ];
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
