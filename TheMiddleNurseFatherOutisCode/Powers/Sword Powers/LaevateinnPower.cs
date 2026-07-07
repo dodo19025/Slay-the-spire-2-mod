@@ -21,9 +21,10 @@ public class LaevateinnPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("AppliedBurn", 3m)
+        new DynamicVar("AppliedBurn", 3m),
+        new DynamicVar("SelfBurn", 2m)
     });
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -40,7 +41,7 @@ public class LaevateinnPower()
         Flash();
         await Cmd.CustomScaledWait(0.2f, 0.4f);
         await PowerCmd.Apply<Powers.BurnPower>(new ThrowingPlayerChoiceContext(), base.Owner,
-            base.DynamicVars["AppliedBurn"].BaseValue, base.Owner, null);
+            base.DynamicVars["SelfBurn"].BaseValue, base.Owner, null);
         foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
             await PowerCmd.Apply<Powers.BurnPower>(new ThrowingPlayerChoiceContext(), hittableEnemy,

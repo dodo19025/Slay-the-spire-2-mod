@@ -20,11 +20,14 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
 {
     private const string _Power = "Power";
     private const string _FeverLost = "FeverLost";
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
+    
+    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
     {
         new DamageVar(4m, ValueProp.Move),
         new DynamicVar("Power", 1m),
-        new DynamicVar("FeverLost", 1m) //CHANGE TO ONE IN FINAL VERSION
+        new DynamicVar("FeverLost", 1m),
+        new DynamicVar("HitCount",1m)
     });
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -42,7 +45,11 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        if (Owner.Creature.HasPower<LaevateinnPower>())
+        {
+            base.DynamicVars["HitCount"].BaseValue++;
+        }
+        await CommonActions.CardAttack(this, play.Target,base.DynamicVars["HitCount"].BaseValue).Execute(choiceContext);
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
             base.Owner.Creature, this);
 

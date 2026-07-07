@@ -20,7 +20,7 @@
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.title": "Second Seal Removed",
 
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "On the start of your turn apply [red]Burn[/red] to EVERYONE\nCards with [gold]Fervour[/gold] gain a bonus action",
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to EVERYONE\nCards with [gold]Fervour[/gold] gain a bonus action",
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself\nCards with [gold]Fervour[/gold] gain a bonus action",
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn",
 
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning Creatures take damage at the end of their turn, each turn Burn is reduced by [blue]1[/blue]",
