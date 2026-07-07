@@ -48,8 +48,10 @@ public class SecondSealRemovedPower()
             if (base.DynamicVars["BurnApplyLeft"].BaseValue <= 0)
             {
                 Flash();
-                    await PowerCmd.Apply<BurnPower>(choiceContext, CombatState.HittableEnemies,
-                        base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
+                foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+                {
+                    await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
+                } //teehee
                 
                 base.DynamicVars["BurnApplyLeft"].BaseValue = 3m;
                 InvokeDisplayAmountChanged();
