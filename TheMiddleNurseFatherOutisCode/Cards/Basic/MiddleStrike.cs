@@ -33,7 +33,6 @@ public class MiddleStrike()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        PowerCmd.Apply<BleedPower>(choiceContext, play.Target, 5m, base.Owner.Creature, this);
     }
 
 

@@ -15,6 +15,6 @@
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target block by damage dealt.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage twice.\nApply ",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage twice.\nApply {BleedPower:diff()} for every hit.",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!"
 }

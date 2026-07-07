@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
@@ -23,6 +24,11 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         new DynamicVar("BleedPower",1m),
         new DynamicVar("HitAmount",2m)
     });
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BleedPower>()
+    ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -36,6 +42,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-
+        base.DynamicVars.Damage.UpgradeValueBy(1m);
+        base.DynamicVars["BleedPower"].UpgradeValueBy(1m);
     }
 }
