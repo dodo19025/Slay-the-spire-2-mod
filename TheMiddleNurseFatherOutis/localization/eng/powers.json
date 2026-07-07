@@ -23,12 +23,12 @@
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself.\nCards with [gold]Fervour[/gold] gain a bonus action.",
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn",
 
-  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning creatures take damage at the end of their turn, each turn Burn is reduced by [blue]1[/blue]",
-  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [gold]Burn[/gold] by [blue]1[/blue]",
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning creatures take damage at the end of their turn. Each turn [red]Burn[/red] is reduced by [blue]1[/blue]",
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [red]Burn[/red] by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn",
 
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage and lose [red]Bleed[/red] Stacks whenever they attack.",
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, lose [blue]{Amount}[/blue] HP and lose [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red].",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage when attacking. Each attack, [red]Bleed[/red] is reduced by two thirds.",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, it loses [blue]{Amount}[/blue] HP and [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red].",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "Bleed",
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
