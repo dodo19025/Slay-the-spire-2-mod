@@ -48,12 +48,8 @@ public class SecondSealRemovedPower()
             if (base.DynamicVars["BurnApplyLeft"].BaseValue <= 0)
             {
                 Flash();
-                var ownerCombatState = base.Owner.CombatState;
-                if (ownerCombatState != null)
-                {
-                    await PowerCmd.Apply<BurnPower>(choiceContext, ownerCombatState.HittableEnemies,
+                    await PowerCmd.Apply<BurnPower>(choiceContext, CombatState.HittableEnemies,
                         base.DynamicVars["BurnApplication"].BaseValue, base.Owner, null);
-                }
                 
                 base.DynamicVars["BurnApplyLeft"].BaseValue = 3m;
                 InvokeDisplayAmountChanged();
