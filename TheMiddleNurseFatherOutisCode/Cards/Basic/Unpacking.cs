@@ -22,17 +22,16 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     private const string _FeverLost = "FeverLost";
     
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
     {
         new DamageVar(4m, ValueProp.Move),
         new DynamicVar("Power", 1m),
         new DynamicVar("FeverLost", 1m),
-        new DynamicVar("HitCount",1m)
     });
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-       FervourKeyWord.Fervour
+       TheMiddleNurseFatherOutisKeywords.Fervour
     ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
@@ -41,15 +40,18 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         HoverTipFactory.FromPower<VulnerablePower>()
     ];
 
+
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
-    {
+    { 
+        int HitCount = 1;
         if (Owner.Creature.HasPower<LaevateinnPower>())
         {
-            base.DynamicVars["HitCount"].BaseValue++;
+            HitCount++;
         }
-        await CommonActions.CardAttack(this, play.Target,base.DynamicVars["HitCount"].BaseValue).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play.Target).WithHitCount(HitCount).Execute(choiceContext);
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
             base.Owner.Creature, this);
 

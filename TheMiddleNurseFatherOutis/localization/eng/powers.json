@@ -19,13 +19,17 @@
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Every {BurnApplyLeft:plural:[blue]{}[/blue] time|[blue]{}[/blue] times} you apply [red]Burn[/red] using cards, apply [blue]{BurnApplication:diff()}[/blue] [red]Burn[/red] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.title": "Second Seal Removed",
 
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "On the start of your turn apply [red]Burn[/red] to EVERYONE\nCards with [gold]Fervour[/gold] gain a bonus action",
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself\nCards with [gold]Fervour[/gold] gain a bonus action",
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "On the start of your turn apply [red]Burn[/red] to EVERYONE.\nCards with [gold]Fervour[/gold] gain a bonus action.",
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself.\nCards with [gold]Fervour[/gold] gain a bonus action.",
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn",
 
-  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning Creatures take damage at the end of their turn, each turn Burn is reduced by [blue]1[/blue]",
+  "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning creatures take damage at the end of their turn, each turn Burn is reduced by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [gold]Burn[/gold] by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn",
+
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage and lose [red]Bleed[/red] Stacks whenever they attack ",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, lose [blue]{Amount}[/blue] HP and lose [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red]",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "BleedPower",
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn.",

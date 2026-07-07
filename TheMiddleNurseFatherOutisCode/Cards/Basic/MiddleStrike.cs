@@ -1,8 +1,10 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -17,16 +19,18 @@ public class MiddleStrike()
         TargetType.AnyEnemy)
 {
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { CardTag.Strike };
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext); 
-        await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, 1m,
-            base.Owner.Creature, this); //delete this lol
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        PowerCmd.Apply<BleedPower>(choiceContext, play.Target, 2m, base.Owner.Creature, this);
     }
+
+
 
     protected override void OnUpgrade()
     {

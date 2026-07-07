@@ -29,7 +29,7 @@ public class SecondSealRemovedPower()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("BurnApplyLeft", 3m), //cahnge this back to 3 after testing
+        new DynamicVar("BurnApplyLeft", 3m), 
         new DynamicVar("BurnApplication", 2m)
     });
     
