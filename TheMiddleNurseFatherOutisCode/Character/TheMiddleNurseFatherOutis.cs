@@ -15,7 +15,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 
 
  
-public abstract class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
+public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 {
     
     public const string CharacterId = "TheMiddleNurseFatherOutis";
@@ -29,17 +29,17 @@ public abstract class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<MiddleStrike>(),
-        ModelDb.Card<MiddleStrike>(),
-        ModelDb.Card<MiddleStrike>(),
-        ModelDb.Card<MiddleStrike>(),
-        ModelDb.Card<Middle_Defend>(),
-        ModelDb.Card<Middle_Defend>(),
-        ModelDb.Card<Middle_Defend>(),
-        ModelDb.Card<Middle_Defend>(),
         ModelDb.Card<Unpacking>(),
-        ModelDb.Card<RuleViolation>()
-        
+        ModelDb.Card<RuleViolation>(),
+        ModelDb.Card<MiddleStrike>(),
+        ModelDb.Card<MiddleStrike>(),
+        ModelDb.Card<MiddleStrike>(),
+        ModelDb.Card<MiddleStrike>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>(),
+        ModelDb.Card<Middle_Defend>()
+
     ];
 
     public override IReadOnlyList<RelicModel> StartingRelics =>

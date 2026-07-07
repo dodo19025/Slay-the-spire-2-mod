@@ -12,7 +12,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
-public abstract class RuleViolation()
+public class RuleViolation()
     : TheMiddleNurseFatherOutisCard(0,
         CardType.Skill, CardRarity.Basic,
         TargetType.Self)

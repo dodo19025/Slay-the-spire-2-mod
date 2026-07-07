@@ -15,7 +15,7 @@ using Color = Godot.Color;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public abstract class BurnPower() : TheMiddleNurseFatherOutisPower
+public class BurnPower() : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
         PowerType.Debuff;

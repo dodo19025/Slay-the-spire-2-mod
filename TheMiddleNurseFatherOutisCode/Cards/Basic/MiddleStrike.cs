@@ -9,7 +9,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
-public abstract class MiddleStrike()
+public class MiddleStrike()
     : TheMiddleNurseFatherOutisCard(1,
         CardType.Attack, CardRarity.Basic,
         TargetType.AnyEnemy)

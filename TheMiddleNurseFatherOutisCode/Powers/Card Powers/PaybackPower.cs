@@ -44,10 +44,10 @@ public class PaybackPower()
         {
 
             await CreatureCmd.TriggerAnim(base.Owner, "legattack", 0.05f);
-            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim,base.Owner, null, null);
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             await Cmd.CustomScaledWait(0.15f, 0.25f);
             _didPayback = true;
-            //MainFile.Logger.Info("Did Payback");
+            MainFile.Logger.Info("Did Payback");
         }
     }
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

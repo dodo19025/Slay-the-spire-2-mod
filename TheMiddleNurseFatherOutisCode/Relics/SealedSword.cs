@@ -15,7 +15,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 
-public abstract class SealedSword()
+public class SealedSword()
 	: TheMiddleNurseFatherOutisRelic
 {
 	public override RelicRarity Rarity =>

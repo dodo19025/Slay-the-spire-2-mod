@@ -1138,27 +1138,27 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
-states/Start/position = Vector2(85, 86)
+states/Start/position = Vector2(367, 112)
 states/cast/node = SubResource("AnimationNodeBlendTree_7j5qr")
-states/cast/position = Vector2(822, 237.36267)
+states/cast/position = Vector2(787, 197.36267)
 states/die/node = SubResource("AnimationNodeBlendTree_ysrfp")
-states/die/position = Vector2(575, 230.24825)
+states/die/position = Vector2(560, 210.24825)
 states/hurt/node = SubResource("AnimationNodeBlendTree_k171a")
-states/hurt/position = Vector2(640, -70)
+states/hurt/position = Vector2(475, 9)
 states/idle/node = SubResource("AnimationNodeBlendTree_7behi")
-states/idle/position = Vector2(645, 86)
+states/idle/position = Vector2(675, 112)
 states/legattack/node = SubResource("AnimationNodeBlendTree_bnts3")
-states/legattack/position = Vector2(822, -33)
+states/legattack/position = Vector2(819, -1)
 states/sunglasses/node = SubResource("AnimationNodeBlendTree_0pke6")
 states/sunglasses/position = Vector2(418, 171.91202)
 states/swordattack/node = SubResource("AnimationNodeBlendTree_w7ghx")
-states/swordattack/position = Vector2(418, -33)
+states/swordattack/position = Vector2(645, -1)
 states/swordlattack/node = SubResource("AnimationNodeBlendTree_l7wlh")
-states/swordlattack/position = Vector2(945, 38.797928)
+states/swordlattack/position = Vector2(941, 36.797928)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
-states/unpacking/position = Vector2(919, 135)
+states/unpacking/position = Vector2(881, 121)
 transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "legattack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "legattack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2"), "idle", "sunglasses", SubResource("AnimationNodeStateMachineTransition_fdo7q"), "sunglasses", "idle", SubResource("AnimationNodeStateMachineTransition_isdv4"), "idle", "swordlattack", SubResource("AnimationNodeStateMachineTransition_qkwjs"), "swordlattack", "idle", SubResource("AnimationNodeStateMachineTransition_22a5r")]
-graph_offset = Vector2(0, -97.46716)
+graph_offset = Vector2(0, -50.202072)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
 length = 0.001
@@ -2063,61 +2063,6 @@ tracks/12/keys = {
 "values": [&"Lattack", &"Lattack"]
 }
 
-[sub_resource type="Animation" id="Animation_8inar"]
-resource_name = "sunglasses"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/2Sealaniamtions:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/2Sealaniamtions:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_tpffy"), SubResource("SpriteFrames_tpffy")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/2Sealaniamtions:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"sunglasses", &"sunglasses"]
-}
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("147_wemwu")
-}],
-"times": PackedFloat32Array(0.3)
-}
-tracks/3/use_blend = true
-
 [sub_resource type="Animation" id="Animation_dr2y8"]
 resource_name = "swordattack"
 tracks/0/type = "value"
@@ -2243,76 +2188,6 @@ tracks/9/keys = {
 "update": 1,
 "values": [&"swordattack", &"swordattack"]
 }
-
-[sub_resource type="Animation" id="Animation_d25i7"]
-resource_name = "swordlattack"
-length = 1.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals/3Sealanimations:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals/3Sealanimations:sprite_frames")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("SpriteFrames_q8r7p"), SubResource("SpriteFrames_q8r7p")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Visuals/3Sealanimations:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"swordLattack", &"swordLattack"]
-}
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("206_lx06v")
-}],
-"times": PackedFloat32Array(0.26666668)
-}
-tracks/3/use_blend = true
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer2D")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("52_kqovg")
-}],
-"times": PackedFloat32Array(0.16666667)
-}
-tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_scoei"]
 resource_name = "unpackingseal0"
@@ -2461,6 +2336,131 @@ tracks/11/keys = {
 "update": 1,
 "values": [&"unpacking", &"unpacking"]
 }
+
+[sub_resource type="Animation" id="Animation_8inar"]
+resource_name = "sunglasses"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/2Sealaniamtions:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/2Sealaniamtions:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_tpffy"), SubResource("SpriteFrames_tpffy")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/2Sealaniamtions:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"sunglasses", &"sunglasses"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("147_wemwu")
+}],
+"times": PackedFloat32Array(0.3)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_d25i7"]
+resource_name = "swordlattack"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/3Sealanimations:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/3Sealanimations:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_q8r7p"), SubResource("SpriteFrames_q8r7p")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/3Sealanimations:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"swordLattack", &"swordLattack"]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("206_lx06v")
+}],
+"times": PackedFloat32Array(0.26666668)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("52_kqovg")
+}],
+"times": PackedFloat32Array(0.16666667)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tn668"]
 _data = {
