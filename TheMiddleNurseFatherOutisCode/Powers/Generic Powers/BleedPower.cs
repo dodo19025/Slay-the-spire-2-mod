@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using BaseLib.Hooks;
+using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -26,24 +27,26 @@ public class BleedPower()
         new DynamicVar("BleedLost", 0m), 
     });
 
-    public Color BleedColor = new Color("#f00e0e");
+    public Color BleedColor = new Color("#5e0702");
 
+    public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
+    {
+        return [new HealthBarForecastSegment(AmountOfBleedDamageToBeTaken(base.Owner), BleedColor, HealthBarForecastDirection.FromRight)];
+    }
 
 
     public decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
-        int AmountToBeLost = 0;
         if (BleedAmount <= 1)
         {
-            return AmountToBeLost = 1;
+            return  1m;
         }
 
-        AmountToBeLost = (int)BleedAmount * (2 / 3);
-        return Math.Round((decimal)AmountToBeLost);
-        
+        return ((decimal)Math.Round((decimal)(BleedAmount * (2m / 3m))));
+
     }
     
-    public int AmountOfBleedDamageToBeTaken(Creature? creature)
+    public int AmountOfBleedDamageToBeTaken(Creature? creature) //calculates the total damage a creature will take with the amount of hits it does
     {
         int TotalDamageToBeTaken = 0;
         if (creature != null && !(creature.IsPlayer))
@@ -52,9 +55,18 @@ public class BleedPower()
             {
                 int attacks = Owner.Monster.NextMove.Intents.Sum(intent => intent is AttackIntent attackIntent ? attackIntent.Repeats : 0); //checks how many times this creature is attacking
                 int BaseBleed = base.Amount;
+                int LostBleed = (int)CalculateBleedLost(base.Amount);
+                for (int i = 0; i < attacks; i++) //runs a loop for the amount of times the creature will be hitting
+                {
+                    TotalDamageToBeTaken += BaseBleed; //adds the damage of the bleed 
+                    BaseBleed -= LostBleed; //then reduces it based on the amount set to be lost after the attack
+                    LostBleed = (int)CalculateBleedLost(BaseBleed); //runs a new calculation to find the new amount of bleed that has to be lost
+                }
 
             }
         }
+        MainFile.Logger.Info("Damage To be Taken [0]", TotalDamageToBeTaken);
+        MainFile.Logger.Info(TotalDamageToBeTaken.ToString());
         return TotalDamageToBeTaken;
     }
 
@@ -64,6 +76,7 @@ public class BleedPower()
     {
         if (power == this)
         {
+            int TotalDamage = AmountOfBleedDamageToBeTaken(base.Owner);
             base.DynamicVars["BleedLost"].BaseValue = CalculateBleedLost(base.Amount);
         }
     }
@@ -71,7 +84,11 @@ public class BleedPower()
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
-        await PowerCmd.ModifyAmount(choiceContext, this, -CalculateBleedLost(base.Amount), null, null);
+        if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack())
+        {
+            await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
+            await PowerCmd.ModifyAmount(choiceContext, this, -CalculateBleedLost(base.Amount), null, null);
+        }
+
     }
 }

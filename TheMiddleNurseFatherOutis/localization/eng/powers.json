@@ -27,9 +27,9 @@
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [gold]Burn[/gold] by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn",
 
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage and lose [red]Bleed[/red] Stacks whenever they attack ",
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, lose [blue]{Amount}[/blue] HP and lose [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red]",
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "BleedPower",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage and lose [red]Bleed[/red] Stacks whenever they attack.",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, lose [blue]{Amount}[/blue] HP and lose [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red].",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "Bleed",
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn.",
