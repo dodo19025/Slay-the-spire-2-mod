@@ -27,10 +27,6 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
                 }
 
             }
-            else if(!cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
-            {
-                 await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
-            }
         }
     }
 }
