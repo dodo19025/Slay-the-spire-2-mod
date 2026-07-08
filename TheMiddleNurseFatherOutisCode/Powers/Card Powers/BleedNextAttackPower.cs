@@ -56,7 +56,7 @@ public class BleedNextAttackPower()
         if (cardPlay.Card.Type == CardType.Attack && cardPlay.Card.Owner.Creature == base.Owner &&
             cardPlay.Card.CurrentTarget != null && base.Amount > 0 && AppliedBleed) //will still break somehow btw
         {
-            await PowerCmd.Decrement(this);
+            await PowerCmd.Remove(this);
             AppliedBleed = false;
         }
     }
