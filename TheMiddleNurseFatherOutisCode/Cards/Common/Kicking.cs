@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -16,6 +17,8 @@ public class Kicking() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
+    protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { TheMiddleNurseFatherOutisTags.Kick }; //just a lil thing
+
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
     {
         new DamageVar(3m, ValueProp.Move),
@@ -32,7 +35,8 @@ public class Kicking() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target, base.DynamicVars["HitAmount"].BaseValue)
+        await CommonActions.CardAttack(this, play.Target)
+            .WithHitCount((int)base.DynamicVars["HitAmount"].BaseValue)
             .Execute(choiceContext);
         
         CardModel card = CreateClone();
