@@ -11,6 +11,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
+[Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
 public class Kicking() : TheMiddleNurseFatherOutisCard(

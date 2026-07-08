@@ -8,13 +8,19 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 
+
 public class SwatPower() : CustomTemporaryPowerModelWrapper<Swat,StrengthPower>
 {
     private CustomTemporaryPowerModel _customTemporaryPowerModelImplementation;
 
     public override PowerType Type =>
         PowerType.Debuff;
-    
+
+    public override string CustomBigIconPath => "res://TheMiddleNurseFatherOutis/images/powers/big/swat_power.png";
+    public override string CustomPackedIconPath => "res://TheMiddleNurseFatherOutis/images/powers/swat_power.png";
+
+    public override List<(string, string)>? Localization => _customTemporaryPowerModelImplementation?.Localization;
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<StrengthPower>()

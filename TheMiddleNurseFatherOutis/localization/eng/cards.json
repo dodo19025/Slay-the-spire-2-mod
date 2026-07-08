@@ -21,6 +21,6 @@
   "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd {CopyPower:diff()} copy of this card into your [gold]hand[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Kicking!",
 
-  "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses 2 [gold]Strength[/gold] this turn",
+  "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn",
   "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat"
 }
