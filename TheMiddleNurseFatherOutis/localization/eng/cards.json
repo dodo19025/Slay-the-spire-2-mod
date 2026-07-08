@@ -10,8 +10,7 @@
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nGain additional [gold]Payback[/gold] Equal to [gold]Strength[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
-
-
+  
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
