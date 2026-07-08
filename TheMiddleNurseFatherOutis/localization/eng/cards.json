@@ -12,9 +12,12 @@
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
 
 
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target block by damage dealt.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage twice.\nApply {BleedPower:diff()} for every hit.",
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!"
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
+
+  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd {CopyPower:diff()} copy of Kicking! into your hand.",
+  "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Kicking!"
 }

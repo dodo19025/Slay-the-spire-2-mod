@@ -27,7 +27,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.smartDescription": "At the end of {OnPlayer: your turn, take|its turn, take} [blue]{Amount}[/blue] damage, then reduce [red]Burn[/red] by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.title": "Burn",
 
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage when attacking. Each attack, [red]Bleed[/red] is reduced by two thirds.",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.description": "Bleeding creatures take HP damage when attacking. Each attack, [red]Bleed[/red] is reduced by half.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, it loses [blue]{Amount}[/blue] HP and [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red].",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "Bleed",
 

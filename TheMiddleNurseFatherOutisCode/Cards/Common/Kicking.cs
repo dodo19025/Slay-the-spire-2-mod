@@ -4,16 +4,15 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
-using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
-using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
-[Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
-public class Stomping() : TheMiddleNurseFatherOutisCard(
+public class Kicking() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -21,28 +20,28 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
     {
         new DamageVar(3m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
-        new DynamicVar("BleedPower",1m),
-        new DynamicVar("HitAmount",2m)
+        new DynamicVar("CopyPower",1m),
+        new DynamicVar("HitAmount",3m)
     });
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<BleedPower>()
+        HoverTipFactory.FromCard<Kicking>()
     ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        for (int i = 0; i < base.DynamicVars["HitAmount"].BaseValue; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await PowerCmd.Apply<BleedPower>(choiceContext, play.Target,base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
-        }
+        await CommonActions.CardAttack(this, play.Target, base.DynamicVars["HitAmount"].BaseValue)
+            .Execute(choiceContext);
+        
+        CardModel card = CreateClone();
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand,base.Owner),2.2f);
     }
 
     protected override void OnUpgrade()
     {
         base.DynamicVars.Damage.UpgradeValueBy(1m);
-        base.DynamicVars["BleedPower"].UpgradeValueBy(1m);
     }
+    
 }

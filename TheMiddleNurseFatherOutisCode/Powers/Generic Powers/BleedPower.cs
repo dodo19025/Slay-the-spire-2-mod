@@ -42,7 +42,7 @@ public class BleedPower()
             return  1m;
         }
 
-        return ((decimal)Math.Round((decimal)(BleedAmount * (2m / 3m))));
+        return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
 
     }
     
