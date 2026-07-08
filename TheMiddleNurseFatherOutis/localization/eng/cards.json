@@ -27,5 +27,9 @@
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
 
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nIf this card gained [gold]Payback[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
-  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write"
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
+
+
+  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThe next {BleedNextAttack:diff()} {BleedNextAttack:plural:attack|attacks} apply {BleedPowerAmount:diff()} [gold]Bleed[/gold] on hit.",
+  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!"
 }
