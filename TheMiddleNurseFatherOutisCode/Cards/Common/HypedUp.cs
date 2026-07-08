@@ -22,7 +22,7 @@ public class HypedUp() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new BlockVar(8m, ValueProp.Move),
+        new BlockVar(7m, ValueProp.Move),
         new DynamicVar("RisingFeverGain", 1m)
     });
 
@@ -44,7 +44,7 @@ public class HypedUp() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(4m);
+        DynamicVars.Block.UpgradeValueBy(3m);
 
     }
 }
