@@ -21,5 +21,11 @@
   "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Kicking!",
 
   "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn",
-  "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat"
+  "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat",
+
+  "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain [blue]{RisingFeverGain:diff()}[/blue] [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
+
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nIf this card gained [gold]Payback[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "ReadyToWrite"
 }

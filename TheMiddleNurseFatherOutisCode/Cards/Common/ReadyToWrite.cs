@@ -1,0 +1,46 @@
+﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
+
+namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
+
+
+public class ReadyToWrite()
+    : TheMiddleNurseFatherOutisCard(1,
+        CardType.Skill, CardRarity.Common,
+        TargetType.Self)
+{
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
+    {
+        new DynamicVar("PaybackAmount", 4m),
+        new CardsVar(1)
+    });
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<PaybackPower>()
+    ];
+
+
+    protected override async Task OnPlay(
+        PlayerChoiceContext choiceContext,
+        CardPlay play)
+    {
+        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["PaybackAmount"].BaseValue,
+            base.Owner.Creature, this);
+        if(Owner.Creature.GainedPayback(base.DynamicVars["PaybackAmount"].BaseValue))
+        {
+            await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
+        }
+    }
+
+    protected override void OnUpgrade()
+    {
+        base.DynamicVars.Cards.UpgradeValueBy(1m);
+    }
+}

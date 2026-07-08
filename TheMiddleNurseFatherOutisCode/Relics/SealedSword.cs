@@ -35,6 +35,10 @@ public class SealedSword()
 	[
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
 		HoverTipFactory.Static(StaticHoverTip.Block),
+		HoverTipFactory.FromPower<FirstSealRemovedPower>(),
+		HoverTipFactory.FromPower<SecondSealRemovedPower>(),
+		HoverTipFactory.FromPower<LaevateinnPower>()
+		
 	]; //Get the hover tips from the Json file and display it on the relic
 
 	public override async Task AfterRoomEntered(AbstractRoom room)
