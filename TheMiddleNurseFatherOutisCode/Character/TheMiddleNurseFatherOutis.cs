@@ -53,6 +53,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         return NodeFactory<NCreatureVisuals>.CreateFromScene("res://TheMiddleNurseFatherOutisCode/Character/middle_outis.tscn");
         
     }
+    
+    
     public override string CustomCharacterSelectBg => "res://TheMiddleNurseFatherOutisCode/scenes/char_select_bg_themiddlenursefatheroutis.tscn";
     public override string CustomEnergyCounterPath =>
         "res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn";

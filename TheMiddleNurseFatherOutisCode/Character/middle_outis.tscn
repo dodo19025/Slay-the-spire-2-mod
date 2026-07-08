@@ -1081,12 +1081,6 @@ node_connections = [&"output", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ysrfp"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qesqh"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0hmwr"]
-switch_mode = 2
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_varnv"]
 switch_mode = 2
 advance_mode = 2
@@ -1136,11 +1130,18 @@ advance_mode = 0
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0hmwr"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qesqh"]
+advance_mode = 0
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_scoei"]
 states/End/position = Vector2(1132, 121)
 states/Start/position = Vector2(367, 112)
 states/attack/node = SubResource("AnimationNodeBlendTree_bnts3")
-states/attack/position = Vector2(813, -1)
+states/attack/position = Vector2(799, -10)
 states/cast/node = SubResource("AnimationNodeBlendTree_7j5qr")
 states/cast/position = Vector2(787, 197.36267)
 states/die/node = SubResource("AnimationNodeBlendTree_ysrfp")
@@ -1156,8 +1157,8 @@ states/swordattack/position = Vector2(645, -1)
 states/swordlattack/node = SubResource("AnimationNodeBlendTree_l7wlh")
 states/swordlattack/position = Vector2(941, 36.797928)
 states/unpacking/node = SubResource("AnimationNodeBlendTree_dr2y8")
-states/unpacking/position = Vector2(881, 121)
-transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2"), "idle", "sunglasses", SubResource("AnimationNodeStateMachineTransition_fdo7q"), "sunglasses", "idle", SubResource("AnimationNodeStateMachineTransition_isdv4"), "idle", "swordlattack", SubResource("AnimationNodeStateMachineTransition_qkwjs"), "swordlattack", "idle", SubResource("AnimationNodeStateMachineTransition_22a5r")]
+states/unpacking/position = Vector2(987, 151)
+transitions = ["idle", "hurt", SubResource("AnimationNodeStateMachineTransition_ysrfp"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_varnv"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_abd36"), "idle", "die", SubResource("AnimationNodeStateMachineTransition_0ydgc"), "die", "idle", SubResource("AnimationNodeStateMachineTransition_w7ghx"), "swordattack", "idle", SubResource("AnimationNodeStateMachineTransition_scoei"), "idle", "swordattack", SubResource("AnimationNodeStateMachineTransition_7j5qr"), "idle", "cast", SubResource("AnimationNodeStateMachineTransition_qfqs4"), "cast", "idle", SubResource("AnimationNodeStateMachineTransition_tn668"), "idle", "unpacking", SubResource("AnimationNodeStateMachineTransition_kqovg"), "unpacking", "idle", SubResource("AnimationNodeStateMachineTransition_kfil2"), "idle", "sunglasses", SubResource("AnimationNodeStateMachineTransition_fdo7q"), "sunglasses", "idle", SubResource("AnimationNodeStateMachineTransition_isdv4"), "idle", "swordlattack", SubResource("AnimationNodeStateMachineTransition_qkwjs"), "swordlattack", "idle", SubResource("AnimationNodeStateMachineTransition_22a5r"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_0hmwr"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_qesqh")]
 graph_offset = Vector2(0, -50.202072)
 
 [sub_resource type="Animation" id="Animation_qfqs4"]
