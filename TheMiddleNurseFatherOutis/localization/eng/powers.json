@@ -37,6 +37,10 @@
 
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.description": "Gain [red]Burn[/red]",
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.smartDescription": "Gain [blue]{Amount}[/blue] [red]Burn[/red]",
-  "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.title": "Unsealed Searing Blade"
+  "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.title": "Unsealed Searing Blade",
+
+  "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.description": "Lose [gold]Strength[/gold] this turn",
+  "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.smartDescription": "Lose [blue]{Amount}[/blue] [gold]Strength[/gold] this turn",
+  "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.title": "Swatted"
 
 }

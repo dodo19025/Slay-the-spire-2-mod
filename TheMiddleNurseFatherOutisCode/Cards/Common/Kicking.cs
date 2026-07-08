@@ -21,16 +21,16 @@ public class Kicking() : TheMiddleNurseFatherOutisCard(
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
     {
-        new DamageVar(3m, ValueProp.Move),
+        new DamageVar(2m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
         new DynamicVar("CopyPower",1m),
         new DynamicVar("HitAmount",3m)
     });
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
-    [
-        HoverTipFactory.FromCard<Kicking>()
-    ];
+    //protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    //[
+        //HoverTipFactory.FromCard<Kicking>()
+    //];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -45,7 +45,7 @@ public class Kicking() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(1m);
+        base.DynamicVars.Damage.UpgradeValueBy(2m);
     }
     
 }

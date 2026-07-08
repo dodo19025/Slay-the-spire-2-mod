@@ -11,13 +11,13 @@ position = Vector2(80, -200)
 rotation = -0.17453292
 texture = ExtResource("1_aib78")
 
-[node name="Control" type="Control" parent="."]
+[node name="ControlRoot" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SelectionRetical" type="Control" parent="Control"]
+[node name="SelectionRetical" type="Control" parent="ControlRoot"]
 visible = false
 anchors_preset = 0
 offset_left = -337.0
@@ -26,10 +26,10 @@ offset_right = 341.0
 offset_bottom = 409.0
 pivot_offset = Vector2(126, 84)
 
-[node name="SelectionReticle" parent="Control/SelectionRetical" instance=ExtResource("2_be2mr")]
+[node name="SelectionReticle" parent="ControlRoot/SelectionRetical" instance=ExtResource("2_be2mr")]
 layout_mode = 1
 
-[node name="Border" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+[node name="Border" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle"]
 layout_mode = 0
 offset_left = -52.0
 offset_top = 139.0
@@ -38,7 +38,7 @@ offset_bottom = 231.0
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border"]
+[node name="Shadow" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle/Border"]
 self_modulate = Color(0, 0, 0, 0.5)
 show_behind_parent = true
 layout_mode = 0
@@ -50,7 +50,7 @@ mouse_filter = 2
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Border2" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+[node name="Border2" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle"]
 layout_mode = 0
 offset_left = 620.0
 offset_top = 139.0
@@ -60,7 +60,7 @@ rotation = 1.5707964
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border2"]
+[node name="Shadow" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle/Border2"]
 self_modulate = Color(0, 0, 0, 0.5)
 show_behind_parent = true
 layout_mode = 0
@@ -72,7 +72,7 @@ mouse_filter = 2
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Border3" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+[node name="Border3" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle"]
 layout_mode = 0
 offset_left = -52.0
 offset_top = 611.0
@@ -82,7 +82,7 @@ rotation = -1.5707964
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border3"]
+[node name="Shadow" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle/Border3"]
 self_modulate = Color(0, 0, 0, 0.5)
 show_behind_parent = true
 layout_mode = 0
@@ -94,7 +94,7 @@ mouse_filter = 2
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Border4" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle"]
+[node name="Border4" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle"]
 layout_mode = 0
 offset_left = 620.0
 offset_top = 611.0
@@ -104,7 +104,7 @@ rotation = 3.1415927
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Shadow" type="TextureRect" parent="Control/SelectionRetical/SelectionReticle/Border4"]
+[node name="Shadow" type="TextureRect" parent="ControlRoot/SelectionRetical/SelectionReticle/Border4"]
 self_modulate = Color(0, 0, 0, 0.5)
 show_behind_parent = true
 layout_mode = 0
@@ -116,7 +116,7 @@ mouse_filter = 2
 texture = ExtResource("3_a0l7p")
 expand_mode = 1
 
-[node name="Hitbox" type="Control" parent="Control"]
+[node name="Hitbox" type="Control" parent="ControlRoot"]
 anchors_preset = 0
 offset_left = -259.0
 offset_top = -384.0
@@ -124,14 +124,14 @@ offset_right = 370.0
 offset_bottom = 276.0
 pivot_offset = Vector2(296, 415.948)
 
-[node name="ThoughtBubbleRight" type="Control" parent="Control"]
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
 anchors_preset = 0
 offset_left = 50.0
 offset_top = -18.0
 offset_right = 50.0
 offset_bottom = -18.0
 
-[node name="ThoughtBubbleLeft" type="Control" parent="Control"]
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
 anchors_preset = 0
 offset_left = -200.0
 offset_top = -19.0
