@@ -27,6 +27,10 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
                 }
 
             }
+            else
+            {
+                await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "legattack", 0.05f);
+            }
         }
     }
 }

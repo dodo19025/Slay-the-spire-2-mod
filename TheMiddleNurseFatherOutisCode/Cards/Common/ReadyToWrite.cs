@@ -31,12 +31,13 @@ public class ReadyToWrite()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["PaybackAmount"].BaseValue,
-            base.Owner.Creature, this);
         if(Owner.Creature.GainedPayback(base.DynamicVars["PaybackAmount"].BaseValue))
         {
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         }
+        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["PaybackAmount"].BaseValue,
+            base.Owner.Creature, this);
+
     }
 
     protected override void OnUpgrade()
