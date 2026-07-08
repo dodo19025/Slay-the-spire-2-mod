@@ -36,7 +36,11 @@ public class RuleViolation()
         int AdditionalPayback = 0;
         if (Owner.Creature.HasPower<StrengthPower>())
         {
-            AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
+            if (Owner.Creature.GetPowerAmount<StrengthPower>() > 0)  //haha glad i caught that one! right guys...?
+            {
+                AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
+
+            }
         }
         await Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["PaybackAmount"].BaseValue,Owner.Creature, this);
         await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
