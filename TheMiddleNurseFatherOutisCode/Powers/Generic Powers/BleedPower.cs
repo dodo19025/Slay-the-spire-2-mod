@@ -65,8 +65,8 @@ public class BleedPower()
 
             }
         }
-        MainFile.Logger.Info("Damage To be Taken >", TotalDamageToBeTaken);
-        MainFile.Logger.Info(TotalDamageToBeTaken.ToString());
+        //MainFile.Logger.Info("Damage To be Taken >", TotalDamageToBeTaken);
+        //MainFile.Logger.Info(TotalDamageToBeTaken.ToString());
         return TotalDamageToBeTaken;
     }
 
@@ -74,7 +74,7 @@ public class BleedPower()
         decimal amount, Creature? applier,
         CardModel? cardSource) //calculate the amount of bleed that is set to be lost
     {
-        if (power == this)
+        if (power == this && base.Amount > 0)
         {
             int TotalDamage = AmountOfBleedDamageToBeTaken(base.Owner);
             base.DynamicVars["BleedLost"].BaseValue = CalculateBleedLost(base.Amount);
@@ -84,7 +84,7 @@ public class BleedPower()
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack() && target != null)
+        if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack() && target != null && base.Amount > 0)
         {
             await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
             if (base.Owner.IsAlive)

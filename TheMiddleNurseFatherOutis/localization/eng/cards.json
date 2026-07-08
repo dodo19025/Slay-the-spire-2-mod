@@ -17,7 +17,7 @@
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
-  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]hand[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]Hand[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Kicking!",
 
   "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
@@ -27,5 +27,5 @@
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
 
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nIf this card gained [gold]Payback[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
-  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "ReadyToWrite"
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write"
 }
