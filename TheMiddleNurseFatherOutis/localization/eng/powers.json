@@ -43,8 +43,8 @@
   "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.smartDescription": "Lose [blue]{Amount}[/blue] [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.title": "Swatted",
 
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.description": "Your next attack applies [gold]Bleed[/gold] on hit.",
-  "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next [blue]{Amount}[/blue] {Amount:plural:attack|attacks} applies [blue]{BleedAmount:diff()}[/blue] [gold]Bleed[/gold]",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.description": "Your next attack applies [gold]Bleed[/gold] on hit this turn.",
+  "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next attack applies [blue]{Amount}[/blue] [gold]Bleed[/gold] on hit this turn.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack"
 
 }

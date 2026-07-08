@@ -45,7 +45,7 @@ public class BleedNextAttackPower()
     {
         if (dealer == base.Owner && target != null && cardSource != null && props.IsPoweredAttack())
         {
-            await PowerCmd.Apply<BleedPower>(choiceContext,target,base.DynamicVars["BleedAmount"].BaseValue, base.Owner,cardSource);
+            await PowerCmd.Apply<BleedPower>(choiceContext,target,base.Amount, base.Owner,cardSource);
             AppliedBleed = true;
 
         }

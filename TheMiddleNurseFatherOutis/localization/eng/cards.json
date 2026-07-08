@@ -30,6 +30,6 @@
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
 
 
-  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThe next {BleedNextAttack:diff()} {BleedNextAttack:plural:attack|attacks} apply {BleedPowerAmount:diff()} [gold]Bleed[/gold] on hit.",
+  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies [blue]{BleedNextAttack:diff()}[/blue] [gold]Bleed[/gold] on hit.",
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!"
 }
