@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -17,7 +18,7 @@ public class BleedNextAttackPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
-        PowerType.Debuff;
+        PowerType.Buff;
 
     public override PowerStackType StackType =>
         PowerStackType.Counter;
@@ -57,6 +58,15 @@ public class BleedNextAttackPower()
         {
             await PowerCmd.Decrement(this);
             AppliedBleed = false;
+        }
+    }
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    {
+        if (!participants.Contains(base.Owner))
+        {
+            await PowerCmd.Remove(this);
+            AppliedBleed = true;
         }
     }
 }

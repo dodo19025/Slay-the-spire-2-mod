@@ -42,7 +42,7 @@ public class IsItYou() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["BleedNextAttack"].UpgradeValueBy(1m);
+        base.DynamicVars["BleedAmount"].UpgradeValueBy(1m);
 
     }
 }

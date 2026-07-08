@@ -21,7 +21,7 @@ public class UnsealedSearingBlade()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
     {
-        new DynamicVar("AppliedThisTurn", 0m), //cahnge this back to 3 after testing
+        new DynamicVar("AppliedThisTurn", 0m), 
     });
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
