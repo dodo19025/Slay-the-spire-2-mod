@@ -19,18 +19,15 @@ public class RuleViolation()
         CardType.Skill, CardRarity.Basic,
         TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
-        {
-            new CalculationBaseVar(3m),
-            new CalculationExtraVar(1m),
-            new CalculatedVar("CalculatedPaybackAmount").WithMultiplier(delegate(CardModel card, Creature? creature)
-            {
-                int num = creature?.GetPowerAmount<StrengthPower>() ?? 0;
-                return (decimal)num;
-            })
-        });
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new CalculationBaseVar(3m),
+        new CalculationExtraVar(1m),
+        new CalculatedVar("CalculatedPaybackAmount").WithMultiplier((Func<CardModel, Creature, Decimal>) ((card, target) => 
+            card.Owner.Creature.GetPowerAmount<StrengthPower>()))
+    ];
+
+protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PaybackPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block),
@@ -51,8 +48,8 @@ public class RuleViolation()
                 AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
             }
         }
-        await Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["CalculatedPaybackAmount"].BaseValue,Owner.Creature, this);
-        await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
+        await Owner.Creature.GainPayback(choiceContext , ((CalculatedVar)base.DynamicVars["CalculatedFocus"]).Calculate(play.Target),base.Owner.Creature, this);
+        //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
