@@ -48,7 +48,7 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
                 AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
             }
         }
-        await Owner.Creature.GainPayback(choiceContext , ((CalculatedVar)base.DynamicVars["CalculatedFocus"]).Calculate(play.Target),base.Owner.Creature, this);
+        await Owner.Creature.GainPayback(choiceContext , ((CalculatedVar)base.DynamicVars["CalculatedPaybackAmount"]).Calculate(play.Target),base.Owner.Creature, this);
         //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 
