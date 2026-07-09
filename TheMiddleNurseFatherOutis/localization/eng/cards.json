@@ -8,7 +8,7 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "[gold]Fervour[/gold]: Hit an additional time.\nDeal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Payback[/gold] {CalculationBase:diff()}.\nGain additional [gold]Payback[/gold] Equal to [gold]Strength[/gold].\n{InCombat:n(Gain {CalculatedPaybackAmount:diff()} [gold]Payback[/gold])|}",
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Payback[/gold] {CalculationBase:diff()}.\nGain additional [gold]Payback[/gold] Equal to [gold]Strength[/gold].\n{InCombat:([gold]Payback[/gold] {CalculatedPaybackAmount:diff()})|}",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.",
