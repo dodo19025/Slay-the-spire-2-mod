@@ -42,7 +42,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(1m);
+        //base.DynamicVars.Damage.UpgradeValueBy(1m);
         base.DynamicVars["BleedPower"].UpgradeValueBy(1m);
     }
 }
