@@ -41,7 +41,7 @@ public class Swat() : TheMiddleNurseFatherOutisCard(
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(2m);
         DynamicVars["StrengthPowerDown"].UpgradeValueBy(1m);
     }
 

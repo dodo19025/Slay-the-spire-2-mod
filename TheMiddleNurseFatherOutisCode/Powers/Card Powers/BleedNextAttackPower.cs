@@ -59,6 +59,11 @@ public class BleedNextAttackPower()
             await PowerCmd.Remove(this);
             AppliedBleed = false;
         }
+
+        if (cardPlay.Card is Swat)
+        {
+            cardPlay.Card.DynamicVars["StrengthPowerDown"].BaseValue++;
+        }
     }
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
