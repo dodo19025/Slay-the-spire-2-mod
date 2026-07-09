@@ -1,8 +1,10 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -17,10 +19,15 @@ public class RuleViolation()
         CardType.Skill, CardRarity.Basic,
         TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
         {
-            new DynamicVar("PaybackAmount", 3),
-            new DynamicVar("CalculatedPaybackAmount", 0m)
+            new CalculationBaseVar(3m),
+            new CalculationExtraVar(1m),
+            new CalculatedVar("CalculatedPaybackAmount").WithMultiplier(delegate(CardModel card, Creature? creature)
+            {
+                int num = creature?.GetPowerAmount<StrengthPower>() ?? 0;
+                return (decimal)num;
+            })
         });
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -29,6 +36,8 @@ public class RuleViolation()
         HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromPower<StrengthPower>()
     ];
+    
+    
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -42,13 +51,12 @@ public class RuleViolation()
                 AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
             }
         }
-        await Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["PaybackAmount"].BaseValue,Owner.Creature, this);
+        await Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["CalculatedPaybackAmount"].BaseValue,Owner.Creature, this);
         await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
-        base.DynamicVars["CalculatedPaybackAmount"].BaseValue = AdditionalPayback + base.DynamicVars["PaybackAmount"].BaseValue;
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackAmount"].UpgradeValueBy(2);
+        DynamicVars.CalculationBase.UpgradeValueBy(2m);
     }
 }
