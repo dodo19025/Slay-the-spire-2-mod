@@ -17,10 +17,11 @@ public class RuleViolation()
         CardType.Skill, CardRarity.Basic,
         TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => 
-        [
-            new("PaybackAmount", 3)
-        ];
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
+        {
+            new DynamicVar("PaybackAmount", 3),
+            new DynamicVar("CalculatedPaybackAmount", 0m)
+        });
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -39,11 +40,11 @@ public class RuleViolation()
             if (Owner.Creature.GetPowerAmount<StrengthPower>() > 0)  //haha glad i caught that one! right guys...?
             {
                 AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
-
             }
         }
         await Owner.Creature.GainPayback(choiceContext ,base.DynamicVars["PaybackAmount"].BaseValue,Owner.Creature, this);
         await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
+        base.DynamicVars["CalculatedPaybackAmount"].BaseValue = AdditionalPayback + base.DynamicVars["PaybackAmount"].BaseValue;
     }
 
     protected override void OnUpgrade()
