@@ -35,7 +35,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("BurnApply", 12m),
+        new DynamicVar("BurnApply", 10m),
     ];
 
 
