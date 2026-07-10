@@ -33,5 +33,8 @@
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
 
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "[gold]Fervour[/gold]: Apply {AdditionalBurn:diff()} additional [gold]Burn[/gold].\nGain {Block:diff()} [gold]Block[/gold].\nApply {BurnApply:diff()} [gold]Burn[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up"
+  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up",
+
+  "THEMIDDLENURSEFATHEROUTIS-IGNITE.description": "[gold]Fervour[/gold]: Deal Damage equal to [gold]Burn[/gold] applied.\nApply {BurnApply:diff()} [gold]Burn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-IGNITE.title": "Ignite"
 }
