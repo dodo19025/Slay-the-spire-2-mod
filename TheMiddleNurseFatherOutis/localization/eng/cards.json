@@ -38,6 +38,6 @@
   "THEMIDDLENURSEFATHEROUTIS-IGNITE.description": "[gold]Fervour[/gold]: Deal Damage equal to [gold]Burn[/gold] applied.\nApply {BurnApply:diff()} [gold]Burn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-IGNITE.title": "Ignite",
 
-  "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervour[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} to ALL enemies",
+  "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervour[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] on ALL enemies",
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal"
 }
