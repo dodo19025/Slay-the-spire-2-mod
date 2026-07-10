@@ -47,6 +47,6 @@
   "THEMIDDLENURSEFATHEROUTIS-TRACES.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Exhaust[/gold] a card in your [gold]Discard[/gold] pile.",
   "THEMIDDLENURSEFATHEROUTIS-TRACES.title": "Traces",
 
-  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Weak[/gold] on ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain"
 }

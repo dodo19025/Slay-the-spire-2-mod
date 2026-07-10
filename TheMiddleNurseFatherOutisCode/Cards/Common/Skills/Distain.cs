@@ -25,6 +25,11 @@ public class Distain() : TheMiddleNurseFatherOutisCard(
         new BlockVar(12m, ValueProp.Move),
         new DynamicVar("WeakPower", 1m)
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [

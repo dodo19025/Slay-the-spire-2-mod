@@ -25,7 +25,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        TheMiddleNurseFatherOutisKeywords.Fervour
+
     ];
     
     
