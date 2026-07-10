@@ -16,7 +16,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class CrossUp() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Skill, CardRarity.Common,
+    1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 
 {
@@ -32,7 +32,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
-            new BlockVar(5m, ValueProp.Move),
+            new DamageVar(4m, ValueProp.Move),
             new DynamicVar("BurnApply", 7m),
             new DynamicVar("AdditionalBurn",5m)
         ];
@@ -51,7 +51,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         {
             additionalburn = base.DynamicVars["AdditionalBurn"].BaseValue;
         }
-        await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
+        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
         await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + additionalburn,
             base.Owner.Creature, this);
 
@@ -59,7 +59,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Block.UpgradeValueBy(2m);
+        base.DynamicVars.Damage.UpgradeValueBy(2m);
         base.DynamicVars["BurnApply"].UpgradeValueBy(2m);
     }
 }
