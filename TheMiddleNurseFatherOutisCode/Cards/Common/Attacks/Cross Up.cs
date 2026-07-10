@@ -33,7 +33,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
             new DamageVar(4m, ValueProp.Move),
-            new DynamicVar("BurnApply", 5m),
+            new DynamicVar("BurnApply", 4m),
             new DynamicVar("AdditionalBurn",5m)
         ];
 
