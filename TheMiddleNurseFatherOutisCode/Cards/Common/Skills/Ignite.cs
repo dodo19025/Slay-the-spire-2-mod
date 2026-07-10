@@ -1,9 +1,11 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -34,6 +36,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("BurnApply", 12m),
+        new DynamicVar("BurnApplyCount",1m)
     ];
 
 
@@ -48,6 +51,17 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "swordattack", 0.05f); //animation for sword since this is classified as a skill
             await CreatureCmd.Damage(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue, ValueProp.Move,
                 base.Owner.Creature, this, play);
+            
+            int ApplyCount = (int)base.DynamicVars["BurnApplyCount"].BaseValue;
+            if (Owner.Creature.HasPower<LaevateinnPower>())
+            {
+                ApplyCount++;
+            }
+            foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, base.DynamicVars["BurnApply"].BaseValue, base.Owner.Creature, this);
+            }
+            
         }
     }
 
