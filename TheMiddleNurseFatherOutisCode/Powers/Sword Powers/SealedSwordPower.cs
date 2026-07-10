@@ -1,4 +1,5 @@
 ﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -31,15 +32,20 @@ public class SealedSwordPower()
         HoverTipFactory.FromPower<RisingFeverPower>(),
         HoverTipFactory.Static(StaticHoverTip.Block),
     ];
-    
-    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
-        Creature? dealer, CardModel? cardSource)
+
+    public override decimal ModifyBlockMultiplicative(Creature target, decimal block, ValueProp props, CardModel? cardSource,
+        CardPlay? cardPlay)
     {
-        if (dealer != base.Owner && target.IsPlayer && result.WasBlockBroken && target == base.Owner)
+        if (target != base.Owner)
         {
-            Flash();
-            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, base.Owner,
-                base.DynamicVars["EnergyNextTurn"].BaseValue, base.Owner, null);
+            return 1m;
         }
+
+        if (!props.IsPoweredAttack())
+        {
+            return 1m;
+        }
+
+        return 0.8m;
     }
 }
