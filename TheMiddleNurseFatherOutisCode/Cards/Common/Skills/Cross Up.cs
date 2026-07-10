@@ -32,8 +32,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
             new BlockVar(4m, ValueProp.Move),
-            new DynamicVar("BurnApply", 4m),
-            new DynamicVar("AdditionalBurn",4m)
+            new DynamicVar("BurnApply", 6m),
+            new DynamicVar("AdditionalBurn",5m)
         ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -45,18 +45,14 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        var additionalburn = 0m;
         if (Owner.Creature.HasPower<LaevateinnPower>())
         {
-            base.DynamicVars["AdditionalBurn"].BaseValue = 4m;
-        }
-        else
-        {
-            base.DynamicVars["AdditionalBurn"].BaseValue = 0m;
+            additionalburn = base.DynamicVars["AdditionalBurn"].BaseValue;
         }
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + base.DynamicVars["AdditionalBurn"].BaseValue,
+        await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + additionalburn,
             base.Owner.Creature, this);
-        base.DynamicVars["AdditionalBurn"].BaseValue = 4m;
 
     }
 
