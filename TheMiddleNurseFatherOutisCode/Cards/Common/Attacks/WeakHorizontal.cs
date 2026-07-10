@@ -1,5 +1,7 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -34,14 +36,31 @@ public class WeakHorizontal()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(10m,ValueProp.Move),
-        new DynamicVar("BurnApply", 7m)
+        new DynamicVar("BurnApply", 7m),
+        new DynamicVar("BurnApplyCount",1m)
+
     ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).TargetingAllOpponents(base.CombatState).Execute(choiceContext);
+        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this,play).TargetingAllOpponents(base.CombatState).Execute(choiceContext);
+        
+        int ApplyCount = (int)base.DynamicVars["BurnApplyCount"].BaseValue;
+        if (Owner.Creature.HasPower<LaevateinnPower>())
+        {
+            ApplyCount++;
+        }
+
+        for (int i = 0; i < ApplyCount; i++)
+        {
+            foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, base.DynamicVars["BurnApply"].BaseValue, base.Owner.Creature, this);
+            }
+        }
+
     }
 
     protected override void OnUpgrade()
