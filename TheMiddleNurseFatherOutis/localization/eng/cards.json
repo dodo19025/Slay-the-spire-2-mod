@@ -39,5 +39,8 @@
   "THEMIDDLENURSEFATHEROUTIS-IGNITE.title": "Ignite",
 
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervour[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] on ALL enemies",
-  "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal"
+  "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal",
+
+  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.description": "Gain [gold]{Block:diff()}[/gold] Block\nLose {RisingFeverLose:diff()} [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.title": "Recite Vengeance"
 }
