@@ -11,7 +11,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class ReadyToWrite()
-    : TheMiddleNurseFatherOutisCard(1,
+    : TheMiddleNurseFatherOutisCard(0,
         CardType.Skill, CardRarity.Common,
         TargetType.Self)
 {
