@@ -24,28 +24,27 @@ public class SealedSwordPower()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
     {
-        new DynamicVar("EnergyNextTurn", 1m)
+        new DynamicVar("DamageReduction", 0.8m)
     });
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
-        HoverTipFactory.Static(StaticHoverTip.Block),
     ];
 
-    public override decimal ModifyBlockMultiplicative(Creature target, decimal block, ValueProp props, CardModel? cardSource,
-        CardPlay? cardPlay)
+    public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer,
+        CardModel? cardSource, CardPlay? cardPlay)
     {
         if (target != base.Owner)
         {
             return 1m;
         }
-
         if (!props.IsPoweredAttack())
         {
             return 1m;
         }
-
         return 0.8m;
     }
+
+
 }

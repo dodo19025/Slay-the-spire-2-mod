@@ -34,7 +34,6 @@ public class SealedSword()
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
-		HoverTipFactory.Static(StaticHoverTip.Block),
 		HoverTipFactory.FromPower<FirstSealRemovedPower>(),
 		HoverTipFactory.FromPower<SecondSealRemovedPower>(),
 		HoverTipFactory.FromPower<LaevateinnPower>()
