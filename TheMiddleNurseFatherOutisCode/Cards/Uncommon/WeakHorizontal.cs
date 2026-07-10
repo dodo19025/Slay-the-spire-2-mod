@@ -17,7 +17,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class WeakHorizontal()
     : TheMiddleNurseFatherOutisCard(2,
-        CardType.Attack, CardRarity.Common,
+        CardType.Attack, CardRarity.Uncommon,
         TargetType.AllEnemies)
 {
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
