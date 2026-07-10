@@ -2,7 +2,9 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -31,9 +33,14 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         [
             new BlockVar(4m, ValueProp.Move),
             new DynamicVar("BurnApply", 4m),
-            new DynamicVar("AdditionalBurn",0m)
+            new DynamicVar("AdditionalBurn",4m)
         ];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BurnPower>(),
+    ];
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -42,9 +49,15 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         {
             base.DynamicVars["AdditionalBurn"].BaseValue = 4m;
         }
+        else
+        {
+            base.DynamicVars["AdditionalBurn"].BaseValue = 0m;
+        }
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
         await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + base.DynamicVars["AdditionalBurn"].BaseValue,
             base.Owner.Creature, this);
+        base.DynamicVars["AdditionalBurn"].BaseValue = 4m;
+
     }
 
     protected override void OnUpgrade()

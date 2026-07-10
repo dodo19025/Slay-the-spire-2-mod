@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Buffers;
+using System.Drawing;
 using BaseLib.Hooks;
 using BaseLib.Patches.UI;
 using MegaCrit.Sts2.Core.Combat;
@@ -25,11 +26,28 @@ public class BurnPower()
         PowerStackType.Counter;
 
     public Color Burncolor = new Color("#f7681b");
+    public int DamageMinusBlock = 0;
     public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
-        return [new HealthBarForecastSegment(base.Amount, Burncolor, HealthBarForecastDirection.FromRight)];
+        if (base.Amount > base.Owner.Block)
+        {
+            DamageMinusBlock = base.Amount - base.Owner.Block;
+        }
+        return [new HealthBarForecastSegment(DamageMinusBlock, Burncolor, HealthBarForecastDirection.FromRight)];
     }
-    
+
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
+    {
+        if (power == this && base.Amount > 0)
+        {
+            if (base.Amount > base.Owner.Block)
+            {
+                DamageMinusBlock = base.Amount - base.Owner.Block;
+            }
+        }
+    }
+
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(base.Owner))
