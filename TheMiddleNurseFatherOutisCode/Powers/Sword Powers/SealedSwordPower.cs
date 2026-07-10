@@ -43,6 +43,11 @@ public class SealedSwordPower()
         {
             return 1m;
         }
+
+        if (dealer != null && dealer.IsPlayer)
+        {
+            return 1m;
+        }
         return 0.8m;
     }
 
