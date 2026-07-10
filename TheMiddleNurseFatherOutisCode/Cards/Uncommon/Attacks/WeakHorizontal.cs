@@ -66,6 +66,6 @@ public class WeakHorizontal()
     protected override void OnUpgrade()
     {
          base.DynamicVars.Damage.UpgradeValueBy(4m);
-         base.DynamicVars["BurnApply"].UpgradeValueBy(5m);
+         base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
     }
 }
