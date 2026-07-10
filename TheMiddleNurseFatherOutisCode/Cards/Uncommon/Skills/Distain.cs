@@ -17,12 +17,12 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class Distain() : TheMiddleNurseFatherOutisCard(
-    2, CardType.Skill, CardRarity.Common,
+    2, CardType.Skill, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(12m, ValueProp.Move),
+        new BlockVar(10m, ValueProp.Move),
         new DynamicVar("WeakPower", 1m)
     ];
     

@@ -6,6 +6,6 @@ namespace TheMiddleNurseFatherOutis;
 
 public static class TheMiddleNurseFatherOutisKeywords
 {
-    [CustomEnum,KeywordProperties(AutoKeywordPosition.Before)] public static CardKeyword Fervour;
+    [CustomEnum,KeywordProperties(AutoKeywordPosition.After)] public static CardKeyword Fervour;
     
 }

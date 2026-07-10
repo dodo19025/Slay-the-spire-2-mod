@@ -37,6 +37,19 @@ public static class PaybackCmd
         return true;
     }
 
+    public static int ValidPaybackAmount(this Creature creature, decimal PaybackAmount)
+    {
+        if (creature.Block >= PaybackAmount && creature.Block > 0)
+        {
+            return (int)PaybackAmount;
+        }
+        else if (creature.Block < PaybackAmount && creature.Block > 0)
+        {
+            return (int)creature.Block;
+        }
+        return 0;
+    }
+
     public static async Task AdditionalPayback(this Creature creature, PlayerChoiceContext choiceContext,
         Decimal amount, Creature? applier = null, CardModel? cardSource = null)
     {
