@@ -48,6 +48,17 @@ public class BurnPower()
         }
     }
 
+    public override async Task AfterBlockGained(Creature creature, decimal amount, ValueProp props, CardModel? cardSource)
+    {
+        if (creature.HasPower<BurnPower>()&& base.Amount > 0)
+        {
+            if (base.Amount > base.Owner.Block)
+            {
+                DamageMinusBlock = base.Amount - base.Owner.Block;
+            }
+        }
+    }
+
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (!participants.Contains(base.Owner))
