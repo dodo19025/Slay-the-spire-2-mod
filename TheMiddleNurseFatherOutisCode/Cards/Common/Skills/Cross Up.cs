@@ -31,8 +31,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
-            new BlockVar(4m, ValueProp.Move),
-            new DynamicVar("BurnApply", 6m),
+            new BlockVar(5m, ValueProp.Move),
+            new DynamicVar("BurnApply", 7m),
             new DynamicVar("AdditionalBurn",5m)
         ];
 

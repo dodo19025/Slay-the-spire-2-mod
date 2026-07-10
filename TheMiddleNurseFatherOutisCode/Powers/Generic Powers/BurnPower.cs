@@ -48,13 +48,17 @@ public class BurnPower()
         }
     }
 
-    public override async Task AfterBlockGained(Creature creature, decimal amount, ValueProp props, CardModel? cardSource)
+    public override async Task AfterBlockGained(Creature creature, decimal amount, ValueProp props, CardModel? cardSource) //for the player side and probably for skittish lol
     {
-        if (creature.HasPower<BurnPower>()&& base.Amount > 0)
+        if (creature.HasPower<BurnPower>())
         {
-            if (base.Amount > base.Owner.Block)
+            if (creature.Block > creature.GetPowerAmount<BurnPower>())
             {
-                DamageMinusBlock = base.Amount - base.Owner.Block;
+                DamageMinusBlock = 0;
+            }
+            else if (creature.GetPowerAmount<BurnPower>() >= creature.Block)
+            {
+                DamageMinusBlock = creature.GetPowerAmount<BurnPower>() -  creature.Block;
             }
         }
     }
