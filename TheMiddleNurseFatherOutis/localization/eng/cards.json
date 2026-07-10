@@ -32,7 +32,7 @@
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies {BleedNextAttack:diff()} [gold]Bleed[/gold] on hit.",
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
 
-  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "[gold]Fervour[/gold]: Apply {AdditionalBurn:diff()} [gold]Burn[/gold].\nGain {Block:diff()} [gold]Block[/gold].\nApply {BurnApply:diff()} [gold]Burn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "[gold]Fervour[/gold]: Apply {AdditionalBurn:diff()} [gold]Burn[/gold].\nDeal {Damage:diff()} [gold]Damage[/gold].\nApply {BurnApply:diff()} [gold]Burn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up",
 
   "THEMIDDLENURSEFATHEROUTIS-IGNITE.description": "[gold]Fervour[/gold]: Deal Damage equal to [gold]Burn[/gold] applied.\nApply {BurnApply:diff()} [gold]Burn[/gold].",
