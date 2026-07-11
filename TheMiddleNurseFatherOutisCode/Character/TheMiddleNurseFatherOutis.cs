@@ -63,7 +63,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override Color MapDrawingColor => new("D938BD");
     public override Color EnergyLabelOutlineColor => new("D938BD");
-
+    
     public override string CustomMerchantAnimPath =>
         "res://TheMiddleNurseFatherOutisCode/scenes/Merchant/Outis_Merchant.tscn";
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
@@ -90,4 +90,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_themiddlenursefatheroutis_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_themiddlenursefatheroutis.png".CharacterUiPath();
+    
+    
+    
 }
