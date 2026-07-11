@@ -13,7 +13,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Po
 public class SwatPower() : CustomTemporaryPowerModelWrapper<Swat,StrengthPower>
 {
     private CustomTemporaryPowerModel _customTemporaryPowerModelImplementation;
-
+    
     public override PowerType Type =>
         PowerType.Debuff;
 
