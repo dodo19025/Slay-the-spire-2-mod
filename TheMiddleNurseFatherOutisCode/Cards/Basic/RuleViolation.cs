@@ -51,7 +51,7 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 
     protected override void OnUpgrade()
     {
-        DynamicVars.CalculationBase.UpgradeValueBy(2m);
+        DynamicVars["PaybackAmount"].UpgradeValueBy(2m);
     }
    // new CalculationBaseVar(3m),
    // new CalculationExtraVar(1m),

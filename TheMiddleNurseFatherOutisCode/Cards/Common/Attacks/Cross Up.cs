@@ -51,7 +51,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         {
             additionalburn = base.DynamicVars["AdditionalBurn"].BaseValue;
         }
-        await CommonActions.CardAttack(this,play.Target).WithAttackerAnim("swordattack",0.2f).Execute(choiceContext);
+        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
         await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + additionalburn,
             base.Owner.Creature, this);
 
