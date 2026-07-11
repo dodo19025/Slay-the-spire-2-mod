@@ -45,47 +45,17 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
             {
                 if (visualthreeseal.Visible)
                 {
-                    await PlayAnimation(dealer, "swordlattack");
+                     await dealer.PlayAnimation("swordlattack",0.2f);
                 }
                 else if (!visualthreeseal.Visible)
                 {
-                    await PlayAnimation(dealer, "swordattack");
+                     await dealer.PlayAnimation("swordattack",0.2f);
                 }
 
             }
             else
             {
-                await PlayAnimation(dealer, "legattack");
-            }
-        }
-    }
-
-    public static async Task PlayAnimation(Creature creature, string AnimationName)
-    {
-        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
-        if (node?.Visuals == null)
-        {
-            return;
-        }
-        var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
-        if (Statemachine != null)
-        {
-            string GodotTrigger = AnimationName.ToLowerInvariant() switch
-            {
-                "hit" => "hurt",
-                "idle" => "idle",
-                "dead" => "die",
-                "cast" => "cast",
-                "block" => "block",
-                "attack" => "legattack",
-                "swordattack" => "swordattack",
-                "swordlattack" => "swordlattack",
-                _ => AnimationName
-            };
-            if (Statemachine.HasConnections(GodotTrigger))
-            {
-                Statemachine.Start(GodotTrigger);
-                await Cmd.CustomScaledWait(0.1f, 0.2f);
+                 await dealer.PlayAnimation("legattack",0.2f);
             }
         }
     }

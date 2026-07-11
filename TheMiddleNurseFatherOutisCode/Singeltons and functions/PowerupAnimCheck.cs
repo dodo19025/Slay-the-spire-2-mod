@@ -16,6 +16,5 @@ public class PowerupAnimCheck() : CustomSingletonModel(HookType.Combat)
         {
             await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "cast", 0.2f);
         }
-        
     }
 }

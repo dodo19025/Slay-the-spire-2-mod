@@ -1,14 +1,16 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using Godot;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Achievements;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis;
 
-public static class PaybackCmd
+public static class TheMiddleNursefatherOutisCmd
 {
     public static async Task GainPayback(this Creature creature, PlayerChoiceContext choiceContext,Decimal amount, Creature? applier = null, CardModel? cardSource = null)
     {
@@ -54,6 +56,34 @@ public static class PaybackCmd
         Decimal amount, Creature? applier = null, CardModel? cardSource = null)
     {
         await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // unconditional paybackgain
+    }
+    
+    public static async Task PlayAnimation(this Creature creature, string AnimationName, float NormalSecondWait)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        if (node?.Visuals == null)
+        {
+            return;
+        }
+        var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
+        if (Statemachine != null)
+        {
+            string GodotTrigger = AnimationName.ToLowerInvariant() switch
+            {
+                "hit" => "hurt",
+                "idle" => "idle",
+                "dead" => "die",
+                "cast" => "cast",
+                "block" => "block",
+                "attack" => "legattack",
+                "swordattack" => "swordattack",
+                "swordlattack" => "swordlattack",
+                _ => AnimationName
+            };
+            Statemachine.Start(GodotTrigger);
+            float FastSecondWait = NormalSecondWait/2;
+            await Cmd.CustomScaledWait(FastSecondWait, NormalSecondWait);
+        }
     }
 
 }
