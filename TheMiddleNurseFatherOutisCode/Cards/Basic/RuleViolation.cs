@@ -23,7 +23,7 @@ public class RuleViolation()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount",3m)
+        new DynamicVar("PaybackAmount",3m).WithTooltip("Seethe")
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
