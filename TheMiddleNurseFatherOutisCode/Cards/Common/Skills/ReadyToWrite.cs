@@ -21,7 +21,7 @@ public class ReadyToWrite()
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("PaybackAmount", 4m).WithTooltip("Payback"),
+        new DynamicVar("PaybackAmount", 4m),
         new CardsVar(1)
     });
     

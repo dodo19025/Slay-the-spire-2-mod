@@ -31,8 +31,8 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, it loses [blue]{Amount}[/blue] HP and [blue]{BleedLost:diff()}[/blue] [red]Bleed[/red].",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_POWER.title": "Bleed",
 
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [blue]{Payback}[/blue] [gold]Block[/gold] to hit back the enemy when taking unblocked damage and remove this next turn.",
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and remove effect next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.description": "Consume [gold]Block[/gold] to gain equal amounts of [gold]Payback[/gold].\nDeal damage back to enemies equal to [gold]Payback[/gold] when taking unblocked damage, expires the turn after activation",
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and expire next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.title": "Payback",
 
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.description": "Gain [red]Burn[/red].",

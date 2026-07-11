@@ -24,7 +24,7 @@ public class PoisedBreathing()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount", 6m).WithTooltip("Payback"),
+        new DynamicVar("PaybackAmount", 6m),
         new DynamicVar("PaybackThreshold", 4m),
         new EnergyVar(2)
     ];

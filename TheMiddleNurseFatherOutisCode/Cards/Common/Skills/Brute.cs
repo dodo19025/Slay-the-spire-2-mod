@@ -21,7 +21,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount", 5m).WithTooltip("Payback"),
+        new DynamicVar("PaybackAmount", 5m),
         new BlockVar(7m,ValueProp.Move)
     ];
     
