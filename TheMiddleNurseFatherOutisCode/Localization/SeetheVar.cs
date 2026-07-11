@@ -1,4 +1,5 @@
 ﻿using BaseLib.Extensions;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
@@ -6,8 +7,8 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 public class SeetheVar : DynamicVar
 {
     public const string Key = "Seethe";
-
-    public SeetheVar(decimal SeetheCount) : base(Key, SeetheCount)
+    
+    public SeetheVar(Decimal SeetheCount) : base(Key, SeetheCount)
     {
         this.WithTooltip();
     }

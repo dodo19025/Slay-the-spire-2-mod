@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
@@ -23,7 +24,7 @@ public class RuleViolation()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount",3m).WithTooltip("Seethe")
+        new SeetheVar(3m)
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -37,21 +38,13 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int AdditionalPayback = 0;
-        if (Owner.Creature.HasPower<StrengthPower>())
-        {
-            if (Owner.Creature.GetPowerAmount<StrengthPower>() > 0)  //haha glad i caught that one! right guys...?
-            {
-                AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
-            }
-        }
-        await Owner.Creature.GainPayback(choiceContext , base.DynamicVars["PaybackAmount"].BaseValue,base.Owner.Creature, this);
+        await Owner.Creature.GainPayback(choiceContext , this.DynamicVars["Seethe"].BaseValue,base.Owner.Creature, this);
         //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackAmount"].UpgradeValueBy(2m);
+        this.DynamicVars["Seethe"].UpgradeValueBy(2m);
     }
    // new CalculationBaseVar(3m),
    // new CalculationExtraVar(1m),
