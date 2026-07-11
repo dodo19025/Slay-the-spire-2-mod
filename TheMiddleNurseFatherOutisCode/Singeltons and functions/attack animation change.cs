@@ -10,32 +10,34 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace TheMiddleNurseFatherOutis;
 
-public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
+public  class attack_animation_change()
 {
-    
 
-    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
-        Creature target, CardModel? cardSource)
-    {
-        CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-        if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
-        {
-            if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
-            {
-                if (visualthreeseal.Visible)
-                {
-                    await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordlattack", 0.05f);
-                }
-                else if (!visualthreeseal.Visible)
-                {
-                    await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordattack", 0.05f);
-                }
 
-            }
-            else
-            {
-                await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "legattack", 0.05f);
-            }
-        }
-    }
+   // public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
+    //    Creature target, CardModel? cardSource)
+   // {
+    //    CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
+      //  if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
+        //{
+          //  if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
+            //{
+              //  if (visualthreeseal.Visible)
+                //{
+                  //  await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordlattack", 0.05f);
+                //}
+                //else if (!visualthreeseal.Visible)
+                //{
+                 //   await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordattack", 0.05f);
+               // }
+
+            //}
+            //else
+            //{
+              //  await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "legattack", 0.05f);
+            //}
+       // }
+    //}
+
+
 }

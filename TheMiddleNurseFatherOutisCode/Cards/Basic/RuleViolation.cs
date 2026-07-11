@@ -21,10 +21,7 @@ public class RuleViolation()
 {
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CalculationBaseVar(3m),
-        new CalculationExtraVar(1m),
-        new CalculatedVar("CalculatedPaybackAmount").WithMultiplier((Func<CardModel, Creature, Decimal>) ((card, target) => 
-            card.Owner.Creature.GetPowerAmount<StrengthPower>()))
+        new DynamicVar("PaybackAmount",3m)
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -48,7 +45,7 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
                 AdditionalPayback += Owner.Creature.GetPowerAmount<StrengthPower>();
             }
         }
-        await Owner.Creature.GainPayback(choiceContext , ((CalculatedVar)base.DynamicVars["CalculatedPaybackAmount"]).Calculate(play.Target),base.Owner.Creature, this);
+        await Owner.Creature.GainPayback(choiceContext , base.DynamicVars["PaybackAmount"].BaseValue,base.Owner.Creature, this);
         //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 
@@ -56,4 +53,8 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     {
         DynamicVars.CalculationBase.UpgradeValueBy(2m);
     }
+   // new CalculationBaseVar(3m),
+   // new CalculationExtraVar(1m),
+    //new CalculatedVar("CalculatedPaybackAmount").WithMultiplier((Func<CardModel, Creature, Decimal>) ((card, target) => 
+    //card.Owner.Creature.GetPowerAmount<StrengthPower>()))
 }

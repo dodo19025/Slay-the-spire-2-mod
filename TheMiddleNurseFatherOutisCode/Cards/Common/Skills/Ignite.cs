@@ -56,7 +56,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["BurnApply"].UpgradeValueBy(6m);
+        base.DynamicVars["BurnApply"].UpgradeValueBy(4m);
 
     }
 }
