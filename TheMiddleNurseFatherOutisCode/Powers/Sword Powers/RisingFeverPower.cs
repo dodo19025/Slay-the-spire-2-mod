@@ -49,9 +49,10 @@ public class RisingFeverPower()
                 {
                     if (FeverAmount <= 0) //fix for if it's negative
                     {
-                        FeverAmountCorrection += (FeverAmount * -1);
+                        FeverAmountCorrection += (FeverAmount * -1); //catch for when i forget to make the check in the card (dumbass)
                         if (base.Owner.HasPower<LaevateinnPower>())
                         {
+                            PowerCmd.Remove(this);
                             return;
                         }
                     }

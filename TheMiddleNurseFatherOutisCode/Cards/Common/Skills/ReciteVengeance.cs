@@ -36,8 +36,11 @@ public class ReciteVengeance()
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["RisingFeverLose"].BaseValue,base.Owner.Creature,this);
+        if (base.Owner.Creature.HasPower<RisingFeverPower>())
+        {
+            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["RisingFeverLose"].BaseValue,base.Owner.Creature,this);
 
+        }
     }
 
     protected override void OnUpgrade()
