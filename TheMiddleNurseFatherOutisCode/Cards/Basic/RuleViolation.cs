@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -20,8 +21,9 @@ public class RuleViolation()
         TargetType.Self)
 {
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DynamicVar("PaybackAmount",3m)
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new DynamicVar("PaybackAmount",3m).WithTooltip("Payback")
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
