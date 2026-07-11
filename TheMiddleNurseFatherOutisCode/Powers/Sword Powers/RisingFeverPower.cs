@@ -52,7 +52,7 @@ public class RisingFeverPower()
                         FeverAmountCorrection += (FeverAmount * -1); //catch for when i forget to make the check in the card (dumbass)
                         if (base.Owner.HasPower<LaevateinnPower>())
                         {
-                            PowerCmd.Remove(this);
+                            await PowerCmd.Remove(this);
                             return;
                         }
                     }

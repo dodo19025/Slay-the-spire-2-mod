@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -36,10 +37,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         for (int i = 0; i < base.DynamicVars["HitAmount"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            if (play.Card.DynamicVars["Exclamation"] != null)
-            {
-                MainFile.Logger.Info("Has exclamation");
-            }
+            
             await PowerCmd.Apply<BleedPower>(choiceContext, play.Target,base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
         }
     }

@@ -6,4 +6,6 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 public static class TheMiddleNurseFatherOutisTags
 {
     [CustomEnum] public static CardTag Kick;
+    [CustomEnum] public static CardTag Exclamation;
+
 }
