@@ -78,6 +78,7 @@ public static class TheMiddleNursefatherOutisCmd
                 "attack" => "legattack",
                 "swordattack" => "swordattack",
                 "swordlattack" => "swordlattack",
+                "unpacking" => "unpacking",
                 _ => AnimationName
             };
             Statemachine.Start(GodotTrigger);
