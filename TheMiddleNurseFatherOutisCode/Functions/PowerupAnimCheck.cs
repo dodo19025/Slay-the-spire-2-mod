@@ -14,7 +14,7 @@ public class PowerupAnimCheck() : CustomSingletonModel(HookType.Combat)
     {
         if (cardPlay.Card.Type == CardType.Power &&  cardPlay.Card.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
-            await CreatureCmd.TriggerAnim(cardPlay.Card.Owner.Creature, "cast", 0.2f);
+            await cardPlay.Card.Owner.Creature.PlayAnimation("cast", 0.3f);
         }
     }
 }
