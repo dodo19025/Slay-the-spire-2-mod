@@ -18,7 +18,7 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DamageVar(8m, ValueProp.Move),
+        new DamageVar(9m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m)
     });
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 

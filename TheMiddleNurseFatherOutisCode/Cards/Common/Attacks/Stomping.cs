@@ -19,7 +19,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
     {
-        new DamageVar(3m, ValueProp.Move),
+        new DamageVar(4m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
         new DynamicVar("BleedPower",1m),
         new DynamicVar("HitAmount",2m)
@@ -36,6 +36,10 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         for (int i = 0; i < base.DynamicVars["HitAmount"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+            if (play.Card.DynamicVars["Exclamation"] != null)
+            {
+                MainFile.Logger.Info("Has exclamation");
+            }
             await PowerCmd.Apply<BleedPower>(choiceContext, play.Target,base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
         }
     }
