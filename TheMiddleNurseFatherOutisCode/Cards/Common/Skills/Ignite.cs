@@ -35,7 +35,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("BurnApply", 8m),
+        new DynamicVar("BurnApply", 7m),
     ];
 
 
@@ -48,7 +48,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
         if (Owner.Creature.HasPower<LaevateinnPower>())
         {
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "swordattack", 0.05f); //animation for sword since this is classified as a skill
-            await CreatureCmd.Damage(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue, ValueProp.Move,
+            await CreatureCmd.Damage(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue/2, ValueProp.Move,
                 base.Owner.Creature, this, play);
             
         }
@@ -56,7 +56,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["BurnApply"].UpgradeValueBy(4m);
+        base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
 
     }
 }
