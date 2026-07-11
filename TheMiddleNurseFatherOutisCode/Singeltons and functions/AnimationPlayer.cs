@@ -37,33 +37,55 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
         {
             return;
         }
+        
         if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
             CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-            var node = NCombatRoom.Instance?.GetCreatureNode(dealer);
-            if (node?.Visuals == null)
-            {
-                return;
-            }
-            var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
-            
-            
             if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
             {
                 if (visualthreeseal.Visible)
                 {
-                    await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordlattack", 0.05f);
+                    await PlayAnimation(dealer, "swordlattack");
                 }
                 else if (!visualthreeseal.Visible)
                 {
-                    await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "swordattack", 0.05f);
+                    await PlayAnimation(dealer, "swordattack");
                 }
 
             }
             else
             {
-                Statemachine.Travel("legattack");
-                //await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "legattack", 0.05f);
+                await PlayAnimation(dealer, "legattack");
+            }
+        }
+    }
+
+    public static async Task PlayAnimation(Creature creature, string AnimationName)
+    {
+        var node = NCombatRoom.Instance?.GetCreatureNode(creature);
+        if (node?.Visuals == null)
+        {
+            return;
+        }
+        var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
+        if (Statemachine != null)
+        {
+            string GodotTrigger = AnimationName.ToLowerInvariant() switch
+            {
+                "hit" => "hurt",
+                "idle" => "idle",
+                "dead" => "die",
+                "cast" => "cast",
+                "block" => "block",
+                "attack" => "legattack",
+                "swordattack" => "swordattack",
+                "swordlattack" => "swordlattack",
+                _ => AnimationName
+            };
+            if (Statemachine.HasConnections(GodotTrigger))
+            {
+                Statemachine.Start(GodotTrigger);
+                await Cmd.CustomScaledWait(0.1f, 0.2f);
             }
         }
     }
