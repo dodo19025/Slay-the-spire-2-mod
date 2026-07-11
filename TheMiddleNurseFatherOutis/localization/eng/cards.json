@@ -26,7 +26,7 @@
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {RisingFeverGain:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
 
-  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nIf this card gained [gold]Payback[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf this card gained [gold]Seethe[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
 
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies {BleedNextAttack:diff()} [gold]Bleed[/gold] on hit.",
@@ -50,9 +50,9 @@
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain",
 
-  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nIf at least {PaybackThreshold:diff()} [gold]Payback[/gold] was gained, gain {Energy:energyIcons()}.",
+  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf at least {PaybackThreshold:diff()} [gold]Seethe[/gold] was gained, gain {Energy:energyIcons()}.",
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "[gold]Payback[/gold] {PaybackAmount:diff()}.\nGain {Block:diff()} [gold]Block[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nGain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute"
 }

@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -24,7 +25,7 @@ public class PoisedBreathing()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount", 6m),
+        new SeetheVar(6m),
         new DynamicVar("PaybackThreshold", 4m),
         new EnergyVar(2)
     ];
@@ -45,7 +46,7 @@ public class PoisedBreathing()
         {
             await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
         }
-        await Owner.Creature.GainPayback(choiceContext,base.DynamicVars["PaybackAmount"].BaseValue);
+        await Owner.Creature.GainPayback(choiceContext,base.DynamicVars["Seethe"].BaseValue);
     }
 
     protected override void OnUpgrade()

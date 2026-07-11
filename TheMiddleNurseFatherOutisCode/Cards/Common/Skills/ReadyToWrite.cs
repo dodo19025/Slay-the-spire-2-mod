@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -21,7 +22,7 @@ public class ReadyToWrite()
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new DynamicVar("PaybackAmount", 4m),
+        new SeetheVar(4m),
         new CardsVar(1)
     });
     
@@ -35,11 +36,11 @@ public class ReadyToWrite()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        if(Owner.Creature.GainedPayback(base.DynamicVars["PaybackAmount"].BaseValue))
+        if(Owner.Creature.GainedPayback(base.DynamicVars["Seethe"].BaseValue))
         {
             await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
         }
-        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["PaybackAmount"].BaseValue,
+        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["Seethe"].BaseValue,
             base.Owner.Creature, this);
 
     }

@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -21,7 +22,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("PaybackAmount", 5m),
+        new SeetheVar(5m),
         new BlockVar(7m,ValueProp.Move)
     ];
     
@@ -34,7 +35,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["PaybackAmount"].BaseValue,
+        await Owner.Creature.GainPayback(choiceContext, this.DynamicVars["Seethe"].BaseValue,
             base.Owner.Creature, this);
         
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
@@ -43,7 +44,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["PaybackAmount"].UpgradeValueBy(1m);
+        this.DynamicVars["Seethe"].UpgradeValueBy(1m);
         base.DynamicVars.Block.UpgradeValueBy(2m);
     }
 }
