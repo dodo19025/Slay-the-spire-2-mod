@@ -22,12 +22,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        if (dealer.IsEnemy)
-        {
-            return;
-        }
-
-        if (cardSource == null)
+        if (cardSource == null || !props.IsPoweredAttack() || dealer.IsEnemy)
         {
             return;
         }

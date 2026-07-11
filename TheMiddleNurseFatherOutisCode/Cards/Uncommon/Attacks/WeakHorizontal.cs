@@ -35,7 +35,7 @@ public class WeakHorizontal()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(8m,ValueProp.Move),
+        new DamageVar(7m,ValueProp.Move),
         new DynamicVar("BurnApply", 7m),
         new DynamicVar("BurnApplyCount",1m)
 
@@ -65,7 +65,7 @@ public class WeakHorizontal()
 
     protected override void OnUpgrade()
     {
-         base.DynamicVars.Damage.UpgradeValueBy(3m);
+         base.DynamicVars.Damage.UpgradeValueBy(2m);
          base.DynamicVars["BurnApply"].UpgradeValueBy(2m);
     }
 }
