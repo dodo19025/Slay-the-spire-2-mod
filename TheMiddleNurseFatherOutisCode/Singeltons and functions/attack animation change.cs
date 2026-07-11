@@ -19,9 +19,13 @@ public class attack_animation_change(): CustomSingletonModel(HookType.Combat)
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
     {
-        CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
+        if (dealer.IsEnemy)
+        {
+            return;
+        }
         if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
+            CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
             if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
             {
                 if (visualthreeseal.Visible)
