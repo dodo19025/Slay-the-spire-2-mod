@@ -50,6 +50,10 @@ public class RisingFeverPower()
                     if (FeverAmount <= 0) //fix for if it's negative
                     {
                         FeverAmountCorrection += (FeverAmount * -1);
+                        if (base.Owner.HasPower<LaevateinnPower>())
+                        {
+                            return;
+                        }
                     }
                     Stage += 1;
                     if (Stage == 1)
@@ -71,7 +75,7 @@ public class RisingFeverPower()
                         visualoneseal.Visible = false;
                         visualtwoseal.Visible = true;
                         await Owner.PlayAnimation("unpacking", 2f);
-                        await Cmd.CustomScaledWait(1f, 2f);
+                        await Cmd.CustomScaledWait(0.5f, 1f);
                         await CreatureCmd.TriggerAnim(base.Owner, "sunglasses", 2f);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner,
                             base.DynamicVars["RisingFeverReapply"].BaseValue + FeverAmountCorrection, base.Owner,
