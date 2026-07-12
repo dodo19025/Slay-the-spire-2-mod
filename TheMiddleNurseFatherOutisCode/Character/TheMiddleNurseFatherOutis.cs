@@ -91,7 +91,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
         }
     }
 
-    public override string CustomIconTexturePath => "res://TheMiddleNurseFatherOutisCode/scenes/OutisIcon.tscn";
+    public override string CustomIconTexturePath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
     
     public override string CustomTrailPath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
