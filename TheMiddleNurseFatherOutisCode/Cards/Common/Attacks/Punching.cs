@@ -7,6 +7,8 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -47,6 +49,7 @@ public class Punching() : TheMiddleNurseFatherOutisCard(
             await CardPileCmd.Add(cardModel, PileType.Hand);
         }
     }
+    
 
     protected override void OnUpgrade()
     {
