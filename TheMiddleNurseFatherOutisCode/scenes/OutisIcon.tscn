@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5jhd01eonjhb"]
+
+[ext_resource type="Texture2D" uid="uid://dosa5g20kc5o5" path="res://TheMiddleNurseFatherOutis/images/charui/map_marker_themiddlenursefatheroutis.png" id="1_fudx1"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_fudx1")

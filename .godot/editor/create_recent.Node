@@ -1,9 +1,9 @@
+TextureRect
 Control
 AnimatedSprite2D
 AnimationTree
 AnimationPlayer
 Node2D
-TextureRect
 Sprite2D
 AudioStreamPlayer2D
 CanvasModulate
