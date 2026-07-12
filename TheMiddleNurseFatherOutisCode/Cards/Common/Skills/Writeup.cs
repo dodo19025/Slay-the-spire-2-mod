@@ -29,11 +29,11 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,base.Owner.Creature,base.DynamicVars["EnergyNextTurnPower"].BaseValue,base.Owner.Creature, this);
+        await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,base.Owner.Creature,base.DynamicVars.Energy.BaseValue,base.Owner.Creature, this);
         
         foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
-            await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars.Energy.IntValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars["VunNextTurnPower"].BaseValue, base.Owner.Creature, this);
         }
     }
 
