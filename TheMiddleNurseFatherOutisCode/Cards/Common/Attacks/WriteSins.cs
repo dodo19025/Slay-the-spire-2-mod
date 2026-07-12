@@ -27,9 +27,7 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        CardModel cardModel =
-            (await CardSelectCmd.FromCombatPile(prefs: new CardSelectorPrefs(base.SelectionScreenPrompt, 1),
-                context: choiceContext, pile: PileType.Draw.GetPile(base.Owner), player: base.Owner)).FirstOrDefault(); //gives a selection prompt for the card correct card pile basically (and lets you select 1)
+        CardModel cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Draw.GetPile(base.Owner), base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, 1))).FirstOrDefault();
         if (cardModel != null)
         {
             await CardPileCmd.Add(cardModel, PileType.Discard);

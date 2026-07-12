@@ -66,6 +66,6 @@
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.description": "Deal {Damage:diff()} damage.\nIf the enemy has a debuff, they lose {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.title": "Concuss",
 
-  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nPut a card from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold]",
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nPut a card from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins"
 }
