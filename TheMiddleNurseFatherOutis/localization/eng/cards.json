@@ -54,5 +54,8 @@
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nGain {Block:diff()} [gold]Block[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute"
+  "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
+
+  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with 'Kick' in its name.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.title": "Punching!"
 }
