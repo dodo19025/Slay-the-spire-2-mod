@@ -57,5 +57,8 @@
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
 
   "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with 'Kick' in its name.",
-  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.title": "Punching!"
+  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.title": "Punching!",
+
+  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] to ALL enemies.\nGain {EnergyNextTurnPower:diff()} {EnergyNextTurnPower:energyIcons()} next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup"
 }
