@@ -40,6 +40,8 @@ public class WeakHorizontal()
         new DynamicVar("BurnApplyCount",1m)
 
     ];
+    
+    
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

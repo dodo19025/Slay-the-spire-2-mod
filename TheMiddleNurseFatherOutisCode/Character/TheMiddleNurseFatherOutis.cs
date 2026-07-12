@@ -94,7 +94,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override string CustomIconTexturePath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
     
-    public override string CustomTrailPath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
+    //public override string CustomTrailPath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_themiddlenursefatheroutis_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_themiddlenursefatheroutis.png".CharacterUiPath();
     
