@@ -8,10 +8,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1783485460::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783828787
+::res://bin/ExportRelease/net9.0/publish/::1783828903
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783827271::0::1::::<><><>0<>0<><>::
-::res://sfx/::1783828880
-glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783828881::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1783828906
+glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783829171::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1783172607::1783172608::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -422,9 +422,9 @@ UnsealedSearingBlade.cs::CSharpScript::7722194016177815604::1783524317::0::1::::
 ::res://TheMiddleNurseFatherOutisCode/Relics/::1783677713
 SealedSword.cs::CSharpScript::4746811683842282374::1783677713::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisRelic.cs::CSharpScript::194360154058807062::1782513135::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/scenes/::1783828804
+::res://TheMiddleNurseFatherOutisCode/scenes/::1783828882
 char_select_bg_themiddlenursefatheroutis.tscn::PackedScene::3558554428643597497::1782985516::0::1::::<><><>0<>0<><>::uid://ccwcwrv0uvnvr::::res://TheMiddleNurseFatherOutisCode/Character/Background_video/The_House_of_Spiders_The_Middle_Nursefather_Outis_Uptie_III_Animation.ogv
-OutisIcon.tscn::PackedScene::4511097122401330907::1783828804::0::1::::<><><>0<>0<><>::uid://dosa5g20kc5o5::::res://TheMiddleNurseFatherOutis/images/charui/map_marker_themiddlenursefatheroutis.png
+OutisIcon.tscn::PackedScene::4511097122401330907::1783828882::0::1::::<><><>0<>0<><>::uid://dosa5g20kc5o5::::res://TheMiddleNurseFatherOutis/images/charui/map_marker_themiddlenursefatheroutis.png
 ::res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/::1783295795
 outis_big_energy.png::CompressedTexture2D::2612087461849135414::1782850405::1782984451::1::::<><><>0<>0<>d6b9cca96bc1180d816324b98ed693a4<>res://.godot/imported/outis_big_energy.png-8d1ebff24159df05a5f1a3ad7d2d9dfc.ctex::
 outis_big_energy_2.png::CompressedTexture2D::3709612596399708594::1782850416::1782984451::1::::<><><>0<>0<>38197ae03fcc055c175ac0a6b6d37d31<>res://.godot/imported/outis_big_energy_2.png-5584cdc12f23349659ff4016dfa2a304.ctex::
