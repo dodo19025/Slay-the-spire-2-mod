@@ -64,6 +64,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override string CustomRestSiteAnimPath => "res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Rest_site.tscn";
 
+
+
     public override Color MapDrawingColor => new("D938BD");
     public override Color EnergyLabelOutlineColor => new("D938BD");
     
@@ -91,6 +93,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override string CustomIconTexturePath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectIconPath => "char_select_themiddlenursefatheroutis.png".CharacterUiPath();
+    
+    public override string CustomTrailPath => "character_icon_themiddlenursefatheroutis.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_themiddlenursefatheroutis_locked.png".CharacterUiPath();
     public override string CustomMapMarkerPath => "map_marker_themiddlenursefatheroutis.png".CharacterUiPath();
     
