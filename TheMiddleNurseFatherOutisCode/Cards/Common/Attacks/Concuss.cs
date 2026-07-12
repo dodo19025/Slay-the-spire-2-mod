@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -19,6 +20,9 @@ public class Concuss() : TheMiddleNurseFatherOutisCard(
     2, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
+    private bool _foundDebuff = false;
+
+    protected override bool ShouldGlowGoldInternal => AnyHasDebuff();
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("StrengthPowerDown", 3m),
@@ -30,13 +34,13 @@ public class Concuss() : TheMiddleNurseFatherOutisCard(
         HoverTipFactory.FromPower<StrengthPower>()
     ];
     
-    private bool _foundDebuff = false;
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
+        
         foreach (PowerModel power in play.Target.Powers)
         {
             if (power != null && power.Type == PowerType.Debuff)
@@ -44,12 +48,26 @@ public class Concuss() : TheMiddleNurseFatherOutisCard(
                 _foundDebuff = true;
             }
         }
-
         if (_foundDebuff)
         {
             await PowerCmd.Apply<SwatPower>(choiceContext, play.Target, base.DynamicVars["StrengthPowerDown"].BaseValue,base.Owner.Creature,this);
         }
 
+    }
+
+    public bool AnyHasDebuff()
+    {
+        foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+        {
+            foreach (PowerModel power in hittableEnemy.Powers)
+            {
+                if (power != null && power.Type == PowerType.Debuff)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     protected override void OnUpgrade()
