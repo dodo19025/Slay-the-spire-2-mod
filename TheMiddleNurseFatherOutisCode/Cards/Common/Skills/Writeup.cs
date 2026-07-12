@@ -21,7 +21,7 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("VunNextTurnPower", 1m),
-        new DynamicVar("EnergyNextTurnPower", 1m),
+        new EnergyVar(1)
     ];
 
 
@@ -33,12 +33,12 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
         
         foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
-            await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars["VunNextTurnPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars.Energy.IntValue, base.Owner.Creature, this);
         }
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["EnergyNextTurnPower"].UpgradeValueBy(1);
+        base.DynamicVars.Energy.UpgradeValueBy(1);
     }
 }

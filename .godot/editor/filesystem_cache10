@@ -8,10 +8,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1783874395::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1783874745
+::res://bin/ExportRelease/net9.0/publish/::1783876110
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1783874399::0::1::::<><><>0<>0<><>::
-::res://sfx/::1783874403
-glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783874748::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1783874748
+glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1783876113::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1783172607::1783172608::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -24,7 +24,7 @@ mod_image.png::CompressedTexture2D::3928357394007599922::1782826949::1782827222:
 ::res://TheMiddleNurseFatherOutis/images/::1782826982
 ::res://TheMiddleNurseFatherOutis/images/card_portraits/::1782772126
 card.png::CompressedTexture2D::4168657877980155789::1782513113::1782513714::1::::<><><>0<>0<>3fed4433db2b4714f15fe1556378e2d8<>res://.godot/imported/card.png-d02ab3c49767a149375984d990ca081e.ctex::
-::res://TheMiddleNurseFatherOutis/images/card_portraits/big/::1783874403
+::res://TheMiddleNurseFatherOutis/images/card_portraits/big/::1783876080
 brute.png::CompressedTexture2D::8780952978120522073::1783702273::1783702337::1::::<><><>0<>0<>7e3881b64df1971e8f66911e797792e0<>res://.godot/imported/brute.png-7ed4a3299b587d7ee0dd2a6b16c475c2.ctex::
 card.png::CompressedTexture2D::5855528349806234641::1782513113::1782513714::1::::<><><>0<>0<>8cf48a249b484f1cfa6d4675a0b0c674<>res://.godot/imported/card.png-6c746b2e883d939267868c15325aee35.ctex::
 cross_up.png::CompressedTexture2D::245035841978743613::1783674024::1783674515::1::::<><><>0<>0<>412b2cfe0bea527e062efa161f594497<>res://.godot/imported/cross_up.png-cd3cdad9584308605b750c277d34cc08.ctex::
@@ -38,7 +38,7 @@ middle_strike.png::CompressedTexture2D::8493563153776287421::1783874731::1783874
 poised_breathing.png::CompressedTexture2D::4732657493478150696::1783700309::1783700379::1::::<><><>0<>0<>6bb721c9d832337c19e83acdc0b79701<>res://.godot/imported/poised_breathing.png-35dbcf886fd8a2ef67912fe21b3710ca.ctex::
 punching.png::CompressedTexture2D::5937239568256927368::1783822650::1783822684::1::::<><><>0<>0<>62d46363fe46996949603753d80ab8b1<>res://.godot/imported/punching.png-cecc0e6e01e818362acc587b1db06dfa.ctex::
 punting.png::CompressedTexture2D::4885489455443698979::1783466600::1783467355::1::::<><><>0<>0<>4a89c7e6e6b193b7e667049c530d777c<>res://.godot/imported/punting.png-4deb59ba18cd735cfd5b2e0fee58c39d.ctex::
-ready_to_write.png::CompressedTexture2D::5804454178427731229::1783505036::1783505073::1::::<><><>0<>0<>a6b6a428ed793e41d9cc47cde273292c<>res://.godot/imported/ready_to_write.png-b635bb5abd757866dea3c3e9a3b9835c.ctex::
+ready_to_write.png::CompressedTexture2D::5804454178427731229::1783875440::1783876113::1::::<><><>0<>0<>a6b6a428ed793e41d9cc47cde273292c<>res://.godot/imported/ready_to_write.png-b635bb5abd757866dea3c3e9a3b9835c.ctex::
 recite_vengeance.png::CompressedTexture2D::1242292148596827188::1783681946::1783681974::1::::<><><>0<>0<>543146dbec6e8b8b22741b7220289be1<>res://.godot/imported/recite_vengeance.png-45c7f8fc79ee428b2f49a32890b1014c.ctex::
 rule_violation.png::CompressedTexture2D::215533223662539016::1783303023::1783303612::1::::<><><>0<>0<>3687d1974d18639a2ba959c227ebe8d8<>res://.godot/imported/rule_violation.png-87cf386ec943b1029fbfc04471f0e360.ctex::
 stomping.png::CompressedTexture2D::8812280502800568385::1783467319::1783467355::1::::<><><>0<>0<>3e24b860dadc0287d90942732a6e26dc<>res://.godot/imported/stomping.png-69e2b80ec28ac3addfa93712d555b768.ctex::
@@ -46,6 +46,7 @@ swat.png::CompressedTexture2D::8122632894989707775::1783472913::1783472960::1:::
 traces.png::CompressedTexture2D::7831945971224944218::1783696751::1783696777::1::::<><><>0<>0<>a2d5ec1b0c88453e300a4f9b7b4c1871<>res://.godot/imported/traces.png-3c3badda31efb1a7aba6299cf21d48d1.ctex::
 unpacking.png::CompressedTexture2D::3989544255134125429::1783158755::1783158883::1::::<><><>0<>0<>0ff58f9740a70baa9e8e7f5ea34aa200<>res://.godot/imported/unpacking.png-c607858a492a56ddbfc0a3b8e6b03bce.ctex::
 weak_horizontal.png::CompressedTexture2D::3043143648578542771::1783681136::1783681167::1::::<><><>0<>0<>bd713cc2e56831301795ff76ae38cad5<>res://.godot/imported/weak_horizontal.png-0fbf2f51180c26fd86f15264f6f324f1.ctex::
+writeup.png::CompressedTexture2D::3462423100208733353::1783876082::1783876113::1::::<><><>0<>0<>bde35d044e9fbf17f7cffab95c37eb51<>res://.godot/imported/writeup.png-41e27a0db5d2271905df58cbedc56b4e.ctex::
 ::res://TheMiddleNurseFatherOutis/images/charui/::1783410620
 big_energy.png::CompressedTexture2D::3975707923808303425::1783410594::1783410620::1::::<><><>0<>0<>d32c72c70b3889a4647940ffb42d6a54<>res://.godot/imported/big_energy.png-045707b1bba302aba931c961bd3277c1.ctex::
 character_icon_char_name.png::CompressedTexture2D::6514592884812774635::1782513113::1782513714::1::::<><><>0<>0<>6a9a9affb7ab1a8367d4b67d51571585<>res://.godot/imported/character_icon_char_name.png-e28424e18cee4a48d1c8838c4025fbd4.ctex::
@@ -95,9 +96,9 @@ sealed_sword_outline.png::CompressedTexture2D::2808261636630653303::1782571025::
 relic.png::CompressedTexture2D::8663117661599846571::1782513113::1782513714::1::::<><><>0<>0<>6fe809b34bfc782e63d96117a76af902<>res://.godot/imported/relic.png-e75261016069bd5c6bb9c4b27d0a2568.ctex::
 sealed_sword.png::CompressedTexture2D::4817897136256058049::1782810638::1782810804::1::::<><><>0<>0<>893698c768fc3fa545469bbe6d1b09d6<>res://.godot/imported/sealed_sword.png-d5c99eeeb206dbb29504df98e2c6ba25.ctex::
 ::res://TheMiddleNurseFatherOutis/localization/::1782513113
-::res://TheMiddleNurseFatherOutis/localization/eng/::1783828224
+::res://TheMiddleNurseFatherOutis/localization/eng/::1783875382
 ancients.json::JSON::-1::1783828224::0::1::::<><><>0<>0<><>::
-cards.json::JSON::-1::1783820793::0::1::::<><><>0<>0<><>::
+cards.json::JSON::-1::1783875382::0::1::::<><><>0<>0<><>::
 card_keywords.json::JSON::-1::1783794208::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1783825139::0::1::::<><><>0<>0<><>::
 powers.json::JSON::-1::1783793270::0::1::::<><><>0<>0<><>::
@@ -122,7 +123,7 @@ Kicking.cs::CSharpScript::8581863033330639031::1783799213::0::1::::<><><>0<>0<><
 Punching.cs::CSharpScript::4270047470849447811::1783824795::0::1::::<><><>0<>0<><>::
 Punting.cs::CSharpScript::1726986781571388872::1783809577::0::1::::<><><>0<>0<><>::
 Stomping.cs::CSharpScript::4559008823247603784::1783811606::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Cards/Common/Skills/::1783809256
+::res://TheMiddleNurseFatherOutisCode/Cards/Common/Skills/::1783875382
 Brute.cs::CSharpScript::4994256068082088221::1783798941::0::1::::<><><>0<>0<><>::
 HypedUp.cs::CSharpScript::4011426268015245838::1783505705::0::1::::<><><>0<>0<><>::
 Ignite.cs::CSharpScript::7187051753168595948::1783809256::0::1::::<><><>0<>0<><>::
@@ -131,6 +132,7 @@ ReadyToWrite.cs::CSharpScript::4059937316470544097::1783799033::0::1::::<><><>0<
 ReciteVengeance.cs::CSharpScript::4238940734852784594::1783787731::0::1::::<><><>0<>0<><>::
 Swat.cs::CSharpScript::6381397821129673504::1783701063::0::1::::<><><>0<>0<><>::
 Traces.cs::CSharpScript::6421993140143756146::1783696599::0::1::::<><><>0<>0<><>::
+Writeup.cs::CSharpScript::3359593800758173510::1783875382::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Cards/Rare/::1783400474
 ::res://TheMiddleNurseFatherOutisCode/Cards/Uncommon/::1783699178
 ::res://TheMiddleNurseFatherOutisCode/Cards/Uncommon/Attacks/::1783801317
