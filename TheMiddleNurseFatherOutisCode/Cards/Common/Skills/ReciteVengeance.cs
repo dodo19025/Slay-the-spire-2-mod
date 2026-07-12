@@ -45,7 +45,7 @@ public class ReciteVengeance()
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(2m);
 
     }
 }
