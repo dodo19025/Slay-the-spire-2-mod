@@ -27,10 +27,13 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        CardModel cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Draw.GetPile(base.Owner), base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, base.DynamicVars.Cards.IntValue))).FirstOrDefault();
+        List<CardModel> cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Draw.GetPile(base.Owner), base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, base.DynamicVars.Cards.IntValue))).ToList();
         if (cardModel != null)
         {
-            await CardPileCmd.Add(cardModel, PileType.Discard);
+            foreach (var card in cardModel)
+            {
+                await CardPileCmd.Add(cardModel, PileType.Discard);
+            }
         }
     }
 
