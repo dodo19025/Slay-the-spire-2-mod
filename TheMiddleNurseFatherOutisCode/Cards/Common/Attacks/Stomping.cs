@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -26,6 +27,10 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         new DynamicVar("HitAmount",2m),
         new DynamicVar("BleedThreshold",5m)
     });
+
+
+
+    protected override bool ShouldGlowGoldInternal => HasEnoughBleed();
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
@@ -47,6 +52,22 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
             decimal AmountOfHitsIncreased = Math.Round(base.DynamicVars["BleedThreshold"].BaseValue / TargetBleed);
             base.DynamicVars["HitAmount"].BaseValue++;
         }
+    }
+
+    public bool HasEnoughBleed()
+    {
+        foreach (Creature HittableEnemy in base.CombatState.HittableEnemies)
+        {
+            if (HittableEnemy.HasPower<BleedPower>())
+            {
+                int bleednum = HittableEnemy.GetPowerAmount<BleedPower>();
+                if (bleednum >= base.DynamicVars["BleedThreshold"].BaseValue)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     protected override void OnUpgrade()
