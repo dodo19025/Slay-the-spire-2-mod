@@ -62,6 +62,11 @@ public static class TheMiddleNursefatherOutisCmd
     
     public static async Task PlayAnimation(this Creature creature, string AnimationName, float NormalSecondWait)
     {
+        //Owner.Player?.Character is Character.TheMiddleNurseFatherOutis
+        if (!(creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis))
+        {
+            return;
+        }
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         if (node?.Visuals == null)
         {
