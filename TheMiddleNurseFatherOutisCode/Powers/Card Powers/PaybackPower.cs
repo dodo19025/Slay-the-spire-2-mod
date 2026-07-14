@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Saves.Validation;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
@@ -42,7 +43,15 @@ public class PaybackPower()
         
         if (target.IsPlayer && result.UnblockedDamage > 0)
         {
-            await Owner.PlayAnimation("attack",0.2f);
+            if (base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
+            {
+                await Owner.PlayAnimation("attack", 0.2f);
+
+            }
+            else if (!(base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis))
+            {
+                await CreatureCmd.TriggerAnim(base.Owner, "Attack",0.2f);
+            }
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             _didPayback = true;
             MainFile.Logger.Info("Did Payback");

@@ -32,7 +32,7 @@ public class BadAssAssKicking()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(8m,ValueProp.Move),
-        new DynamicVar("PaybackAmount",4m)
+        new DynamicVar("PaybackAmount",3m)
     ];
 
     protected override async Task OnPlay(
@@ -46,6 +46,6 @@ public class BadAssAssKicking()
     protected override void OnUpgrade()
     {
         base.DynamicVars.Damage.UpgradeValueBy(2m);
-        base.DynamicVars["PaybackAmount"].UpgradeValueBy(1m);
+        base.DynamicVars["PaybackAmount"].UpgradeValueBy(2m);
     }
 }
