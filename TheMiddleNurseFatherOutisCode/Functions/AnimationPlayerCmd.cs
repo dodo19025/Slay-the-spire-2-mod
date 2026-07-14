@@ -53,13 +53,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
                  await dealer.PlayAnimation("legattack",0.2f);
             }
         }
-
-        if (cardSource.Type == CardType.Skill &&
-            cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character
-                .TheMiddleNurseFatherOutis)
-        {
-            await dealer.PlayAnimation("cast", 0.2f);
-        }
+        
 
     }
     
