@@ -71,7 +71,7 @@
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Mean Kick",
 
-  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage.\nGain {PaybackAmount:diff()} [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage for each time [gold]Payback[/gold] was activated this combat.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy.",

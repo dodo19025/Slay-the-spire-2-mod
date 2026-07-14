@@ -1,8 +1,11 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -31,8 +34,11 @@ public class BadAssAssKicking()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(8m,ValueProp.Move),
-        new DynamicVar("PaybackAmount",3m)
+        new DamageVar(3m,ValueProp.Move),
+        new RepeatVar(1),
+        new CalculationBaseVar(0),
+        new CalculationExtraVar(1m),
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + PaybackPower.PaybackAcitvated[base.Owner.PlayerCombatState]),
     ];
 
     protected override async Task OnPlay(
@@ -46,6 +52,5 @@ public class BadAssAssKicking()
     protected override void OnUpgrade()
     {
         base.DynamicVars.Damage.UpgradeValueBy(2m);
-        base.DynamicVars["PaybackAmount"].UpgradeValueBy(2m);
     }
 }

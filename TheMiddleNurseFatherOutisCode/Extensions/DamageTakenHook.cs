@@ -10,8 +10,8 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 
 public class DamageTakenHook() : CustomSingletonModel(HookType.Combat)
 {
-    public static readonly SpireField<PlayerCombatState, int> PaybackAcitvated =
-        new SpireField<PlayerCombatState, int>(() => 0);
+    public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
+
     public static readonly SpireField<PlayerCombatState, bool> TookDamageLastTurn =
         new SpireField<PlayerCombatState, bool>(() => false);
 
