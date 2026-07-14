@@ -19,6 +19,8 @@ public class MeanKick() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
+
+    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<PaybackPower>();
     protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { TheMiddleNurseFatherOutisTags.Kick };
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
@@ -27,6 +29,10 @@ public class MeanKick() : TheMiddleNurseFatherOutisCard(
         new DynamicVar("HitAmount",1m)
     ];
 
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<PaybackPower>()
+    ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -38,7 +44,7 @@ public class MeanKick() : TheMiddleNurseFatherOutisCard(
             _hitAmount++;
         }
         await CommonActions.CardAttack(this, play.Target)
-            .WithHitCount((int)base.DynamicVars["HitAmount"].BaseValue)
+            .WithHitCount(_hitAmount)
             .Execute(choiceContext);
     }
 

@@ -74,6 +74,6 @@
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage.\nGain {PaybackAmount:diff()} [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
-  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy once.",
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy.",
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush"
 }
