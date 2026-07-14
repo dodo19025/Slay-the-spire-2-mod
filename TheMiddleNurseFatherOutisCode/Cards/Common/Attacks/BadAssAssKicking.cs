@@ -43,7 +43,7 @@ public class BadAssAssKicking()
         new RepeatVar(1),
         new CalculationBaseVar(0),
         new CalculationExtraVar(1m),
-        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + DamageTakenHook.PaybackAcitvated[card.Owner.PlayerCombatState]),
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 0 + DamageTakenHook.PaybackAcitvated[card.Owner.PlayerCombatState]),
     ];
     
     //
