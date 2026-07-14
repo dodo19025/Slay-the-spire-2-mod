@@ -39,14 +39,6 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
         }
     }
 
-    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (DamageTakenHook.TookDamageLastTurn[player.PlayerCombatState])
-        {
-            SetStarCostUntilPlayed(0);
-        }
-        return Task.CompletedTask;
-    }
 
     protected override void OnUpgrade()
     {

@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -11,8 +12,10 @@ using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Characters;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -51,7 +54,22 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
             await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars["VunNextTurnPower"].BaseValue, base.Owner.Creature, this);
         }
     }
-    
+
+    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+        Creature? dealer, CardModel? cardSource)
+    {
+        if (dealer == null || dealer.Side == target.Side || !props.IsPoweredAttack() || dealer.IsPlayer ||
+            !target.IsPlayer)
+        {
+            return;
+        }
+
+        if (target.IsPlayer && result.UnblockedDamage > 0)
+        {
+            base.EnergyCost.SetUntilPlayed(0);
+        }
+
+    }
 
 
     protected override void OnUpgrade()

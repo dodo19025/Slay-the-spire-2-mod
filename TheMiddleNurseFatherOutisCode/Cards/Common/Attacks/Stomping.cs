@@ -18,12 +18,13 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[4]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[5]
     {
-        new DamageVar(4m, ValueProp.Move),
+        new DamageVar(3m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
         new DynamicVar("BleedPower",1m),
-        new DynamicVar("HitAmount",2m)
+        new DynamicVar("HitAmount",2m),
+        new DynamicVar("BleedThreshold",5m)
     });
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -37,9 +38,15 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         for (int i = 0; i < base.DynamicVars["HitAmount"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            
             await PowerCmd.Apply<BleedPower>(choiceContext, play.Target,base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
         }
+
+        int TargetBleed = play.Target.GetPowerAmount<BleedPower>();
+        if (TargetBleed >= base.DynamicVars["BleedThreshold"].BaseValue)
+        {
+            decimal AmountOfHitsIncreased = Math.Round(base.DynamicVars["BleedThreshold"].BaseValue / TargetBleed);
+        }
+        base.DynamicVars["HitAmount"].BaseValue++;
     }
 
     protected override void OnUpgrade()
