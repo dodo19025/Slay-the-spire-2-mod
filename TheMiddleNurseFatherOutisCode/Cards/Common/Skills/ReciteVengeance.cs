@@ -1,6 +1,7 @@
 ﻿using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -19,11 +20,25 @@ public class ReciteVengeance()
         CardType.Skill, CardRarity.Common,
         TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
     {
-        new BlockVar(6m, ValueProp.Move),
-        new DynamicVar("RisingFeverLose", 1m)
+        new BlockVar(5m, ValueProp.Move),
+        new DynamicVar("RisingFeverLose", 1m),
+        new DynamicVar("IncreasedBlock", 3m)
     });
+    
+    protected override bool ShouldGlowGoldInternal
+    {
+        get
+        {
+            if (base.CombatState == null)
+            {
+                return false;
+            }
+            return base.CombatState.HittableEnemies.Any((Creature e) => e.Monster?.IntendsToAttack ?? false);
+        }
+    }
+
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
@@ -39,8 +54,26 @@ public class ReciteVengeance()
         if (base.Owner.Creature.HasPower<RisingFeverPower>())
         {
             await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["RisingFeverLose"].BaseValue,base.Owner.Creature,this);
-
         }
+
+        foreach (Creature HittableEnemy in base.CombatState.HittableEnemies)
+        {
+            if (HittableEnemy.Monster.IntendsToAttack)
+            {
+                await CreatureCmd.GainBlock(Owner.Creature, base.DynamicVars["IncreasedBlock"].BaseValue, ValueProp.Move, play);
+
+            }
+        }
+
+    }
+
+    public bool AnyEnemyIntendsAttack()
+    {
+        if (base.CombatState == null)
+        {
+            return false;
+        }
+        return base.CombatState.HittableEnemies.Any((Creature e) => e.Monster?.IntendsToAttack ?? false);
     }
 
     protected override void OnUpgrade()
