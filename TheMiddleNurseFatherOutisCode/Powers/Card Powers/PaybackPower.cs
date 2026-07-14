@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -8,6 +9,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Validation;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -78,8 +80,10 @@ public class PaybackPower()
     public override async Task AfterCombatEnd(CombatRoom room)
     {
         PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
-        DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
+        DamageTakenHook.PaybackAcitvated[playerCombatState] = 0;
         DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
     }
+    
+
 }
 
