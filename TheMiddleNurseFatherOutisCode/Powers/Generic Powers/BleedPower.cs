@@ -35,14 +35,14 @@ public class BleedPower()
     }
 
 
-    public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
+    public static decimal CalculateBleedLost(decimal bleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
-        if (BleedAmount <= 1)
+        if (bleedAmount <= 1)
         {
             return  1m;
         }
 
-        return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
+        return ((decimal)Math.Round((decimal)(bleedAmount * (1m / 2m))));
 
     }
     
