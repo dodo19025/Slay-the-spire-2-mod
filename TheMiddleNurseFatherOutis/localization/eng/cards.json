@@ -59,7 +59,7 @@
   "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with 'Kick' in its name.",
   "THEMIDDLENURSEFATHEROUTIS-PUNCHING.title": "Punching!",
 
-  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 if you took damage last turn.",
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup",
   
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.description": "Deal {Damage:diff()} damage.\nIf the enemy has a debuff, they lose {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",

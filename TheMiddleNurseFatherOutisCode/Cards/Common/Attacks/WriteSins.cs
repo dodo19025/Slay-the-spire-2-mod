@@ -2,11 +2,13 @@
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
@@ -35,6 +37,15 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
                 await CardPileCmd.Add(cardModel, PileType.Discard);
             }
         }
+    }
+
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (DamageTakenHook.TookDamageLastTurn[player.PlayerCombatState])
+        {
+            SetStarCostUntilPlayed(0);
+        }
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()
