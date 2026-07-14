@@ -14,7 +14,7 @@
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.\nIncrease the amount of times this card hits for every {BleedThreshold:diff()} [gold]Bleed[/gold] on enemy",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.\nIncrease this card's hit amount by 1 if the enemy has {BleedThreshold:diff()} [gold]Bleed[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
   "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]Hand[/gold].",

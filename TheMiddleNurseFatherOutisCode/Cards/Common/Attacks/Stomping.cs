@@ -45,8 +45,8 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         if (TargetBleed >= base.DynamicVars["BleedThreshold"].BaseValue)
         {
             decimal AmountOfHitsIncreased = Math.Round(base.DynamicVars["BleedThreshold"].BaseValue / TargetBleed);
+            base.DynamicVars["HitAmount"].BaseValue++;
         }
-        base.DynamicVars["HitAmount"].BaseValue++;
     }
 
     protected override void OnUpgrade()
