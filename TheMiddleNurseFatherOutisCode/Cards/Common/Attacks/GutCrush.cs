@@ -63,6 +63,7 @@ public class GutCrush() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
+        base.DynamicVars.Damage.UpgradeValueBy(7m);
 
     }
 }
