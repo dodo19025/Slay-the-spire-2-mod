@@ -67,5 +67,14 @@
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.title": "Concuss",
 
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nPut {Cards:diff()} {Cards:plural:card|cards} from your [gold]Draw Pile[/gold] into your [gold]Discard Pile[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins"
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins",
+
+  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Mean Kick",
+
+  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {damage:diff()} damage.\nGain {PaybackAmount:diff()} [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Bad-Ass Ass Kicking",
+
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy once.",
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush"
 }

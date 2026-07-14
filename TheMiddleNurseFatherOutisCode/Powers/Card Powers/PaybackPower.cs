@@ -42,7 +42,7 @@ public class PaybackPower()
         
         if (target.IsPlayer && result.UnblockedDamage > 0)
         {
-            await Owner.PlayAnimation("legattack",0.2f);
+            await Owner.PlayAnimation("attack",0.2f);
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             _didPayback = true;
             MainFile.Logger.Info("Did Payback");

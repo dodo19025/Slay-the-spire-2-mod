@@ -35,7 +35,7 @@ public class BleedPower()
     }
 
 
-    public decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
+    public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
         if (BleedAmount <= 1)
         {
@@ -86,16 +86,10 @@ public class BleedPower()
     {
         if (dealer != null && target != base.Owner && dealer == base.Owner && props.IsPoweredAttack() && target != null && base.Amount > 0)
         {
-            await CreatureCmd.Damage(choiceContext, base.Owner, base.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
-            if (base.Owner.IsAlive)
-            {
-                await PowerCmd.ModifyAmount(choiceContext, this, -CalculateBleedLost(base.Amount), null, null);
-            }
-            else
-            {
-                await Cmd.CustomScaledWait(0.1f, 0.25f);
-            }
+            await TheMiddleNursefatherOutisCmd.ActivateBleed(choiceContext, base.Owner, base.Amount);
         }
 
     }
+
+
 }

@@ -6,6 +6,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Achievements;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis;
@@ -86,5 +88,18 @@ public static class TheMiddleNursefatherOutisCmd
             await Cmd.CustomScaledWait(FastSecondWait, NormalSecondWait);
         }
     }
+    
+    public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature target, decimal BleedAmount)
+    {
+        await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
+        if (target.IsAlive)
+        {
+            await PowerCmd.ModifyAmount(choiceContext, target.GetPower<BleedPower>(), -(BleedAmount), null, null);
+        }
+        else
+        {
+            await Cmd.CustomScaledWait(0.1f, 0.25f);
+        }
+    } 
 
 }
