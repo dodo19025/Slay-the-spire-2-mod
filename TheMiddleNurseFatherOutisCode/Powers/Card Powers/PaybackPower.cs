@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -28,6 +29,8 @@ public class PaybackPower()
     [
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
+
+    public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
     
 
     private bool _didPayback = false;
@@ -54,7 +57,11 @@ public class PaybackPower()
             }
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             _didPayback = true;
+            PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
+            PaybackAcitvated[playerCombatState] += 1;
+            MainFile.Logger.Info($"Num of paybacks done: {PaybackAcitvated[playerCombatState]}");
             MainFile.Logger.Info("Did Payback");
+            
         }
     }
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
