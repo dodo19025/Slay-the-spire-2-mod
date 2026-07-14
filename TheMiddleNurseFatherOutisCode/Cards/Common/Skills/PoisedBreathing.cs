@@ -32,8 +32,8 @@ public class PoisedBreathing()
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<PaybackPower>(),
-            base.EnergyHoverTip
+        HoverTipFactory.FromPower<PaybackPower>(), 
+        base.EnergyHoverTip
     ];
 
     protected override bool ShouldGlowGoldInternal =>
