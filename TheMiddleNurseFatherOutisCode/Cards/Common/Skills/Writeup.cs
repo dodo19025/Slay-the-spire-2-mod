@@ -34,7 +34,8 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<VulnerableNextTurn>()
+        HoverTipFactory.FromPower<VulnerableNextTurn>(),
+        base.EnergyHoverTip
     ];
 
 
