@@ -79,6 +79,7 @@ public class PaybackPower()
     {
         PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
         DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
+        DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
     }
 }
 
