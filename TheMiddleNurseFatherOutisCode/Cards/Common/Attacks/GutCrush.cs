@@ -45,7 +45,6 @@ public class GutCrush() : TheMiddleNurseFatherOutisCard(
         if (play.Target.IsAlive && play.Target.HasPower<BleedPower>())
         {
             int _enemyBleed = play.Target.GetPowerAmount<BleedPower>();
-            await CreatureCmd.Damage(choiceContext, play.Target, (decimal)_enemyBleed, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
             await TheMiddleNursefatherOutisCmd.ActivateBleed(choiceContext, play.Target, _enemyBleed);
             
         }

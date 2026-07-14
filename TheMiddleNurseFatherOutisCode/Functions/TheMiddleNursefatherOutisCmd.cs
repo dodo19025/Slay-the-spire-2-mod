@@ -89,12 +89,23 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
     
+    public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
+    {
+        if (BleedAmount <= 1)
+        {
+            return  1m;
+        }
+
+        return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
+
+    }
+    
     public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature target, decimal BleedAmount)
     {
         await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
         if (target.IsAlive)
         {
-            await PowerCmd.ModifyAmount(choiceContext, target.GetPower<BleedPower>(), -(BleedAmount), null, null);
+            await PowerCmd.ModifyAmount(choiceContext, target.GetPower<BleedPower>(), -CalculateBleedLost(BleedAmount), null, null);
         }
         else
         {
