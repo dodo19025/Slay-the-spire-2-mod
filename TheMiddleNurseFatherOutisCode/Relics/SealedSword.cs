@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -9,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
@@ -52,6 +54,15 @@ public class SealedSword()
 			
 		}
 		
+	}
+	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+	{
+		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 1)
+		{
+			PlayerCombatState? playerCombatState = base.Owner.Creature.Player.PlayerCombatState;
+			DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
+			DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
+		}
 	}
 	
 
