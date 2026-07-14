@@ -41,7 +41,7 @@
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervour[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] to ALL enemies",
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal",
 
-  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.description": "Gain {BaseBlock:diff()}[gold] Block[/gold].\nLose {RisingFeverLose:diff()} [gold]Rising Fever[/gold].\nGain {IncreasedBlock:diff()} [gold]Block[/gold] for every enemy attacking.",
+  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.description": "Gain {Block:diff()}[gold] Block[/gold].\nLose {RisingFeverLose:diff()} [gold]Rising Fever[/gold].\nGain {IncreasedBlock:diff()} [gold]Block[/gold] for each enemy attacking.",
   "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.title": "Recite Vengeance",
 
   "THEMIDDLENURSEFATHEROUTIS-TRACES.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Exhaust[/gold] a card in your [gold]Discard[/gold] pile.",

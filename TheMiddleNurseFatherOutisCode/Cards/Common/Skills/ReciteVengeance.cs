@@ -22,7 +22,7 @@ public class ReciteVengeance()
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
     {
-        new BlockVar(5m, ValueProp.Move),
+        new BlockVar(4m, ValueProp.Move),
         new DynamicVar("RisingFeverLose", 1m),
         new DynamicVar("IncreasedBlock", 3m)
     });
@@ -78,7 +78,7 @@ public class ReciteVengeance()
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(2m);
+        base.DynamicVars["IncreasedBlock"].UpgradeValueBy(1m);
 
     }
 }
