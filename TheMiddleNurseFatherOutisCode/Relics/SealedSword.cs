@@ -60,7 +60,7 @@ public class SealedSword()
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState.TurnNumber <= 1)
 		{
 			PlayerCombatState? playerCombatState = base.Owner.Creature.Player.PlayerCombatState;
-			DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
+			DamageTakenHook.PaybackAcitvated[playerCombatState] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
 		}
 	}
