@@ -35,7 +35,8 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("BurnApply", 7m),
+        new DynamicVar("BurnApply", 9m),
+        new DynamicVar("SelfBurn", 4m)
     ];
 
 
@@ -44,6 +45,8 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue,
+            base.Owner.Creature, this);
+        await PowerCmd.Apply<BurnPower>(choiceContext, base.Owner.Creature, base.DynamicVars["SelfBurn"].BaseValue,
             base.Owner.Creature, this);
         if (Owner.Creature.HasPower<LaevateinnPower>())
         {
@@ -57,6 +60,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     protected override void OnUpgrade()
     {
         base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
+        base.DynamicVars["SelfBurn"].UpgradeValueBy(-2m);
 
     }
 }
