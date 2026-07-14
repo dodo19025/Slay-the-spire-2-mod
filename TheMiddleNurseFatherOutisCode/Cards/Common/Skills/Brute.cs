@@ -17,13 +17,13 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class Brute() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Skill, CardRarity.Common,
+    2, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new SeetheVar(5m),
-        new BlockVar(7m,ValueProp.Move)
+        new SeetheVar(6m),
+        new BlockVar(10m,ValueProp.Move)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -44,7 +44,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars["Seethe"].UpgradeValueBy(1m);
-        base.DynamicVars.Block.UpgradeValueBy(2m);
+        this.DynamicVars["Seethe"].UpgradeValueBy(2m);
+        base.DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

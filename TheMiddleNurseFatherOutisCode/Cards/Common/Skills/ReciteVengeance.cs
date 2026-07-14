@@ -66,16 +66,7 @@ public class ReciteVengeance()
         }
 
     }
-
-    public bool AnyEnemyIntendsAttack()
-    {
-        if (base.CombatState == null)
-        {
-            return false;
-        }
-        return base.CombatState.HittableEnemies.Any((Creature e) => e.Monster?.IntendsToAttack ?? false);
-    }
-
+    
     protected override void OnUpgrade()
     {
         base.DynamicVars["IncreasedBlock"].UpgradeValueBy(1m);
