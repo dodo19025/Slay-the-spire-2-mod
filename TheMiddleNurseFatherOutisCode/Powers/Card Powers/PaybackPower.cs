@@ -8,8 +8,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Validation;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
@@ -58,8 +60,8 @@ public class PaybackPower()
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             _didPayback = true;
             PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
-            PaybackAcitvated[playerCombatState] += 1;
-            MainFile.Logger.Info($"Num of paybacks done: {PaybackAcitvated[playerCombatState]}");
+            DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
+            MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState]}");
             MainFile.Logger.Info("Did Payback");
             
         }
@@ -71,6 +73,12 @@ public class PaybackPower()
             await PowerCmd.Remove(this);
             _didPayback = false;
         }
+    }
+
+    public override async Task AfterCombatEnd(CombatRoom room)
+    {
+        PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
+        DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
     }
 }
 

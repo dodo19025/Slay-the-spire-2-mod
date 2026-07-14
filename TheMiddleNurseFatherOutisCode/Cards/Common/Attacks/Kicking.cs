@@ -41,7 +41,7 @@ public class Kicking() : TheMiddleNurseFatherOutisCard(
             .Execute(choiceContext);
         
         CardModel card = CreateClone();
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Draw,base.Owner),2.2f);
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand,base.Owner),2.2f);
     }
 
     protected override void OnUpgrade()

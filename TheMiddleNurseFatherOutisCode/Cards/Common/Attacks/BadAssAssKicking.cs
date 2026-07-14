@@ -1,4 +1,6 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -9,6 +11,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
@@ -32,22 +35,29 @@ public class BadAssAssKicking()
     ];
 
     
+    
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(3m,ValueProp.Move),
         new RepeatVar(1),
         new CalculationBaseVar(0),
         new CalculationExtraVar(1m),
-        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + PaybackPower.PaybackAcitvated[base.Owner.PlayerCombatState]),
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + DamageTakenHook.PaybackAcitvated[card.Owner.PlayerCombatState]),
     ];
-
+    
+    //
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        Owner.Creature.AdditionalPayback(choiceContext,base.DynamicVars["PaybackAmount"].BaseValue);
+        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
+            .WithHitCount((int)((CalculatedVar)base.DynamicVars["CalculatedHits"]).Calculate(play.Target))
+            .Targeting(play.Target)
+            .FromCard(this, play)
+            .Execute(choiceContext);
     }
+    
 
     protected override void OnUpgrade()
     {
