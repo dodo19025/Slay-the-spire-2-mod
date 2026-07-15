@@ -32,6 +32,8 @@ public class RuleViolation()
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PaybackPower>(),
+        HoverTipFactory.FromPower<MiddleStyleTattoos>()
+
     ];
     
     

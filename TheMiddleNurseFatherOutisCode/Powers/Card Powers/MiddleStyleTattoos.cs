@@ -34,7 +34,7 @@ public class MiddleStyleTattoos()
         {
             return amount;
         }
-        return Math.Max(0m, amount - base.DynamicVars["HpLossReduction"].BaseValue);
+        return Math.Max(0m, amount - base.DynamicVars["DamageReduction"].BaseValue);
     }
     
     public override Task AfterModifyingHpLostAfterOsty()

@@ -25,7 +25,8 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
     });
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.Static(StaticHoverTip.Block)
+        HoverTipFactory.Static(StaticHoverTip.Block),
+        HoverTipFactory.FromPower<MiddleStyleTattoos>()
     ];
 
 
