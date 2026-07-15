@@ -48,7 +48,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next attack applies [blue]{Amount}[/blue] [gold]Bleed[/gold] on hit this turn.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack",
 
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.description": "Whenever you would lose HP, lose [blue]1[/blue less. Reduced by [blue]1[/blue] at turn end.",
+  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.title": "Middle Style Tattoos"
 
