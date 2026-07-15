@@ -22,8 +22,8 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new SeetheVar(6m),
-        new BlockVar(10m,ValueProp.Move)
+        new BlockVar(10m,ValueProp.Move),
+        new DynamicVar("TattosGained",1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -35,16 +35,14 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await Owner.Creature.GainPayback(choiceContext, this.DynamicVars["Seethe"].BaseValue,
-            base.Owner.Creature, this);
-        
+        await PowerCmd.Apply<MiddleStyleTattoos>(choiceContext,base.Owner.Creature,base.DynamicVars["TattosGained"].BaseValue,base.Owner.Creature,this);
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
 
     }
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars["Seethe"].UpgradeValueBy(2m);
+        this.DynamicVars["TattosGained"].UpgradeValueBy(1m);
         base.DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

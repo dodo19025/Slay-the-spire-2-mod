@@ -1,5 +1,6 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -24,7 +25,8 @@ public class RuleViolation()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new SeetheVar(3m)
+        new SeetheVar(3m),
+        new DynamicVar("TattosGained", 1m)
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -38,7 +40,12 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        int paybackamount = Owner.Creature.ValidPaybackAmount(base.DynamicVars["Seethe"].BaseValue);
         await Owner.Creature.GainPayback(choiceContext , this.DynamicVars["Seethe"].BaseValue,base.Owner.Creature, this);
+        if (paybackamount >= base.DynamicVars["Seethe"].BaseValue)
+        {
+            await PowerCmd.Apply<MiddleStyleTattoos>(choiceContext,base.Owner.Creature,base.DynamicVars["TattosGained"].BaseValue,base.Owner.Creature,this);
+        }
         //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
     }
 

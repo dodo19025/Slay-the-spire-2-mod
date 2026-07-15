@@ -8,10 +8,10 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "[gold]Fervour[/gold]: Hit an additional time.\nDeal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Seethe[/gold] {Seethe:diff()}.",
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nGain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold] if you gained {Seethe:diff()} [gold]Payback[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.\nIncrease this card's hit amount by 1 if the enemy has {BleedThreshold:diff()} [gold]Bleed[/gold].",
@@ -53,7 +53,7 @@
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf at least {PaybackThreshold:diff()} [gold]Payback[/gold] was gained, gain {Energy:energyIcons()}.",
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nGain {Block:diff()} [gold]Block[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
 
   "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with 'Kick' in its name.",
