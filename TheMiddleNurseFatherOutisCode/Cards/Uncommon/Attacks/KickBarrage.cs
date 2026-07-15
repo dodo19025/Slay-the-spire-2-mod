@@ -27,7 +27,7 @@ public class KickBarrage()
         new RepeatVar(1),
         new CalculationBaseVar(0),
         new CalculationExtraVar(1m),
-        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) => e.HappenedThisTurn(card.CombatState) && e.CardPlay.Card.Type == CardType.Attack && e.CardPlay.Card.Tags.Contains(TheMiddleNurseFatherOutisTags.Kick) && e.CardPlay.Card.Owner == base.Owner))
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) => e.HappenedThisTurn(card.CombatState) && e.CardPlay.Card.Type == CardType.Attack && e.CardPlay.Card.Tags.Contains(TheMiddleNurseFatherOutisTags.Kick) && e.CardPlay.Card.Owner == card.Owner))
     ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

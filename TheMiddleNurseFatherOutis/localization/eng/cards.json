@@ -84,5 +84,9 @@
   "THEMIDDLENURSEFATHEROUTIS-STRIKE_BACK.title": "Strike Back",
 
   "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.description": "Deal {Damage:diff()} damage.\nHit an additional time for every attack containing “Kick”.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
-  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage"
+  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage",
+
+
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.description": "Deal {Damage:diff()} damage.\nHit an additional time if you took damage Last turn.",
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.title": "Payback With Interest"
 }
