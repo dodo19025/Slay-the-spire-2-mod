@@ -31,6 +31,8 @@ public class MiddleStrike()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await PowerCmd.Apply<ParalyzePower>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
+            base.Owner.Creature, this);
     }
 
 
