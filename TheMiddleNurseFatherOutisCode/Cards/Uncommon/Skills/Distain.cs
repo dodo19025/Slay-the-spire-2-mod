@@ -34,6 +34,7 @@ public class Distain() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<WeakPower>(),
+        HoverTipFactory.FromPower<ParalyzePower>()
     ];
 
     
@@ -44,7 +45,7 @@ public class Distain() : TheMiddleNurseFatherOutisCard(
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
         foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
-            await PowerCmd.Apply<WeakPower>(choiceContext, hittableEnemy, base.DynamicVars["WeakPower"].BaseValue, base.Owner.Creature, this);
+            await PowerCmd.Apply<ParalyzePower>(choiceContext, hittableEnemy, base.DynamicVars["WeakPower"].BaseValue, base.Owner.Creature, this);
         }
 
     }

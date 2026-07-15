@@ -25,11 +25,12 @@ public class ParalyzePower() : TheMiddleNurseFatherOutisPower
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("ReducedDamagePresen",50m),
-        new DynamicVar("ReducedDamage",0.5m),
+        new DynamicVar("ReducedDamagePresen",25m),
+        new DynamicVar("ReducedDamage",0.75m),
         new DynamicVar("MonsterDamage",0m),
         new DynamicVar("MonsterHits",0m)
     ];
+    
     
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
     {
@@ -45,21 +46,22 @@ public class ParalyzePower() : TheMiddleNurseFatherOutisPower
         {
 
             int? attacks = Owner.Monster.NextMove.Intents.Sum(intent => intent is AttackIntent attackIntent ? attackIntent.Repeats : 0); //checks how many times this creature is attacking
-            int? damage = target?.Monster?.NextMove?.Intents.Where(static i => i is AttackIntent).Cast<AttackIntent>().FirstOrDefault()?.GetSingleDamage([target], base.Owner.Monster.Creature);
+            //int? damage = Owner?.Monster?.NextMove?.Intents.Where(static i => i is AttackIntent).Cast<AttackIntent>().FirstOrDefault()?.GetSingleDamage([target], Owner.Monster.Creature);
             base.DynamicVars["MonsterHits"].BaseValue = (decimal)attacks;
-            base.DynamicVars["MonsterDamage"].BaseValue = (decimal)damage;
+            //base.DynamicVars["MonsterDamage"].BaseValue = (decimal)damage;
+            //
+            //{OnPlayer:|Original damage ({MonsterDamage:diff()} x {MonsterHits:diff()})}.
         }
         decimal num = base.DynamicVars["ReducedDamage"].BaseValue;
-        PowerCmd.Decrement(this);
         return num;
     }
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
-        CardModel? cardSource)
+    public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
+        Creature target, CardModel? cardSource)
     {
-        if (power == this)
+        if (dealer != null && dealer.HasPower<ParalyzePower>())
         {
-
+            PowerCmd.Decrement(this);
         }
     }
 }

@@ -47,7 +47,7 @@
   "THEMIDDLENURSEFATHEROUTIS-TRACES.description": "Gain {Block:diff()} [gold]Block[/gold].\n[gold]Exhaust[/gold] a card in your [gold]Discard[/gold] pile.",
   "THEMIDDLENURSEFATHEROUTIS-TRACES.title": "Traces",
 
-  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Paralyze[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain",
 
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf at least {PaybackThreshold:diff()} [gold]Payback[/gold] was gained, gain {Energy:energyIcons()}.",
@@ -75,5 +75,11 @@
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy.",
-  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush"
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush",
+
+  "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.description": "Gain {Block:diff()} [gold]Block[/gold].\nReduce [gold]Block[/gold] gained by {ReducedBlockGain:diff()} every use this combat.",
+  "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.title": "Stand Ground",
+
+  "THEMIDDLENURSEFATHEROUTIS-STRIKE_BACK.description": "Deal {Damage:diff()} damage.\nDeal {AdditionalDamage:diff()} additional damage if the enemy is attacking.",
+  "THEMIDDLENURSEFATHEROUTIS-STRIKE_BACK.title": "Strike Back"
 }
