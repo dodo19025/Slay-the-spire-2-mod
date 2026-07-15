@@ -21,20 +21,20 @@ public class StandGround()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(8m, ValueProp.Move),
-        new DynamicVar("ReducedBlockGain", 2m)
+        new DynamicVar("ReducedBlockGain", 2m),
+        new DynamicVar("TotalBlock", 8m)
     ];
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        decimal _totalblock = base.DynamicVars.Block.BaseValue - _totalreduceblock;
+        decimal _totalblock = base.DynamicVars["TotalBlock"].BaseValue - _totalreduceblock;
         await CreatureCmd.GainBlock(base.Owner.Creature, _totalblock,ValueProp.Move, play);
         _totalreduceblock += base.DynamicVars["ReducedBlockGain"].BaseValue;
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Block.UpgradeValueBy(2m);
+        base.DynamicVars["TotalBlock"].UpgradeValueBy(2m);
     }
 }

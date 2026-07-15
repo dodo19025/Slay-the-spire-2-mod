@@ -24,7 +24,7 @@ public class SealedSwordPower()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
     {
-        new DynamicVar("DamageReduction", 0.8m)
+        new DynamicVar("DamageReduction", 0.9m)
     });
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

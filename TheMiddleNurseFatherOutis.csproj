@@ -64,6 +64,7 @@
       <Folder Include="sfx\" />
       <Folder Include="TheMiddleNurseFatherOutisCode\Cards\Ancient\" />
       <Folder Include="TheMiddleNurseFatherOutisCode\Cards\Rare\" />
+      <Folder Include="TheMiddleNurseFatherOutisCode\Cards\Uncommon\Powers\" />
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">
