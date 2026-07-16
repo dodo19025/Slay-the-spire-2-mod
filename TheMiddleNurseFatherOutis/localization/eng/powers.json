@@ -1,5 +1,5 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Reduced by [blue]1[/blue] whenever you play [blue]2[/blue] [gold]Fervor[/gold Cards.\nLose a Sword Seal when this expires.",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Reduced by [blue]1[/blue] whenever you play [blue]2[/blue] [gold]Fervor[/gold] Cards.\nLose a Sword Seal when this expires.",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Reduced by [blue]1[/blue] whenever you play [blue]2[/blue] [gold]Fervor[/gold] Cards.\nLose a Sword Seal when this expires.\n[gold]Fervor[/gold] Cards left: [blue]{CardsLeft:diff()}[/blue].",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.title": "Rising Fever",
 

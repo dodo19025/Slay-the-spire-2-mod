@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 namespace TheMiddleNurseFatherOutis;
 
@@ -37,8 +38,13 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
         if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
             CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
+            if (cardSource is Unpacking)
+            {
+                return;
+            }
             if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
             {
+
                 if (visualthreeseal.Visible)
                 {
                      await dealer.PlayAnimation("swordlattack",0.2f);

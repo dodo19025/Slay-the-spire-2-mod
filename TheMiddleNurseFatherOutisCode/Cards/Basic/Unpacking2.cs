@@ -7,18 +7,15 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Potions;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using MegaCrit.Sts2.GameInfo.Objects;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
-using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
-public class Unpacking() : TheMiddleNurseFatherOutisCard(
+public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     0, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
@@ -78,15 +75,18 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
             CanvasItem visualoneseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
             CanvasItem visualtwoseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
             CanvasItem visualthreeseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-            Modsounds.unpacking0.Play();
-            visualzeroseal.Visible = false;
-            visualoneseal.Visible = true;
+            Modsounds.unpacking1.Play();
+            visualoneseal.Visible = false;
+            visualtwoseal.Visible = true;;
             await CreatureCmd.TriggerAnim(base.Owner.Creature, "unpacking", 0.4f);
             await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, 2m, base.Owner.Creature, this); //reapplies rising fever to 2
-            await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner.Creature, -1m, base.Owner.Creature, this);
-            await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
-            CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking2>(base.Owner.Creature.Player);
-            CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
+            await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner.Creature, -1m, base.Owner.Creature, this);
+            await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+            await Cmd.CustomScaledWait(0.5f, 1f);
+            await CreatureCmd.TriggerAnim(base.Owner.Creature, "sunglasses", 2f);
+
+
+
         }
     }
 
@@ -104,3 +104,4 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         return true;
     }
 }
+
