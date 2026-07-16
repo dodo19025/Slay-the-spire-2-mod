@@ -20,7 +20,7 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(4m,ValueProp.Move),
-        new CardsVar(1)
+        new CardsVar(2)
     ];
 
 

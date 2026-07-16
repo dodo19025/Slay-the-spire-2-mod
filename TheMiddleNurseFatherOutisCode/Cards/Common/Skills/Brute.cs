@@ -28,7 +28,6 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<PaybackPower>(),
         HoverTipFactory.FromPower<MiddleStyleTattoos>()
 
     ];

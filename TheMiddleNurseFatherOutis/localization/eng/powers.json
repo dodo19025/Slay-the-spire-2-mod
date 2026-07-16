@@ -1,6 +1,6 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Lose a Sword Seal when this expires.",
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Lose a Sword Seal when this expires.",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Reduced by [blue]1[/blue] whenever you play [blue]2[/blue] [gold]Fervor[/gold Cards.\nLose a Sword Seal when this expires.",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Reduced by [blue]1[/blue] whenever you play [blue]2[/blue] [gold]Fervor[/gold] Cards.\nLose a Sword Seal when this expires.\n[gold]Fervor[/gold] Cards left: [blue]{CardsLeft:diff()}[/blue].",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.title": "Rising Fever",
 
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.description": "Gain 1 [red]Vulnerable[/red] next turn.",
@@ -35,7 +35,6 @@
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.smartDescription": "When taking unblocked damage this turn, hit back for [blue]{Amount}[/blue] damage and expire next turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_POWER.title": "Payback",
   
-
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.description": "Gain [red]Burn[/red].",
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.smartDescription": "Gain [blue]{Amount}[/blue] [red]Burn[/red].",
   "THEMIDDLENURSEFATHEROUTIS-UNSEALED_SEARING_BLADE.title": "Unsealed Searing Blade",

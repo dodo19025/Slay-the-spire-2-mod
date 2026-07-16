@@ -57,7 +57,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
 
         if (Owner.Creature.HasPower<RisingFeverPower>())
         {
-            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
+            //await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["FeverLost"].BaseValue,base.Owner.Creature,this );
         }
 
         

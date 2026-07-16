@@ -55,13 +55,13 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
         }
     }
 
-    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+    public override  Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
         if (dealer == null || dealer.Side == target.Side || !props.IsPoweredAttack() || dealer.IsPlayer ||
             !target.IsPlayer)
         {
-            return;
+            return Task.CompletedTask;
         }
 
         if (target.IsPlayer && result.UnblockedDamage > 0)
@@ -69,6 +69,7 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
             base.EnergyCost.SetUntilPlayed(0);
         }
 
+        return Task.CompletedTask;
     }
 
 

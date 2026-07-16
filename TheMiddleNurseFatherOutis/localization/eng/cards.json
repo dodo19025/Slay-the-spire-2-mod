@@ -5,10 +5,10 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "[gold]Fervour[/gold]: Hit an additional time.\nDeal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "[gold]Fervour[/gold]: Hit an additional time.\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff() [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold].",

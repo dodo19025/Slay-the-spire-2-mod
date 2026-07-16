@@ -16,7 +16,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 public class ReadyToWrite()
-    : TheMiddleNurseFatherOutisCard(0,
+    : TheMiddleNurseFatherOutisCard(1,
         CardType.Skill, CardRarity.Common,
         TargetType.Self)
 {

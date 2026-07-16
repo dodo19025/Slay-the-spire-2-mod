@@ -53,7 +53,7 @@ public class PoisedBreathing()
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["PaybackThreshold"].UpgradeValueBy(-2);
+        //base.DynamicVars["PaybackThreshold"].UpgradeValueBy(-2);
         base.DynamicVars.Energy.UpgradeValueBy(1m);
     }
 
