@@ -40,7 +40,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
             CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
             if (cardSource is Unpacking || cardSource is Unpacking2 || cardSource is Unpacking3)
             {
-                return;
+                await dealer.PlayAnimation("swordlattack",0.2f);
             }
             if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
             {

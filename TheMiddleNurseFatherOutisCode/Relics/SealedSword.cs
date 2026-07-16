@@ -49,8 +49,6 @@ public class SealedSword()
 		if(room is CombatRoom)
 		{
 			Flash();
-			CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking>(base.Owner.Creature.Player);
-			await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
 			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["SwordStage0"].BaseValue, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
@@ -58,6 +56,15 @@ public class SealedSword()
 			
 		}
 		
+	}
+	
+	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
+	{
+		if (player == base.Owner && base.Owner.PlayerCombatState.TurnNumber == 1)
+		{
+			CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking>(base.Owner.Creature.Player);
+			await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
+		}
 	}
 	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{

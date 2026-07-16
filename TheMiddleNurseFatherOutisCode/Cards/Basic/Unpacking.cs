@@ -53,7 +53,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        if (power is RisingFeverPower && power.Owner == base.Owner.Creature)
+        if (power is RisingFeverPower && power.Owner == base.Owner.Creature && !(base.Owner.Creature.HasPower<LaevateinnPower>()))
         {
             MainFile.Logger.Info("Decected that rising fever has change");
             if (power.Amount <= 0)
