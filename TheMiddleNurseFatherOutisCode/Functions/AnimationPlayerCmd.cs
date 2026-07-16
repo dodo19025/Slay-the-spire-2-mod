@@ -41,6 +41,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
             if (cardSource is Unpacking || cardSource is Unpacking2 || cardSource is Unpacking3)
             {
                 await dealer.PlayAnimation("swordattack",0.2f);
+                return;
             }
             if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
             {
@@ -48,16 +49,19 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
                 if (visualthreeseal.Visible)
                 {
                      await dealer.PlayAnimation("swordlattack",0.2f);
-                }
-                else if (!visualthreeseal.Visible)
+                     return;
+                } 
+                if (!visualthreeseal.Visible)
                 {
                      await dealer.PlayAnimation("swordattack",0.2f);
+                     return;
                 }
 
             }
             else
             {
                  await dealer.PlayAnimation("legattack",0.2f);
+                 return;
             }
         }
         

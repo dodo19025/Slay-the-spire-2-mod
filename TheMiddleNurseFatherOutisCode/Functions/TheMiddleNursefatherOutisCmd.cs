@@ -120,6 +120,7 @@ public static class TheMiddleNursefatherOutisCmd
                         visualzeroseal.Visible = false;
                         visualoneseal.Visible = true;
                         Modsounds.unpacking0.Play();
+                        await Cmd.CustomScaledWait(0.5f, 1f);
                         await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                         await PowerCmd.Remove<SealedSwordPower>(creature);
                         await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
@@ -129,6 +130,8 @@ public static class TheMiddleNursefatherOutisCmd
                         visualoneseal.Visible = false;
                         visualtwoseal.Visible = true;
                         Modsounds.unpacking1.Play();
+                        await Cmd.CustomScaledWait(0.5f, 1f);
+                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                         await PowerCmd.Remove<FirstSealRemovedPower>(creature);
                         await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
                         await PowerCmd.Apply<RisingFeverPower>(choiceContext, creature,2m,creature,null);
@@ -139,6 +142,8 @@ public static class TheMiddleNursefatherOutisCmd
                         visualtwoseal.Visible = false;
                         visualthreeseal.Visible = true;
                         Modsounds.unpacking2.Play();
+                        await Cmd.CustomScaledWait(0.5f, 1f);
+                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                         await PowerCmd.Remove<SecondSealRemovedPower>(creature);
                         await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
                         return;
