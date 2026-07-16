@@ -21,12 +21,12 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
     {
         new DamageVar(11m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
-        new DynamicVar("TattosGained", 1m)
+        new DynamicVar("GrudgeGained", 1m)
     });
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<MiddleStyleTattoos>()
+        HoverTipFactory.FromPower<Grudge>()
     ];
 
 
@@ -43,7 +43,7 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
                 .Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage));
         if (play.Target.Block <= 0)
         {
-            await PowerCmd.Apply<MiddleStyleTattoos>(choiceContext,base.Owner.Creature,base.DynamicVars["TattosGained"].BaseValue,base.Owner.Creature,this);
+            await PowerCmd.Apply<Grudge>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
 
         }
 

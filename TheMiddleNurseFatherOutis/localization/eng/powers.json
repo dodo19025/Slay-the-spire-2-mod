@@ -47,9 +47,9 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next attack applies [blue]{Amount}[/blue] [gold]Bleed[/gold] on hit this turn.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack",
 
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.title": "Vengeance Tattoo",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.title": "Grudge",
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",

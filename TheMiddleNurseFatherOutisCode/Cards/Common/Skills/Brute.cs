@@ -23,12 +23,12 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new BlockVar(10m,ValueProp.Move),
-        new DynamicVar("TattosGained",1m)
+        new DynamicVar("GrudgeGained",1m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<MiddleStyleTattoos>()
+        HoverTipFactory.FromPower<Grudge>()
 
     ];
 
@@ -36,14 +36,14 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<MiddleStyleTattoos>(choiceContext,base.Owner.Creature,base.DynamicVars["TattosGained"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<Grudge>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
 
     }
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars["TattosGained"].UpgradeValueBy(1m);
+        this.DynamicVars["GrudgeGained"].UpgradeValueBy(1m);
         base.DynamicVars.Block.UpgradeValueBy(3m);
     }
 }

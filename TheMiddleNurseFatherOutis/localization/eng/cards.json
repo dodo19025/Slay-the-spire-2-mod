@@ -17,7 +17,7 @@
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.\nIncrease this card's hit amount by 1 if the enemy has {BleedThreshold:diff()} [gold]Bleed[/gold].",
@@ -59,7 +59,7 @@
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nIf you have {PaybackThreshold:diff()} [gold]Payback[/gold], gain {Energy:energyIcons()}.",
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold]",
+  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
 
   "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with “Kick” in its name.",

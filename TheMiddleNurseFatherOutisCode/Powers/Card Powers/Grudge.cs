@@ -11,7 +11,8 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 
-public class MiddleStyleTattoos()
+
+public class Grudge()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>

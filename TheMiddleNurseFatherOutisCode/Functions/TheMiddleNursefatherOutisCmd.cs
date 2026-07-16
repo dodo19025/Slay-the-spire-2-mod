@@ -94,6 +94,32 @@ public static class TheMiddleNursefatherOutisCmd
             await Cmd.CustomScaledWait(FastSecondWait, NormalSecondWait);
         }
     }
+
+    public static async Task ChangeSwordSeal(this Creature creature, PlayerChoiceContext choiceContext)
+    {
+        if (creature.HasPower<LaevateinnPower>() == false)
+        {
+            foreach (PowerModel power in creature.Powers)
+            {
+                switch (power)
+                { 
+                    case SealedSwordPower: 
+                        await PowerCmd.Remove<SealedSwordPower>(creature);
+                            await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                            return;
+                        case FirstSealRemovedPower:
+                            await PowerCmd.Remove<FirstSealRemovedPower>(creature);
+                            await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                            return;
+                        case SecondSealRemovedPower:
+                            await PowerCmd.Remove<SecondSealRemovedPower>(creature);
+                            await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
+                            return;
+                    }
+            }
+        }
+
+    }
     
     public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
