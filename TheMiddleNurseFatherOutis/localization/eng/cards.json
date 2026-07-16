@@ -11,6 +11,9 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Lose a Sword Seal.\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.title": "Unpacking",
 
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Lose a Sword Seal.\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking",
+
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   

@@ -38,7 +38,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
         if (cardSource.Type == CardType.Attack && cardSource.Owner.Creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis)
         {
             CanvasItem visualthreeseal = (cardSource.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-            if (cardSource is Unpacking)
+            if (cardSource is Unpacking || cardSource is Unpacking2 || cardSource is Unpacking3)
             {
                 return;
             }
