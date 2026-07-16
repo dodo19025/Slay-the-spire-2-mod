@@ -23,7 +23,7 @@ public class KickBarrage()
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(7m,ValueProp.Move),
+        new DamageVar(10m,ValueProp.Move),
         new RepeatVar(1),
         new CalculationBaseVar(0),
         new CalculationExtraVar(1m),
@@ -42,6 +42,6 @@ public class KickBarrage()
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(2m);
+        base.DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

@@ -25,8 +25,8 @@ public class PoisedBreathing()
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new SeetheVar(6m),
-        new DynamicVar("PaybackThreshold", 4m),
+        new DynamicVar("PaybackGained",4m),
+        new DynamicVar("PaybackThreshold", 8m),
         new EnergyVar(2)
     ];
     
@@ -36,22 +36,34 @@ public class PoisedBreathing()
         base.EnergyHoverTip
     ];
 
-    protected override bool ShouldGlowGoldInternal =>
-        (Owner.Creature.Block >= base.DynamicVars["PaybackThreshold"].BaseValue);
+    protected override bool ShouldGlowGoldInternal => UserHasEnoughPayback();
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        if (Owner.Creature.Block >= base.DynamicVars["PaybackThreshold"].BaseValue)
+        
+        await Owner.Creature.AdditionalPayback(choiceContext,base.DynamicVars["PaybackGained"].BaseValue);
+        if (UserHasEnoughPayback())
         {
             await PlayerCmd.GainEnergy(base.DynamicVars.Energy.BaseValue, base.Owner);
+
         }
-        await Owner.Creature.GainPayback(choiceContext,base.DynamicVars["Seethe"].BaseValue);
     }
 
     protected override void OnUpgrade()
     {
+        base.DynamicVars["PaybackThreshold"].UpgradeValueBy(-2);
         base.DynamicVars.Energy.UpgradeValueBy(1m);
+    }
+
+    private bool UserHasEnoughPayback()
+    {
+        decimal currentpayback = base.Owner.Creature.GetPowerAmount<PaybackPower>();
+        if (currentpayback >= base.DynamicVars["PaybackThreshold"].BaseValue)
+        {
+            return true;
+        }
+        return false;
     }
 }

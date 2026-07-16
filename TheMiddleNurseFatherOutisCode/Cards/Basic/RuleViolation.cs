@@ -25,15 +25,12 @@ public class RuleViolation()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new SeetheVar(3m),
-        new DynamicVar("TattosGained", 1m)
+        new DynamicVar("PaybackGained",5m),
     ];
 
 protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PaybackPower>(),
-        HoverTipFactory.FromPower<MiddleStyleTattoos>()
-
     ];
     
     
@@ -42,18 +39,12 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int paybackamount = Owner.Creature.ValidPaybackAmount(base.DynamicVars["Seethe"].BaseValue);
-        await Owner.Creature.GainPayback(choiceContext , this.DynamicVars["Seethe"].BaseValue,base.Owner.Creature, this);
-        if (paybackamount >= base.DynamicVars["Seethe"].BaseValue)
-        {
-            await PowerCmd.Apply<MiddleStyleTattoos>(choiceContext,base.Owner.Creature,base.DynamicVars["TattosGained"].BaseValue,base.Owner.Creature,this);
-        }
-        //await Owner.Creature.AdditionalPayback(choiceContext ,AdditionalPayback,Owner.Creature, this);
+        await Owner.Creature.AdditionalPayback(choiceContext , this.DynamicVars["PaybackGained"].BaseValue,base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        this.DynamicVars["Seethe"].UpgradeValueBy(2m);
+        this.DynamicVars["PaybackGained"].UpgradeValueBy(2m);
     }
    // new CalculationBaseVar(3m),
    // new CalculationExtraVar(1m),

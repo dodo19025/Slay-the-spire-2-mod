@@ -50,7 +50,7 @@
 
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
-  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.title": "Middle Style Tattoos",
+  "THEMIDDLENURSEFATHEROUTIS-MIDDLE_STYLE_TATTOOS.title": "Vengeance Tattoo",
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",

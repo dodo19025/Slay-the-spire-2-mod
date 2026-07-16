@@ -22,7 +22,7 @@ public class ReadyToWrite()
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
     {
-        new SeetheVar(4m),
+        new DynamicVar("PaybackGained", 4m),
         new CardsVar(1)
     });
     
@@ -36,17 +36,15 @@ public class ReadyToWrite()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        if(Owner.Creature.GainedPayback(base.DynamicVars["Seethe"].BaseValue))
-        {
-            await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
-        }
-        await Owner.Creature.GainPayback(choiceContext, base.DynamicVars["Seethe"].BaseValue,
+        await Owner.Creature.AdditionalPayback(choiceContext, base.DynamicVars["PaybackGained"].BaseValue,
             base.Owner.Creature, this);
+        await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
 
     }
 
     protected override void OnUpgrade()
     {
+        base.DynamicVars["PaybackGained"].UpgradeValueBy(2m);
         base.DynamicVars.Cards.UpgradeValueBy(1m);
     }
 }

@@ -8,7 +8,7 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "[gold]Fervour[/gold]: Hit an additional time.\nDeal {Damage:diff()} damage.\nLose 1 [gold]Rising Fever[/gold].\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nGain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold] if you gained {Seethe:diff()} [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff() [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold].",
@@ -26,7 +26,7 @@
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {RisingFeverGain:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
 
-  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf this card gained [gold]Payback[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
 
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies {BleedNextAttack:diff()} [gold]Bleed[/gold] on hit.",
@@ -50,7 +50,7 @@
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Paralyze[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain",
 
-  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "[gold]Seethe[/gold] {Seethe:diff()}.\nIf at least {PaybackThreshold:diff()} [gold]Payback[/gold] was gained, gain {Energy:energyIcons()}.",
+  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nIf you have {PaybackThreshold:diff()} [gold]Payback[/gold], gain {Energy:energyIcons()}.",
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {TattosGained:diff()} [gold]Middle Style Tattoos[/gold]",
@@ -83,9 +83,8 @@
   "THEMIDDLENURSEFATHEROUTIS-STRIKE_BACK.description": "Deal {Damage:diff()} damage.\nDeal {AdditionalDamage:diff()} additional damage if the enemy is attacking.",
   "THEMIDDLENURSEFATHEROUTIS-STRIKE_BACK.title": "Strike Back",
 
-  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.description": "Deal {Damage:diff()} damage.\nHit an additional time for every attack containing “Kick”.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
+  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.description": "Deal {Damage:diff()} damage.\nHit an additional time for every attack containing “Kick” you've used this turn.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage",
-
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.description": "Deal {Damage:diff()} damage.\nHit an additional time if you took damage Last turn.",
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.title": "Payback With Interest"
