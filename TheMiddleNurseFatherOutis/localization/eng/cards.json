@@ -8,10 +8,10 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Convert [gold]Sealed Sword[/gold] Into [gold]First Seal Removed[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Convert [gold]]First Seal Removed[/gold] Into [gold]Second Seal Removed[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Convert [gold]First Seal Removed[/gold] Into [gold]Second Seal Removed[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.title": "Unpacking+1",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Convert [gold]]Second Seal Removed[/gold] Into [gold]Lævateinn[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Convert [gold]Second Seal Removed[/gold] Into [gold]Lævateinn[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking+2",
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",
