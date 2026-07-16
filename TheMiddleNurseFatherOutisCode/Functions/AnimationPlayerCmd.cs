@@ -18,6 +18,7 @@ namespace TheMiddleNurseFatherOutis;
 public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
 {
 
+    
 
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)

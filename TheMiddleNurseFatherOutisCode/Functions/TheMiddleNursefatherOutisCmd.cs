@@ -74,6 +74,8 @@ public static class TheMiddleNursefatherOutisCmd
         var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
         if (Statemachine != null)
         {
+            
+            
             string GodotTrigger = AnimationName.ToLowerInvariant() switch
             {
                 "hit" => "hurt",
