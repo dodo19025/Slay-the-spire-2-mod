@@ -53,7 +53,7 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
         if (power is RisingFeverPower && power.Owner == base.Owner.Creature && !(base.Owner.Creature.HasPower<LaevateinnPower>()))
         {
             MainFile.Logger.Info("Decected that rising fever has change");
-            if (power.Amount <= 0)
+            if (power.Amount <= 0 && power.Owner.HasPower<FirstSealRemovedPower>())
             {
                 MainFile.Logger.Info("autoplaying card");
                 await CardCmd.AutoPlay(choiceContext,this,null);
@@ -71,9 +71,9 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         { 
-            base.Owner.Creature.ChangeSwordSeal(choiceContext);
+            await base.Owner.Creature.ChangeSwordSeal(choiceContext);
             CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking3>(base.Owner.Creature.Player);
-            CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
+            await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
             
         }
     }
