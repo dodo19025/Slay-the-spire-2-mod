@@ -73,18 +73,8 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
             base.Owner.Creature, this);
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
-        { 
-            CanvasItem visualzeroseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
-            CanvasItem visualoneseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
-            CanvasItem visualtwoseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
-            CanvasItem visualthreeseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-            Modsounds.unpacking0.Play();
-            visualzeroseal.Visible = false;
-            visualoneseal.Visible = true;
-            await CreatureCmd.TriggerAnim(base.Owner.Creature, "unpacking", 0.4f);
-            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, 2m, base.Owner.Creature, this); //reapplies rising fever to 2
-            await PowerCmd.Apply<SealedSwordPower>(choiceContext, base.Owner.Creature, -1m, base.Owner.Creature, this);
-            await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+        {
+            base.Owner.Creature.ChangeSwordSeal(choiceContext);
             CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking2>(base.Owner.Creature.Player);
             CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
         }

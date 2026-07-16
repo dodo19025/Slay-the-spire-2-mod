@@ -36,7 +36,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("BurnApply", 9m),
-        new DynamicVar("SelfBurn", 4m)
+        new DynamicVar("SelfBurn", 2m)
     ];
 
 
@@ -60,7 +60,7 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
     protected override void OnUpgrade()
     {
         base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
-        base.DynamicVars["SelfBurn"].UpgradeValueBy(-2m);
+        base.DynamicVars["SelfBurn"].UpgradeValueBy(-1m);
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Godot;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -71,7 +72,7 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return;
         }
-        var Statemachine = node.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
+        var Statemachine = node?.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
         if (Statemachine != null)
         {
             
@@ -97,24 +98,50 @@ public static class TheMiddleNursefatherOutisCmd
 
     public static async Task ChangeSwordSeal(this Creature creature, PlayerChoiceContext choiceContext)
     {
-        if (creature.HasPower<LaevateinnPower>() == false)
+        if (!(creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character
+                .TheMiddleNurseFatherOutis))
+        {
+            return;
+        }
+        
+        CanvasItem visualzeroseal = (creature.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
+        CanvasItem visualoneseal = (creature.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
+        CanvasItem visualtwoseal = (creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
+        CanvasItem visualthreeseal = (creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
+        
+        
+        if (!creature.HasPower<LaevateinnPower>())
         {
             foreach (PowerModel power in creature.Powers)
             {
                 switch (power)
                 { 
                     case SealedSwordPower: 
+                        visualzeroseal.Visible = false;
+                        visualoneseal.Visible = true;
+                        Modsounds.unpacking0.Play();
+                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                         await PowerCmd.Remove<SealedSwordPower>(creature);
-                            await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
-                            return;
-                        case FirstSealRemovedPower:
-                            await PowerCmd.Remove<FirstSealRemovedPower>(creature);
-                            await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
-                            return;
-                        case SecondSealRemovedPower:
-                            await PowerCmd.Remove<SecondSealRemovedPower>(creature);
-                            await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
-                            return;
+                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, creature,2m,creature,null);
+                        return;
+                    case FirstSealRemovedPower:
+                        visualoneseal.Visible = false;
+                        visualtwoseal.Visible = true;
+                        Modsounds.unpacking1.Play();
+                        await PowerCmd.Remove<FirstSealRemovedPower>(creature);
+                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, creature,2m,creature,null);
+                        await Cmd.CustomScaledWait(0.5f, 1f);
+                        await CreatureCmd.TriggerAnim(creature, "sunglasses", 2f);
+                        return;
+                    case SecondSealRemovedPower:
+                        visualtwoseal.Visible = false;
+                        visualthreeseal.Visible = true;
+                        Modsounds.unpacking2.Play();
+                        await PowerCmd.Remove<SecondSealRemovedPower>(creature);
+                        await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
+                        return;
                     }
             }
         }

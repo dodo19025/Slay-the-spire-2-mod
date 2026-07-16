@@ -53,7 +53,7 @@ public class ReciteVengeance()
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
         if (base.Owner.Creature.HasPower<RisingFeverPower>())
         {
-            await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["RisingFeverLose"].BaseValue,base.Owner.Creature,this);
+            //await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, -base.DynamicVars["RisingFeverLose"].BaseValue,base.Owner.Creature,this);
         }
 
         foreach (Creature HittableEnemy in base.CombatState.HittableEnemies)

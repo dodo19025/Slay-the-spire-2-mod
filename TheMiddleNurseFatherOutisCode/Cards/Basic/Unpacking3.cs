@@ -70,14 +70,7 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         { 
-            CanvasItem visualtwoseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
-            CanvasItem visualthreeseal = (play.Card.Owner.Creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-            Modsounds.unpacking2.Play();
-            visualtwoseal.Visible = false;
-            visualthreeseal.Visible = true;;
-            await CreatureCmd.TriggerAnim(base.Owner.Creature, "unpacking", 0.4f);
-            await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, base.Owner.Creature, -1m, base.Owner.Creature, this);
-            await PowerCmd.Apply<LaevateinnPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+            base.Owner.Creature.ChangeSwordSeal(choiceContext);
             //CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking3>(base.Owner.Creature.Player);
             //CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
             
