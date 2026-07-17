@@ -46,41 +46,44 @@ public class FirstSealRemovedPower()
     {
         Data data = GetInternalData<Data>();
     }
-
-    public override Task BeforeAttack(AttackCommand command)
+    
+    public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
         Data data = GetInternalData<Data>();
-
-        if (command.CardPlay?.Target != null && command.CardPlay.Target.HasPower<BleedPower>())
+        if (cardPlay.Card.Owner.Creature != base.Owner)
         {
-            MainFile.Logger.Info($"$Target Old Bleed --> {data.TargetOldleed}");
-            data.TargetOldleed = command.CardPlay.Target.GetPowerAmount<BleedPower>();
+            return Task.CompletedTask;
+        }
+        if (cardPlay.Target != null && cardPlay.Target.HasPower<BleedPower>())
+        {
+            data.TargetOldleed = cardPlay.Target.GetPowerAmount<BleedPower>();
+            MainFile.Logger.Info($"$Target Old Bleed,detected target has bleed --> {data.TargetOldleed}");
             return Task.CompletedTask;
         } 
-        if (command.CardPlay?.Target != null && !(command.CardPlay.Target.HasPower<BleedPower>()))
+        if (cardPlay?.Target != null && !(cardPlay.Target.HasPower<BleedPower>()))
         {
             data.TargetOldleed = 0;
             MainFile.Logger.Info($"$Target Old Bleed --> {data.TargetOldleed}");
             return Task.CompletedTask;
         }
-        return Task.CompletedTask;
+        return Task.CompletedTask;    
     }
+    
 
-    public override async Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         Data data = GetInternalData<Data>();
         data.TargetNewBleed = 0;
-        if (command.CardPlay?.Target != null && command.CardPlay.Target.HasPower<BleedPower>())
+        if (cardPlay?.Target != null && cardPlay.Target.HasPower<BleedPower>())
         {
-            data.TargetNewBleed = command.CardPlay.Target.GetPowerAmount<BleedPower>();
+            data.TargetNewBleed = cardPlay.Target.GetPowerAmount<BleedPower>();
         }
         MainFile.Logger.Info($"$Target New Bleed --> {data.TargetNewBleed}");
 
         if (data.TargetNewBleed > data.TargetOldleed)
         {
-            PowerCmd.Apply<BurnPower>(choiceContext, command.CardPlay.Target,
-                base.DynamicVars["BurnApplicationValue"].BaseValue, command.CardPlay.Card.Owner.Creature,
-                command.CardPlay.Card);
+            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
+                base.DynamicVars["BurnApplicationValue"].BaseValue, cardPlay.Card.Owner.Creature, cardPlay.Card);
         }
     }
 }
