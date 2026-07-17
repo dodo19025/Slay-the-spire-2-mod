@@ -38,9 +38,9 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
             .FromCard(this, play)
             .Targeting(play.Target)
             .Execute(choiceContext);
-        await CreatureCmd.LoseBlock(play.Target,
+        await CreatureCmd.LoseBlock(choiceContext,play.Target,
             attackCommand.Results.SelectMany((List<DamageResult> r) => r)
-                .Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage));
+                .Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage),base.Owner.Creature);
         if (play.Target.Block <= 0)
         {
             await PowerCmd.Apply<GrudgePower>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
