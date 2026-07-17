@@ -57,6 +57,7 @@ public class RisingFeverPower()
         if (base.DynamicVars["CardsLeft"].BaseValue <= 0)
         {
             await Cmd.Wait(0.25f);
+            Flash();
             base.DynamicVars["CardsLeft"].BaseValue = 2m;
             await PowerCmd.Decrement(this);
         }
