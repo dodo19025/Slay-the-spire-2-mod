@@ -29,6 +29,12 @@ public class SecondSealRemovedPower()
         new DynamicVar("AdditionalDamagePerBleed", 1m),
         new DynamicVar("BleedThreshold",4m)
     ];
+  
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BurnPower>(),
+        HoverTipFactory.FromPower<BleedPower>()
+    ];
 
     protected override object InitInternalData()
     {

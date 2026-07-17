@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
@@ -29,6 +30,12 @@ public class FirstSealRemovedPower()
         new DynamicVar("BurnApplicationValue", 1m),
         new DynamicVar("AdditionalDamagePerBleed", 1m),
         new DynamicVar("BleedThreshold",4m)
+    ];
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BurnPower>(),
+        HoverTipFactory.FromPower<BleedPower>()
     ];
 
     protected override object InitInternalData()
