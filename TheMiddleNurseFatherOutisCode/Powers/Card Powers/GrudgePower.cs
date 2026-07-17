@@ -56,10 +56,6 @@ public class GrudgePower()
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-        if (power == this && base.Amount > base.DynamicVars["MaxGrudgeAmount"].BaseValue && power.Owner == base.Owner)
-        {
-            decimal _correctionCacl = base.Amount - base.DynamicVars["MaxGrudgeAmount"].BaseValue;
-            await PowerCmd.ModifyAmount(choiceContext, power, -(_correctionCacl), base.Owner, null);
-        }
+
     }
 }

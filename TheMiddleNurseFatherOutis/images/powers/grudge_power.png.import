@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8174lw065p0m"
-path="res://.godot/imported/grudge.png-666f1a81f319833a0216ad2812d9acc2.ctex"
+uid="uid://c2dyq7fuuvx71"
+path="res://.godot/imported/grudge_power.png-d1ac0bf7175747a6d2cf8411c1d6e8f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutis/images/powers/big/grudge.png"
-dest_files=["res://.godot/imported/grudge.png-666f1a81f319833a0216ad2812d9acc2.ctex"]
+source_file="res://TheMiddleNurseFatherOutis/images/powers/grudge_power.png"
+dest_files=["res://.godot/imported/grudge_power.png-d1ac0bf7175747a6d2cf8411c1d6e8f0.ctex"]
 
 [params]
 
