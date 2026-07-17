@@ -141,7 +141,7 @@ public class SealedSword()
 		}
 		return Task.CompletedTask;
 	}
-
+//kill me
 
 	public static async Task FixGrudgeCount(Creature creature, PlayerChoiceContext choiceContext, decimal AmountofGrudgeGained, decimal MaxGrudgeAllowed)
 	{
