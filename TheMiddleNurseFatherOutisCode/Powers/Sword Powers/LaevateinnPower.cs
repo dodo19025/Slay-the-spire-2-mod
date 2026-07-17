@@ -57,10 +57,11 @@ public class LaevateinnPower()
 
     }
     
-        protected override object InitInternalData()
+    protected override object InitInternalData()
     {
         return new Data();
     }
+    
     
     private class Data
     {

@@ -26,7 +26,7 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<Grudge>()
+        HoverTipFactory.FromPower<GrudgePower>()
     ];
 
 
@@ -43,7 +43,7 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
                 .Sum((DamageResult r) => r.TotalDamage + r.OverkillDamage));
         if (play.Target.Block <= 0)
         {
-            await PowerCmd.Apply<Grudge>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
+            await PowerCmd.Apply<GrudgePower>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
 
         }
 

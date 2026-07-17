@@ -28,7 +28,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<Grudge>()
+        HoverTipFactory.FromPower<GrudgePower>()
 
     ];
 
@@ -36,7 +36,7 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<Grudge>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<GrudgePower>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
         await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
 
     }

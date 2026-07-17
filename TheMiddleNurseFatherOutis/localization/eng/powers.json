@@ -19,8 +19,8 @@
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.smartDescription": "Gain [blue]2[/blue] [gold]Rising Fever[/gold].\nWhen playing a card that applies [gold]Bleed[/gold], apply [red]equal[/red] amounts [gold]Burn[/gold].\nCards deal an additional [blue]{AdditionalDamagePerBleed:diff()}[/blue] damage for every [blue]{BleedThreshold:diff()}[/blue] [gold]Bleed[/gold] on target.\nWhen you play an attack, inflict [blue]1[/blue] [gold]Burn[/gold] on self and target.",
   "THEMIDDLENURSEFATHEROUTIS-SECOND_SEAL_REMOVED_POWER.title": "Second Seal Removed",
 
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to EVERYONE.\nCards with [gold]Fervour[/gold] gain a bonus action.\nWhen playing a card that applies [gold]Bleed[/gold], apply equal amounts [gold]Burn[/gold].\nCards deal an additional [blue]1[/blue] damage for every [blue]4[/blue] [gold]Bleed[/gold] on target.\nWhen you play an attack, inflict [blue]1[/blue] [gold]Burn[/gold] on self and target.",
-  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself.\nCards with [gold]Fervour[/gold] gain a bonus action.\nWhen playing a card that applies [gold]Bleed[/gold], apply [red]equal[/red] amounts [gold]Burn[/gold].\nCards deal an additional [blue]{AdditionalDamagePerBleed:diff()}[/blue] damage for every [blue]{BleedThreshold:diff()}[/blue] [gold]Bleed[/gold] on target.\nWhen you play an attack, inflict [blue]1[/blue] [gold]Burn[/gold] on self and target.",
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.description": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to EVERYONE.\nCards with [gold]Fervor[/gold] gain a bonus action.\nWhen playing a card that applies [gold]Bleed[/gold], apply equal amounts [gold]Burn[/gold].\nCards deal an additional [blue]1[/blue] damage for every [blue]3[/blue] [gold]Bleed[/gold] on target.\nWhen you play an attack, inflict [blue]1[/blue] [gold]Burn[/gold] on self and target.",
+  "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.smartDescription": "On the start of your turn apply [blue]3[/blue] [red]Burn[/red] to ALL enemies and [blue]2[/blue] [red]Burn[/red] to yourself.\nCards with [gold]Fervor[/gold] gain a bonus action.\nWhen playing a card that applies [gold]Bleed[/gold], apply [red]equal[/red] amounts [gold]Burn[/gold].\nCards deal an additional [blue]{AdditionalDamagePerBleed:diff()}[/blue] damage for every [blue]{BleedThreshold:diff()}[/blue] [gold]Bleed[/gold] on target.\nWhen you play an attack, inflict [blue]1[/blue] [gold]Burn[/gold] on self and target.",
   "THEMIDDLENURSEFATHEROUTIS-LAEVATEINN_POWER.title": "Lævateinn",
 
   "THEMIDDLENURSEFATHEROUTIS-BURN_POWER.description": "Burning creatures take damage at the end of their turn. Each turn [red]Burn[/red] is reduced by [blue]1[/blue]",
@@ -47,9 +47,9 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next attack applies [blue]{Amount}[/blue] [gold]Bleed[/gold] on hit this turn.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack",
 
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE.title": "Grudge",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end. ",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.title": "Grudge",
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",

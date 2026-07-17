@@ -12,7 +12,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Po
 
 
 
-public class Grudge()
+public class GrudgePower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
@@ -25,7 +25,8 @@ public class Grudge()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("DamageReduction",1m)
+        new DynamicVar("DamageReduction",1m),
+        new DynamicVar("MaxGrudgeAmount", 15m)
 
     ];
     
@@ -49,6 +50,16 @@ public class Grudge()
         if (side == CombatSide.Enemy)
         {
             PowerCmd.Decrement(this);
+        }
+    }
+
+    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
+        CardModel? cardSource)
+    {
+        if (power == this && base.Amount > base.DynamicVars["MaxGrudgeAmount"].BaseValue && power.Owner == base.Owner)
+        {
+            decimal _correctionCacl = base.Amount - base.DynamicVars["MaxGrudgeAmount"].BaseValue;
+            await PowerCmd.ModifyAmount(choiceContext, power, -(_correctionCacl), base.Owner, null);
         }
     }
 }
