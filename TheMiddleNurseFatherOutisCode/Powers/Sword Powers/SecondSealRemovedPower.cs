@@ -84,12 +84,20 @@ public class SecondSealRemovedPower()
             data.TargetNewBleed = cardPlay.Target.GetPowerAmount<BleedPower>();
         }
         //MainFile.Logger.Info($"$Target New Bleed --> {data.TargetNewBleed}");
-
         if (data.TargetNewBleed > data.TargetOldleed)
         {
             base.DynamicVars["BurnApplicationValue"].BaseValue = data.TargetNewBleed - data.TargetOldleed;
             await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
                 base.DynamicVars["BurnApplicationValue"].BaseValue, cardPlay.Card.Owner.Creature, cardPlay.Card);
+        }
+        // this next part is for applying both burn on self an the TARGET if you play an attack
+
+        if (cardPlay.Card.Type == CardType.Attack && cardPlay.Target != null)
+        {
+            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
+                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
+            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Card.Owner.Creature,
+                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
         }
     }
 
