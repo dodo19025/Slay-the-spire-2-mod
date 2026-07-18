@@ -35,7 +35,7 @@ public class PaybackPower()
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
 
-    public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
+    //public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
     
 
     private bool _didPayback = false;
@@ -62,9 +62,9 @@ public class PaybackPower()
             }
             await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
             _didPayback = true;
-            PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
-            DamageTakenHook.PaybackAcitvated[playerCombatState] += 1;
-            MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState]}");
+            PlayerCombatState? playerCombatState = base.Owner.Player!.PlayerCombatState;
+            DamageTakenHook.PaybackAcitvated[playerCombatState!] += 1;
+            MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState!]}");
             MainFile.Logger.Info("Did Payback");
             
         }
@@ -80,9 +80,9 @@ public class PaybackPower()
 
     public override async Task AfterCombatEnd(CombatRoom room)
     {
-        PlayerCombatState? playerCombatState = base.Owner.Player.PlayerCombatState;
-        DamageTakenHook.PaybackAcitvated[playerCombatState] = 0;
-        DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
+        PlayerCombatState? playerCombatState = base.Owner.Player!.PlayerCombatState;
+        DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
+        DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
     }
     
 

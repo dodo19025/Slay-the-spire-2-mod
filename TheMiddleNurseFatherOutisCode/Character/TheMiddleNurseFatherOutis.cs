@@ -46,7 +46,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
-        ModelDb.Relic<SealedSword>()
+        ModelDb.Relic<HOSBookOfVengeance>()
     ];
     
     //Note1

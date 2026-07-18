@@ -1,3 +1,5 @@
+using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -20,7 +22,8 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 
-public class SealedSword()
+
+public class HOSBookOfVengeance()
 	: TheMiddleNurseFatherOutisRelic
 {
 	public override RelicRarity Rarity =>
@@ -30,25 +33,27 @@ public class SealedSword()
 	private const string _RisingFeverStartKey = "RisingFever";
 	private const string _EnergyNextTurnStartKey = "EnergyNextTurn";
 
-	protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[7]
-	{
+	protected override IEnumerable<DynamicVar> CanonicalVars => (
+	[
 		new DynamicVar("RisingFever", 1m),
 		new DynamicVar("SwordStage0", 1m),
+		new DynamicVar("CombatStartGrudgePower",5m),
 		new DynamicVar("MaxGrudgeProcsFromDamage",3m),
 		new DynamicVar("GrudgeGainPerDamage",2m),
 		new DynamicVar("GrudgeGainPerHit",1m),
 		new DynamicVar("MaxGrudgeProcsFromHits",5m),
 		new DynamicVar("MaxGrudgeAmount",15m)
-	}); //Made for values to be easily changable
+	]); //Made for values to be easily changable
 	
-	
+	public static readonly SavedSpireField<PlayerCombatState, int> MaxTattoos = new(() => 4,"MaxTattoos");
+	public static readonly SavedSpireField<PlayerCombatState, int> ConversionRate = new(() => 5,"ConversionRate");
+	public static readonly SavedSpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0,"RecordedConsumedGrudge");
+
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
-		HoverTipFactory.FromPower<FirstSealRemovedPower>(),
-		HoverTipFactory.FromPower<SecondSealRemovedPower>(),
-		HoverTipFactory.FromPower<LaevateinnPower>()
+		HoverTipFactory.FromPower<FirstSealRemovedPower>()
 		
 	]; //Get the hover tips from the Json file and display it on the relic
 
@@ -56,11 +61,14 @@ public class SealedSword()
 	{
 		if(room is CombatRoom)
 		{
+			
 			Flash();
 			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["SwordStage0"].BaseValue, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["RisingFever"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
+			await PowerCmd.Apply<GrudgePower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
+				base.DynamicVars["CombatStartGrudgePower"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
 		}
 		
 	}
@@ -69,8 +77,8 @@ public class SealedSword()
 	{
 		if (player == base.Owner && base.Owner.PlayerCombatState?.TurnNumber == 1)
 		{
-			CardModel? Card = base.Owner.Creature?.CombatState?.CreateCard<Unpacking>(base.Owner.Creature.Player);
-			await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
+			CardModel? Card = base.Owner.Creature?.CombatState?.CreateCard<Unpacking>(base.Owner.Creature.Player!);
+			await CardPileCmd.AddGeneratedCardToCombat(Card!, PileType.Hand, base.Owner);
 		}
 	}
 	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
@@ -78,15 +86,15 @@ public class SealedSword()
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
-			DamageTakenHook.PaybackAcitvated[playerCombatState] = 0;
-			DamageTakenHook.TookDamageLastTurn[playerCombatState] = false;
+			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
+			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
 		}
 	}
 
-	public int _currentGainedGrudgeFromHits = 0;
-	public int _currentGainedGrudgeFromDamage = 0;
-	public bool _allowGrudgeFromDamage = true;
-	public bool _allowGrudgeFromHits = true;
+	private int _currentGainedGrudgeFromHits = 0;
+	private int _currentGainedGrudgeFromDamage = 0;
+	private bool _allowGrudgeFromDamage = true;
+	private bool _allowGrudgeFromHits = true;
 	
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource)
@@ -107,7 +115,6 @@ public class SealedSword()
 		
 		if (target.IsPlayer && _allowGrudgeFromHits)
 		{
-			MainFile.Logger.Info("AAAAAAAAAAA");
 			await FixGrudgeCount(base.Owner.Creature, choiceContext, base.DynamicVars["GrudgeGainPerHit"].BaseValue,
 				base.DynamicVars["MaxGrudgeAmount"].BaseValue);
 			_currentGainedGrudgeFromHits++;
@@ -118,8 +125,7 @@ public class SealedSword()
 		}
 		
 		if (target.IsPlayer && result.UnblockedDamage > 0 && _allowGrudgeFromDamage)
-		{
-			MainFile.Logger.Info("CCCCCCC");
+		{ 
 			await FixGrudgeCount(base.Owner.Creature, choiceContext, base.DynamicVars["GrudgeGainPerDamage"].BaseValue,
 				base.DynamicVars["MaxGrudgeAmount"].BaseValue);
 			_currentGainedGrudgeFromDamage++;
@@ -132,18 +138,16 @@ public class SealedSword()
 
 	public override Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
-		if(participants.Contains(base.Owner.Creature) && base.Owner.Creature.Side == side)
-		{
-			_currentGainedGrudgeFromHits = 0;
-			_currentGainedGrudgeFromDamage = 0;
-			_allowGrudgeFromDamage = true;
-			_allowGrudgeFromHits = true;
-		}
+		if (!participants.Contains(base.Owner.Creature) || base.Owner.Creature.Side != side) return Task.CompletedTask;
+		_currentGainedGrudgeFromHits = 0;
+		_currentGainedGrudgeFromDamage = 0;
+		_allowGrudgeFromDamage = true;
+		_allowGrudgeFromHits = true;
 		return Task.CompletedTask;
 	}
 //kill me
 
-	public static async Task FixGrudgeCount(Creature creature, PlayerChoiceContext choiceContext, decimal AmountofGrudgeGained, decimal MaxGrudgeAllowed)
+	private static async Task FixGrudgeCount(Creature creature, PlayerChoiceContext choiceContext, decimal AmountofGrudgeGained, decimal MaxGrudgeAllowed)
 	{
 		if (creature.HasPower<GrudgePower>())
 		{
@@ -167,6 +171,8 @@ public class SealedSword()
 			await PowerCmd.Apply<GrudgePower>(choiceContext, creature, AmountofGrudgeGained, creature, null);
 		}
 	}
+
+	
 
 	//protected override IEnumerable<IHoverTip> ExtraHoverTips => [HoverTipFactory.FromPower<RisingFeverPower>(), HoverTipFactory.Static(StaticHoverTip.Block),HoverTipFactory.FromPower<StrengthPower>()];
 }

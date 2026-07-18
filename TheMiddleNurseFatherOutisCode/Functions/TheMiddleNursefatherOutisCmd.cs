@@ -4,12 +4,14 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Achievements;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 namespace TheMiddleNurseFatherOutis;
 
@@ -164,7 +166,7 @@ public static class TheMiddleNursefatherOutisCmd
 
     }
     
-    public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature target, decimal BleedAmount)
+    public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature? target, decimal BleedAmount)
     {
         await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
         if (target.IsAlive)
@@ -176,5 +178,56 @@ public static class TheMiddleNursefatherOutisCmd
             await Cmd.CustomScaledWait(0.1f, 0.25f);
         }
     } 
+    
+    public static async Task ConvertGrudgeToTattoo(Creature? creature, PlayerChoiceContext choiceContext,
+		decimal GrudgeConsumed)
+    {
+        decimal MaxTattoos = (decimal)HOSBookOfVengeance.MaxTattoos[creature?.Player!.PlayerCombatState!];
+        decimal ConversionRate = (decimal)HOSBookOfVengeance.ConversionRate[creature?.Player!.PlayerCombatState!];
+        decimal TotalConsumedGrudge = (decimal)HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!];
+
+
+		if(!creature!.HasPower<GrudgePower>()) return;
+		TotalConsumedGrudge += GrudgeConsumed;
+        HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] += (int)TotalConsumedGrudge;
+		if (TotalConsumedGrudge >= ConversionRate)
+		{
+			decimal TattoosGained = TotalConsumedGrudge / ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
+			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this
+            HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=  (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
+			if (creature.GetPowerAmount<GrudgePower>() <= GrudgeConsumed)
+			{
+				await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -creature.GetPowerAmount<GrudgePower>(),creature, null);
+			}
+
+			if (creature.GetPowerAmount<GrudgePower>() > GrudgeConsumed)
+			{
+				await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -GrudgeConsumed,creature, null);
+
+			}
+
+			if (creature.HasPower<VengeanceTattoo>())
+            { 
+                
+                if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained >= MaxTattoos && creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //what this does is check if the creature's current tattoo count + the amount to be gained is higher than the max tattoos allowed
+				{
+					decimal _amountCorrected = MaxTattoos - creature.GetPowerAmount<VengeanceTattoo>(); //since the amount of tattoos would overflow, you'd just set this to the max tattoos
+					await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, _amountCorrected,creature, null);
+
+				}
+				else if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained < MaxTattoos &&
+				         creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //this is if you're gaining an okay amount!!
+				{
+					await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, TattoosGained,creature, null);
+
+				}
+			}
+			else
+			{
+				await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, TattoosGained,creature, null);
+
+			}
+		}
+	}
 
 }

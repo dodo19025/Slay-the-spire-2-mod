@@ -13,8 +13,8 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
 public class DamageTakenHook() : CustomSingletonModel(HookType.Combat)
 {
     public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
-    public static readonly SpireField<PlayerCombatState, bool> TookDamageLastTurn =
-        new SpireField<PlayerCombatState, bool>(() => false);
+    public static readonly SavedSpireField<PlayerCombatState, bool> TookDamageLastTurn =
+        new SavedSpireField<PlayerCombatState, bool>(() => false, "TookDamageLastTurn");
 
     public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
@@ -26,8 +26,8 @@ public class DamageTakenHook() : CustomSingletonModel(HookType.Combat)
 
         if (target.IsPlayer && result.UnblockedDamage > 0)
         {
-            TookDamageLastTurn[target.Player.PlayerCombatState] = true;
-            MainFile.Logger.Info($"Damage Last turn Status: {DamageTakenHook.TookDamageLastTurn[target.Player.PlayerCombatState]}");
+            TookDamageLastTurn[target.Player!.PlayerCombatState!] = true;
+            MainFile.Logger.Info($"Damage Last turn Status: {DamageTakenHook.TookDamageLastTurn[target?.Player!.PlayerCombatState!]}");
 
         }
         return Task.CompletedTask;
@@ -39,8 +39,8 @@ public class DamageTakenHook() : CustomSingletonModel(HookType.Combat)
         {
             if (creature.IsPlayer)
             {
-                TookDamageLastTurn[creature.Player.PlayerCombatState] = false;
-                MainFile.Logger.Info($"Damage Last turn Status: {DamageTakenHook.TookDamageLastTurn[creature.Player.PlayerCombatState]}");
+                TookDamageLastTurn[creature?.Player!.PlayerCombatState!] = false;
+                MainFile.Logger.Info($"Damage Last turn Status: {DamageTakenHook.TookDamageLastTurn[creature?.Player!.PlayerCombatState!]}");
             }
         }
 

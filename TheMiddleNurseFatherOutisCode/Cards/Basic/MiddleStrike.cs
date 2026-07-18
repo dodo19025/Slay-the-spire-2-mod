@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
@@ -31,6 +32,7 @@ public class MiddleStrike()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await TheMiddleNursefatherOutisCmd.ConvertGrudgeToTattoo(base.Owner.Creature, choiceContext, 5m);
     }
 
 
