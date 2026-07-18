@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Achievements;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
@@ -186,27 +187,44 @@ public static class TheMiddleNursefatherOutisCmd
         decimal ConversionRate = (decimal)HOSBookOfVengeance.ConversionRate[creature?.Player!.PlayerCombatState!];
         decimal TotalConsumedGrudge = (decimal)HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!];
 
-
+        decimal CorrectedGrudge = 0;
+        
 		if(!creature!.HasPower<GrudgePower>()) return;
-		TotalConsumedGrudge += GrudgeConsumed;
+        MainFile.Logger.Info($"$Recorded Grudge Amount Before Any Calculations --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+        // we need to get the total amount of grudge they ACTUALLY consumed
+        decimal CurrentGrudge = creature!.GetPowerAmount<GrudgePower>();
+        if (CurrentGrudge < GrudgeConsumed)
+        {
+            CorrectedGrudge = CurrentGrudge;
+        }
+        if (CurrentGrudge >= GrudgeConsumed)
+        {
+            CorrectedGrudge = GrudgeConsumed;
+
+        }
+
+        TotalConsumedGrudge += CorrectedGrudge;
         HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] += (int)TotalConsumedGrudge;
+        MainFile.Logger.Info($"$Recorded Grudge Amount Before Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+       
+        if (creature!.GetPowerAmount<GrudgePower>() <= CorrectedGrudge)
+        {
+            await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -creature.GetPowerAmount<GrudgePower>(),creature, null);
+        }
+
+        if (creature.GetPowerAmount<GrudgePower>() > CorrectedGrudge)
+        {
+            await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -CorrectedGrudge,creature, null);
+
+        }
+        
 		if (TotalConsumedGrudge >= ConversionRate)
 		{
 			decimal TattoosGained = TotalConsumedGrudge / ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
 			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this
             HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=  (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
-			if (creature.GetPowerAmount<GrudgePower>() <= GrudgeConsumed)
-			{
-				await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -creature.GetPowerAmount<GrudgePower>(),creature, null);
-			}
-
-			if (creature.GetPowerAmount<GrudgePower>() > GrudgeConsumed)
-			{
-				await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -GrudgeConsumed,creature, null);
-
-			}
-
-			if (creature.HasPower<VengeanceTattoo>())
+            MainFile.Logger.Info($"$Recorded Grudge Amount After Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+			if (creature!.HasPower<VengeanceTattoo>())
             { 
                 
                 if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained >= MaxTattoos && creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //what this does is check if the creature's current tattoo count + the amount to be gained is higher than the max tattoos allowed

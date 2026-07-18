@@ -88,6 +88,7 @@ public class HOSBookOfVengeance()
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
 			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
+			HOSBookOfVengeance.RecordedConsumedGrudge[playerCombatState!] = 0;
 		}
 	}
 
