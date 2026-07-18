@@ -48,14 +48,18 @@ public class HOSBookOfVengeance()
 	public static readonly SavedSpireField<PlayerCombatState, int> ConversionRate = new(() => 5,"ConversionRate");
 	public static readonly SavedSpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0,"RecordedConsumedGrudge");
 	public static readonly SavedSpireField<PlayerCombatState, int> TattooHealConversion = new(() => 3,"RecordedConsumedGrudge");
+	public static readonly SavedSpireField<PlayerCombatState, int> CombatEndTattoos = new(() => 0,"CombatEndTattoos");
+
 
 
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
-		HoverTipFactory.FromPower<RisingFeverPower>(), 
+
 		HoverTipFactory.FromPower<SealedSwordPower>(),
-		HoverTipFactory.FromPower<GrudgePower>()
+		HoverTipFactory.FromPower<RisingFeverPower>(), 
+		HoverTipFactory.FromPower<GrudgePower>(),
+		HoverTipFactory.FromPower<VengeanceTattoo>(), 
 		
 	]; //Get the hover tips from the Json file and display it on the relic
 
@@ -88,6 +92,7 @@ public class HOSBookOfVengeance()
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
 			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
+			MainFile.Logger.Info($"Current HP --> {base.DynamicVars["CombatStartHealth"].BaseValue}");
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
 			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
@@ -95,15 +100,25 @@ public class HOSBookOfVengeance()
 		}
 	}
 
-	public override async Task AfterCombatVictory(CombatRoom room)
+	
+	
+	public override async Task AfterCombatVictory(CombatRoom _)
 	{
+		if (base.Owner.Creature.IsDead)
+		{
+			return;
+		}
+		
 		int AfterCombatHealth = base.Owner.Creature.CurrentHp;
-		if(!base.Owner.Creature.HasPower<VengeanceTattoo>()) return;
-
+		MainFile.Logger.Info($"After Combat HP before tattoo check--> {AfterCombatHealth}");
+		if(HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] <= 0) return;
+		MainFile.Logger.Info($"After Combat HP --> {AfterCombatHealth}");
 		if (AfterCombatHealth < base.DynamicVars["CombatStartHealth"].BaseValue)
 		{
-			int Totalhealed = base.Owner.Creature.GetPowerAmount<VengeanceTattoo>() *
+			MainFile.Logger.Info("Detected that current hp was lower than the start");
+			int Totalhealed = HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] *
 			                  HOSBookOfVengeance.TattooHealConversion[base.Owner.Creature.Player.PlayerCombatState];
+			HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] = 0;
 
 			if (Totalhealed+AfterCombatHealth >= base.DynamicVars["CombatStartHealth"].BaseValue)
 			{

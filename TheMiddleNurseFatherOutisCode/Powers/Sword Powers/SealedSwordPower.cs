@@ -31,24 +31,5 @@ public class SealedSwordPower()
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
     ];
-
-    public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer,
-        CardModel? cardSource, CardPlay? cardPlay)
-    {
-        if (target != base.Owner)
-        {
-            return 1m;
-        }
-        if (!props.IsPoweredAttack())
-        {
-            return 1m;
-        }
-        if (dealer != null && dealer.IsPlayer)
-        {
-            return 1m;
-        }
-        return 0.8m;
-    }
-
-
+    
 }

@@ -24,7 +24,6 @@ public class GrudgePower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
     
-    private const string _damageReductionKey = "DamageReduction";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
@@ -34,14 +33,7 @@ public class GrudgePower()
 
     ];
     
-    public override decimal ModifyHpLostAfterOsty(Creature target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource)
-    {
-        if (target != base.Owner)
-        {
-            return amount;
-        }
-        return Math.Max(0m, amount - base.DynamicVars["DamageReduction"].BaseValue);
-    }
+
     
     public override Task AfterModifyingHpLostAfterOsty()
     {
