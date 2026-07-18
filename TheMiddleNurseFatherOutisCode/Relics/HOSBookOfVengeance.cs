@@ -35,19 +35,20 @@ public class HOSBookOfVengeance()
 
 	protected override IEnumerable<DynamicVar> CanonicalVars => (
 	[
-		new DynamicVar("RisingFever", 1m),
-		new DynamicVar("SwordStage0", 1m),
 		new DynamicVar("CombatStartGrudgePower",5m),
 		new DynamicVar("MaxGrudgeProcsFromDamage",3m),
 		new DynamicVar("GrudgeGainPerDamage",2m),
 		new DynamicVar("GrudgeGainPerHit",1m),
 		new DynamicVar("MaxGrudgeProcsFromHits",5m),
-		new DynamicVar("MaxGrudgeAmount",15m)
+		new DynamicVar("MaxGrudgeAmount",15m),
+		new DynamicVar("CombatStartHealth",0m)
 	]); //Made for values to be easily changable
 	
 	public static readonly SavedSpireField<PlayerCombatState, int> MaxTattoos = new(() => 4,"MaxTattoos");
 	public static readonly SavedSpireField<PlayerCombatState, int> ConversionRate = new(() => 5,"ConversionRate");
 	public static readonly SavedSpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0,"RecordedConsumedGrudge");
+	public static readonly SavedSpireField<PlayerCombatState, int> TattooHealConversion = new(() => 3,"RecordedConsumedGrudge");
+
 
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -65,9 +66,9 @@ public class HOSBookOfVengeance()
 			
 			Flash();
 			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
-				base.DynamicVars["SwordStage0"].BaseValue, base.Owner.Creature, null); //cahnge this back to first seal when done testing
+				1m, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
-				base.DynamicVars["RisingFever"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
+				1m, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
 			await PowerCmd.Apply<GrudgePower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				base.DynamicVars["CombatStartGrudgePower"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
 		}
@@ -86,10 +87,42 @@ public class HOSBookOfVengeance()
 	{
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
+			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
 			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
 			HOSBookOfVengeance.RecordedConsumedGrudge[playerCombatState!] = 0;
+		}
+	}
+
+	public override async Task AfterCombatVictory(CombatRoom room)
+	{
+		int AfterCombatHealth = base.Owner.Creature.CurrentHp;
+		if(!base.Owner.Creature.HasPower<VengeanceTattoo>()) return;
+
+		if (AfterCombatHealth < base.DynamicVars["CombatStartHealth"].BaseValue)
+		{
+			int Totalhealed = base.Owner.Creature.GetPowerAmount<VengeanceTattoo>() *
+			                  HOSBookOfVengeance.TattooHealConversion[base.Owner.Creature.Player.PlayerCombatState];
+
+			if (Totalhealed+AfterCombatHealth >= base.DynamicVars["CombatStartHealth"].BaseValue)
+			{
+				//start combat at 70
+				//end it at 68
+				//have 3 tattoos, meaning 9 healing 
+				//this just means what we have to do is do the combat start hp - combat end = healing
+
+				decimal _correctedheal = base.DynamicVars["CombatStartHealth"].BaseValue - AfterCombatHealth;
+				await CreatureCmd.Heal(base.Owner.Creature, _correctedheal);
+			}
+
+			if (Totalhealed + AfterCombatHealth < base.DynamicVars["CombatStartHealth"].BaseValue)
+			{
+				await CreatureCmd.Heal(base.Owner.Creature, Totalhealed);
+
+			}
+
+
 		}
 	}
 
