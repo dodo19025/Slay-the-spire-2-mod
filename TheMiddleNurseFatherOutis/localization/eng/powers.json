@@ -47,8 +47,8 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.smartDescription": "Your next attack applies [blue]{Amount}[/blue] [gold]Bleed[/gold] on hit this turn.",
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack",
 
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.description": "Max Stack: [blue]15[/blue].\nWhenever you are attacked, gain [blue]1[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]2[/blue] [gold]Grudge[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Max Stack: [blue]{MaxGrudgeAmount:diff()}[/blue].\nWhenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]{GrudgeGainPerDamage:diff()}[/blue] [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.description": "Max Stack: [blue]15[/blue].\nWhenever you are attacked, gain [blue]1[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]2[/blue] [gold]Grudge[/gold].\nGain [blue]1[/blue] [gold]Vengeance Tattoo[/gold] for every [blue]5[/blue] [gold]Grudge[/gold] Consumed.",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Max Stack: [blue]{MaxGrudgeAmount:diff()}[/blue].\nWhenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]{GrudgeGainPerDamage:diff()}[/blue] [gold]Grudge[/gold].\nGain [blue]1[/blue] [gold]Vengeance Tattoo[/gold] for every [blue]5[/blue] [gold]Grudge[/gold] Consumed.",
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.title": "Grudge",
 
   "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",

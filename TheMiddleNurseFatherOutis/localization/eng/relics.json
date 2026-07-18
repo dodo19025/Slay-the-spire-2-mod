@@ -1,5 +1,5 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-H_OS_BOOK_OF_VENGEANCE.description": "At the start of each combat record current HP value.\nGain 5 [gold]Grudge[/gold].\nGain [gold]Sealed Sword[/gold].\nAt the end of combat heal 3 HP for each stack of [gold]Vengeance Tattoo[/gold] this healing cannot exceed the recorded value.",
+  "THEMIDDLENURSEFATHEROUTIS-H_OS_BOOK_OF_VENGEANCE.description": "At the start of each combat record current HP value.\nGain 5 [gold]Grudge[/gold].\nGain [gold]Sealed Sword[/gold].\nAt the end of combat heal 3 HP for each stack of [gold]Vengeance Tattoo[/gold], this healing cannot exceed the recorded value.",
   "THEMIDDLENURSEFATHEROUTIS-H_OS_BOOK_OF_VENGEANCE.flavor": "",
   "THEMIDDLENURSEFATHEROUTIS-H_OS_BOOK_OF_VENGEANCE.title": "HOS Book Of Vengeance"
 }

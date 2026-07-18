@@ -53,7 +53,8 @@ public class HOSBookOfVengeance()
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
-		HoverTipFactory.FromPower<SealedSwordPower>()
+		HoverTipFactory.FromPower<SealedSwordPower>(),
+		HoverTipFactory.FromPower<GrudgePower>()
 		
 	]; //Get the hover tips from the Json file and display it on the relic
 

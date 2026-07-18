@@ -53,7 +53,7 @@ public class GrudgePower()
     {
         if (side == CombatSide.Enemy)
         {
-            PowerCmd.Decrement(this);
+            //PowerCmd.Decrement(this);
         }
     }
     
