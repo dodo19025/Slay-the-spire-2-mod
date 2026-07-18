@@ -190,7 +190,7 @@ public static class TheMiddleNursefatherOutisCmd
         decimal CorrectedGrudge = 0;
         
 		if(!creature!.HasPower<GrudgePower>()) return;
-        MainFile.Logger.Info($"$Recorded Grudge Amount Before Any Calculations --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+        //MainFile.Logger.Info($"$Recorded Grudge Amount Before Any Calculations --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
         // we need to get the total amount of grudge they ACTUALLY consumed
         decimal CurrentGrudge = creature!.GetPowerAmount<GrudgePower>();
         if (CurrentGrudge < GrudgeConsumed)
@@ -205,7 +205,7 @@ public static class TheMiddleNursefatherOutisCmd
 
         TotalConsumedGrudge += CorrectedGrudge;
         HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] += (int)TotalConsumedGrudge;
-        MainFile.Logger.Info($"$Recorded Grudge Amount Before Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+       //MainFile.Logger.Info($"$Recorded Grudge Amount Before Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
        
         if (creature!.GetPowerAmount<GrudgePower>() <= CorrectedGrudge)
         {
@@ -223,7 +223,7 @@ public static class TheMiddleNursefatherOutisCmd
 			decimal TattoosGained = TotalConsumedGrudge / ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
 			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this
             HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=  (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
-            MainFile.Logger.Info($"$Recorded Grudge Amount After Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+            //MainFile.Logger.Info($"$Recorded Grudge Amount After Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
 			if (creature!.HasPower<VengeanceTattoo>())
             { 
                 

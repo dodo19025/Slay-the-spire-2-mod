@@ -19,6 +19,7 @@ public class VengeanceTattoo()
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
         new DynamicVar("MaxAmount", 4m),
+        new DynamicVar("DamageReduction",1m),
     ]); //Made for values to be easily changable
 
 }

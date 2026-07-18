@@ -53,7 +53,7 @@ public class HOSBookOfVengeance()
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
 	[
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
-		HoverTipFactory.FromPower<FirstSealRemovedPower>()
+		HoverTipFactory.FromPower<SealedSwordPower>()
 		
 	]; //Get the hover tips from the Json file and display it on the relic
 
@@ -100,7 +100,7 @@ public class HOSBookOfVengeance()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource)
 	{
-		MainFile.Logger.Info("11111");
+		//MainFile.Logger.Info("11111");
 		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side || !props.IsPoweredAttack())
 		{
 			return;

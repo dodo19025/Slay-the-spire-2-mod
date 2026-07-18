@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Combat;
+﻿using System.Diagnostics.CodeAnalysis;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -6,7 +7,9 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -25,8 +28,9 @@ public class GrudgePower()
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("DamageReduction",1m),
-        new DynamicVar("MaxGrudgeAmount", 15m)
+        new DynamicVar("MaxGrudgeAmount", 15m),
+        new DynamicVar("GrudgeGainPerHit",1m),
+        new DynamicVar("GrudgeGainPerDamage",2m)
 
     ];
     
@@ -52,10 +56,10 @@ public class GrudgePower()
             PowerCmd.Decrement(this);
         }
     }
-
+    
+    
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
-
     }
 }
