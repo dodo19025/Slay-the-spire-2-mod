@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqiepqo8lxyrh"]
+
+[ext_resource type="Texture2D" uid="uid://c2dyq7fuuvx71" path="res://TheMiddleNurseFatherOutis/images/powers/grudge_power.png" id="1_rknb6"]
+
+[node name="GrudgeCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rknb6")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="CountContainer" type="Control" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -35.0
+offset_right = 39.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Count" type="Label" parent="TextureRect/CountContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -8.0
+offset_right = -20.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.81177783, 0.035520785, 0.730181, 1)
+theme_override_colors/font_outline_color = Color(0.2834465, 0.59120744, 0.6613953, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
