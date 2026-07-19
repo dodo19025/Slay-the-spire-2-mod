@@ -7,7 +7,8 @@ public partial class NGrudgeCounter : Control
 {
 	private TheMiddleNurseFatherOutisMegaLabel? _countLabel;
 
-	private TheMiddleNurseFatherOutisMegaLabel? CountLabel => _countLabel ??= GetNode<TheMiddleNurseFatherOutisMegaLabel>("%Count");
+	private TheMiddleNurseFatherOutisMegaLabel CountLabel =>
+		_countLabel ??= GetNode<TheMiddleNurseFatherOutisMegaLabel>("%Count");
 
 	public void SetCount(int count)
 	{
