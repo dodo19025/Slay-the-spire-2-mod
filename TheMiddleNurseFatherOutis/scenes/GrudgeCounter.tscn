@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqiepqo8lxyrh"]
 
-[ext_resource type="Script" uid="uid://tilucxcb23dv" path="res://TheMiddleNurseFatherOutisCode/Grudge/GrudgeResource.cs" id="1_m5b7e"]
+[ext_resource type="Script" uid="uid://46t2r8wrnqyx" path="res://TheMiddleNurseFatherOutisCode/Grudge/NGrudgeCounter.cs" id="1_m5b7e"]
 [ext_resource type="Texture2D" uid="uid://c2dyq7fuuvx71" path="res://TheMiddleNurseFatherOutis/images/powers/grudge_power.png" id="1_rknb6"]
 
 [node name="GrudgeCounter" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 80.0
