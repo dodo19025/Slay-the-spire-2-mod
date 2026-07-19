@@ -1,0 +1,296 @@
+[gd_scene load_steps=49 format=3 uid="uid://cb5ny5pfbplpv"]
+
+[ext_resource type="Texture2D" uid="uid://cnguxwk4t0mre" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle1.png" id="1_yeft1"]
+[ext_resource type="Texture2D" uid="uid://cy5ibbdjfklvv" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle2.png" id="2_sgfm7"]
+[ext_resource type="Texture2D" uid="uid://mt0lj5e4fh8c" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle3.png" id="3_kqxmo"]
+[ext_resource type="Texture2D" uid="uid://dqcb58q5chv1p" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle4.png" id="4_w1lao"]
+[ext_resource type="Texture2D" uid="uid://by5m3vwvilan6" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle5.png" id="5_mxn3y"]
+[ext_resource type="Texture2D" uid="uid://cyy8jrikhypmf" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle6.png" id="6_1stpy"]
+[ext_resource type="Texture2D" uid="uid://mu52y4lxsgci" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle7.png" id="7_1hq4i"]
+[ext_resource type="Texture2D" uid="uid://djg533cfn2snf" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle8.png" id="8_wpyvs"]
+[ext_resource type="Texture2D" uid="uid://dj4c1pxg11cju" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle9.png" id="9_fyiyo"]
+[ext_resource type="Texture2D" uid="uid://c4xrt2txxf1vy" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle10.png" id="10_xuf6w"]
+[ext_resource type="Texture2D" uid="uid://pxnjcyc5qgm" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle11.png" id="11_m0sfm"]
+[ext_resource type="Texture2D" uid="uid://b6giwv43venok" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle12.png" id="12_uayn5"]
+[ext_resource type="Texture2D" uid="uid://dr480opw7sbjm" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle13.png" id="13_4by3v"]
+[ext_resource type="Texture2D" uid="uid://dr7iqgo37l42k" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle14.png" id="14_tholo"]
+[ext_resource type="Texture2D" uid="uid://csmhmcxtgnwk" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle15.png" id="15_aosy5"]
+[ext_resource type="Texture2D" uid="uid://6psjyvsoma52" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle16.png" id="16_f7hlg"]
+[ext_resource type="Texture2D" uid="uid://b58xpvufsq1pj" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle17.png" id="17_e661i"]
+[ext_resource type="Texture2D" uid="uid://b668jbkl8dfhp" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle18.png" id="18_tycwu"]
+[ext_resource type="Texture2D" uid="uid://vj62gg5tr37o" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle19.png" id="19_ui3nn"]
+[ext_resource type="Texture2D" uid="uid://s0nygs5ut0e3" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle20.png" id="20_vmgmc"]
+[ext_resource type="Texture2D" uid="uid://5btapkdjjq3p" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle21.png" id="21_22wvv"]
+[ext_resource type="Texture2D" uid="uid://nwmrhitintfp" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle22.png" id="22_w14tq"]
+[ext_resource type="Texture2D" uid="uid://caayws2vyw5n3" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle23.png" id="23_hqrf2"]
+[ext_resource type="Texture2D" uid="uid://cls4nc18ro767" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle24.png" id="24_xs0ud"]
+[ext_resource type="Texture2D" uid="uid://50cd4641waho" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle25.png" id="25_yri80"]
+[ext_resource type="Texture2D" uid="uid://dsa8xddfwbmko" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle26.png" id="26_23n2w"]
+[ext_resource type="Texture2D" uid="uid://b1nqkq3ks51ka" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle27.png" id="27_r5mn5"]
+[ext_resource type="Texture2D" uid="uid://dhorq1mm83ldy" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle28.png" id="28_bxy7c"]
+[ext_resource type="Texture2D" uid="uid://dr0h6cemcuia2" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle29.png" id="29_8nacu"]
+[ext_resource type="Texture2D" uid="uid://chnmers8ttud7" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle30.png" id="30_d4oo6"]
+[ext_resource type="Texture2D" uid="uid://c3swxc8jxxd84" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle31.png" id="31_jw52j"]
+[ext_resource type="Texture2D" uid="uid://bep6i80bxi0v" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle32.png" id="32_5oev5"]
+[ext_resource type="Texture2D" uid="uid://d3p3g5n3dorfs" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle33.png" id="33_jr5xp"]
+[ext_resource type="Texture2D" uid="uid://c20jgyukfcmx0" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle34.png" id="34_0hprk"]
+[ext_resource type="Texture2D" uid="uid://bpkowt4cy0tvy" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle35.png" id="35_sduro"]
+[ext_resource type="Texture2D" uid="uid://deotltlevq6na" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle36.png" id="36_gugby"]
+[ext_resource type="Texture2D" uid="uid://4n2pyh57yldo" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle37.png" id="37_rcak0"]
+[ext_resource type="Texture2D" uid="uid://8rgu5n85pq4l" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle38.png" id="38_h7nme"]
+[ext_resource type="Texture2D" uid="uid://boocqrbmr6mmx" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle39.png" id="39_ox1ld"]
+[ext_resource type="Texture2D" uid="uid://ny80y0g0ejqp" path="res://TheMiddleNurseFatherOutis/scenes/Sprites/0seal_sprites/middle_outis_0seal_idle Folder/seal0idle40.png" id="40_etsyu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbp1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yeft1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sgfm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kqxmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w1lao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mxn3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1stpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1hq4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wpyvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fyiyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xuf6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m0sfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uayn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4by3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tholo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aosy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f7hlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_e661i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tycwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ui3nn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_vmgmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_22wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_w14tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hqrf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xs0ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yri80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_23n2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_r5mn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bxy7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_8nacu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_d4oo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jw52j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5oev5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jr5xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_0hprk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_sduro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_gugby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rcak0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_h7nme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_ox1ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_etsyu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_sco7t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_jbp1x")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_vrdk3"]
+resource_name = "idle_merchant"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.40000004, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6, 0.6333334, 0.6666667, 0.70000005, 0.73333335, 0.7666667, 0.8000001, 0.8333334, 0.868031, 0.90000004, 0.9333334, 0.9666667, 0.9987973, 1.0333334, 1.0666667, 1.1, 1.1333334, 1.1666667, 1.2, 1.2333333, 1.2666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:sprite_frames")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("SpriteFrames_jbp1x"), SubResource("SpriteFrames_jbp1x")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.3000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"idle"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8my6t"]
+_data = {
+&"RESET": SubResource("Animation_sco7t"),
+&"idle_merchant": SubResource("Animation_vrdk3")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8wnjn"]
+animation = &"idle_merchant"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_b0o1c"]
+graph_offset = Vector2(-29.760994, 338.74945)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_8wnjn")
+nodes/Animation/position = Vector2(28.515118, 129.29405)
+node_connections = [&"output", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nwqc5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jh8mb"]
+states/End/position = Vector2(899, 100)
+states/Start/position = Vector2(116, 100)
+states/idle/node = SubResource("AnimationNodeBlendTree_b0o1c")
+states/idle/position = Vector2(374, 74)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_nwqc5")]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jbp1x")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8my6t")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_jh8mb")
+anim_player = NodePath("../AnimationPlayer")

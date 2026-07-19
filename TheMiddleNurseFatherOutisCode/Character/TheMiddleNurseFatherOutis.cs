@@ -52,16 +52,16 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     //Note1
     public override NCreatureVisuals? CreateCustomVisuals()
     {
-        return NodeFactory<NCreatureVisuals>.CreateFromScene("res://TheMiddleNurseFatherOutisCode/Character/middle_outis.tscn");
+        return NodeFactory<NCreatureVisuals>.CreateFromScene("res://TheMiddleNurseFatherOutis/scenes/middle_outis.tscn");
         
     }
     
     
-    public override string CustomCharacterSelectBg => "res://TheMiddleNurseFatherOutisCode/scenes/char_select_bg_themiddlenursefatheroutis.tscn";
+    public override string CustomCharacterSelectBg => "res://TheMiddleNurseFatherOutis/scenes/char_select_bg_themiddlenursefatheroutis.tscn";
     public override string CustomEnergyCounterPath =>
-        "res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn";
+        "res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_energy_counter.tscn";
 
-    public override string CustomRestSiteAnimPath => "res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Rest_site.tscn";
+    public override string CustomRestSiteAnimPath => "res://TheMiddleNurseFatherOutis/scenes/Rest_Site/Rest_site.tscn";
 
 
 
@@ -69,7 +69,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override Color EnergyLabelOutlineColor => new("D938BD");
     
     public override string CustomMerchantAnimPath =>
-        "res://TheMiddleNurseFatherOutisCode/scenes/Merchant/Outis_Merchant.tscn";
+        "res://TheMiddleNurseFatherOutis/scenes/Merchant/Outis_Merchant.tscn";
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheMiddleNurseFatherOutisRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<TheMiddleNurseFatherOutisPotionPool>();
