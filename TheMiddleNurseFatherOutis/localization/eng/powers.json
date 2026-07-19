@@ -48,7 +48,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BLEED_NEXT_ATTACK_POWER.title": "Bleed Next Attack",
 
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.description": "Whenever you are attacked, gain [blue]1[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]2[/blue] [gold]Grudge[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Whenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage",
+  "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Whenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]{GrudgeGainPerDamage:diff()}[/blue] [gold]Grudge[/gold] instead.",
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.title": "Grudge",
 
   "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
