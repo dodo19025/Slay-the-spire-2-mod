@@ -20,8 +20,6 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
-using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.ui;
-
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 
@@ -111,7 +109,7 @@ public class HOSBookOfVengeance()
 	private bool _allowGrudgeFromHits = true;
 	
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
-		Creature? dealer, CardModel? cardSource)
+		Creature? dealer, CardModel? cardSource) //this is to handle how grudge is gained
 	{
 		//MainFile.Logger.Info("11111");
 		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side || !props.IsPoweredAttack())
@@ -127,7 +125,7 @@ public class HOSBookOfVengeance()
 			}
 		}
 		
-		if (target.IsPlayer && _allowGrudgeFromHits)
+		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 )
 		{
 			await FixGrudgeCount(base.Owner.Creature, choiceContext, base.DynamicVars["GrudgeGainPerHit"].BaseValue,
 				base.DynamicVars["MaxGrudgeAmount"].BaseValue);
