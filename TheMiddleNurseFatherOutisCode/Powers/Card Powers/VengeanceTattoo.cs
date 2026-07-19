@@ -35,13 +35,5 @@ public class VengeanceTattoo()
         }
         return Math.Max(0m, amount - base.DynamicVars["DamageReduction"].BaseValue);
     }
-
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
-        CardModel? cardSource)
-    {
-        if (power == this && base.Owner == power.Owner)
-        {
-            HOSBookOfVengeance.CombatEndTattoos[base.Owner.Player.PlayerCombatState] = power.Amount;
-        }
-    }
+    
 }

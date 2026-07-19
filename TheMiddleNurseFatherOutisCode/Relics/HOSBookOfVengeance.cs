@@ -45,11 +45,9 @@ public class HOSBookOfVengeance()
 		new DynamicVar("CombatStartHealth",0m)
 	]); //Made for values to be easily changable
 	
-	public static readonly SavedSpireField<PlayerCombatState, int> MaxTattoos = new(() => 4,"MaxTattoos");
-	public static readonly SavedSpireField<PlayerCombatState, int> ConversionRate = new(() => 5,"ConversionRate");
-	public static readonly SavedSpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0,"RecordedConsumedGrudge");
-	public static readonly SavedSpireField<PlayerCombatState, int> TattooHealConversion = new(() => 3,"RecordedConsumedGrudge");
-	public static readonly SavedSpireField<PlayerCombatState, int> CombatEndTattoos = new(() => 0,"CombatEndTattoos");
+	public static readonly SpireField<PlayerCombatState, int> MaxTattoos = new(() => 4);
+	public static readonly SpireField<PlayerCombatState, int> ConversionRate = new(() => 5);
+	public static readonly SpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0);
 
 
 
@@ -104,44 +102,6 @@ public class HOSBookOfVengeance()
 
 	
 	
-	public override async Task AfterCombatVictory(CombatRoom _)
-	{
-		if (base.Owner.Creature.IsDead)
-		{
-			return;
-		}
-		
-		int AfterCombatHealth = base.Owner.Creature.CurrentHp;
-		MainFile.Logger.Info($"After Combat HP before tattoo check--> {AfterCombatHealth}");
-		if(HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] <= 0) return;
-		MainFile.Logger.Info($"After Combat HP --> {AfterCombatHealth}");
-		if (AfterCombatHealth < base.DynamicVars["CombatStartHealth"].BaseValue)
-		{
-			MainFile.Logger.Info("Detected that current hp was lower than the start");
-			int Totalhealed = HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] *
-			                  HOSBookOfVengeance.TattooHealConversion[base.Owner.Creature.Player.PlayerCombatState];
-			HOSBookOfVengeance.CombatEndTattoos[base.Owner.Creature.Player.PlayerCombatState] = 0;
-
-			if (Totalhealed+AfterCombatHealth >= base.DynamicVars["CombatStartHealth"].BaseValue)
-			{
-				//start combat at 70
-				//end it at 68
-				//have 3 tattoos, meaning 9 healing 
-				//this just means what we have to do is do the combat start hp - combat end = healing
-
-				decimal _correctedheal = base.DynamicVars["CombatStartHealth"].BaseValue - AfterCombatHealth;
-				await CreatureCmd.Heal(base.Owner.Creature, _correctedheal);
-			}
-
-			if (Totalhealed + AfterCombatHealth < base.DynamicVars["CombatStartHealth"].BaseValue)
-			{
-				await CreatureCmd.Heal(base.Owner.Creature, Totalhealed);
-
-			}
-
-
-		}
-	}
 
 	private int _currentGainedGrudgeFromHits = 0;
 	private int _currentGainedGrudgeFromDamage = 0;
