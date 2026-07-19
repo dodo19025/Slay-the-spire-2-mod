@@ -1,9 +1,7 @@
-res://control.tscn::c84d42bb17aab8e2b2b8486126a489c7::1782919363::res://.godot/exported/133200997/export-e66311c87c39ec8c25379305b5ae724b-control.scn
-res://middle_outis.tscn::26e80d3fec28d2bf53ffc4bf956065a7::1782919363::res://.godot/exported/133200997/export-8c6da8fc8301181ffdfabd9cf91b8ffd-middle_outis.scn
-res://TheMiddleNurseFatherOutisCode/Character/middle_outis.tscn::a9f1c0d830918990099c4633206e1f14::1783804613::res://.godot/exported/133200997/export-c2dbe12bb47df943c20e0452ab475e9d-middle_outis.scn
-res://TheMiddleNurseFatherOutisCode/scenes/char_select_bg_themiddlenursefatheroutis.tscn::555a54ee02cf69e6506bc1dad6bd4a46::1782985516::res://.godot/exported/133200997/export-c52743cc800731254dd2f0796ff8b2e4-char_select_bg_themiddlenursefatheroutis.scn
-res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn::dd9b2ee38ae3cab34fbab1d064ff460b::1783295795::res://.godot/exported/133200997/export-560e14a74f8a7c02542a0e12d03a05d1-outis_energy_counter.scn
-res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Rest_site.tscn::8f87c0edaa4e95aef04c6d61e8ba3d26::1783471162::res://.godot/exported/133200997/export-910ab05b304fe8c98fce05b2eb26ad84-Rest_site.scn
-res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Selection_Reticle.tscn::fa36f84f796a0004f597eefa77971d35::1783017489::res://.godot/exported/133200997/export-fef7302729eb63a7c1c96274960c95f1-Selection_Reticle.scn
-res://TheMiddleNurseFatherOutisCode/scenes/Merchant/Outis_Merchant.tscn::d6b7932b7b9d6ed0905d95c81bba0322::1783295808::res://.godot/exported/133200997/export-1c5bca9bcb549d98df8d58bc880b6fc8-Outis_Merchant.scn
-res://TheMiddleNurseFatherOutisCode/scenes/OutisIcon.tscn::b7336a4bc6bcafb604c7535731e6e30d::1783828882::res://.godot/exported/133200997/export-e8d7803d7a73c2c1f99c580699616297-OutisIcon.scn
+res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_energy_counter.tscn::fb44a4240f68ee165831a5f6e2e5f9db::1784453716::res://.godot/exported/133200997/export-8ea86f911177a5028a72b482d6fc80f1-outis_energy_counter.scn
+res://TheMiddleNurseFatherOutis/scenes/Merchant/Outis_Merchant.tscn::8406a3524d9c0d3275b7831dd91e2e07::1784453746::res://.godot/exported/133200997/export-8b147ad58e25860515da80c29a60cf19-Outis_Merchant.scn
+res://TheMiddleNurseFatherOutis/scenes/Rest_Site/Rest_site.tscn::49a701d9a2bd1ef66aabfa83562892ba::1784453746::res://.godot/exported/133200997/export-c71ca8eb8a971314caa13d50b2289d29-Rest_site.scn
+res://TheMiddleNurseFatherOutis/scenes/Rest_Site/Selection_Reticle.tscn::fa36f84f796a0004f597eefa77971d35::1783017489::res://.godot/exported/133200997/export-0e01171f753853a38e95ba9cdda95ad7-Selection_Reticle.scn
+res://TheMiddleNurseFatherOutis/scenes/char_select_bg_themiddlenursefatheroutis.tscn::fd807bdeffa7db2fa855dd45595ead14::1784453746::res://.godot/exported/133200997/export-9662e5792faee44779e3c5fc34928d07-char_select_bg_themiddlenursefatheroutis.scn
+res://TheMiddleNurseFatherOutis/scenes/middle_outis.tscn::19729cbb1765dd3ce2c8b7e65cf9246a::1784453746::res://.godot/exported/133200997/export-9605e179ab751c035066ff00a3b995fd-middle_outis.scn
+res://TheMiddleNurseFatherOutis/scenes/OutisIcon.tscn::b7336a4bc6bcafb604c7535731e6e30d::1783828882::res://.godot/exported/133200997/export-844032c39e0e4f75224c712c7915746b-OutisIcon.scn

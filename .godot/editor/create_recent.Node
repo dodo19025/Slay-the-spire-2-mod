@@ -1,5 +1,6 @@
-TextureRect
+Label
 Control
+TextureRect
 AnimatedSprite2D
 AnimationTree
 AnimationPlayer
@@ -8,7 +9,6 @@ Sprite2D
 AudioStreamPlayer2D
 CanvasModulate
 ShaderGlobalsOverride
-Label
 VideoStreamPlayer
 AspectRatioContainer
 Marker2D
