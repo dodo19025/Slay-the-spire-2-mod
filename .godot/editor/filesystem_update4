@@ -1,0 +1,10 @@
+res://TheMiddleNurseFatherOutisCode/scenes/Big_Energy/outis_energy_counter.tscn
+res://TheMiddleNurseFatherOutisCode/scenes/Rest_Site/Rest_site.tscn
+res://TheMiddleNurseFatherOutis/scenes/char_select_bg_themiddlenursefatheroutis.tscn
+res://TheMiddleNurseFatherOutisCode/Character/middle_outis.tscn
+res://TheMiddleNurseFatherOutis/scenes/Rest_Site/Rest_site.tscn
+res://TheMiddleNurseFatherOutis/scenes/Merchant/Outis_Merchant.tscn
+res://TheMiddleNurseFatherOutisCode/ui/TheMiddleNurseFatherOutisMegaLabel.cs
+res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn
+res://TheMiddleNurseFatherOutisCode/ui/NGrudgeCounter.cs
+res://TheMiddleNurseFatherOutisCode/ui/NGrudgeCounterReminder.cs
