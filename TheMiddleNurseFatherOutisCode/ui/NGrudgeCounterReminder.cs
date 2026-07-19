@@ -10,8 +10,8 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.ui;
 public partial class NGrudgeCounterReminder : Control
 {
     private NGrudgeCounter _counter = null!;
-    private Player _player;
-    private Tween _fadeTween;
+    private Player? _player;
+    private Tween? _fadeTween;
 
     public override void _Ready()
     {
@@ -23,7 +23,7 @@ public partial class NGrudgeCounterReminder : Control
         AddChild(_counter);
     }
 
-    public void intialize(Player player)
+    public void Initialize(Player player)
     {
         _player = player;
         UpdateVisiblity();
@@ -54,13 +54,12 @@ public partial class NGrudgeCounterReminder : Control
         var shouldShow = _player != null && GrudgeResource.CanSpendGrudge(_player) &&
                          _player.Creature.CombatState?.CurrentSide == CombatSide.Player;
         if (shouldShow)
-        {
             _counter.SetCount(GrudgeResource.GetGrudge(_player!));
-        }
 
         _fadeTween?.Kill();
         _fadeTween = CreateTween();
-        _fadeTween.TweenProperty(_counter, "modulate:a", shouldShow ? 1f : 0f, 0.2f).SetEase(Tween.EaseType.Out)
+        _fadeTween.TweenProperty(_counter, "modulate:a", shouldShow ? 1f : 0f, 0.2f)
+            .SetEase(Tween.EaseType.Out)
             .SetTrans(Tween.TransitionType.Sine);
     }
 }

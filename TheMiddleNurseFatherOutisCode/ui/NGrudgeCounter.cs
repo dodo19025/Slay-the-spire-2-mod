@@ -16,7 +16,7 @@ public partial class NGrudgeCounter : Control
 
 	public void ApplyFont(Font font, int minsize, int maxsize)
 	{
-		CountLabel.AddThemeFontOverride(ThemeConstants.Label.Font,font);
+		CountLabel.AddThemeFontOverride(ThemeConstants.Label.Font, font);
 		CountLabel.MinFontSize = minsize;
 		CountLabel.MaxFontSize = maxsize;
 	}

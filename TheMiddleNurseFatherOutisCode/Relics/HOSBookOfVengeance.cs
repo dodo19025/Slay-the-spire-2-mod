@@ -19,6 +19,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.ui;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
@@ -68,7 +69,6 @@ public class HOSBookOfVengeance()
 		{
 			
 			Flash();
-			await GrudgeResource.GainGrudge(5, base.Owner.Creature.Player);
 			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				1m, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
@@ -91,6 +91,7 @@ public class HOSBookOfVengeance()
 	{
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
+			await GrudgeResource.GainGrudge(5, base.Owner.Creature.Player);
 			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
 			MainFile.Logger.Info($"Current HP --> {base.DynamicVars["CombatStartHealth"].BaseValue}");
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;

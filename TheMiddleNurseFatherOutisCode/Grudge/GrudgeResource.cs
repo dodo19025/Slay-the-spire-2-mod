@@ -11,7 +11,7 @@ public static class GrudgeResource
     public static event Action<PlayerCombatState, int, int>? GrudgeChanged;
     
     public static int GetGrudge(Player player) => 
-        player.PlayerCombatState != null ? PlayerGrudge[player.PlayerCombatState] : 0; //this should do what it says?
+        player.PlayerCombatState != null ? PlayerGrudge[player.PlayerCombatState] : 0; //this should do what it says? aka ??
 
     public static bool CanSpendGrudge(Player player)
     {
@@ -25,9 +25,9 @@ public static class GrudgeResource
         if(player.PlayerCombatState == null || player.Creature.CombatState == null) return;
         
         //what is about to happen next is basically the process of how you gain stars one by one in the display
-
         for (var i = 0; i < amount; i++)
         {
+            MainFile.Logger.Info($"Added {i} Grudge");
             var OldVar = PlayerGrudge[player.PlayerCombatState];
             PlayerGrudge[player.PlayerCombatState] = OldVar + i;
             GrudgeChanged?.Invoke(player.PlayerCombatState,OldVar,OldVar+1);
@@ -37,7 +37,8 @@ public static class GrudgeResource
                 //then come back ONCE you make hooks for gainign grudge
             }
         }
-        
+        MainFile.Logger.Info($"Added {amount} total Grudge");
+
         
     }
 
