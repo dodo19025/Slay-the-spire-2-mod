@@ -73,6 +73,8 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override CardPoolModel CardPool => ModelDb.CardPool<TheMiddleNurseFatherOutisCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<TheMiddleNurseFatherOutisRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<TheMiddleNurseFatherOutisPotionPool>();
+    
+    
 
     /*  PlaceholderCharacterModel will utilize placeholder basegame assets for most of your character assets until you
         override all the other methods that define those assets.

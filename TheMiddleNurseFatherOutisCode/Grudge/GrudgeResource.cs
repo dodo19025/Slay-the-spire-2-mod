@@ -1,5 +1,8 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Abstracts;
+using BaseLib.Utils;
+using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Nodes.Combat;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 
@@ -7,9 +10,9 @@ public static class GrudgeResource
 {
     private static readonly SpireField<PlayerCombatState, int> PlayerGrudge = new(() => 0);
     
-    
     public static event Action<PlayerCombatState, int, int>? GrudgeChanged;
-    
+
+
     public static int GetGrudge(Player player) => 
         player.PlayerCombatState != null ? PlayerGrudge[player.PlayerCombatState] : 0; //this should do what it says? aka ??
 
@@ -50,5 +53,96 @@ public static class GrudgeResource
         if (newVar == OldVar) return;
         PlayerGrudge[player.PlayerCombatState] = newVar; //basically changes the number to the new one now after losing it
         GrudgeChanged?.Invoke(player.PlayerCombatState,OldVar,newVar);
+    }
+
+    public class GrudgeCounterController() : CustomSingletonModel(HookType.Combat)
+    {
+        public static readonly AddedNode<NEnergyCounter, NGrudgeCounter> GrudgeCounterNode = new(parent =>
+        {
+            var counter = new NGrudgeCounter
+            {
+                Name = "GrudgeCounter",
+                MouseFilter = Control.MouseFilterEnum.Ignore
+            };
+
+            counter.SetAnchorsPreset(Control.LayoutPreset.TopLeft);
+            counter.Position = Vector2.Zero;
+            counter.Size = new Vector2(128, 128);
+            counter.ZIndex = 0;
+
+            var virtualscene =
+                ResourceLoader.Load<PackedScene>("res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn");
+
+            var visual = virtualscene.Instantiate<Control>();
+            visual.Name = "Icon";
+            visual.MouseFilter = Control.MouseFilterEnum.Ignore;
+
+            counter.AddChild(visual);
+
+            return counter;
+
+        });
+    }
+    
+    
+    [GlobalClass]
+    public partial class NGrudgeCounter : Control
+    {
+        private Label? _label;
+        private Control? _icon;
+        private NEnergyCounter? _energyCounter;
+        private Player? _player;
+
+        private int _grudgeCount = 0;
+
+        public override void _Ready()
+        {
+            this.MouseFilter = MouseFilterEnum.Ignore;
+
+            _label = GetNodeOrNull<Label>("GrudgeCounter/CountContainer/Count");
+            _icon = GetNodeOrNull<Control>("GrudgeCounter/Icon");
+
+            if (GetParent() is NEnergyCounter energyCounter)
+            {
+                _energyCounter = energyCounter;
+            }
+
+            this.Visible = false;
+            
+        }
+
+        public override void _Process(double delta)
+        {
+            if(_player == null) return;
+            RefreshVisiblity();
+            if(this.Visible == false) return;
+            UpdateGrudge();
+        }
+
+        private void RefreshVisiblity()
+        {
+            if (_player == null || _player.PlayerCombatState == null)
+            {
+                this.Visible = false;
+            }
+            else
+            {
+                int Grudge =  GetGrudge(_player);
+
+                this.Visible = this.Visible || _player.Character is Character.TheMiddleNurseFatherOutis || Grudge > 0;
+
+            }
+        }
+
+        private void UpdateGrudge()
+        {
+            if (_player == null || _player.PlayerCombatState == null || _label == null)
+            {
+                return;
+            }
+            int Grudge =  GetGrudge(_player);
+            _grudgeCount = Grudge;
+            _label.Text = _grudgeCount.ToString();
+        }
     }
 }
