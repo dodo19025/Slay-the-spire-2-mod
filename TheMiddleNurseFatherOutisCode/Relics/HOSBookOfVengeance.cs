@@ -41,7 +41,6 @@ public class HOSBookOfVengeance()
 		new DynamicVar("GrudgeGainPerDamage",2m),
 		new DynamicVar("GrudgeGainPerHit",1m),
 		new DynamicVar("MaxGrudgeProcsFromHits",5m),
-		new DynamicVar("MaxGrudgeAmount",15m),
 		new DynamicVar("CombatStartHealth",0m)
 	]); //Made for values to be easily changable
 	
@@ -116,19 +115,11 @@ public class HOSBookOfVengeance()
 		{
 			return;
 		}
-
-		if (base.Owner.Creature.HasPower<GrudgePower>())
-		{
-			if (base.Owner.Creature.GetPowerAmount<GrudgePower>() >= base.DynamicVars["MaxGrudgeAmount"].BaseValue)
-			{
-				return;
-			}
-		}
 		
 		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 )
 		{
-			await FixGrudgeCount(base.Owner.Creature, choiceContext, base.DynamicVars["GrudgeGainPerHit"].BaseValue,
-				base.DynamicVars["MaxGrudgeAmount"].BaseValue);
+			await PowerCmd.Apply<GrudgePower>(choiceContext, base.Owner.Creature,
+				base.DynamicVars["GrudgeGainPerHit"].BaseValue, base.Owner.Creature, null);
 			_currentGainedGrudgeFromHits++;
 			if (_currentGainedGrudgeFromHits >= base.DynamicVars["MaxGrudgeProcsFromHits"].BaseValue)
 			{
@@ -137,9 +128,9 @@ public class HOSBookOfVengeance()
 		}
 		
 		if (target.IsPlayer && result.UnblockedDamage > 0 && _allowGrudgeFromDamage)
-		{ 
-			await FixGrudgeCount(base.Owner.Creature, choiceContext, base.DynamicVars["GrudgeGainPerDamage"].BaseValue,
-				base.DynamicVars["MaxGrudgeAmount"].BaseValue);
+		{
+			await PowerCmd.Apply<GrudgePower>(choiceContext, base.Owner.Creature,
+				base.DynamicVars["GrudgeGainPerDamage"].BaseValue, base.Owner.Creature, null);
 			_currentGainedGrudgeFromDamage++;
 			if (_currentGainedGrudgeFromDamage >= base.DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
 			{
@@ -159,30 +150,6 @@ public class HOSBookOfVengeance()
 	}
 //kill me!
 
-	private static async Task FixGrudgeCount(Creature creature, PlayerChoiceContext choiceContext, decimal AmountofGrudgeGained, decimal MaxGrudgeAllowed)
-	{
-		if (creature.HasPower<GrudgePower>())
-		{
-			if (AmountofGrudgeGained + creature.GetPowerAmount<GrudgePower>() >= MaxGrudgeAllowed && creature.GetPowerAmount<GrudgePower>() < MaxGrudgeAllowed)
-			{
-				decimal _amountCorrected = MaxGrudgeAllowed - creature.GetPowerAmount<GrudgePower>();
-				await PowerCmd.Apply<GrudgePower>(choiceContext, creature, _amountCorrected, creature, null);
-				//say you have 11 grudge, and you're set to gain 5, i should only allow 4 gained from this
-				//how i would do this is just simply do max amount - current amount then add that amount regardless?
-			}
-			else if (AmountofGrudgeGained + creature.GetPowerAmount<GrudgePower>() < MaxGrudgeAllowed)
-			{
-				decimal _amountCorrected = MaxGrudgeAllowed - creature.GetPowerAmount<GrudgePower>();
-				await PowerCmd.Apply<GrudgePower>(choiceContext, creature, AmountofGrudgeGained, creature, null);
-			}
-			
-		}
-		else
-		{
-			decimal _amountCorrected = MaxGrudgeAllowed - creature.GetPowerAmount<GrudgePower>();
-			await PowerCmd.Apply<GrudgePower>(choiceContext, creature, AmountofGrudgeGained, creature, null);
-		}
-	}
 
 	
 
