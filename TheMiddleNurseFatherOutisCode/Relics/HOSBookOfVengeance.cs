@@ -157,7 +157,7 @@ public class HOSBookOfVengeance()
 		_allowGrudgeFromHits = true;
 		return Task.CompletedTask;
 	}
-//kill me
+//kill me!
 
 	private static async Task FixGrudgeCount(Creature creature, PlayerChoiceContext choiceContext, decimal AmountofGrudgeGained, decimal MaxGrudgeAllowed)
 	{
