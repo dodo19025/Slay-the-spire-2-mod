@@ -7,7 +7,6 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 public partial class NGrudgeCounter : Control
 {
 	private Label? _label;
-	private Control? _icon;
 	private NEnergyCounter? _energyCounter;
 	private Player? _player;
 
@@ -17,7 +16,7 @@ public partial class NGrudgeCounter : Control
 	{
 		this.MouseFilter = MouseFilterEnum.Ignore;
 		
-		_label = GetNodeOrNull<Label>("%Count");
+		_label = GetNodeOrNull<Label>("%_Count");
 		
 		if (GetParent() is NEnergyCounter energyCounter)
 		{
