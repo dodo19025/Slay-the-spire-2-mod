@@ -104,8 +104,10 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="Layers" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 51.0
+offset_top = 56.0
+offset_right = 91.0
+offset_bottom = 96.0
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 0
@@ -118,8 +120,10 @@ texture = ExtResource("1_txljk")
 
 [node name="RotationLayers" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_left = 51.0
+offset_top = 56.0
+offset_right = 179.0
+offset_bottom = 184.0
 
 [node name="Layer3" type="TextureRect" parent="RotationLayers"]
 layout_mode = 0
@@ -141,15 +145,17 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_yp1hp")
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
+position = Vector2(51, 56)
 
 [node name="EnergyVfxFront" type="Node2D" parent="."]
+position = Vector2(51, 56)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = -8.0
-offset_top = -15.0
-offset_right = 64.0
-offset_bottom = 53.0
+offset_left = 43.0
+offset_top = 41.0
+offset_right = 115.0
+offset_bottom = 109.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_colors/font_outline_color = Color(0.8557185, 0.36021084, 0.9040618, 1)
