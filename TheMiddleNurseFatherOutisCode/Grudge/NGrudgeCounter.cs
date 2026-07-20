@@ -66,7 +66,10 @@ public partial class NGrudgeCounter : Control
 		}
 	}
 
-	private void UpdateGrudge()
+	
+	//make it increase one by one
+	
+	private void UpdateGrudge() 
 	{
 		if (_player == null || _player.PlayerCombatState == null)
 		{
