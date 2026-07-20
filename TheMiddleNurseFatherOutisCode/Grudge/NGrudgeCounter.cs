@@ -20,8 +20,8 @@ public partial class NGrudgeCounter : Control
 		this.MouseFilter = MouseFilterEnum.Ignore;
 		
 		_label = GetNodeOrNull<Label>("%Count");
-		LocString locString = new LocString("static_hover_tips","GRUDGE.description");
-		_hoverTip = new HoverTip(new LocString("static_hover_tips", "GRUDGE.title"), locString);
+		LocString locString = new LocString("static_hover_tips","THEMIDDLENURSEFATHEROUTIS-GRUDGE.description");
+		_hoverTip = new HoverTip(new LocString("static_hover_tips", "THEMIDDLENURSEFATHEROUTIS-GRUDGE.title"), locString);
 
 
 		Connect(Control.SignalName.MouseEntered, Callable.From(OnHovered));
