@@ -63,18 +63,16 @@ public class HOSBookOfVengeance()
 
 	public override async Task AfterRoomEntered(AbstractRoom room)
 	{
-		if(room is CombatRoom)
+		if (room is CombatRoom)
 		{
-			
+
 			Flash();
 			await PowerCmd.Apply<SealedSwordPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				1m, base.Owner.Creature, null); //cahnge this back to first seal when done testing
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
-				1m, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
-			await PowerCmd.Apply<GrudgePower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
-				base.DynamicVars["CombatStartGrudgePower"].BaseValue, base.Owner.Creature, null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1
+				1m, base.Owner.Creature,
+				null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1}
 		}
-		
 	}
 	
 	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
@@ -89,7 +87,7 @@ public class HOSBookOfVengeance()
 	{
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
-			await GrudgeResource.GainGrudge(5, base.Owner!.Creature!.Player!);
+			await GrudgeResource.GainGrudge((int)base.DynamicVars["CombatStartGrudgePower"].BaseValue, base.Owner!.Creature!.Player!);
 			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
 			MainFile.Logger.Info($"Current HP --> {base.DynamicVars["CombatStartHealth"].BaseValue}");
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
@@ -110,7 +108,6 @@ public class HOSBookOfVengeance()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource) //this is to handle how grudge is gained
 	{
-		//MainFile.Logger.Info("11111");
 		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side || !props.IsPoweredAttack())
 		{
 			return;
@@ -118,8 +115,8 @@ public class HOSBookOfVengeance()
 		
 		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 )
 		{
-			await PowerCmd.Apply<GrudgePower>(choiceContext, base.Owner.Creature,
-				base.DynamicVars["GrudgeGainPerHit"].BaseValue, base.Owner.Creature, null);
+			await GrudgeResource.GainGrudge((int)base.DynamicVars["GrudgeGainPerHit"].BaseValue,
+				base.Owner.Creature.Player);
 			_currentGainedGrudgeFromHits++;
 			if (_currentGainedGrudgeFromHits >= base.DynamicVars["MaxGrudgeProcsFromHits"].BaseValue)
 			{
@@ -129,8 +126,8 @@ public class HOSBookOfVengeance()
 		
 		if (target.IsPlayer && result.UnblockedDamage > 0 && _allowGrudgeFromDamage)
 		{
-			await PowerCmd.Apply<GrudgePower>(choiceContext, base.Owner.Creature,
-				base.DynamicVars["GrudgeGainPerDamage"].BaseValue, base.Owner.Creature, null);
+			await GrudgeResource.GainGrudge((int)base.DynamicVars["GrudgeGainPerDamage"].BaseValue,
+				base.Owner.Creature.Player);
 			_currentGainedGrudgeFromDamage++;
 			if (_currentGainedGrudgeFromDamage >= base.DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
 			{

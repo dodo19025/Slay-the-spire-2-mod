@@ -27,11 +27,11 @@ public static partial class GrudgeResource
 
 	public static async Task GainGrudge(int amount, Player player)
 	{
-		if(player.PlayerCombatState == null || player.Creature.CombatState == null || CanSpendGrudge(player) == false) return;
+		if(player.PlayerCombatState == null || player.Creature.CombatState == null) return;
 		
 		//what is about to happen next is basically the process of how you gain stars one by one in the display
 		var Grudges = PlayerGrudge[player.PlayerCombatState];
-		PlayerGrudge[player.PlayerCombatState] += (int)Math.Max(amount + Grudges, 0);
+		PlayerGrudge[player.PlayerCombatState] = (int)Math.Max(amount + Grudges, 0);
 		GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);
 
 
@@ -55,9 +55,11 @@ public static partial class GrudgeResource
 			var counter = PreloadManager.Cache.GetScene("res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn")
 				.Instantiate<NGrudgeCounter>();
 			
+			
+			
 			parent.AddChildSafely(counter);
 			counter.SetAnchorsPreset(Control.LayoutPreset.Center);
-			counter.Position = new Vector2(200,200);
+			counter.Position = new Vector2(130,-70);
 			counter.Size = new Vector2(94, 94);
 			counter.ZIndex = 0;
 
