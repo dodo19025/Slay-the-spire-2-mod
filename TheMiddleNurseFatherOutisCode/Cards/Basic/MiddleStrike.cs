@@ -33,7 +33,7 @@ public class MiddleStrike()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await GrudgeResource.GainGrudge(5, base.Owner.Creature.Player);
+        await GrudgeResource.GainGrudge(4, base.Owner.Creature.Player);
     }
 
 

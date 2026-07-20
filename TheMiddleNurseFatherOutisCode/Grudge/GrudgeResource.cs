@@ -1,7 +1,9 @@
 using BaseLib.Abstracts;
 using BaseLib.Utils;
 using Godot;
+using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
@@ -25,22 +27,13 @@ public static partial class GrudgeResource
 
 	public static async Task GainGrudge(int amount, Player player)
 	{
-		if(player.PlayerCombatState == null || player.Creature.CombatState == null) return;
+		if(player.PlayerCombatState == null || player.Creature.CombatState == null || CanSpendGrudge(player) == false) return;
 		
 		//what is about to happen next is basically the process of how you gain stars one by one in the display
-		for (var i = 0; i < amount; i++)
-		{
-			MainFile.Logger.Info($"Added {i} Grudge");
-			var OldVar = PlayerGrudge[player.PlayerCombatState];
-			PlayerGrudge[player.PlayerCombatState] = OldVar + i;
-			GrudgeChanged?.Invoke(player.PlayerCombatState,OldVar,OldVar+1);
+		var Grudges = PlayerGrudge[player.PlayerCombatState];
+		PlayerGrudge[player.PlayerCombatState] += (int)Math.Max(amount + Grudges, 0);
+		GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);
 
-			foreach (var model in player.Creature.CombatState.IterateHookListeners().ToList())
-			{
-				//then come back ONCE you make hooks for gainign grudge
-			}
-		}
-		MainFile.Logger.Info($"Added {amount} total Grudge");
 
 		
 	}
@@ -59,25 +52,14 @@ public static partial class GrudgeResource
 	{
 		public static readonly AddedNode<NEnergyCounter, NGrudgeCounter> GrudgeCounterNode = new(parent =>
 		{
-			var counter = new NGrudgeCounter
-			{
-				Name = "GrudgeCounter",
-				MouseFilter = Control.MouseFilterEnum.Ignore
-			};
-
-			counter.SetAnchorsPreset(Control.LayoutPreset.TopRight);
+			var counter = PreloadManager.Cache.GetScene("res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn")
+				.Instantiate<NGrudgeCounter>();
+			
+			parent.AddChildSafely(counter);
+			counter.SetAnchorsPreset(Control.LayoutPreset.Center);
 			counter.Position = Vector2.Right;
-			counter.Size = new Vector2(200, 200);
+			counter.Size = new Vector2(94, 94);
 			counter.ZIndex = 0;
-
-			var virtualscene =
-				ResourceLoader.Load<PackedScene>("res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn");
-
-			var visual = virtualscene.Instantiate<Control>();
-			visual.Name = "%Icon";
-			visual.MouseFilter = Control.MouseFilterEnum.Ignore;
-
-			counter.AddChild(visual);
 
 			return counter;
 

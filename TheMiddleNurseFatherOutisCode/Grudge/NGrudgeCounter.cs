@@ -16,7 +16,7 @@ public partial class NGrudgeCounter : Control
 	{
 		this.MouseFilter = MouseFilterEnum.Ignore;
 		
-		_label = GetNodeOrNull<Label>("%_Count");
+		_label = GetNodeOrNull<Label>("%Count");
 		
 		if (GetParent() is NEnergyCounter energyCounter)
 		{
@@ -44,7 +44,6 @@ public partial class NGrudgeCounter : Control
 
 	private void RefreshVisiblity()
 	{
-		MainFile.Logger.Debug($"Refreshing visibility");
 
 		if (_player == null || _player.PlayerCombatState == null)
 		{
@@ -53,10 +52,7 @@ public partial class NGrudgeCounter : Control
 		else
 		{
 			int Grudge = GrudgeResource.GetGrudge(_player);
-			MainFile.Logger.Info($"Player Has --> {Grudge}: Refreshed Visibility and detected player is there");
 			this.Visible = this.Visible || _player.Character is Character.TheMiddleNurseFatherOutis || Grudge > 0;
-			this.Visible = true;
-
 		}
 	}
 
@@ -69,7 +65,6 @@ public partial class NGrudgeCounter : Control
 
 		if (_label == null)
 		{
-			MainFile.Logger.Info($"Player does not have a label, returning");
 			return;
 		}
 		int Grudge =  GrudgeResource.GetGrudge(_player);
