@@ -89,7 +89,7 @@ public class HOSBookOfVengeance()
 	{
 		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
-			await GrudgeResource.GainGrudge(5, base.Owner.Creature.Player);
+			await GrudgeResource.GainGrudge(3, base.Owner!.Creature!.Player!);
 			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
 			MainFile.Logger.Info($"Current HP --> {base.DynamicVars["CombatStartHealth"].BaseValue}");
 			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
