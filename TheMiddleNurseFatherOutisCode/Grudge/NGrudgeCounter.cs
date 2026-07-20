@@ -22,6 +22,11 @@ public partial class NGrudgeCounter : Control
 		_label = GetNodeOrNull<Label>("%Count");
 		LocString locString = new LocString("static_hover_tips","GRUDGE.description");
 		_hoverTip = new HoverTip(new LocString("static_hover_tips", "GRUDGE.title"), locString);
+
+
+		Connect(Control.SignalName.MouseEntered, Callable.From(OnHovered));
+		Connect(Control.SignalName.MouseExited, Callable.From(OnUnhovered));
+
 		
 		if (GetParent() is NEnergyCounter energyCounter)
 		{
@@ -80,8 +85,11 @@ public partial class NGrudgeCounter : Control
 
 	private void OnHovered()
 	{
+		MainFile.Logger.Info("@@@");
 		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -300f));
 	}
+	
+	
 
 	private void OnUnhovered()
 	{
