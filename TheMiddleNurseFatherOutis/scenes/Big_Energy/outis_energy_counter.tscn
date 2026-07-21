@@ -26,7 +26,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_3ndad")
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 1
@@ -43,17 +42,7 @@ texture = ExtResource("1_txljk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="RotationLayers" type="Control" parent="Layers"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Layer2" type="TextureRect" parent="Layers/RotationLayers"]
+[node name="Layer2" type="TextureRect" parent="Layers"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +57,7 @@ texture = ExtResource("4_1lrd6")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Layer3" type="TextureRect" parent="Layers/RotationLayers"]
+[node name="Layer3" type="TextureRect" parent="Layers"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,6 +72,17 @@ texture = ExtResource("2_yp1hp")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="RotationLayers" type="Control" parent="Layers"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3ndad")
+
 [node name="EnergyVfxFront" type="Node2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(64, 64)
@@ -92,6 +92,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)

@@ -16,8 +16,8 @@ public partial class NCustomRotationLayers : Control
 	{
 		_parent = GetParent<NEnergyCounter>();
 		_player = _parent._player;
-		_layer2 = GetNode<TextureRect>("Layer2");
-		_layer3 = GetNode<TextureRect>("Layer3");
+		_layer2 = GetNodeOrNull<TextureRect>("Layers/Layer2");
+		_layer3 = GetNodeOrNull<TextureRect>("Layers/Layer3");
 	}
 
 	public override void _Process(double delta)
