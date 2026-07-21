@@ -1,10 +1,10 @@
-Control
-Label
 TextureRect
+Label
+Node2D
+Control
 AnimatedSprite2D
 AnimationTree
 AnimationPlayer
-Node2D
 Sprite2D
 AudioStreamPlayer2D
 CanvasModulate
