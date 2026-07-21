@@ -1,3 +1,5 @@
-res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_energy_counter.tscn
-res://TheMiddleNurseFatherOutisCode/Grudge/GrudgeResource.cs
 res://TheMiddleNurseFatherOutis/scenes/Big_Energy/NCustomRotationLayers.cs
+res://TheMiddleNurseFatherOutisCode/Grudge/GrudgeResource.cs
+res://TheMiddleNurseFatherOutisCode/Grudge/NGrudgeCounter.cs
+res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_energy_counter.tscn
+res://TheMiddleNurseFatherOutis/scenes/GrudgeCounter.tscn

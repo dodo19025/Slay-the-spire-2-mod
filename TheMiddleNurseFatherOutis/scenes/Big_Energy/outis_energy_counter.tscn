@@ -26,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_3ndad")
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 1
@@ -81,7 +82,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_3ndad")
 
 [node name="EnergyVfxFront" type="Node2D" parent="."]
 unique_name_in_owner = true
