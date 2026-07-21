@@ -4,7 +4,9 @@ using Godot;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 
@@ -33,7 +35,14 @@ public static partial class GrudgeResource
 		var Grudges = PlayerGrudge[player.PlayerCombatState];
 		PlayerGrudge[player.PlayerCombatState] = (int)Math.Max(amount + Grudges, 0);
 		GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);
-
+		foreach (var model in player.Creature.CombatState.IterateHookListeners().ToList())
+		{
+			if (model is IAfterGrudgeGained listener)
+			{
+				MainFile.Logger.Info($"Detected in the listener that you gained {amount} Grudges");
+				await listener.AfterGrudgeGained(player, amount);
+			}
+		}
 
 		
 	}

@@ -17,7 +17,7 @@ public partial class NGrudgeCounter : Control
 
 	public override void _Ready()
 	{
-		this.MouseFilter = MouseFilterEnum.Ignore;
+		this.MouseFilter = MouseFilterEnum.Pass;
 		
 		_label = GetNodeOrNull<Label>("%Count");
 		LocString locString = new LocString("static_hover_tips","THEMIDDLENURSEFATHEROUTIS-GRUDGE.description");
@@ -87,8 +87,7 @@ public partial class NGrudgeCounter : Control
 
 
 	private void OnHovered()
-	{
-		MainFile.Logger.Info("@@@");
+	{ 
 		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -300f));
 	}
 	

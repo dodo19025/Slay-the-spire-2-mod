@@ -108,12 +108,12 @@ public class HOSBookOfVengeance()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource) //this is to handle how grudge is gained
 	{
-		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side || !props.IsPoweredAttack())
+		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side)
 		{
 			return;
 		}
 		
-		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 )
+		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 && props.IsPoweredAttack())
 		{
 			await GrudgeResource.GainGrudge((int)base.DynamicVars["GrudgeGainPerHit"].BaseValue,
 				base.Owner.Creature.Player);
