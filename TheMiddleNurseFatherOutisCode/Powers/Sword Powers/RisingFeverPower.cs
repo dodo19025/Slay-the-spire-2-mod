@@ -33,7 +33,7 @@ public class RisingFeverPower()
         new BoolVar("CanUnpack", false)
     ]);
 
-    public override int DisplayAmount => base.DynamicVars["FeverAmount"].IntValue;
+    public override int DisplayAmount => DynamicVars["FeverAmount"].IntValue;
 
     public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
