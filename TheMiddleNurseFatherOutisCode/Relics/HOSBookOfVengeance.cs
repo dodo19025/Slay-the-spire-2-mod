@@ -58,9 +58,6 @@ public class HOSBookOfVengeance()
 
 		HoverTipFactory.FromPower<SealedSwordPower>(),
 		HoverTipFactory.FromPower<RisingFeverPower>(), 
-		HoverTipFactory.FromPower<GrudgePower>(),
-		HoverTipFactory.FromPower<VengeanceTattoo>(), 
-		
 	]; //Get the hover tips from the Json file and display it on the relic
 
 	
@@ -83,23 +80,23 @@ public class HOSBookOfVengeance()
 	
 	public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
 	{
-		if (player == base.Owner && base.Owner.PlayerCombatState?.TurnNumber == 1)
+		if (player == Owner && Owner.PlayerCombatState?.TurnNumber == 1)
 		{
-			CardModel? Card = base.Owner.Creature?.CombatState?.CreateCard<Unpacking>(base.Owner.Creature.Player!);
-			await CardPileCmd.AddGeneratedCardToCombat(Card!, PileType.Hand, base.Owner);
+			CardModel? Card = Owner.Creature?.CombatState?.CreateCard<Unpacking>(Owner.Creature.Player!);
+			await CardPileCmd.AddGeneratedCardToCombat(Card!, PileType.Hand, Owner);
 		}
 	}
 	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
-		if (participants.Contains(base.Owner.Creature) && base.Owner.PlayerCombatState?.TurnNumber <= 1)
+		if (participants.Contains(Owner.Creature) && Owner.PlayerCombatState?.TurnNumber <= 1)
 		{
-			await GrudgeResource.GainGrudge((int)base.DynamicVars["CombatStartGrudgePower"].BaseValue, base.Owner!.Creature!.Player!);
-			base.DynamicVars["CombatStartHealth"].BaseValue = base.Owner.Creature.CurrentHp;
-			MainFile.Logger.Info($"Current HP --> {base.DynamicVars["CombatStartHealth"].BaseValue}");
-			PlayerCombatState? playerCombatState = base.Owner.Creature?.Player?.PlayerCombatState;
+			await GrudgeResource.GainGrudge((int)DynamicVars["CombatStartGrudgePower"].BaseValue, Owner!.Creature!.Player!);
+			DynamicVars["CombatStartHealth"].BaseValue = Owner.Creature.CurrentHp;
+			MainFile.Logger.Info($"Current HP --> {DynamicVars["CombatStartHealth"].BaseValue}");
+			PlayerCombatState? playerCombatState = Owner.Creature?.Player?.PlayerCombatState;
 			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
-			HOSBookOfVengeance.RecordedConsumedGrudge[playerCombatState!] = 0;
+			RecordedConsumedGrudge[playerCombatState!] = 0;
 		}
 	}
 
@@ -114,17 +111,17 @@ public class HOSBookOfVengeance()
 	public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
 		Creature? dealer, CardModel? cardSource) //this is to handle how grudge is gained
 	{
-		if (dealer == null || dealer == base.Owner.Creature || dealer.Side == base.Owner.Creature.Side)
+		if (dealer == null || dealer == Owner.Creature || dealer.Side == Owner.Creature.Side)
 		{
 			return;
 		}
 		
 		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 && props.IsPoweredAttack())
 		{
-			await GrudgeResource.GainGrudge((int)base.DynamicVars["GrudgeGainPerHit"].BaseValue,
+			await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGainPerHit"].BaseValue,
 				base.Owner.Creature.Player);
 			_currentGainedGrudgeFromHits++;
-			if (_currentGainedGrudgeFromHits >= base.DynamicVars["MaxGrudgeProcsFromHits"].BaseValue)
+			if (_currentGainedGrudgeFromHits >= DynamicVars["MaxGrudgeProcsFromHits"].BaseValue)
 			{
 				_allowGrudgeFromHits = false;
 			}
@@ -132,10 +129,10 @@ public class HOSBookOfVengeance()
 		
 		if (target.IsPlayer && result.UnblockedDamage > 0 && _allowGrudgeFromDamage)
 		{
-			await GrudgeResource.GainGrudge((int)base.DynamicVars["GrudgeGainPerDamage"].BaseValue,
+			await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGainPerDamage"].BaseValue,
 				base.Owner.Creature.Player);
 			_currentGainedGrudgeFromDamage++;
-			if (_currentGainedGrudgeFromDamage >= base.DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
+			if (_currentGainedGrudgeFromDamage >= DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
 			{
 				_allowGrudgeFromDamage = false;
 			}
@@ -144,7 +141,7 @@ public class HOSBookOfVengeance()
 
 	public override Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
 	{
-		if (!participants.Contains(base.Owner.Creature) || base.Owner.Creature.Side != side) return Task.CompletedTask;
+		if (!participants.Contains(Owner.Creature) || Owner.Creature.Side != side) return Task.CompletedTask;
 		_currentGainedGrudgeFromHits = 0;
 		_currentGainedGrudgeFromDamage = 0;
 		_allowGrudgeFromDamage = true;
