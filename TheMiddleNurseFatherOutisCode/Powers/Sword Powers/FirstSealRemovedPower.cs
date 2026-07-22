@@ -92,7 +92,6 @@ public class FirstSealRemovedPower()
             data.TargetNewBleed = cardPlay.Target.GetPowerAmount<BleedPower>();
         }
         //MainFile.Logger.Info($"$Target New Bleed --> {data.TargetNewBleed}");
-
         if (data.TargetNewBleed > data.TargetOldleed)
         {
             await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
