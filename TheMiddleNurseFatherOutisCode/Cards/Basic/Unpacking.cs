@@ -43,14 +43,16 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
-        HoverTipFactory.FromPower<VulnerableNextTurn>(),
-        HoverTipFactory.FromPower<VulnerablePower>()
     ];
 
     
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
+        if (!Owner.HasPower<SealedSwordPower>())
+        {
+            return;
+        }
         if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
         {
             MainFile.Logger.Info("autoplaying card");
@@ -60,6 +62,11 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
+        if (!Owner.HasPower<SealedSwordPower>())
+        {
+            return;
+        }
+        
         if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
         {
             MainFile.Logger.Info("autoplaying card");

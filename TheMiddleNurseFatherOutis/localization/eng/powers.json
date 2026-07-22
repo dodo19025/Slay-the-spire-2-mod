@@ -1,6 +1,6 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Use [gold]Unpacking[/gold] when expiring.",
-  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Use [gold]Unpacking[/gold] when expiring",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.description": "Use [gold]Unpacking[/gold] when expiring.\nThis can only happen once per turn.",
+  "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.smartDescription": "Use [gold]Unpacking[/gold] when expiring\nThis can only happen once per turn.",
   "THEMIDDLENURSEFATHEROUTIS-RISING_FEVER_POWER.title": "Rising Fever",
 
   "THEMIDDLENURSEFATHEROUTIS-VULNERABLE_NEXT_TURN.description": "Gain 1 [red]Vulnerable[/red] next turn.",

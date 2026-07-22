@@ -191,11 +191,11 @@ public static class TheMiddleNursefatherOutisCmd
         if (creature.HasPower<RisingFeverPower>())
         {
             PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
+            risingFever.DynamicVars["FeverAmount"].BaseValue += FeverAmount;
             if (risingFever.DynamicVars["FeverAmount"].BaseValue <= 0)
             {
                 risingFever.DynamicVars["FeverAmount"].BaseValue = 0;
             }
-            risingFever.DynamicVars["FeverAmount"].BaseValue += FeverAmount;
             risingFever.Flash();
             risingFever.InvokeDisplayAmountChanged();
             if (RestrictUnpackingThisTurn)

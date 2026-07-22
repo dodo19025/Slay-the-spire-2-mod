@@ -1,8 +1,10 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -19,19 +21,14 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     0, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
-    private const string _Power = "Power";
-    private const string _FeverLost = "FeverLost";
-    
-    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
+ protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),base.Owner.Creature);
 
-    protected override bool IsPlayable => GetUserFever();
-
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
-    {
-        new DamageVar(10m, ValueProp.Move),
-        new DynamicVar("Power", 1m),
-        new DynamicVar("FeverLost", 1m),
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DamageVar(4m, ValueProp.Move),
+        new DynamicVar("BleedPower", 3m),
+        new CardsVar(1)
+    ]);
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
@@ -42,54 +39,60 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<RisingFeverPower>(),
-        HoverTipFactory.FromPower<VulnerableNextTurn>(),
-        HoverTipFactory.FromPower<VulnerablePower>()
     ];
 
+    
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
-        CardModel? cardSource)
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (power is RisingFeverPower && power.Owner == base.Owner.Creature && !(base.Owner.Creature.HasPower<LaevateinnPower>()))
+        if (!Owner.HasPower<FirstSealRemovedPower>())
         {
-            MainFile.Logger.Info("Decected that rising fever has change");
-            if (power.Amount <= 0 && power.Owner.HasPower<FirstSealRemovedPower>())
-            {
-                MainFile.Logger.Info("autoplaying card");
-                await CardCmd.AutoPlay(choiceContext,this,null);
-            }
+            return;
         }
+        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
+        {
+            MainFile.Logger.Info("autoplaying card");
+            await CardCmd.AutoPlay(choiceContext,this,null); 
+        } 
     }
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (!Owner.HasPower<FirstSealRemovedPower>())
+        {
+            return;
+        }
+        
+        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
+        {
+            MainFile.Logger.Info("autoplaying card");
+            await CardCmd.AutoPlay(choiceContext,this,null); 
+        } 
+    }
+
+
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     { 
         
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, play.Target, base.DynamicVars["Power"].BaseValue,
-            base.Owner.Creature, this);
+        await PowerCmd.Apply<BleedPower>(choiceContext, play.Target, DynamicVars["BleedPower"].BaseValue,
+            Owner.Creature, this);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
-        { 
-            await base.Owner.Creature.ChangeSwordSeal(choiceContext);
-            CardModel Card = base.Owner.Creature.CombatState.CreateCard<Unpacking3>(base.Owner.Creature.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, base.Owner);
-            
+        {
+            await Owner.Creature.ChangeSwordSeal(choiceContext);
+            CardModel Card = Owner?.Creature?.CombatState?.CreateCard<Unpacking2>(Owner.Creature.Player);
+            await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, Owner);
         }
     }
 
     protected override void OnUpgrade()
     {
-        base.EnergyCost.UpgradeBy(-1);
-    }
-
-    public bool GetUserFever()
-    {
-        if (base.Owner.Creature.HasPower<RisingFeverPower>())
-        {
-            return false;
-        }
-        return true;
+        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars["BleedPower"].UpgradeValueBy(1m);
     }
 }
 
