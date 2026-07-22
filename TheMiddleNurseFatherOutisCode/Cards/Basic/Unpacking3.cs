@@ -38,7 +38,7 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     ];
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<RisingFeverPower>(),
+        HoverTipFactory.FromPower<BleedPower>(),
     ];
 
     
