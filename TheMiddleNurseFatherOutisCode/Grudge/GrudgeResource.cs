@@ -64,7 +64,6 @@ public static partial class GrudgeResource
 				.Instantiate<NGrudgeCounter>();
 			
 			
-			
 			parent.AddChildSafely(counter);
 			counter.SetAnchorsPreset(Control.LayoutPreset.Center);
 			counter.Position = new Vector2(110,-50);

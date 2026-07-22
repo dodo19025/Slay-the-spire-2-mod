@@ -1,3 +1,4 @@
+
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Nodes.Combat;
@@ -16,8 +17,8 @@ public partial class NCustomRotationLayers : Control
 	{
 		_parent = GetParent<NEnergyCounter>();
 		_player = _parent._player;
-		_layer2 = GetNodeOrNull<TextureRect>("Layers/Layer2");
-		_layer3 = GetNodeOrNull<TextureRect>("Layers/Layer3");
+		_layer2 = GetNodeOrNull<TextureRect>("Layers/RotationLayers/Layer2");
+		_layer3 = GetNodeOrNull<TextureRect>("Layers/RotationLayers/Layer3");
 	}
 
 	public override void _Process(double delta)
