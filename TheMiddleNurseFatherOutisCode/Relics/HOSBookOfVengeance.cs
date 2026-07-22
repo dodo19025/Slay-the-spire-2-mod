@@ -1,3 +1,4 @@
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Assets;
@@ -47,8 +48,9 @@ public class HOSBookOfVengeance()
 	public static readonly SpireField<PlayerCombatState, int> MaxTattoos = new(() => 4);
 	public static readonly SpireField<PlayerCombatState, int> ConversionRate = new(() => 5);
 	public static readonly SpireField<PlayerCombatState, int> RecordedConsumedGrudge = new(() => 0);
-
-
+	
+	
+	
 
 
 	protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -61,6 +63,8 @@ public class HOSBookOfVengeance()
 		
 	]; //Get the hover tips from the Json file and display it on the relic
 
+	
+	
 	public override async Task AfterRoomEntered(AbstractRoom room)
 	{
 		if (room is CombatRoom)
@@ -72,6 +76,8 @@ public class HOSBookOfVengeance()
 			await PowerCmd.Apply<RisingFeverPower>(new ThrowingPlayerChoiceContext(), base.Owner.Creature,
 				1m, base.Owner.Creature,
 				null); //Throwingplayercontext so not caring about any player choice, and this applies the rising fever power at 1}
+			await TheMiddleNursefatherOutisCmd.ChangeFeverAmount(new BlockingPlayerChoiceContext(), base.Owner.Creature, 1,false);
+
 		}
 	}
 	

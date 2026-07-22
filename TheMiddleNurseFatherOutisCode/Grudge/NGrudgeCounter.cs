@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.HoverTips;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 [GlobalClass]
@@ -88,7 +89,7 @@ public partial class NGrudgeCounter : Control
 
 	private void OnHovered()
 	{ 
-		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -300f));
+		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -100));
 	}
 	
 	

@@ -27,39 +27,21 @@ public class RisingFeverPower()
         PowerStackType.Counter;
     
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DynamicVar("FeverAmount", 0m),
+        new BoolVar("CanUnpack", false)
+    ]);
+
+    public override int DisplayAmount => base.DynamicVars["FeverAmount"].IntValue;
+
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        new DynamicVar("RisingFeverReapply", 2m), 
-        new DynamicVar("StrengthGain", 3m),
-        new DynamicVar("CardsLeft",2m)
-    });
-
- 
-
-    public const string _cardsLeftKey = "CardsLeft";
-
-    public class Data
-    {
-        public int FeverCardsPlayed;
-    }
-
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (cardPlay.Card.Owner != base.Owner.Player || cardPlay.Card.Owner.HasPower<LaevateinnPower>())
+        if (!((BoolVar)DynamicVars["CanUnpack"]).BoolVal)
         {
-            return;
+            MainFile.Logger.Info("Detected that unpack is false, setting to true");
+            ((BoolVar)DynamicVars["CanUnpack"]).BoolVal = true;
         }
-        if(cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
-        {
-            base.DynamicVars["CardsLeft"].BaseValue--;
-
-        }
-        if (base.DynamicVars["CardsLeft"].BaseValue <= 0)
-        {
-            await Cmd.Wait(0.25f);
-            Flash();
-            base.DynamicVars["CardsLeft"].BaseValue = 2m;
-            await PowerCmd.Decrement(this);
-        }
+        return Task.CompletedTask;
     }
 }

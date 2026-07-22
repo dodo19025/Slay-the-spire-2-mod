@@ -9,5 +9,13 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 
 public interface IAfterGrudgeGained
 {
-    Task AfterGrudgeGained(Player player, int amount);
+    Task AfterGrudgeGained(Player player, int amountgained);
 }
+
+public interface IBeforeGrudgeGained
+{
+    Task BeforeGrudgeGained(Player player, int amountgained);
+}
+
+
+

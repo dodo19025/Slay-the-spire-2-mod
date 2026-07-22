@@ -79,7 +79,6 @@ public static class TheMiddleNursefatherOutisCmd
         if (Statemachine != null)
         {
             
-            
             string GodotTrigger = AnimationName.ToLowerInvariant() switch
             {
                 "hit" => "hurt",
@@ -93,6 +92,7 @@ public static class TheMiddleNursefatherOutisCmd
                 "unpacking" => "unpacking",
                 _ => AnimationName
             };
+            
             Statemachine.Start(GodotTrigger);
             float FastSecondWait = NormalSecondWait/2;
             await Cmd.CustomScaledWait(FastSecondWait, NormalSecondWait);
@@ -111,49 +111,55 @@ public static class TheMiddleNursefatherOutisCmd
         CanvasItem visualoneseal = (creature.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
         CanvasItem visualtwoseal = (creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
         CanvasItem visualthreeseal = (creature.GetCreatureNode()!.Body.GetNode("3Sealanimations") as CanvasItem)!;
-        
-        
-        if (!creature.HasPower<LaevateinnPower>())
+
+        if (creature.HasPower<LaevateinnPower>())
         {
-            foreach (PowerModel power in creature.Powers)
-            {
-                switch (power)
-                { 
-                    case SealedSwordPower: 
-                        visualzeroseal.Visible = false;
-                        visualoneseal.Visible = true;
-                        Modsounds.unpacking0.Play();
-                        await Cmd.CustomScaledWait(0.5f, 1f);
-                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
-                        await PowerCmd.Remove<SealedSwordPower>(creature);
-                        await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
-                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, creature,2m,creature,null);
-                        return;
-                    case FirstSealRemovedPower:
-                        visualoneseal.Visible = false;
-                        visualtwoseal.Visible = true;
-                        Modsounds.unpacking1.Play();
-                        await Cmd.CustomScaledWait(0.5f, 1f);
-                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
-                        await PowerCmd.Remove<FirstSealRemovedPower>(creature);
-                        await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
-                        await PowerCmd.Apply<RisingFeverPower>(choiceContext, creature,2m,creature,null);
-                        await Cmd.CustomScaledWait(0.5f, 1f);
-                        await CreatureCmd.TriggerAnim(creature, "sunglasses", 2f);
-                        return;
-                    case SecondSealRemovedPower:
-                        visualtwoseal.Visible = false;
-                        visualthreeseal.Visible = true;
-                        Modsounds.unpacking2.Play();
-                        await Cmd.CustomScaledWait(0.5f, 1f);
-                        await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
-                        await PowerCmd.Remove<SecondSealRemovedPower>(creature);
-                        await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
-                        return;
+            return;
+        }
+        
+        foreach (PowerModel power in creature.Powers)
+        {
+            switch (power)
+            { 
+                case SealedSwordPower: 
+                    visualzeroseal.Visible = false;
+                    visualoneseal.Visible = true;
+                    Modsounds.unpacking0.Play();
+                    await Cmd.CustomScaledWait(0.5f, 1f);
+                    await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
+                    await PowerCmd.Remove<SealedSwordPower>(creature);
+                    await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                    await ChangeFeverAmount(choiceContext, creature, 2,true);
+                    return;
+                    
+                case FirstSealRemovedPower:
+                    visualoneseal.Visible = false;
+                    visualtwoseal.Visible = true;
+                    Modsounds.unpacking1.Play();
+                    await Cmd.CustomScaledWait(0.5f, 1f);
+                    await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
+                    await PowerCmd.Remove<FirstSealRemovedPower>(creature);
+                    await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                    await ChangeFeverAmount(choiceContext, creature, 2, true);
+                    await Cmd.CustomScaledWait(0.5f, 1f);
+                    await CreatureCmd.TriggerAnim(creature, "sunglasses", 2f);
+                    return;
+                    
+                case SecondSealRemovedPower:
+                    visualtwoseal.Visible = false;
+                    visualthreeseal.Visible = true;
+                    Modsounds.unpacking2.Play();
+                    await Cmd.CustomScaledWait(0.5f, 1f);
+                    await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
+                    await PowerCmd.Remove<SecondSealRemovedPower>(creature);
+                    await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
+                    if (creature.HasPower<RisingFeverPower>())
+                    {
+                        await PowerCmd.Remove<RisingFeverPower>(creature);
                     }
+                    return;
             }
         }
-
     }
     
     public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
@@ -178,7 +184,41 @@ public static class TheMiddleNursefatherOutisCmd
         {
             await Cmd.CustomScaledWait(0.1f, 0.25f);
         }
-    } 
+    }
+
+    public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount, bool RestrictUnpackingThisTurn)
+    {
+        if (creature.HasPower<RisingFeverPower>())
+        {
+            PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
+            if (risingFever.DynamicVars["FeverAmount"].BaseValue <= 0)
+            {
+                risingFever.DynamicVars["FeverAmount"].BaseValue = 0;
+            }
+            risingFever.DynamicVars["FeverAmount"].BaseValue += FeverAmount;
+            risingFever.Flash();
+            risingFever.InvokeDisplayAmountChanged();
+            if (RestrictUnpackingThisTurn)
+            {
+                ((BoolVar)risingFever.DynamicVars["CanUnpack"]).BoolVal = false;
+            }
+        }
+        return Task.CompletedTask;
+    }
+    
+    public static bool CanUnpack(PlayerChoiceContext choiceContext, Creature creature)
+    {
+        if (creature.HasPower<RisingFeverPower>() && creature.IsPlayer && creature.IsAlive)
+        {
+            PowerModel? power = creature.GetPower<RisingFeverPower>();
+            if (power?.DynamicVars["FeverAmount"].BaseValue <= 0 && ((BoolVar)power.DynamicVars["CanUnpack"]).BoolVal)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     
     public static async Task ConvertGrudgeToTattoo(Creature? creature, PlayerChoiceContext choiceContext,
 		decimal GrudgeConsumed)
@@ -221,7 +261,7 @@ public static class TheMiddleNursefatherOutisCmd
 		if (TotalConsumedGrudge >= ConversionRate)
 		{
 			decimal TattoosGained = TotalConsumedGrudge / ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
-			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this
+			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this ??? what
             HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=  (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
             //MainFile.Logger.Info($"$Recorded Grudge Amount After Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
 			if (creature!.HasPower<VengeanceTattoo>())

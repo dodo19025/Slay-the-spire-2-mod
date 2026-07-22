@@ -5,7 +5,7 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Convert [gold]Sealed Sword[/gold] Into [gold]First Seal Removed[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()}\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Convert [gold]First Seal Removed[/gold] Into [gold]Second Seal Removed[/gold].\nDeal {Damage:diff()} damage.\n Apply 1 [gold]Vulnerable Next Turn[/gold].",

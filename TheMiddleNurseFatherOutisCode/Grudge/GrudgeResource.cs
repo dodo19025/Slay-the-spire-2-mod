@@ -4,6 +4,7 @@ using Godot;
 using MegaCrit.Sts2.Core.Assets;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Helpers;
+using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
@@ -15,6 +16,7 @@ public static partial class GrudgeResource
 	private static readonly SpireField<PlayerCombatState, int> PlayerGrudge = new(() => 0);
 	
 	public static event Action<PlayerCombatState, int, int>? GrudgeChanged;
+		//GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);
 
 
 	public static int GetGrudge(Player player) =>
@@ -31,15 +33,12 @@ public static partial class GrudgeResource
 	{
 		if(player.PlayerCombatState == null || player.Creature.CombatState == null) return;
 		
-		//what is about to happen next is basically the process of how you gain stars one by one in the display
 		var Grudges = PlayerGrudge[player.PlayerCombatState];
 		PlayerGrudge[player.PlayerCombatState] = (int)Math.Max(amount + Grudges, 0);
-		GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);
 		foreach (var model in player.Creature.CombatState.IterateHookListeners().ToList())
 		{
 			if (model is IAfterGrudgeGained listener)
 			{
-				MainFile.Logger.Info($"Detected in the listener that you gained {amount} Grudges");
 				await listener.AfterGrudgeGained(player, amount);
 			}
 		}
@@ -70,7 +69,7 @@ public static partial class GrudgeResource
 			counter.SetAnchorsPreset(Control.LayoutPreset.Center);
 			counter.Position = new Vector2(110,-50);
 			counter.Size = new Vector2(94, 94);
-			counter.ZIndex = 0;
+			counter.ZIndex = parent.ZIndex - 1;
 
 			return counter;
 
