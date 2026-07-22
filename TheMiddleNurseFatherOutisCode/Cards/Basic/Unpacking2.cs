@@ -84,7 +84,7 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         {
             await Owner.Creature.ChangeSwordSeal(choiceContext);
-            CardModel Card = Owner?.Creature?.CombatState?.CreateCard<Unpacking2>(Owner.Creature.Player);
+            CardModel Card = Owner?.Creature?.CombatState?.CreateCard<Unpacking3>(Owner.Creature.Player);
             await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, Owner);
         }
     }
