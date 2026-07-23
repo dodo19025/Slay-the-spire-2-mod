@@ -43,7 +43,6 @@ public class Punching() : TheMiddleNurseFatherOutisCard(
                     c.Type == CardType.Attack && c.Tags.Contains(TheMiddleNurseFatherOutisTags.Kick)).ToList()
                 .StableShuffle(base.Owner.RunState.Rng.Shuffle).FirstOrDefault(); //does a stable shuffle, whatever that means
         }
-
         if (cardModel != null)
         {
             await CardPileCmd.Add(cardModel, PileType.Hand);

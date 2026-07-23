@@ -13,7 +13,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 
 public static partial class GrudgeResource
 {
-	private static readonly SpireField<PlayerCombatState, int> PlayerGrudge = new(() => 0);
+	public static readonly SpireField<PlayerCombatState, int> PlayerGrudge = new(() => 0);
 	
 	public static event Action<PlayerCombatState, int, int>? GrudgeChanged;
 		//GrudgeChanged?.Invoke(player.PlayerCombatState,Grudges,PlayerGrudge[player.PlayerCombatState]);

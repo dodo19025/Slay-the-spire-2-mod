@@ -1,4 +1,10 @@
 {
   "THEMIDDLENURSEFATHEROUTIS-FERVOUR.description": "This card does a bonus action while you have [gold]Lævateinn[/gold]",
-  "THEMIDDLENURSEFATHEROUTIS-FERVOUR.title": "Fervor"
+  "THEMIDDLENURSEFATHEROUTIS-FERVOUR.title": "Fervor",
+
+  "THEMIDDLENURSEFATHEROUTIS-KICK.description": "Consume 1 [gold]Grudge[/gold] to gain 1 [gold]Counter[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-KICK.title": "Kick",
+
+  "THEMIDDLENURSEFATHEROUTIS-PUNCH.description": "Consume 1 [gold]Grudge[/gold] to draw 1 “Kick”.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNCH.title": "Punch"
 }

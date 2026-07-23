@@ -28,6 +28,12 @@ public class MiddleStrike()
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(6m, ValueProp.Move)];
     
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheMiddleNurseFatherOutisKeywords.Punch
+    ];
+    
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

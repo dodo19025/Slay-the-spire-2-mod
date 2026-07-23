@@ -33,6 +33,10 @@ protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         HoverTipFactory.FromPower<PaybackPower>(),
     ];
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheMiddleNurseFatherOutisKeywords.Kick
+    ];
     
     
     protected override async Task OnPlay(

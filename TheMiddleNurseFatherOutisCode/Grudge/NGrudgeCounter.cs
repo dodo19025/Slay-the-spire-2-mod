@@ -89,7 +89,7 @@ public partial class NGrudgeCounter : Control
 
 	private void OnHovered()
 	{ 
-		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -100));
+		NHoverTipSet.CreateAndShow(this,_hoverTip)?.SetGlobalPosition(base.GlobalPosition + new Vector2(-34f, -150));
 	}
 	
 	
