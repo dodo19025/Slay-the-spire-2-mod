@@ -36,7 +36,7 @@ public class MiddleStrike()
         await GrudgeResource.GainGrudge(4, base.Owner.Creature.Player);
         await TheMiddleNursefatherOutisCmd.ChangeFeverAmount(choiceContext, Owner.Creature, -1, false);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
-            DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
+            3m, play.Target, play.Card);
     }
 
 

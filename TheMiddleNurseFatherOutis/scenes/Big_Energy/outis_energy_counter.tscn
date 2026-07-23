@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://42sjmq5lhueo"]
+[gd_scene load_steps=4 format=3 uid="uid://bm5sbciok732q"]
 
 [ext_resource type="Texture2D" uid="uid://bdhkx05hwsasc" path="res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_big_energy.png" id="1_txljk"]
 [ext_resource type="Texture2D" uid="uid://bm0ofai3gvcy5" path="res://TheMiddleNurseFatherOutis/scenes/Big_Energy/outis_big_energy_3.png" id="2_yp1hp"]
@@ -6,18 +6,20 @@
 
 [node name="OutisEnergyCounter" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 128.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1792.0
+offset_bottom = -952.0
+grow_horizontal = 2
+grow_vertical = 2
 pivot_offset = Vector2(64, 64)
 metadata/_edit_lock_ = true
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(64, 64)
 
 [node name="Layers" type="Control" parent="."]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,17 +27,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_3ndad")
 
 [node name="Layer1" type="TextureRect" parent="Layers"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -29.0
-offset_right = 23.0
-offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_txljk")
@@ -47,10 +44,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -29.0
-offset_right = 23.0
-offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_1lrd6")
@@ -62,10 +55,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -23.0
-offset_top = -28.0
-offset_right = 24.0
-offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_yp1hp")
@@ -73,7 +62,6 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="RotationLayers" type="Control" parent="Layers"]
-unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,7 +71,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="EnergyVfxFront" type="Node2D" parent="."]
-unique_name_in_owner = true
 position = Vector2(64, 64)
 
 [node name="Label" type="Label" parent="."]
@@ -91,18 +78,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 4.0
-offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
-theme_override_colors/font_outline_color = Color(0.98431784, 0.17402232, 0.84974617, 1)
+theme_override_colors/font_color = Color(0.8688485, 0.3114013, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.994)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 16
 theme_override_constants/shadow_outline_size = 16
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 36
 text = "3/3"
 horizontal_alignment = 1
 vertical_alignment = 1
