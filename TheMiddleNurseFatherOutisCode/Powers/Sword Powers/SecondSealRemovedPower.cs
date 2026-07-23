@@ -35,67 +35,9 @@ public class SecondSealRemovedPower()
         HoverTipFactory.FromPower<BurnPower>(),
         HoverTipFactory.FromPower<BleedPower>()
     ];
-
-    protected override object InitInternalData()
-    {
-        return new Data();
-    }
     
-    private class Data
-    {
-        public int TargetOldleed;
-
-        public int TargetNewBleed;
-    }
-    public override async Task BeforePowerAmountChanged(PowerModel power, decimal amount, Creature target,
-        Creature? applier,
-        CardModel? cardSource)
-    {
-        Data data = GetInternalData<Data>();
-    }
-    
-    public override Task BeforeCardPlayed(CardPlay cardPlay)
-    {
-        Data data = GetInternalData<Data>();
-        if (cardPlay.Card.Owner.Creature != base.Owner)
-        {
-            return Task.CompletedTask;
-        }
-        if (cardPlay.Target != null && cardPlay.Target.HasPower<BleedPower>())
-        {
-            data.TargetOldleed = cardPlay.Target.GetPowerAmount<BleedPower>();
-           // MainFile.Logger.Info($"$Target Old Bleed,detected target has bleed --> {data.TargetOldleed}");
-            return Task.CompletedTask;
-        } 
-        if (cardPlay?.Target != null && !(cardPlay.Target.HasPower<BleedPower>()))
-        {
-            data.TargetOldleed = 0;
-           // MainFile.Logger.Info($"$Target Old Bleed --> {data.TargetOldleed}");
-            return Task.CompletedTask;
-        }
-        return Task.CompletedTask;    
-    }
-    
-
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        Data data = GetInternalData<Data>();
-        data.TargetNewBleed = 0;
-        if (cardPlay.Card.Owner.Creature != base.Owner)
-        {
-            return;
-        }
-        if (cardPlay?.Target != null && cardPlay.Target.HasPower<BleedPower>())
-        {
-            data.TargetNewBleed = cardPlay.Target.GetPowerAmount<BleedPower>();
-        }
-        //MainFile.Logger.Info($"$Target New Bleed --> {data.TargetNewBleed}");
-        if (data.TargetNewBleed > data.TargetOldleed)
-        {
-            base.DynamicVars["BurnApplicationValue"].BaseValue = data.TargetNewBleed - data.TargetOldleed;
-            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
-                base.DynamicVars["BurnApplicationValue"].BaseValue, cardPlay.Card.Owner.Creature, cardPlay.Card);
-        }
         // this next part is for applying both burn on self an the TARGET if you play an attack
 
         if (cardPlay.Card.Type == CardType.Attack && cardPlay.Target != null)

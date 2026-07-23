@@ -186,22 +186,42 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
 
+
+    public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, Creature? target,
+        decimal bleedAmount, CardModel cardModel)
+    {
+        decimal additionalBurnPerBleed = 0;
+        PowerModel? swordPower = null;
+        if (applier.HasPower<FirstSealRemovedPower>())
+        {
+            swordPower = applier.GetPower<FirstSealRemovedPower>();
+            additionalBurnPerBleed = swordPower.DynamicVars["BurnApplicationValue"].BaseValue; 
+        }
+
+        if (applier.HasPower<SecondSealRemovedPower>() || applier.HasPower<LaevateinnPower>())
+        {
+            additionalBurnPerBleed = bleedAmount; 
+        }
+        
+        await PowerCmd.Apply<BleedPower>(choiceContext, target, bleedAmount, applier, cardModel);
+        if (additionalBurnPerBleed > 0)
+        {
+            await PowerCmd.Apply<BurnPower>(choiceContext, target, additionalBurnPerBleed, applier, cardModel);
+        }
+        
+    }
+
     public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount, bool RestrictUnpackingThisTurn)
     {
-        if (creature.HasPower<RisingFeverPower>())
+        if (!creature.HasPower<RisingFeverPower>()) return Task.CompletedTask;
+        PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
+        risingFever.DynamicVars["FeverAmount"].BaseValue =
+            Math.Max(0, risingFever.DynamicVars["FeverAmount"].BaseValue + FeverAmount);
+        risingFever.Flash();
+        risingFever.InvokeDisplayAmountChanged();
+        if (RestrictUnpackingThisTurn)
         {
-            PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
-            risingFever.DynamicVars["FeverAmount"].BaseValue += FeverAmount;
-            if (risingFever.DynamicVars["FeverAmount"].BaseValue <= 0)
-            {
-                risingFever.DynamicVars["FeverAmount"].BaseValue = 0;
-            }
-            risingFever.Flash();
-            risingFever.InvokeDisplayAmountChanged();
-            if (RestrictUnpackingThisTurn)
-            {
-                ((BoolVar)risingFever.DynamicVars["CanUnpack"]).BoolVal = false;
-            }
+            ((BoolVar)risingFever.DynamicVars["CanUnpack"]).BoolVal = false;
         }
         return Task.CompletedTask;
     }
