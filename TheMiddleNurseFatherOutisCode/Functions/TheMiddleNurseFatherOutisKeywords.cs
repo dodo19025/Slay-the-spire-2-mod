@@ -7,22 +7,27 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis;
 
 
+
 public static class TheMiddleNurseFatherOutisKeywords
 {
-    [CustomEnum,KeywordProperties(AutoKeywordPosition.After)] public static CardKeyword Fervour;
+    [CustomEnum,KeywordProperties(AutoKeywordPosition.After)] 
+    public static CardKeyword Fervour;
 
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Kick;
     
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Punch;
-
-
+    
+    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    public static CardKeyword Swing;
+    
 }
 
 //handling how the keywords will work using hooks
@@ -34,7 +39,7 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
         if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick))
         {
             int grudge = GrudgeResource.GetGrudge(cardPlay.Player);
-            if (grudge >= 1)
+            if (grudge >= 1) 
             {
                 GrudgeResource.LoseGrudge(1,cardPlay.Player);
                 await PowerCmd.Apply<PaybackPower>(new BlockingPlayerChoiceContext(), cardPlay.Card.Owner.Creature, 2m,
@@ -49,13 +54,13 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             {
                 GrudgeResource.LoseGrudge(1,cardPlay.Player);
                 CardModel? cardModel = PileType.Draw.GetPile(cardPlay.Card.Owner).Cards
-                    .Where((CardModel c) => c.Type == CardType.Skill && c.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick))
+                    .Where((CardModel c) => c.Type == CardType.Attack && c.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick))
                     .ToList().StableShuffle(cardPlay.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault(); //i am literally confuused but okay
                 if (cardModel == null) //shuffle manually
                 {
                     cardModel = PileType.Draw.GetPile(cardPlay.Card.Owner).Cards
                         .Where((CardModel c) =>
-                            c.Type == CardType.Skill && c.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick)).ToList()
+                            c.Type == CardType.Attack && c.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick)).ToList()
                         .StableShuffle(cardPlay.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault(); //does a stable shuffle, whatever that means
                 }
                 if (cardModel != null)
@@ -63,6 +68,38 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
                     await CardPileCmd.Add(cardModel, PileType.Hand);
                 }
             }
+        }
+
+        if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing))
+        {
+            if (!(cardPlay.Player.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis))
+            {
+                return;
+            }
+
+            decimal bleedApplication = 0;
+
+            if (cardPlay.Card.Owner.Creature.HasPower<FirstSealRemovedPower>())
+            {
+                bleedApplication = 1;
+            }
+            
+            if (cardPlay.Card.Owner.Creature.HasPower<SecondSealRemovedPower>())
+            {
+                bleedApplication = 2;
+            }
+            
+            if (cardPlay.Card.Owner.Creature.HasPower<LaevateinnPower>())
+            {
+                bleedApplication = 3;
+            }
+
+            if (bleedApplication <= 0)
+            {
+                return;
+            }
+            await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), cardPlay.Target, bleedApplication,
+                cardPlay.Card.Owner.Creature, cardPlay.Card);
         }
     }
 }

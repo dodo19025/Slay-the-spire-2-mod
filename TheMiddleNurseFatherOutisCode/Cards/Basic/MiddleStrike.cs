@@ -30,7 +30,7 @@ public class MiddleStrike()
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        TheMiddleNurseFatherOutisKeywords.Punch
+        TheMiddleNurseFatherOutisKeywords.Swing
     ];
     
     

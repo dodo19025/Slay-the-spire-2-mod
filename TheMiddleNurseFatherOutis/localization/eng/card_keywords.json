@@ -5,6 +5,9 @@
   "THEMIDDLENURSEFATHEROUTIS-KICK.description": "Consume 1 [gold]Grudge[/gold] to gain 1 [gold]Counter[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-KICK.title": "Kick",
 
-  "THEMIDDLENURSEFATHEROUTIS-PUNCH.description": "Consume 1 [gold]Grudge[/gold] to draw 1 “Kick”.",
-  "THEMIDDLENURSEFATHEROUTIS-PUNCH.title": "Punch"
+  "THEMIDDLENURSEFATHEROUTIS-PUNCH.description": "Consume 1 [gold]Grudge[/gold] to draw 1 “Kick” from the [gold]Draw Pile[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-PUNCH.title": "Punch",
+
+  "THEMIDDLENURSEFATHEROUTIS-SWING.description": "Apply [gold]Bleed[/gold] equal to stages of Sword Seals removed.",
+  "THEMIDDLENURSEFATHEROUTIS-SWING.title": "Swing"
 }
