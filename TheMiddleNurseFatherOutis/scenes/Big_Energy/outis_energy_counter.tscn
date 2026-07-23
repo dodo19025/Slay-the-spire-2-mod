@@ -6,14 +6,9 @@
 
 [node name="OutisEnergyCounter" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1792.0
-offset_bottom = -952.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(64, 64)
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
 metadata/_edit_lock_ = true
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
@@ -33,31 +28,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_txljk")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="Layer2" type="TextureRect" parent="Layers"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_1lrd6")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="Layer3" type="TextureRect" parent="Layers"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_yp1hp")
 expand_mode = 1
 stretch_mode = 4
 
@@ -70,6 +47,38 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Layer2" type="TextureRect" parent="Layers/RotationLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(87.5, 97)
+texture = ExtResource("4_1lrd6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Layer3" type="TextureRect" parent="Layers/RotationLayers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(87.5, 95)
+texture = ExtResource("2_yp1hp")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="EnergyVfxFront" type="Node2D" parent="."]
 position = Vector2(64, 64)
 
@@ -78,6 +87,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8688485, 0.3114013, 1, 1)
