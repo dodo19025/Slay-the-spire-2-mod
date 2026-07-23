@@ -37,9 +37,11 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Retain,
-        CardKeyword.Exhaust
-       //TheMiddleNurseFatherOutisKeywords.Fervour
+        CardKeyword.Exhaust,
+        TheMiddleNurseFatherOutisKeywords.Swing
     ];
+    
+
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<BleedPower>(),
