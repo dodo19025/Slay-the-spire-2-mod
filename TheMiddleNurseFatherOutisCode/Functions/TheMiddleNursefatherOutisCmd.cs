@@ -187,8 +187,7 @@ public static class TheMiddleNursefatherOutisCmd
     }
 
 
-    public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, Creature? target,
-        decimal bleedAmount, CardModel cardModel)
+    public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, decimal bleedAmount ,Creature? target, CardModel cardModel)
     {
         decimal additionalBurnPerBleed = 0;
         PowerModel? swordPower = null;

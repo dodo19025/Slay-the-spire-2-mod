@@ -77,8 +77,8 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     { 
         
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<BleedPower>(choiceContext, play.Target, DynamicVars["BleedPower"].BaseValue,
-            Owner.Creature, this);
+        await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
+            DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
