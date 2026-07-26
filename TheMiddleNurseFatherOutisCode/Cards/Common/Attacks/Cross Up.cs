@@ -31,6 +31,10 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         TheMiddleNurseFatherOutisKeywords.Kick
     ];
     
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromPower<BleedPower>()
+    ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
