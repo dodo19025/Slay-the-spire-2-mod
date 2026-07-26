@@ -20,7 +20,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 public class WriteSins() : TheMiddleNurseFatherOutisCard(
-    0, CardType.Attack, CardRarity.Common,
+    1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 

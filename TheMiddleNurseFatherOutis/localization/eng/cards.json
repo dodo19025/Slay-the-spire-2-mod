@@ -38,7 +38,7 @@
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies {BleedNextAttack:diff()} [gold]Bleed[/gold] on hit.",
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
 
-  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "[gold]Fervor[/gold]: Apply {AdditionalBurn:diff()} [gold]Burn[/gold].\nDeal {Damage:diff()} [gold]Damage[/gold].\nApply {BurnApply:diff()} [gold]Burn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nIf this is the first attack played this turn, gain {Energy:energyIcons()} and draw {Cards:diff()} card.",
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up",
 
   "THEMIDDLENURSEFATHEROUTIS-IGNITE.description": "[gold]Fervor[/gold]: Deal Damage equal to half of [gold]Burn[/gold] applied.\nApply {BurnApply:diff()} [gold]Burn[/gold] and gain {SelfBurn:diff()} [gold]Burn[/gold].",
@@ -71,7 +71,7 @@
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.description": "Deal {Damage:diff()} damage.\nIf the enemy has a debuff, they lose {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.title": "Concuss",
 
-  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nApply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold]",
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nApply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins",
 
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",

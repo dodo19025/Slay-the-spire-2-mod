@@ -1,4 +1,6 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -20,46 +22,50 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     TargetType.AnyEnemy)
 
 {
-    
-    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
+
+
+    protected override bool ShouldGlowGoldInternal => FirstAttackPlayed();
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        TheMiddleNurseFatherOutisKeywords.Fervour
-
+        TheMiddleNurseFatherOutisKeywords.Kick
     ];
     
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
             new DamageVar(4m, ValueProp.Move),
-            new DynamicVar("BurnApply", 4m),
-            new DynamicVar("AdditionalBurn",5m)
+            new EnergyVar(1),
+            new CardsVar(1),
         ];
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
-    [
-        HoverTipFactory.FromPower<BurnPower>(),
-    ];
+    
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        var additionalburn = 0m;
-        if (Owner.Creature.HasPower<LaevateinnPower>())
-        {
-            additionalburn = base.DynamicVars["AdditionalBurn"].BaseValue;
-        }
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue + additionalburn,
-            base.Owner.Creature, this);
-
+        if (FirstAttackPlayed())
+        {
+            await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
+            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(2m);
-        base.DynamicVars["BurnApply"].UpgradeValueBy(2m);
+        EnergyCost.UpgradeBy(-1);
+    }
+
+    private bool FirstAttackPlayed()
+    {
+        int NumberOfCardsPlayed = CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) =>
+            e.HappenedThisTurn(this.CombatState) && e.CardPlay.Card.Type == CardType.Attack &&
+            e.CardPlay.Card.Owner == Owner);
+        if (NumberOfCardsPlayed <= 0)
+        {
+            return true;
+        }
+        return false;
     }
 }
