@@ -35,7 +35,7 @@ public class WriteSinsPower()
 
     public async Task AfterPaybackDone(PlayerChoiceContext choiceContext ,Player player, int amountpayback,  Creature target)
     { 
-        await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, target, Amount, Owner, null);
+        await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, target, DynamicVars["VunPower"].BaseValue, Owner, null);
         Amount--;
         if (Amount <= 0)
         {
