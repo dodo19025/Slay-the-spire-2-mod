@@ -4,7 +4,6 @@
 
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
-  
 
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
@@ -63,8 +62,8 @@
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
 
-  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.description": "Deal {Damage:diff()} damage.\nDraw {Cards:diff()} Attack with “Kick” in its name.",
-  "THEMIDDLENURSEFATHEROUTIS-PUNCHING.title": "Punching!",
+  "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.description": "Deal {Damage:diff()} damage to a random enemy {HitAmount:diff()} times.\nConsume {GrudgeConsume:diff()} to hit {AdditionalHitAmount:diff()} additional times.",
+  "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.title": "Wild Flailing",
 
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 until played if you took damage this combat.",
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup",
