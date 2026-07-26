@@ -5,8 +5,6 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
   
-  "THEMIDDLENURSEFATHEROUTIS-JOT_IN_THE_BOOK.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-JOT_IN_THE_BOOK.title": "Jot in the Book",
 
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
@@ -17,13 +15,13 @@
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking+2",
 
-  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nApply {BleedPower:diff()} [gold]Bleed[/gold] for every hit.\nIncrease this card's hit amount by 1 if the enemy has {BleedThreshold:diff()} [gold]Bleed[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf {AttackThreshold:diff()}+ attacks have been played this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
   "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]Hand[/gold].",

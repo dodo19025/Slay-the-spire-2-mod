@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -33,6 +34,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
     public override IEnumerable<CardModel> StartingDeck =>
     [
         ModelDb.Card<RuleViolation>(),
+        ModelDb.Card<Stomping>(),
         ModelDb.Card<MiddleStrike>(),
         ModelDb.Card<MiddleStrike>(),
         ModelDb.Card<MiddleStrike>(),

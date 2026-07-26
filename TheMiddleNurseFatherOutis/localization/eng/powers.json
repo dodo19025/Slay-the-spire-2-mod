@@ -61,6 +61,10 @@
   
   "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.description": "Creatures with [gold]Shield[/gold] Take reduced damage equal to [gold]Shield[/gold] Amounts. Every time [gold]Shield[/gold] is activated, reduce its amounts by the amount of damage negated.",
   "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.smartDescription": "This turn, the next time [gold]{OwnerName}[/gold] would take damage, take [blue]{Amount}[/blue] less damage and reduce [gold]Shield[/gold] by damage negated.",
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield"
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield",
+
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.description": "After Attacking a certain amount, lose [blue]1[/blue] [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.smartDescription": "After [blue]{Amount}[/blue] attacks, lose [blue]{RisingFeverlLost:diff()}[/blue] [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.title": "Impatience"
 
 }
