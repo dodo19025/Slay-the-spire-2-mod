@@ -64,7 +64,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         int NumberOfCardsPlayed = CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) =>
             e.HappenedThisTurn(this.CombatState) && e.CardPlay.Card.Type == CardType.Attack &&
             e.CardPlay.Card.Owner == Owner);
-        if (NumberOfCardsPlayed >= DynamicVars["AttackThreshold"].BaseValue)
+        if (NumberOfCardsPlayed + 1>= DynamicVars["AttackThreshold"].BaseValue)
         {
             return true;
         }
