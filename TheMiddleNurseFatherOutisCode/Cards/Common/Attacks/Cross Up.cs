@@ -35,6 +35,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
             new DamageVar(4m, ValueProp.Move),
+            new DynamicVar("BleedPower",2m),
             new EnergyVar(1),
             new CardsVar(1),
         ];
@@ -45,6 +46,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
+        await PowerCmd.Apply<BleedPower>(choiceContext,Owner.Creature,DynamicVars["BleedPower"].BaseValue,Owner.Creature, this);
+
         if (FirstAttackPlayed())
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
