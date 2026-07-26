@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsy8cc34x0cr"
-path="res://.godot/imported/stomping2.png-0dc6565ea930c94865036800484c574c.ctex"
+uid="uid://bk21berpdvqef"
+path="res://.godot/imported/stomping.png-69e2b80ec28ac3addfa93712d555b768.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutis/images/card_portraits/big/stomping2.png"
-dest_files=["res://.godot/imported/stomping2.png-0dc6565ea930c94865036800484c574c.ctex"]
+source_file="res://TheMiddleNurseFatherOutis/images/card_portraits/big/stomping.png"
+dest_files=["res://.godot/imported/stomping.png-69e2b80ec28ac3addfa93712d555b768.ctex"]
 
 [params]
 
