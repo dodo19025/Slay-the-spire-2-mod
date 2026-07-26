@@ -71,7 +71,7 @@
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.description": "Deal {Damage:diff()} damage.\nIf the enemy has a debuff, they lose {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-CONCUSS.title": "Concuss",
 
-  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nApply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nThis turn, apply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins",
 
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",

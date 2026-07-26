@@ -39,7 +39,7 @@ public class WriteSinsPower()
         Amount--;
         if (Amount <= 0)
         {
-            PowerCmd.Remove(this);
+            await PowerCmd.Remove(this);
         }
     }
 
@@ -47,8 +47,7 @@ public class WriteSinsPower()
     {
         if (Owner.HasPower<WriteSinsPower>())
         {
-            PowerCmd.Remove(this);
-
+            await PowerCmd.Remove(this);
         }
     }
 }
