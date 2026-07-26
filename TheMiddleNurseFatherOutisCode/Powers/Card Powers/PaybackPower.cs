@@ -84,10 +84,12 @@ public class PaybackPower()
             MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState!]}");
             MainFile.Logger.Info("Did Payback");
             
+            
             foreach (var model in Owner.Player.Creature.CombatState.IterateHookListeners().ToList())
             {
                 if (model is IAfterPaybackDone listener)
                 {
+                    MainFile.Logger.Info("Listener detected that payback was done");
                     await listener.AfterPaybackDone(choiceContext,Owner.Player, Amount,dealer);
                 }
             }

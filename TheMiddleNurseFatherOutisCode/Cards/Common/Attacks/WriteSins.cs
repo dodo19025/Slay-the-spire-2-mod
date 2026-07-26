@@ -49,13 +49,11 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await PowerCmd.Apply<PaybackPower>(choiceContext, Owner.Creature,DynamicVars["PaybackGained"].BaseValue,Owner.Creature,this);
         await PowerCmd.Apply<WriteSinsPower>(choiceContext, Owner.Creature,DynamicVars["VunPower"].BaseValue,Owner.Creature,this);
-
     }
 
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(2m);
-        base.DynamicVars.Cards.UpgradeValueBy(1m);
+        DynamicVars["PaybackGained"].UpgradeValueBy(3m);
     }
 }

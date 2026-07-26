@@ -13,7 +13,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Po
 
 
 public class WriteSinsPower()
-    : TheMiddleNurseFatherOutisPower
+    : TheMiddleNurseFatherOutisPower, IAfterPaybackDone
 {
     public override PowerType Type =>
         PowerType.Buff;
@@ -28,7 +28,21 @@ public class WriteSinsPower()
     ];
 
     public async Task AfterPaybackDone(PlayerChoiceContext choiceContext ,Player player, int amountpayback,  Creature target)
+    { 
+        await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, target, Amount, Owner, null);
+        Amount--;
+        if (Amount <= 0)
+        {
+            PowerCmd.Remove(this);
+        }
+    }
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        await PowerCmd.Apply<VulnerablePower>(choiceContext, target, DynamicVars["VunPower"].BaseValue, Owner, null);
+        if (Owner.HasPower<WriteSinsPower>())
+        {
+            PowerCmd.Remove(this);
+
+        }
     }
 }
