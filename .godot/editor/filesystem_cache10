@@ -6,10 +6,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1784481203::0::1::::<><><>0<>0<><>::
 ::res://bin/::1782513710
 ::res://bin/ExportRelease/::1782513710
 ::res://bin/ExportRelease/net9.0/::1782513710
-::res://bin/ExportRelease/net9.0/publish/::1785093145
+::res://bin/ExportRelease/net9.0/publish/::1785093620
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1785088426::0::1::::<><><>0<>0<><>::
-::res://sfx/::1785093130
-glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1785093148::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1785093148
+glasses.wav::AudioStreamWAV::2106530649997649347::1783170984::1785093623::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1783014461::1783014717::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1783172607::1783172608::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1783014804::1783014838::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -117,9 +117,9 @@ h_os_book_of_vengeance.png::CompressedTexture2D::3740196598674155551::1784386736
 relic.png::CompressedTexture2D::8663117661599846571::1782513113::1782513714::1::::<><><>0<>0<>6fe809b34bfc782e63d96117a76af902<>res://.godot/imported/relic.png-e75261016069bd5c6bb9c4b27d0a2568.ctex::
 sealed_sword.png::CompressedTexture2D::4817897136256058049::1782810638::1782810804::1::::<><><>0<>0<>893698c768fc3fa545469bbe6d1b09d6<>res://.godot/imported/sealed_sword.png-d5c99eeeb206dbb29504df98e2c6ba25.ctex::
 ::res://TheMiddleNurseFatherOutis/localization/::1782513113
-::res://TheMiddleNurseFatherOutis/localization/eng/::1785092965
+::res://TheMiddleNurseFatherOutis/localization/eng/::1785093529
 ancients.json::JSON::-1::1783828224::0::1::::<><><>0<>0<><>::
-cards.json::JSON::-1::1785092008::0::1::::<><><>0<>0<><>::
+cards.json::JSON::-1::1785093529::0::1::::<><><>0<>0<><>::
 card_keywords.json::JSON::-1::1784807106::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1783825139::0::1::::<><><>0<>0<><>::
 powers.json::JSON::-1::1785092965::0::1::::<><><>0<>0<><>::

@@ -20,7 +20,7 @@
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf {AttackThreshold:diff()}+ attacks have been played this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
   "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]Hand[/gold].",
