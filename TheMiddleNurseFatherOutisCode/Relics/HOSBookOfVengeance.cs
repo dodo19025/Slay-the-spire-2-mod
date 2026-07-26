@@ -116,10 +116,22 @@ public class HOSBookOfVengeance()
 			return;
 		}
 		
-		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage < 0 && props.IsPoweredAttack())
+		if (target.IsPlayer && result.UnblockedDamage >= 0 && _allowGrudgeFromDamage && target.Block <= 0)
+		{
+			await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGainPerDamage"].BaseValue,
+				Owner.Creature.Player);
+			_currentGainedGrudgeFromDamage++;
+			if (_currentGainedGrudgeFromDamage >= DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
+			{
+				_allowGrudgeFromDamage = false;
+			}
+			return; //so if the player is taking any form of damage, it does not activate the part when you are just getting targetted
+		}
+		
+		if (target.IsPlayer && _allowGrudgeFromHits && result.UnblockedDamage <= 0 && props.IsPoweredAttack())
 		{
 			await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGainPerHit"].BaseValue,
-				base.Owner.Creature.Player);
+				Owner.Creature.Player);
 			_currentGainedGrudgeFromHits++;
 			if (_currentGainedGrudgeFromHits >= DynamicVars["MaxGrudgeProcsFromHits"].BaseValue)
 			{
@@ -127,16 +139,7 @@ public class HOSBookOfVengeance()
 			}
 		}
 		
-		if (target.IsPlayer && result.UnblockedDamage > 0 && _allowGrudgeFromDamage)
-		{
-			await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGainPerDamage"].BaseValue,
-				base.Owner.Creature.Player);
-			_currentGainedGrudgeFromDamage++;
-			if (_currentGainedGrudgeFromDamage >= DynamicVars["MaxGrudgeProcsFromDamage"].BaseValue)
-			{
-				_allowGrudgeFromDamage = false;
-			}
-		}
+
 	}
 
 	public override Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)

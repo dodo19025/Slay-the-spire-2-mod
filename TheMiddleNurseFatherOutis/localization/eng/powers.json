@@ -59,8 +59,8 @@
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.title": "Paralyze",
   
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.description": "",
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.smartDescription": "",
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.description": "Creatures with [gold]Shield[/gold] Take reduced damage equal to [gold]Shield[/gold] Amounts. Every time [gold]Shield[/gold] is activated, reduce its amounts by the amount of damage negated.",
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.smartDescription": "This turn, the next time [gold]{OwnerName}[/gold] would take damage, take [blue]{Amount}[/blue] less damage and reduce [gold]Shield[/gold] by damage negated.",
   "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield"
 
 }

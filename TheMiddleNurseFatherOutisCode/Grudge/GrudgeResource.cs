@@ -46,7 +46,7 @@ public static partial class GrudgeResource
 		
 	}
 
-	internal static void LoseGrudge(int amount, Player player)
+	public static async Task LoseGrudge(int amount, Player player)
 	{
 		if (player.PlayerCombatState == null) return;
 		var OldVar = PlayerGrudge[player.PlayerCombatState];

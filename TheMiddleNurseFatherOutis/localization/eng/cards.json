@@ -4,6 +4,9 @@
 
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
+  
+  "THEMIDDLENURSEFATHEROUTIS-JOT_IN_THE_BOOK.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-JOT_IN_THE_BOOK.title": "Jot in the Book",
 
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
