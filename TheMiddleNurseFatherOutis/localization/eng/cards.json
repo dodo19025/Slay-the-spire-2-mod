@@ -62,7 +62,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold]",
   "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
 
-  "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.description": "Deal {Damage:diff()} damage to a random enemy {HitAmount:diff()} times.\nConsume {GrudgeConsume:diff()} to hit {AdditionalHitAmount:diff()} additional times.",
+  "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.description": "Deal {Damage:diff()} damage to a random enemy {HitAmount:diff()} times.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.title": "Wild Flailing",
 
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 until played if you took damage this combat.",
@@ -77,7 +77,7 @@
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Mean Kick",
 
-  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage for each time [gold]Payback[/gold] was activated this combat.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
+  "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times. Apply {BleedPower:diff()} [gold]Bleed[/gold] each hit.\nLævateinn: Hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy.",

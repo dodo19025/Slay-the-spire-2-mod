@@ -18,14 +18,19 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class WildFlailing() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.RandomEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
         new DamageVar(2m, ValueProp.Move),
-        new DynamicVar("HitAmount", 1m),
+        new DynamicVar("HitAmount", 4m),
         new DynamicVar("AdditionalHitAmount", 2m),
         new DynamicVar("GrudgeConsume", 3m),
+    ]);
+
+    public override IEnumerable<CardKeyword> CanonicalKeywords => (
+    [
+        TheMiddleNurseFatherOutisKeywords.Punch
     ]);
     
     
@@ -39,7 +44,9 @@ public class WildFlailing() : TheMiddleNurseFatherOutisCard(
             await GrudgeResource.LoseGrudge((int)DynamicVars["GrudgeConsume"].BaseValue, Owner.Creature.Player!);
             hitAmount += (int)DynamicVars["AdditionalHitAmount"].BaseValue;
         }
-        await CommonActions.CardAttack(this, play.Target)
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .FromCard(this,play)
+            .TargetingRandomOpponents(CombatState) //has to be done this way since we don't pass a target by default
             .WithHitCount(hitAmount)
             .Execute(choiceContext);
     }

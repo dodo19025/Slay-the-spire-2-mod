@@ -30,7 +30,10 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         new DynamicVar("RisingFeverLost",1m),
     ]);
 
-
+    public override IEnumerable<CardKeyword> CanonicalKeywords => (
+    [
+        TheMiddleNurseFatherOutisKeywords.Kick
+    ]);
 
     protected override bool ShouldGlowGoldInternal => PlayedEnoughCards();
     

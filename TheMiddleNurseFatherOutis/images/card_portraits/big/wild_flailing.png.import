@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqubp6kaf21ds"
-path="res://.godot/imported/punching.png-cecc0e6e01e818362acc587b1db06dfa.ctex"
+path="res://.godot/imported/wild_flailing.png-2fdc67e9669bfdd2949d8eea2070a7b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TheMiddleNurseFatherOutis/images/card_portraits/big/punching.png"
-dest_files=["res://.godot/imported/punching.png-cecc0e6e01e818362acc587b1db06dfa.ctex"]
+source_file="res://TheMiddleNurseFatherOutis/images/card_portraits/big/wild_flailing.png"
+dest_files=["res://.godot/imported/wild_flailing.png-2fdc67e9669bfdd2949d8eea2070a7b6.ctex"]
 
 [params]
 
