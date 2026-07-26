@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -8,6 +9,7 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -34,6 +36,12 @@ public class PaybackPower()
     [
         HoverTipFactory.Static(StaticHoverTip.Block)
     ];
+    
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new DynamicVar("MaxActivation",1m),
+        new DynamicVar("CurrentActivation",0m)
+    ];
 
     //public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
     
@@ -44,11 +52,17 @@ public class PaybackPower()
         DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
-        if (dealer == null || dealer == base.Owner || dealer.Side == base.Owner.Side || !props.IsPoweredAttack())
+        if (dealer == null || dealer == base.Owner || dealer.Side == base.Owner.Side || !props.IsPoweredAttack() )
         {
             return;
         }
-        
+
+        if (DynamicVars["MaxActivation"].BaseValue <= DynamicVars["CurrentActivation"].BaseValue)
+        {
+            //setting the max number of payback that can be done
+            return;
+        }
+
         if (target.IsPlayer && result.UnblockedDamage > 0)
         {
             if (base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
@@ -58,18 +72,23 @@ public class PaybackPower()
             }
             else if (!(base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis))
             {
-                await CreatureCmd.TriggerAnim(base.Owner, "Attack",0.2f);
+                await CreatureCmd.TriggerAnim(base.Owner, "Attack", 0.2f);
             }
-            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered,base.Owner, null, null);
+
+            await CreatureCmd.Damage(choiceContext, dealer, base.Amount, ValueProp.Unpowered, base.Owner, null, null);
             _didPayback = true;
             PlayerCombatState? playerCombatState = base.Owner.Player!.PlayerCombatState;
             DamageTakenHook.PaybackAcitvated[playerCombatState!] += 1;
+            DynamicVars["CurrentActivation"].BaseValue += 1;
             MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState!]}");
             MainFile.Logger.Info("Did Payback");
-            
+
         }
     }
-        public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    
+    
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (_didPayback)
         {

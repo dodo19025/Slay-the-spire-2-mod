@@ -5,13 +5,13 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold]\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold]\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.title": "Unpacking+1",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold]\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nDraw {Cards:diff()} card.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking+2",
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].",

@@ -57,6 +57,10 @@
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.title": "Paralyze"
+  "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.title": "Paralyze",
+  
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.description": "",
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.smartDescription": "",
+  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield"
 
 }

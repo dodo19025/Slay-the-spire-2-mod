@@ -22,12 +22,12 @@ public class BleedPower()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
-    {
-        new DynamicVar("BleedLost", 0m), 
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DynamicVar("BleedLost", 0m)
+    ]);
 
-    public Color BleedColor = new Color("#5e0702");
+    private readonly Color BleedColor = new Color("#5e0702");
 
     public override IEnumerable<HealthBarForecastSegment> GetHealthBarForecastSegments(HealthBarForecastContext context)
     {
@@ -35,7 +35,7 @@ public class BleedPower()
     }
 
 
-    public static decimal CalculateBleedLost(decimal bleedAmount) //bleedamount is for the amount of bleed that we currently have
+    private static decimal CalculateBleedLost(decimal bleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
         if (bleedAmount <= 1)
         {
@@ -45,8 +45,8 @@ public class BleedPower()
         return ((decimal)Math.Round((decimal)(bleedAmount * (1m / 2m))));
 
     }
-    
-    public int AmountOfBleedDamageToBeTaken(Creature? creature) //calculates the total damage a creature will take with the amount of hits it does
+
+    private int AmountOfBleedDamageToBeTaken(Creature? creature) //calculates the total damage a creature will take with the amount of hits it does
     {
         int TotalDamageToBeTaken = 0;
         if (creature != null && !(creature.IsPlayer))
@@ -70,7 +70,7 @@ public class BleedPower()
         return TotalDamageToBeTaken;
     }
 
-    public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
+    public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power,
         decimal amount, Creature? applier,
         CardModel? cardSource) //calculate the amount of bleed that is set to be lost
     {
@@ -79,6 +79,8 @@ public class BleedPower()
             int TotalDamage = AmountOfBleedDamageToBeTaken(base.Owner);
             base.DynamicVars["BleedLost"].BaseValue = CalculateBleedLost(base.Amount);
         }
+
+        return Task.CompletedTask;
     }
 
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
