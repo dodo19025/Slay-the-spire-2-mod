@@ -38,6 +38,7 @@ public class StompingUnseal()
             if (Amount <= 0)
             {
                await TheMiddleNursefatherOutisCmd.ChangeFeverAmount(choiceContext, Owner, -1m, false);
+               await PowerCmd.Remove(this);
             }
         }
     }
