@@ -45,7 +45,7 @@ public class Rule_Violation()
     protected override void OnUpgrade()
     {
         DynamicVars["PaybackGained"].UpgradeValueBy(2m);
-        DynamicVars["PaybackGained"].UpgradeValueBy(2m);
+        DynamicVars["GrudgeGained"].UpgradeValueBy(2m);
 
     }
 }

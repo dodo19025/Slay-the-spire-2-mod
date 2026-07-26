@@ -33,7 +33,7 @@ public class TheMiddleNurseFatherOutis : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<RuleViolation>(),
+        ModelDb.Card<Rule_Violation>(),
         ModelDb.Card<Stomping>(),
         ModelDb.Card<MiddleStrike>(),
         ModelDb.Card<MiddleStrike>(),

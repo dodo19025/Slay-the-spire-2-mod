@@ -64,7 +64,7 @@
   "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.description": "After Attacking a certain amount, lose [blue]1[/blue] [gold]Rising Fever[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.smartDescription": "After [blue]{Amount}[/blue] attacks, lose [blue]{RisingFeverlLost:diff()}[/blue] [gold]Rising Fever[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.smartDescription": "After [blue]{Amount}[/blue] attacks, lose [blue]{RisingFeverLost:diff()}[/blue] [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.title": "Impatience"
 
 }
