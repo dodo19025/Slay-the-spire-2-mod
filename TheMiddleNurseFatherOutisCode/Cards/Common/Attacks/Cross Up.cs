@@ -46,8 +46,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<BleedPower>(choiceContext,Owner.Creature,DynamicVars["BleedPower"].BaseValue,Owner.Creature, this);
-
+        await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
+            DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
         if (FirstAttackPlayed())
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
