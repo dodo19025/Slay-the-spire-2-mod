@@ -28,3 +28,35 @@
 }
 
 ------
+Write sins discard from draw pile
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new DamageVar(4m,ValueProp.Move),
+        new CardsVar(2)
+    ];
+
+
+    protected override async Task OnPlay(
+        PlayerChoiceContext choiceContext,
+        CardPlay play)
+    {
+        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
+        List<CardModel> cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Draw.GetPile(base.Owner), base.Owner, new CardSelectorPrefs(CardSelectorPrefs.DiscardSelectionPrompt, base.DynamicVars.Cards.IntValue))).ToList();
+        if (cardModel != null)
+        {
+            foreach (var card in cardModel)
+            {
+                await CardPileCmd.Add(cardModel, PileType.Discard);
+            }
+        }
+    }
+
+
+    protected override void OnUpgrade()
+    {
+        base.DynamicVars.Damage.UpgradeValueBy(2m);
+        base.DynamicVars.Cards.UpgradeValueBy(1m);
+    }
+    
+    

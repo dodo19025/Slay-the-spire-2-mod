@@ -65,6 +65,10 @@
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.description": "After Attacking a certain amount, lose [blue]1[/blue] [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.smartDescription": "After [blue]{Amount}[/blue] attacks, lose [blue]{RisingFeverLost:diff()}[/blue] [gold]Rising Fever[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.title": "Impatience"
+  "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.title": "Impatience",
+
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.description": "After Hitting the enemy with [gold]Payback[/gold], apply [gold]Vulnerable[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.smartDescription": "After Hitting the enemy with [gold]Payback[/gold], apply [blue]{Amount}[/blue] [gold]Vulnerable[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.title": "Sins Written"
 
 }

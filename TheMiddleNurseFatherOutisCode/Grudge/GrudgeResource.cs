@@ -42,8 +42,6 @@ public static partial class GrudgeResource
 				await listener.AfterGrudgeGained(player, amount);
 			}
 		}
-
-		
 	}
 
 	public static async Task LoseGrudge(int amount, Player player)

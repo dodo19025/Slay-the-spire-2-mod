@@ -17,6 +17,7 @@ using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.Saves.Validation;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Extensions;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
@@ -82,6 +83,14 @@ public class PaybackPower()
             DynamicVars["CurrentActivation"].BaseValue += 1;
             MainFile.Logger.Info($"Num of paybacks done: {DamageTakenHook.PaybackAcitvated[playerCombatState!]}");
             MainFile.Logger.Info("Did Payback");
+            
+            foreach (var model in Owner.Player.Creature.CombatState.IterateHookListeners().ToList())
+            {
+                if (model is IAfterPaybackDone listener)
+                {
+                    await listener.AfterPaybackDone(choiceContext,Owner.Player, Amount,dealer);
+                }
+            }
 
         }
     }

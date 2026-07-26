@@ -1,13 +1,17 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+
+[Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 public class Rule_Violation()
     : TheMiddleNurseFatherOutisCard(1,

@@ -62,7 +62,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
         }
     }
 
-    public bool PlayedEnoughCards()
+    private bool PlayedEnoughCards()
     {
         int NumberOfCardsPlayed = CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) =>
             e.HappenedThisTurn(this.CombatState) && e.CardPlay.Card.Type == CardType.Attack &&

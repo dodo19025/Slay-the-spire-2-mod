@@ -21,18 +21,17 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class BadAssAssKicking()
-    : TheMiddleNurseFatherOutisCard(1,
+    : TheMiddleNurseFatherOutisCard(2,
         CardType.Attack, CardRarity.Common,
         TargetType.AnyEnemy)
 {
     
-    protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { TheMiddleNurseFatherOutisTags.Kick };
+    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
 
-    
         
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<LaevateinnPower>()
+        HoverTipFactory.FromPower<BleedPower>()
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => (
