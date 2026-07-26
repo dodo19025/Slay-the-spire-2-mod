@@ -101,11 +101,9 @@ public class PaybackPower()
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (_didPayback)
-        {
+
             await PowerCmd.Remove(this);
             _didPayback = false;
-        }
     }
 
     public override async Task AfterCombatEnd(CombatRoom room)
