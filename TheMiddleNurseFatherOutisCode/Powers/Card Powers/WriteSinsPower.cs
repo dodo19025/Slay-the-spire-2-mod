@@ -33,8 +33,12 @@ public class WriteSinsPower()
         HoverTipFactory.FromPower<VulnerablePower>()
     ];
 
-    public async Task AfterPaybackDone(PlayerChoiceContext choiceContext ,Player player, int amountpayback,  Creature target)
-    { 
+    public async Task AfterPaybackDone(PlayerChoiceContext choiceContext ,Player player, int amountPayback,  Creature target)
+    {
+        if (player != base.Owner.Player)
+        {
+            return; //so if another player does payback as well
+        }
         await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, target, DynamicVars["VunPower"].BaseValue, Owner, null);
         Amount--;
         if (Amount <= 0)
