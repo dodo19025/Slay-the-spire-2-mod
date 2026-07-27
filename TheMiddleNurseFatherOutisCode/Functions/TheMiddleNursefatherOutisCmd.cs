@@ -18,7 +18,15 @@ namespace TheMiddleNurseFatherOutis;
 
 public static class TheMiddleNursefatherOutisCmd
 {
-    public static async Task GainPayback(this Creature creature, PlayerChoiceContext choiceContext,Decimal amount, Creature? applier = null, CardModel? cardSource = null)
+    
+    /// <summary>
+    /// Used for generating Payback with the "seethe" mechanic, which consumes block to gain equal payback
+    /// </summary>
+    /// <param name="creature"> Creatures that gains payback</param>
+    /// <param name="choiceContext"> Players choicecontext</param>
+    /// <param name="amount"> Amount of payback you are trying to gain</param>
+    /// <param name="cardSource">Card that gavepayback from this</param>
+    public static async Task GainPayback(this Creature creature, PlayerChoiceContext choiceContext,Decimal amount, CardModel? cardSource = null)
     {
         int CurrentBlock = creature.Block;
         
@@ -35,16 +43,28 @@ public static class TheMiddleNursefatherOutisCmd
         
     }
 
+    /// <summary>
+    /// Compares the payback amount to your block number and checks if you are Valid to gain all payback in the amount given
+    /// </summary>
+    /// <param name="creature"> Creature getting its payback compared</param>
+    /// <param name="PaybackAmount"> Amount of payback it is set to compare to block</param>
+    /// <returns></returns>
     public static bool GainedPayback(this Creature creature, decimal PaybackAmount)
     {
         if (PaybackAmount > creature.Block)
         {
             return false;
         }
-
         return true;
     }
 
+    
+    /// <summary>
+    /// Returns how much payback you are set to gain depending on how much block you have (if you have more block you gain all the payback specified, otherwise you gain payback equal to your block or 0)
+    /// </summary>
+    /// <param name="creature"> Creature getting the payback compared to</param>
+    /// <param name="PaybackAmount"> Amount of payback being checked</param>
+    /// <returns></returns>
     public static int ValidPaybackAmount(this Creature creature, decimal PaybackAmount)
     {
         if (creature.Block >= PaybackAmount && creature.Block > 0)
@@ -58,12 +78,26 @@ public static class TheMiddleNursefatherOutisCmd
         return 0;
     }
 
+    /// <summary>
+    /// Gives unconditional amount of payback, in hindsight this is uncencessary lool
+    /// </summary>
+    /// <param name="creature"> Creature gaining payback</param>
+    /// <param name="choiceContext"> The player's choice that signaled this event</param>
+    /// <param name="amount"> Amount of payback to be gained</param>
+    /// <param name="cardSource"> The card source that would apply this payback amount</param>
     public static async Task AdditionalPayback(this Creature creature, PlayerChoiceContext choiceContext,
-        Decimal amount, Creature? applier = null, CardModel? cardSource = null)
+        Decimal amount, CardModel? cardSource = null)
     {
         await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // unconditional paybackgain
     }
     
+    
+    /// <summary>
+    /// Animation player handler for outis
+    /// </summary>
+    /// <param name="creature"> Gets the creature to play the animations for</param>
+    /// <param name="AnimationName"> The animation name for the animation to be played</param>
+    /// <param name="NormalSecondWait"> The delay that is played after the animation ends</param>
     public static async Task PlayAnimation(this Creature creature, string AnimationName, float NormalSecondWait)
     {
         if (!(creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character.TheMiddleNurseFatherOutis))
@@ -99,6 +133,12 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
 
+    
+    /// <summary>
+    /// Handler for changing the sword seals, playing animations and sounds and changing the rising fever numbers
+    /// </summary>
+    /// <param name="creature"> The creature that is having their sealed sword state changed</param>
+    /// <param name="choiceContext"> The players choice that signaled this event</param>
     public static async Task ChangeSwordSeal(this Creature creature, PlayerChoiceContext choiceContext)
     {
         if (!(creature.Player?.Character is TheMiddleNurseFatherOutisCode.Character
@@ -162,6 +202,12 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
     
+    
+    /// <summary>
+    /// Calculates the amount of bleed to be reduced after it is set to be activated
+    /// </summary>
+    /// <param name="BleedAmount">Target's bleed amount before it would get reduced</param>
+    /// <returns></returns>
     public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
         if (BleedAmount <= 1)
@@ -172,7 +218,12 @@ public static class TheMiddleNursefatherOutisCmd
         return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
 
     }
-    
+    /// <summary>
+    /// The function that gets called when bleed needs to be when activating bleed on the target to handle the calculations, damage and reduce it by the appropriate amounts
+    /// </summary>
+    /// <param name="choiceContext"> The player's choice that signaled this event</param>
+    /// <param name="target"> The target that is set to take damage from bleed</param>
+    /// <param name="BleedAmount"> The target's bleed amount before it gets reduced</param>
     public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature? target, decimal BleedAmount)
     {
         await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
@@ -186,11 +237,20 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
 
+    /// <summary>
+    /// Handles applying bleed using outis' cards for the additional burn application using the swords, applies bleed as normal if at sealed sword 0 or no sword stage
+    /// </summary>
+    /// <param name="choiceContext"> The player's choice that signaled this event</param>
+    /// <param name="applier"> The creature applying the bleed</param>
+    /// <param name="bleedAmount"> The amount of bleed to be applied</param>
+    /// <param name="target"> The creature that will have bleed applied to them</param>
+    /// <param name="cardModel"> The card that applied bleed</param>
 
     public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, decimal bleedAmount ,Creature? target, CardModel cardModel)
     {
         decimal additionalBurnPerBleed = 0;
         PowerModel? swordPower = null;
+        
         if (applier.HasPower<FirstSealRemovedPower>())
         {
             swordPower = applier.GetPower<FirstSealRemovedPower>();
@@ -203,6 +263,7 @@ public static class TheMiddleNursefatherOutisCmd
         }
         
         await PowerCmd.Apply<BleedPower>(choiceContext, target, bleedAmount, applier, cardModel);
+        
         if (additionalBurnPerBleed > 0)
         {
             await PowerCmd.Apply<BurnPower>(choiceContext, target, additionalBurnPerBleed, applier, cardModel);
@@ -210,6 +271,14 @@ public static class TheMiddleNursefatherOutisCmd
         
     }
 
+    /// <summary>
+    /// Changes the rising fever value and unpacks upon it is set to 0
+    /// </summary>
+    /// <param name="choiceContext"> The player's choice that signaled this event</param>
+    /// <param name="creature"> The creature that is set to have its fever amount changed</param>
+    /// <param name="FeverAmount"> The amount of fever that is modifying the current fever amount, the numbers are additive meaning a negative reduction just needs a negative number fed it</param>
+    /// <param name="RestrictUnpackingThisTurn"> Dictates if unpacking is restricted for this turn. PS: unpacking through rising fever automatically sets this to false for this turn so any powers or skills that unrestrict this will have to manually change the rising fever boolean</param>
+    /// <returns></returns>
     public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount, bool RestrictUnpackingThisTurn)
     {
         if (!creature.HasPower<RisingFeverPower>()) return Task.CompletedTask;
@@ -225,6 +294,13 @@ public static class TheMiddleNursefatherOutisCmd
         return Task.CompletedTask;
     }
     
+    
+    /// <summary>
+    /// Checks if the player is allowed to unpack based on if they have 0 rising fever
+    /// </summary>
+    /// <param name="choiceContext"> The player's choice which signaled this event</param>
+    /// <param name="creature"> The creature that has rising fever</param>
+    /// <returns></returns>
     public static bool CanUnpack(PlayerChoiceContext choiceContext, Creature creature)
     {
         if (creature.HasPower<RisingFeverPower>() && creature.IsPlayer && creature.IsAlive)
@@ -238,7 +314,12 @@ public static class TheMiddleNursefatherOutisCmd
         return false;
     }
 
-    
+    /// <summary>
+    /// Converts Grudge to tattoos based on the conversion rate that is set in the relic.PS: change how this works so it is friendly with cards instead of relying on a relic
+    /// </summary>
+    /// <param name="creature"> The creature that is gaining tattoos</param>
+    /// <param name="choiceContext"> The players choice that fired this signal</param>
+    /// <param name="GrudgeConsumed"> The amount of grudge to be consumed for this change</param>
     public static async Task ConvertGrudgeToTattoo(Creature? creature, PlayerChoiceContext choiceContext,
 		decimal GrudgeConsumed)
     {

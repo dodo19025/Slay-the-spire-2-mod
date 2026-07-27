@@ -27,6 +27,8 @@ public class StompingUnseal()
         new DynamicVar("RisingFeverLost",1m),
     ]);
     
+    public override PowerInstanceType InstanceType => PowerInstanceType.Instanced; //non stackable power
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<RisingFeverPower>()
