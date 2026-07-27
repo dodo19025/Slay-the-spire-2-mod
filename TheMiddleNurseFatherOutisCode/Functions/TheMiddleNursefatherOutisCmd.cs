@@ -219,7 +219,7 @@ public static class TheMiddleNursefatherOutisCmd
 
     }
     /// <summary>
-    /// The function that gets called when bleed needs to be when activating bleed on the target to handle the calculations, damage and reduce it by the appropriate amounts
+    /// The function that gets called when activating bleed on the target to handle the calculations, damage and reduce it by the appropriate amounts
     /// </summary>
     /// <param name="choiceContext"> The player's choice that signaled this event</param>
     /// <param name="target"> The target that is set to take damage from bleed</param>
