@@ -18,10 +18,10 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
 public class Unpacking2() : TheMiddleNurseFatherOutisCard(
-    0, CardType.Attack, CardRarity.Basic,
+    2, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
- protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),base.Owner.Creature);
+ protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),Owner.Creature);
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
@@ -40,36 +40,7 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     [
         HoverTipFactory.FromPower<BleedPower>(),
     ];
-
     
-
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (!Owner.HasPower<FirstSealRemovedPower>())
-        {
-            return;
-        }
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
-
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (!Owner.HasPower<FirstSealRemovedPower>())
-        {
-            return;
-        }
-        
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
-
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -79,16 +50,19 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
             DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         {
             await Owner.Creature.ChangeSwordSeal(choiceContext);
-            CardModel Card = Owner?.Creature?.CombatState?.CreateCard<Unpacking3>(Owner.Creature.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, Owner);
         }
     }
 
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        EnergyCost.AddThisCombat(-1);
+        return Task.CompletedTask;
+    }
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4m);

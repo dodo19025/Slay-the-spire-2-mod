@@ -18,7 +18,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
 public class Unpacking3() : TheMiddleNurseFatherOutisCard(
-    0, CardType.Attack, CardRarity.Basic,
+    2, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
  protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),base.Owner.Creature);
@@ -42,33 +42,7 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     ];
 
     
-
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (!Owner.HasPower<SecondSealRemovedPower>())
-        {
-            return;
-        }
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
-
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (!Owner.HasPower<SecondSealRemovedPower>())
-        {
-            return;
-        }
-        
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
+    
 
 
     protected override async Task OnPlay(
@@ -79,14 +53,20 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
             DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
-
+        
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         {
             await Owner.Creature.ChangeSwordSeal(choiceContext);
         }
     }
 
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        EnergyCost.AddThisCombat(-1);
+        return Task.CompletedTask;
+    }
+
+    
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4m);

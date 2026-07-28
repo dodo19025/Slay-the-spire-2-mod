@@ -69,7 +69,8 @@ public class RisingFeverPower()
         
     }
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    //reason this is cardplayed late is to check for powers and such
+    public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != Owner.Player)
         {
@@ -84,7 +85,14 @@ public class RisingFeverPower()
             return;
         }
         //MainFile.Logger.Info("Detected that the player can unpack from 'rising fever' function");
-
+        foreach (CardModel? cardModel in cardPlay.Card.Owner.PlayerCombatState!.Hand.Cards)
+        {
+            //to catch if the player ever has the unpacking cards and hasn't used them
+            if (cardModel is Unpacking or Unpacking2 or Unpacking3)
+            {
+                return;
+            }
+        }
         switch (swordStage)
         {
             case SealedSwordPower:
