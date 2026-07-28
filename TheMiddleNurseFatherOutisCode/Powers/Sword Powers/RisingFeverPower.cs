@@ -59,7 +59,6 @@ public class RisingFeverPower()
             }
         }
         
-        
         PowerModel? swordStage = TheMiddleNursefatherOutisCmd.getSwordStage(player.Creature);
         
         if (swordStage == null || swordStage is LaevateinnPower || !(TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext, player.Creature)))
