@@ -305,6 +305,7 @@ public static class TheMiddleNursefatherOutisCmd
     {
         if (creature.HasPower<RisingFeverPower>() && creature.IsPlayer && creature.IsAlive)
         {
+            //MainFile.Logger.Info("Detected that the player can unpack from 'can unpack' function");
             PowerModel? power = creature.GetPower<RisingFeverPower>();
             if (power?.DynamicVars["FeverAmount"].BaseValue <= 0 && ((BoolVar)power.DynamicVars["CanUnpack"]).BoolVal)
             {

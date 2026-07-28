@@ -46,15 +46,12 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
     [
         HoverTipFactory.FromPower<BleedPower>(),
     ];
-
     
-
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     { 
-        
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
             DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
@@ -64,6 +61,13 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         {
             await Owner.Creature.ChangeSwordSeal(choiceContext);
         }
+    }
+
+
+    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        EnergyCost.AddThisCombat(-1);
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()

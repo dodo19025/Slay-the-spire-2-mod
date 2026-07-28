@@ -44,11 +44,6 @@ public class RisingFeverPower()
             ((BoolVar)DynamicVars["CanUnpack"]).BoolVal = true;
         }
         
-        if (DynamicVars["FeverAmount"].BaseValue > 0)
-        {
-            return;
-        }
-
         PowerModel? swordStage = TheMiddleNursefatherOutisCmd.getSwordStage(player.Creature);
         
         if (swordStage == null || swordStage is LaevateinnPower || !(TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext, player.Creature)))
@@ -76,7 +71,7 @@ public class RisingFeverPower()
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Owner != Owner.Player || DynamicVars["FeverAmount"].BaseValue > 0)
+        if (cardPlay.Card.Owner != Owner.Player)
         {
             return;
         }
@@ -85,8 +80,10 @@ public class RisingFeverPower()
         
         if (swordStage == null || swordStage is LaevateinnPower || !(TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext, cardPlay.Card.Owner.Creature)))
         {
+            //MainFile.Logger.Info("Detected that the player can't unpack from 'rising fever' function");
             return;
         }
+        //MainFile.Logger.Info("Detected that the player can unpack from 'rising fever' function");
 
         switch (swordStage)
         {
