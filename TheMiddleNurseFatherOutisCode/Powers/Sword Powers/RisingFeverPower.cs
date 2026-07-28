@@ -33,6 +33,12 @@ public class RisingFeverPower()
         new DynamicVar("FeverAmount", 0m),
         new BoolVar("CanUnpack", false)
     ]);
+    
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromCard<Unpacking>()
+    ];
 
     public override int DisplayAmount => DynamicVars["FeverAmount"].IntValue;
 
@@ -43,6 +49,16 @@ public class RisingFeverPower()
             MainFile.Logger.Info("Detected that unpack is false, setting to true");
             ((BoolVar)DynamicVars["CanUnpack"]).BoolVal = true;
         }
+        
+        foreach (CardModel? cardModel in Owner.Player.PlayerCombatState!.Hand.Cards)
+        {
+            //to catch if the player ever has the unpacking cards and hasn't used them
+            if (cardModel is Unpacking or Unpacking2 or Unpacking3)
+            {
+                return;
+            }
+        }
+        
         
         PowerModel? swordStage = TheMiddleNursefatherOutisCmd.getSwordStage(player.Creature);
         
