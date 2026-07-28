@@ -22,6 +22,7 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     TargetType.AnyEnemy)
 {
  protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),base.Owner.Creature);
+ public override bool HasTurnEndInHandEffect => true;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
@@ -40,8 +41,6 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     [
         HoverTipFactory.FromPower<BleedPower>(),
     ];
-
-    
     
 
 
@@ -60,12 +59,11 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
         }
     }
 
-    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    protected override Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
     {
         EnergyCost.AddThisCombat(-1);
         return Task.CompletedTask;
     }
-
     
     protected override void OnUpgrade()
     {
