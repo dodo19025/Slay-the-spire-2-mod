@@ -50,10 +50,10 @@ public class RisingFeverPower()
             ((BoolVar)DynamicVars["CanUnpack"]).BoolVal = true;
         }
         
-        foreach (CardModel? cardModel in Owner.Player.PlayerCombatState!.Hand.Cards)
+        foreach (CardModel? cardModel in Owner.Player.PlayerCombatState!.AllCards)
         {
             //to catch if the player ever has the unpacking cards and hasn't used them
-            if (cardModel is Unpacking or Unpacking2 or Unpacking3)
+            if (cardModel is Unpacking or Unpacking2 or Unpacking3 && cardModel.Pile!.Type != PileType.Exhaust)
             {
                 return;
             }
@@ -100,10 +100,10 @@ public class RisingFeverPower()
             return;
         }
         //MainFile.Logger.Info("Detected that the player can unpack from 'rising fever' function");
-        foreach (CardModel? cardModel in cardPlay.Card.Owner.PlayerCombatState!.Hand.Cards)
+        foreach (CardModel? cardModel in cardPlay.Card.Owner.PlayerCombatState!.AllCards)
         {
             //to catch if the player ever has the unpacking cards and hasn't used them
-            if (cardModel is Unpacking or Unpacking2 or Unpacking3)
+            if (cardModel is Unpacking or Unpacking2 or Unpacking3 && cardModel.Pile!.Type != PileType.Exhaust)
             {
                 return;
             }

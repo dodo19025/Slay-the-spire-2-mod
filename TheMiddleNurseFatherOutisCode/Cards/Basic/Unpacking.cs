@@ -1,6 +1,7 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
 using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -26,8 +27,7 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
 {
     
     protected override bool IsPlayable => TheMiddleNursefatherOutisCmd.CanUnpack(new BlockingPlayerChoiceContext(),Owner.Creature);
-
-    public override bool HasTurnEndInHandEffect => true;
+    
 
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
@@ -65,9 +65,16 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         }
     }
 
-    protected override Task OnTurnEndInHand(PlayerChoiceContext choiceContext)
+
+    public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        EnergyCost.AddThisCombat(-1);
+        if (participants.Contains(Owner.Creature))
+        {
+            if (Pile?.Type == PileType.Hand)
+            {
+                EnergyCost.AddThisCombat(-1);
+            }
+        }
         return Task.CompletedTask;
     }
     
