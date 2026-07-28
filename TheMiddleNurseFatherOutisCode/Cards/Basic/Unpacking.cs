@@ -21,7 +21,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 
 
 public class Unpacking() : TheMiddleNurseFatherOutisCard(
-    0, CardType.Attack, CardRarity.Basic,
+    2, CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
     
@@ -49,33 +49,6 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
 
     
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (!Owner.HasPower<SealedSwordPower>())
-        {
-            return;
-        }
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
-
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
-    {
-        if (!Owner.HasPower<SealedSwordPower>())
-        {
-            return;
-        }
-        
-        if (TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext,Owner.Creature) && !(Owner.Creature.HasPower<LaevateinnPower>()))
-        {
-            MainFile.Logger.Info("autoplaying card");
-            await CardCmd.AutoPlay(choiceContext,this,null); 
-        } 
-    }
-
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -90,8 +63,6 @@ public class Unpacking() : TheMiddleNurseFatherOutisCard(
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         {
             await Owner.Creature.ChangeSwordSeal(choiceContext);
-            CardModel Card = Owner?.Creature?.CombatState?.CreateCard<Unpacking2>(Owner.Creature.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(Card, PileType.Hand, Owner);
         }
     }
 

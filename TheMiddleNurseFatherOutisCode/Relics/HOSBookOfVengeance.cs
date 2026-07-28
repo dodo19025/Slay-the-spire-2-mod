@@ -82,8 +82,7 @@ public class HOSBookOfVengeance()
 	{
 		if (player == Owner && Owner.PlayerCombatState?.TurnNumber == 1)
 		{
-			CardModel? Card = Owner.Creature?.CombatState?.CreateCard<Unpacking>(Owner.Creature.Player!);
-			await CardPileCmd.AddGeneratedCardToCombat(Card!, PileType.Hand, Owner);
+			
 		}
 	}
 	public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)

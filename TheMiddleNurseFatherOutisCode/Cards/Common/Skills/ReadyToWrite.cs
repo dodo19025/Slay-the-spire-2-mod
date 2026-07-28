@@ -36,8 +36,7 @@ public class ReadyToWrite()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await Owner.Creature.AdditionalPayback(choiceContext, base.DynamicVars["PaybackGained"].BaseValue,
-            base.Owner.Creature, this);
+        await Owner.Creature.AdditionalPayback(choiceContext, base.DynamicVars["PaybackGained"].BaseValue, this);
         await CardPileCmd.Draw(choiceContext, base.DynamicVars.Cards.BaseValue, base.Owner);
 
     }

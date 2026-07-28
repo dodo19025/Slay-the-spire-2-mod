@@ -11,6 +11,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
@@ -35,13 +36,72 @@ public class RisingFeverPower()
 
     public override int DisplayAmount => DynamicVars["FeverAmount"].IntValue;
 
-    public override Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
         if (!((BoolVar)DynamicVars["CanUnpack"]).BoolVal)
         {
             MainFile.Logger.Info("Detected that unpack is false, setting to true");
             ((BoolVar)DynamicVars["CanUnpack"]).BoolVal = true;
         }
-        return Task.CompletedTask;
+        
+        if (DynamicVars["FeverAmount"].BaseValue > 0)
+        {
+            return;
+        }
+
+        PowerModel? swordStage = TheMiddleNursefatherOutisCmd.getSwordStage(player.Creature);
+        
+        if (swordStage == null || swordStage is LaevateinnPower || !(TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext, player.Creature)))
+        {
+            return;
+        }
+
+        switch (swordStage)
+        {
+            case SealedSwordPower:
+                CardModel? unpacking = Owner?.CombatState?.CreateCard<Unpacking>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking, PileType.Hand, Owner.Player);
+                return;
+            case FirstSealRemovedPower:
+                CardModel? unpacking2 = Owner?.CombatState?.CreateCard<Unpacking2>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking2, PileType.Hand, Owner.Player);
+                return;
+            case SecondSealRemovedPower:
+                CardModel? unpacking3 = Owner?.CombatState?.CreateCard<Unpacking3>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking3, PileType.Hand, Owner.Player);
+                return;
+        }
+        
+    }
+
+    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    {
+        if (cardPlay.Card.Owner != Owner.Player || DynamicVars["FeverAmount"].BaseValue > 0)
+        {
+            return;
+        }
+
+        PowerModel? swordStage = TheMiddleNursefatherOutisCmd.getSwordStage(cardPlay.Card.Owner.Creature);
+        
+        if (swordStage == null || swordStage is LaevateinnPower || !(TheMiddleNursefatherOutisCmd.CanUnpack(choiceContext, cardPlay.Card.Owner.Creature)))
+        {
+            return;
+        }
+
+        switch (swordStage)
+        {
+            case SealedSwordPower:
+                CardModel? unpacking = Owner?.CombatState?.CreateCard<Unpacking>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking, PileType.Hand, Owner.Player);
+                return;
+            case FirstSealRemovedPower:
+                CardModel? unpacking2 = Owner?.CombatState?.CreateCard<Unpacking2>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking2, PileType.Hand, Owner.Player);
+                return;
+            case SecondSealRemovedPower:
+                CardModel? unpacking3 = Owner?.CombatState?.CreateCard<Unpacking3>(Owner.Player);
+                await CardPileCmd.AddGeneratedCardToCombat(unpacking3, PileType.Hand, Owner.Player);
+                return;
+        }
     }
 }

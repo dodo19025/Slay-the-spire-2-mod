@@ -314,6 +314,32 @@ public static class TheMiddleNursefatherOutisCmd
         return false;
     }
 
+/// <summary>
+/// Returns the current sword stage the player is on
+/// </summary>
+/// <param name="creature"> The creature who has the sword</param>
+/// <returns></returns>
+    public static PowerModel? getSwordStage(Creature creature)
+    {
+        foreach (PowerModel power in creature.Powers)
+        {
+            switch (power)
+            {
+                case SealedSwordPower:
+                    return power;
+                case FirstSealRemovedPower:
+                    return power;
+                case SecondSealRemovedPower:
+                    return power;
+                case LaevateinnPower:
+                    return power;
+
+            }
+        }
+        return null;
+    }
+    
+    
     /// <summary>
     /// Converts Grudge to tattoos based on the conversion rate that is set in the relic.PS: change how this works so it is friendly with cards instead of relying on a relic
     /// </summary>
