@@ -5,13 +5,13 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce card cost by 1 if this is in your hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce card cost by 1 if this is in your hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.title": "Unpacking+1",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce card cost by 1 if this is in your hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking+2",
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",

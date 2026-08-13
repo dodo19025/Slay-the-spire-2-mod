@@ -340,7 +340,6 @@ public static class TheMiddleNursefatherOutisCmd
         return null;
     }
     
-    
     /// <summary>
     /// Converts Grudge to tattoos based on the conversion rate that is set in the relic.PS: change how this works so it is friendly with cards instead of relying on a relic
     /// </summary>
@@ -396,6 +395,7 @@ public static class TheMiddleNursefatherOutisCmd
                 
                 if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained >= MaxTattoos && creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //what this does is check if the creature's current tattoo count + the amount to be gained is higher than the max tattoos allowed
 				{
+                    
 					decimal _amountCorrected = MaxTattoos - creature.GetPowerAmount<VengeanceTattoo>(); //since the amount of tattoos would overflow, you'd just set this to the max tattoos
 					await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, _amountCorrected,creature, null);
 
