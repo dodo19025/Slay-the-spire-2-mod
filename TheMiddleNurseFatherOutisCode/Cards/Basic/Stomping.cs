@@ -26,7 +26,7 @@ public class Stomping() : TheMiddleNurseFatherOutisCard(
     [
         new DamageVar(3m, ValueProp.Move),
         new DynamicVar("Exclamation", 1m),
-        new DynamicVar("AttackThreshold",2m),
+        new DynamicVar("AttackThreshold",3m),
         new DynamicVar("RisingFeverLost",1m),
     ]);
 

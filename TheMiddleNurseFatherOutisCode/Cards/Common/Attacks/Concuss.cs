@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -17,21 +18,23 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class Concuss() : TheMiddleNurseFatherOutisCard(
-    2, CardType.Attack, CardRarity.Common,
+    3, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    private bool _foundDebuff = false;
-
-    protected override bool ShouldGlowGoldInternal => AnyHasDebuff();
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheMiddleNurseFatherOutisKeywords.Swing
+    ];
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("StrengthPowerDown", 3m),
-        new DamageVar(16m,ValueProp.Move)
+        new DynamicVar("GrudgeGain", 3m),
+        new DynamicVar("DamageRemoved", 5m),
+        new DamageVar(35m,ValueProp.Move)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<StrengthPower>()
+        HoverTipFactory.FromPower<GrudgePower>()
     ];
     
     
@@ -40,38 +43,20 @@ public class Concuss() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        
-        foreach (PowerModel power in play.Target.Powers)
-        {
-            if (power != null && power.Type == PowerType.Debuff)
-            {
-                _foundDebuff = true;
-            }
-        }
-        if (_foundDebuff)
-        {
-            await PowerCmd.Apply<SwatPower>(choiceContext, play.Target, base.DynamicVars["StrengthPowerDown"].BaseValue,base.Owner.Creature,this);
-        }
-
     }
 
-    public bool AnyHasDebuff()
+    public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
-        foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+        if (TheMiddleNursefatherOutisCmd.getSwordStage(Owner.Creature) is LaevateinnPower)
         {
-            foreach (PowerModel power in hittableEnemy.Powers)
-            {
-                if (power != null && power.Type == PowerType.Debuff)
-                {
-                    return true;
-                }
-            }
+            await GrudgeResource.GainGrudge(DynamicVars["GrudgeGain"].IntValue, Owner);
+            return;
         }
-        return false;
+        DynamicVars.Damage.BaseValue -= DynamicVars["DamageRemoved"].BaseValue;
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(5m);
+        base.DynamicVars.Damage.UpgradeValueBy(15m);
     }
 }
