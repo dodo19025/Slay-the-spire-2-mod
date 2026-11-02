@@ -93,7 +93,7 @@ public class HOSBookOfVengeance()
 			DynamicVars["CombatStartHealth"].BaseValue = Owner.Creature.CurrentHp;
 			MainFile.Logger.Info($"Current HP --> {DynamicVars["CombatStartHealth"].BaseValue}");
 			PlayerCombatState? playerCombatState = Owner.Creature?.Player?.PlayerCombatState;
-			DamageTakenHook.PaybackAcitvated[playerCombatState!] = 0;
+			DamageTakenHook.PaybackActivated[playerCombatState!] = 0;
 			DamageTakenHook.TookDamageLastTurn[playerCombatState!] = false;
 			RecordedConsumedGrudge[playerCombatState!] = 0;
 		}

@@ -17,7 +17,8 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
-public class Concuss() : TheMiddleNurseFatherOutisCard(
+
+public class MildIncon() : TheMiddleNurseFatherOutisCard(
     3, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -47,12 +48,24 @@ public class Concuss() : TheMiddleNurseFatherOutisCard(
 
     public override async Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
+        if (card != this)
+        {
+            return;
+        }
+        
         if (TheMiddleNursefatherOutisCmd.getSwordStage(Owner.Creature) is LaevateinnPower)
         {
             await GrudgeResource.GainGrudge(DynamicVars["GrudgeGain"].IntValue, Owner);
             return;
         }
-        DynamicVars.Damage.BaseValue -= DynamicVars["DamageRemoved"].BaseValue;
+
+        if (DynamicVars.Damage.BaseValue >= 5)
+        {
+            var current_damage = DynamicVars.Damage.BaseValue;
+            var new_damage = current_damage - 5;
+            DynamicVars.Damage.BaseValue = new_damage;
+
+        }
     }
 
     protected override void OnUpgrade()

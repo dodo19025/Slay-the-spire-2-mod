@@ -23,8 +23,8 @@
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
-  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage twice.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {Block:diff()} [gold]Block[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Checking The Book",
+  "THEMIDDLENURSEFATHEROUTIS-CHECK_THE_BOOK.description": "Deal {Damage:diff()} damage twice.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {Block:diff()} [gold]Block[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-CHECK_THE_BOOK.title": "Checking The Book",
 
   "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat",
@@ -35,8 +35,8 @@
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
 
-  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Deal {Damage:diff()} damage.\nThis turn, the next attack you play applies {BleedNextAttack:diff()} [gold]Bleed[/gold] on hit.",
-  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
+  "THEMIDDLENURSEFATHEROUTIS-WE_REMEMEBER.description": "Deal {Damage:diff()} damage.\nIf you performed a [gold]Payback[/gold] last turn, hit an additional time and add 1 [gold]Wound[/gold] to your [gold]Discard Pile[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-WE_REMEMEBER.title": "We Remember",
 
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nIf this is the first attack played this turn, gain {Energy:energyIcons()} and draw {Cards:diff()} card.",
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up",
@@ -68,14 +68,14 @@
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 until played if you took damage this combat.",
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup",
   
-  "THEMIDDLENURSEFATHEROUTIS-CONCUSS.description": "Deal {Damage:diff()} damage.\nWhen drawn without [gold]Lævateinn[/gold], this card deals {DamageRemoved:diff()} less damage for the rest of combat.\n[gold]Lævateinn[/gold]:When this card is drawn, gain {GrudgeGain:diff()} [gold]Grudge[/gold].",
-    "THEMIDDLENURSEFATHEROUTIS-CONCUSS.title": "Mild Inconvenience",
+  "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.description": "Deal {Damage:diff()} damage.\nWhen drawn without [gold]Lævateinn[/gold], this card deals {DamageRemoved:diff()} less damage for the rest of combat.\n[gold]Lævateinn[/gold]:When this card is drawn, gain {GrudgeGain:diff()} [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.title": "Mild Inconvenience",
 
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nThis turn, apply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins",
 
-  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nApply 1 [gold]Vulnerable[/gold] for each Seal removed.\n[gold]Lævateinn[/gold]: Apply equal amounts [gold]Weak[/gold] and [gold]Exhaust[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Don’t Break Now!",
+  "THEMIDDLENURSEFATHEROUTIS-DONT_BREAK_NOW.description": "Deal {Damage:diff()} damage.\nApply 1 [gold]Vulnerable[/gold] for each Seal removed.\n[gold]Lævateinn[/gold]: Apply equal amounts [gold]Weak[/gold] and [gold]Exhaust[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-DONT_BREAK_NOW.title": "Don’t Break Now!",
 
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times. Apply {BleedPower:diff()} [gold]Bleed[/gold] each hit.\n[gold]Lævateinn[/gold]: Hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",

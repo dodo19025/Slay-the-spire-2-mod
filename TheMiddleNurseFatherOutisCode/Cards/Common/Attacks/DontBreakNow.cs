@@ -15,10 +15,11 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
-public class MeanKick() : TheMiddleNurseFatherOutisCard(
+public class DontBreakNow() : TheMiddleNurseFatherOutisCard(
     2, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
