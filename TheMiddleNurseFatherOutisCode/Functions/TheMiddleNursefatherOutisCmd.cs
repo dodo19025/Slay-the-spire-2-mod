@@ -1,4 +1,5 @@
 ﻿using Godot;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -18,7 +19,7 @@ namespace TheMiddleNurseFatherOutis;
 
 public static class TheMiddleNursefatherOutisCmd
 {
-    
+
     /// <summary>
     /// Used for generating Payback with the "seethe" mechanic, which consumes block to gain equal payback
     /// </summary>
@@ -26,21 +27,23 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="choiceContext"> Players choicecontext</param>
     /// <param name="amount"> Amount of payback you are trying to gain</param>
     /// <param name="cardSource">Card that gavepayback from this</param>
-    public static async Task GainPayback(this Creature creature, PlayerChoiceContext choiceContext,Decimal amount, CardModel? cardSource = null)
+    public static async Task GainPayback(this Creature creature, PlayerChoiceContext choiceContext, Decimal amount,
+        CardModel? cardSource = null)
     {
         int CurrentBlock = creature.Block;
-        
+
         if (CurrentBlock > 0) //if player has block
         {
             if (amount >= CurrentBlock)
             {
                 amount = CurrentBlock; //if the amount of payback gained is less than block, then current block becomes the amount gained
             }
-            
-            await CreatureCmd.LoseBlock(choiceContext,creature,amount,creature); //consumes block equal to payback
-            await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // Gains equal amounts payback power
+
+            await CreatureCmd.LoseBlock(choiceContext, creature, amount, creature); //consumes block equal to payback
+            await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature,
+                null); // Gains equal amounts payback power
         }
-        
+
     }
 
     /// <summary>
@@ -55,10 +58,11 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return false;
         }
+
         return true;
     }
 
-    
+
     /// <summary>
     /// Returns how much payback you are set to gain depending on how much block you have (if you have more block you gain all the payback specified, otherwise you gain payback equal to your block or 0)
     /// </summary>
@@ -75,6 +79,7 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return (int)creature.Block;
         }
+
         return 0;
     }
 
@@ -88,10 +93,11 @@ public static class TheMiddleNursefatherOutisCmd
     public static async Task AdditionalPayback(this Creature creature, PlayerChoiceContext choiceContext,
         Decimal amount, CardModel? cardSource = null)
     {
-        await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature, null); // unconditional paybackgain
+        await PowerCmd.Apply<PaybackPower>(choiceContext, creature, amount, creature,
+            null); // unconditional paybackgain
     }
-    
-    
+
+
     /// <summary>
     /// Animation player handler for outis
     /// </summary>
@@ -104,15 +110,18 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return;
         }
+
         var node = NCombatRoom.Instance?.GetCreatureNode(creature);
         if (node?.Visuals == null)
         {
             return;
         }
-        var Statemachine = node?.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
+
+        var Statemachine = node?.Visuals.GetNodeOrNull<AnimationTree>("AnimationTree").Get("parameters/playback")
+            .As<AnimationNodeStateMachinePlayback>();
         if (Statemachine != null)
         {
-            
+
             string GodotTrigger = AnimationName.ToLowerInvariant() switch
             {
                 "hit" => "hurt",
@@ -126,14 +135,14 @@ public static class TheMiddleNursefatherOutisCmd
                 "unpacking" => "unpacking",
                 _ => AnimationName
             };
-            
+
             Statemachine.Start(GodotTrigger);
-            float FastSecondWait = NormalSecondWait/2;
+            float FastSecondWait = NormalSecondWait / 2;
             await Cmd.CustomScaledWait(FastSecondWait, NormalSecondWait);
         }
     }
 
-    
+
     /// <summary>
     /// Handler for changing the sword seals, playing animations and sounds and changing the rising fever numbers
     /// </summary>
@@ -146,7 +155,7 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return;
         }
-        
+
         CanvasItem visualzeroseal = (creature.GetCreatureNode()!.Body.GetNode("0Sealanimations") as CanvasItem)!;
         CanvasItem visualoneseal = (creature.GetCreatureNode()!.Body.GetNode("1Sealanimations") as CanvasItem)!;
         CanvasItem visualtwoseal = (creature.GetCreatureNode()!.Body.GetNode("2Sealaniamtions") as CanvasItem)!;
@@ -156,22 +165,22 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return;
         }
-        
+
         foreach (PowerModel power in creature.Powers)
         {
             switch (power)
-            { 
-                case SealedSwordPower: 
+            {
+                case SealedSwordPower:
                     visualzeroseal.Visible = false;
                     visualoneseal.Visible = true;
                     Modsounds.unpacking0.Play();
                     await Cmd.CustomScaledWait(0.5f, 1f);
                     await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                     await PowerCmd.Remove<SealedSwordPower>(creature);
-                    await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature,1m,creature,null);
-                    await ChangeFeverAmount(choiceContext, creature, 2,true);
+                    await PowerCmd.Apply<FirstSealRemovedPower>(choiceContext, creature, 1m, creature, null);
+                    await ChangeFeverAmount(choiceContext, creature, 2, true);
                     return;
-                    
+
                 case FirstSealRemovedPower:
                     visualoneseal.Visible = false;
                     visualtwoseal.Visible = true;
@@ -179,12 +188,12 @@ public static class TheMiddleNursefatherOutisCmd
                     await Cmd.CustomScaledWait(0.5f, 1f);
                     await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                     await PowerCmd.Remove<FirstSealRemovedPower>(creature);
-                    await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature,1m,creature,null);
+                    await PowerCmd.Apply<SecondSealRemovedPower>(choiceContext, creature, 1m, creature, null);
                     await ChangeFeverAmount(choiceContext, creature, 2, true);
                     await Cmd.CustomScaledWait(0.5f, 1f);
                     await CreatureCmd.TriggerAnim(creature, "sunglasses", 2f);
                     return;
-                    
+
                 case SecondSealRemovedPower:
                     visualtwoseal.Visible = false;
                     visualthreeseal.Visible = true;
@@ -192,32 +201,35 @@ public static class TheMiddleNursefatherOutisCmd
                     await Cmd.CustomScaledWait(0.5f, 1f);
                     await CreatureCmd.TriggerAnim(creature, "unpacking", 0.4f);
                     await PowerCmd.Remove<SecondSealRemovedPower>(creature);
-                    await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature,1m,creature,null);
+                    await PowerCmd.Apply<LaevateinnPower>(choiceContext, creature, 1m, creature, null);
                     if (creature.HasPower<RisingFeverPower>())
                     {
                         await PowerCmd.Remove<RisingFeverPower>(creature);
                     }
+
                     return;
             }
         }
     }
-    
-    
+
+
     /// <summary>
     /// Calculates the amount of bleed to be reduced after it is set to be activated
     /// </summary>
     /// <param name="BleedAmount">Target's bleed amount before it would get reduced</param>
     /// <returns></returns>
-    public static decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
+    public static decimal
+        CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
     {
         if (BleedAmount <= 1)
         {
-            return  1m;
+            return 1m;
         }
 
         return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
 
     }
+
     /// <summary>
     /// The function that gets called when activating bleed on the target to handle the calculations, damage and reduce it by the appropriate amounts
     /// </summary>
@@ -226,10 +238,12 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="BleedAmount"> The target's bleed amount before it gets reduced</param>
     public static async Task ActivateBleed(PlayerChoiceContext choiceContext, Creature? target, decimal BleedAmount)
     {
-        await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, null);
+        await CreatureCmd.Damage(choiceContext, target, BleedAmount, ValueProp.Unpowered | ValueProp.SkipHurtAnim,
+            null);
         if (target.IsAlive)
         {
-            await PowerCmd.ModifyAmount(choiceContext, target.GetPower<BleedPower>(), -CalculateBleedLost(BleedAmount), null, null);
+            await PowerCmd.ModifyAmount(choiceContext, target.GetPower<BleedPower>(), -CalculateBleedLost(BleedAmount),
+                null, null);
         }
         else
         {
@@ -246,29 +260,30 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="target"> The creature that will have bleed applied to them</param>
     /// <param name="cardModel"> The card that applied bleed</param>
 
-    public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, decimal bleedAmount ,Creature? target, CardModel cardModel)
+    public static async Task CardApplyBleed(PlayerChoiceContext choiceContext, Creature? applier, decimal bleedAmount,
+        Creature? target, CardModel cardModel)
     {
         decimal additionalBurnPerBleed = 0;
         PowerModel? swordPower = null;
-        
+
         if (applier.HasPower<FirstSealRemovedPower>())
         {
             swordPower = applier.GetPower<FirstSealRemovedPower>();
-            additionalBurnPerBleed = swordPower.DynamicVars["BurnApplicationValue"].BaseValue; 
+            additionalBurnPerBleed = swordPower.DynamicVars["BurnApplicationValue"].BaseValue;
         }
 
         if (applier.HasPower<SecondSealRemovedPower>() || applier.HasPower<LaevateinnPower>())
         {
-            additionalBurnPerBleed = bleedAmount; 
+            additionalBurnPerBleed = bleedAmount;
         }
-        
+
         await PowerCmd.Apply<BleedPower>(choiceContext, target, bleedAmount, applier, cardModel);
-        
+
         if (additionalBurnPerBleed > 0)
         {
             await PowerCmd.Apply<BurnPower>(choiceContext, target, additionalBurnPerBleed, applier, cardModel);
         }
-        
+
     }
 
     /// <summary>
@@ -279,7 +294,8 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="FeverAmount"> The amount of fever that is modifying the current fever amount, the numbers are additive meaning a negative reduction just needs a negative number fed it</param>
     /// <param name="RestrictUnpackingThisTurn"> Dictates if unpacking is restricted for this turn. PS: unpacking through rising fever automatically sets this to false for this turn so any powers or skills that unrestrict this will have to manually change the rising fever boolean</param>
     /// <returns></returns>
-    public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount, bool RestrictUnpackingThisTurn)
+    public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount,
+        bool RestrictUnpackingThisTurn)
     {
         if (!creature.HasPower<RisingFeverPower>()) return Task.CompletedTask;
         PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
@@ -291,10 +307,11 @@ public static class TheMiddleNursefatherOutisCmd
         {
             ((BoolVar)risingFever.DynamicVars["CanUnpack"]).BoolVal = false;
         }
+
         return Task.CompletedTask;
     }
-    
-    
+
+
     /// <summary>
     /// Checks if the player is allowed to unpack based on if they have 0 rising fever
     /// </summary>
@@ -312,14 +329,15 @@ public static class TheMiddleNursefatherOutisCmd
                 return true;
             }
         }
+
         return false;
     }
 
-/// <summary>
-/// Returns the current sword stage the player is on
-/// </summary>
-/// <param name="creature"> The creature who has the sword</param>
-/// <returns></returns>
+    /// <summary>
+    /// Returns the current sword stage the player is on
+    /// </summary>
+    /// <param name="creature"> The creature who has the sword</param>
+    /// <returns></returns>
     public static PowerModel? getSwordStage(Creature creature)
     {
         foreach (PowerModel power in creature.Powers)
@@ -337,9 +355,10 @@ public static class TheMiddleNursefatherOutisCmd
 
             }
         }
+
         return null;
     }
-    
+
     /// <summary>
     /// Converts Grudge to tattoos based on the conversion rate that is set in the relic.PS: change how this works so it is friendly with cards instead of relying on a relic
     /// </summary>
@@ -347,15 +366,16 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="choiceContext"> The players choice that fired this signal</param>
     /// <param name="GrudgeConsumed"> The amount of grudge to be consumed for this change</param>
     public static async Task ConvertGrudgeToTattoo(Creature? creature, PlayerChoiceContext choiceContext,
-		decimal GrudgeConsumed)
+        decimal GrudgeConsumed)
     {
         decimal MaxTattoos = (decimal)HOSBookOfVengeance.MaxTattoos[creature?.Player!.PlayerCombatState!];
         decimal ConversionRate = (decimal)HOSBookOfVengeance.ConversionRate[creature?.Player!.PlayerCombatState!];
-        decimal TotalConsumedGrudge = (decimal)HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!];
+        decimal TotalConsumedGrudge =
+            (decimal)HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!];
 
         decimal CorrectedGrudge = 0;
-        
-		if(!creature!.HasPower<GrudgePower>()) return;
+
+        if (!creature!.HasPower<GrudgePower>()) return;
         //MainFile.Logger.Info($"$Recorded Grudge Amount Before Any Calculations --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
         // we need to get the total amount of grudge they ACTUALLY consumed
         decimal CurrentGrudge = creature!.GetPowerAmount<GrudgePower>();
@@ -363,6 +383,7 @@ public static class TheMiddleNursefatherOutisCmd
         {
             CorrectedGrudge = CurrentGrudge;
         }
+
         if (CurrentGrudge >= GrudgeConsumed)
         {
             CorrectedGrudge = GrudgeConsumed;
@@ -371,48 +392,73 @@ public static class TheMiddleNursefatherOutisCmd
 
         TotalConsumedGrudge += CorrectedGrudge;
         HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] += (int)TotalConsumedGrudge;
-       //MainFile.Logger.Info($"$Recorded Grudge Amount Before Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
-       
+        //MainFile.Logger.Info($"$Recorded Grudge Amount Before Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
+
         if (creature!.GetPowerAmount<GrudgePower>() <= CorrectedGrudge)
         {
-            await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -creature.GetPowerAmount<GrudgePower>(),creature, null);
+            await PowerCmd.Apply<GrudgePower>(choiceContext, creature, -creature.GetPowerAmount<GrudgePower>(),
+                creature, null);
         }
 
         if (creature.GetPowerAmount<GrudgePower>() > CorrectedGrudge)
         {
-            await PowerCmd.Apply<GrudgePower>(choiceContext,creature, -CorrectedGrudge,creature, null);
+            await PowerCmd.Apply<GrudgePower>(choiceContext, creature, -CorrectedGrudge, creature, null);
 
         }
-        
-		if (TotalConsumedGrudge >= ConversionRate)
-		{
-			decimal TattoosGained = TotalConsumedGrudge / ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
-			decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this ??? what
-            HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=  (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
+
+        if (TotalConsumedGrudge >= ConversionRate)
+        {
+            decimal
+                TattoosGained =
+                    TotalConsumedGrudge /
+                    ConversionRate; //get thenumber of tattoos you'll gain from the total amount of grudges you have
+            decimal LeftOverGrudge = TotalConsumedGrudge % ConversionRate; //dunno why im making this ??? what
+            HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!] -=
+                (int)(TattoosGained * ConversionRate); //reduce your grudge by the amount that was actually consumed
             //MainFile.Logger.Info($"$Recorded Grudge Amount After Conversions --> {HOSBookOfVengeance.RecordedConsumedGrudge[creature?.Player!.PlayerCombatState!]}");
-			if (creature!.HasPower<VengeanceTattoo>())
-            { 
-                
-                if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained >= MaxTattoos && creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //what this does is check if the creature's current tattoo count + the amount to be gained is higher than the max tattoos allowed
-				{
-                    
-					decimal _amountCorrected = MaxTattoos - creature.GetPowerAmount<VengeanceTattoo>(); //since the amount of tattoos would overflow, you'd just set this to the max tattoos
-					await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, _amountCorrected,creature, null);
+            if (creature!.HasPower<VengeanceTattoo>())
+            {
 
-				}
-				else if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained < MaxTattoos &&
-				         creature.GetPowerAmount<VengeanceTattoo>() < MaxTattoos) //this is if you're gaining an okay amount!!
-				{
-					await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, TattoosGained,creature, null);
+                if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained >= MaxTattoos &&
+                    creature.GetPowerAmount<VengeanceTattoo>() <
+                    MaxTattoos) //what this does is check if the creature's current tattoo count + the amount to be gained is higher than the max tattoos allowed
+                {
 
-				}
-			}
-			else
-			{
-				await PowerCmd.Apply<VengeanceTattoo>(choiceContext,creature, TattoosGained,creature, null);
+                    decimal _amountCorrected =
+                        MaxTattoos -
+                        creature
+                            .GetPowerAmount<
+                                VengeanceTattoo>(); //since the amount of tattoos would overflow, you'd just set this to the max tattoos
+                    await PowerCmd.Apply<VengeanceTattoo>(choiceContext, creature, _amountCorrected, creature, null);
 
-			}
-		}
-	}
+                }
+                else if (creature.GetPowerAmount<VengeanceTattoo>() + TattoosGained < MaxTattoos &&
+                         creature.GetPowerAmount<VengeanceTattoo>() <
+                         MaxTattoos) //this is if you're gaining an okay amount!!
+                {
+                    await PowerCmd.Apply<VengeanceTattoo>(choiceContext, creature, TattoosGained, creature, null);
 
+                }
+            }
+            else
+            {
+                await PowerCmd.Apply<VengeanceTattoo>(choiceContext, creature, TattoosGained, creature, null);
+
+            }
+        }
+    }
+
+    public static CardModel LastCard(this Creature creature, CardPlay cardPlay)
+    {
+        var history = CombatManager.Instance.History.CardPlaysFinished
+            .Where(c => c.CardPlay.Player == cardPlay.Player
+                        && c.HappenedThisTurn(c.CardPlay.Card.CombatState));
+        var lastcard = history.Last();
+        if (history.Count() > 1)
+        {
+            return lastcard.CardPlay.Card;
+
+        }
+        return null;
+    }
 }

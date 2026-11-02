@@ -17,7 +17,7 @@
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage.\nReduce target [gold]Block[/gold] by damage dealt.\nIf this broke target's block, gain {GrudgeGained:diff()} [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage to ALL enemies.\nConsume 2 [gold]Grudge[/gold] to increase damage by {DamageIncrease:diff()}.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
@@ -93,5 +93,8 @@
   "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage",
 
   "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.description": "Deal {Damage:diff()} damage.\nHit an additional time if you took damage Last turn.",
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.title": "Payback With Interest"
+  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.title": "Payback With Interest",
+
+  "THEMIDDLENURSEFATHEROUTIS-RIGHT_PLEXUS.description": "Deal {Damage:diff()} damage.\nIf the last card played was a [gold]Punch[/gold], gain {GrudgeGained:diff()} [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], gain {Energy:energyIcons()}.\n[gold]Lævateinn[/gold]: Apply 1 [gold]Weak[/gold] and {BleedPower:diff()} [gold]Bleed[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RIGHT_PLEXUS.title": "Right In The Solar Plexus!"
 }

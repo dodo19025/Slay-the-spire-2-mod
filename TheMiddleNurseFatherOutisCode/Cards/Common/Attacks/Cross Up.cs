@@ -71,8 +71,8 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
             e.CardPlay.Card.Owner == Owner);
         if (NumberOfCardsPlayed <= 0)
         {
-            return true;
-        }
+                return true;
+            }
         return false;
     }
 }
