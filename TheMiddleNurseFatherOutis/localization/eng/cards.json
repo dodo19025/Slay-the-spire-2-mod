@@ -68,7 +68,7 @@
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 until played if you took damage this combat.",
   "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup",
   
-  "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.description": "Deal {Damage:diff()} damage.\nWhen drawn without [gold]Lævateinn[/gold], this card deals {DamageRemoved:diff()} less damage for the rest of combat.\n[gold]Lævateinn[/gold]:When this card is drawn, gain {GrudgeGain:diff()} [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.description": "Deal {Damage:diff()} damage.\nWhen drawn without [gold]Lævateinn[/gold], this card deals {DamageRemoved:diff()} less damage for the rest of combat.\n[gold]Lævateinn[/gold]: When this card is drawn, gain {GrudgeGain:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.title": "Mild Inconvenience",
 
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nThis turn, apply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
