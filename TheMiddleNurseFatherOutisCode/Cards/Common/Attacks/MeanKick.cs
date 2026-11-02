@@ -1,9 +1,12 @@
 ﻿using BaseLib.Extensions;
 using BaseLib.Utils;
+using HarmonyLib;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -16,36 +19,45 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class MeanKick() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Attack, CardRarity.Common,
+    2, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
 
-    protected override bool ShouldGlowGoldInternal => base.Owner.HasPower<PaybackPower>();
-    protected override HashSet<CardTag> CanonicalTags => new HashSet<CardTag> { TheMiddleNurseFatherOutisTags.Kick };
-
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheMiddleNurseFatherOutisKeywords.Swing
+    ];
+    
+    
+    protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10m,ValueProp.Move),
-        new DynamicVar("HitAmount",1m)
+        new DamageVar(15m,ValueProp.Move),
+        new DynamicVar("PowerPower",1m)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<PaybackPower>()
+        HoverTipFactory.FromPower<VulnerablePower>(),
+        HoverTipFactory.FromPower<WeakPower>(),
+        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+
     ];
+    
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        int _hitAmount = (int)base.DynamicVars["HitAmount"].BaseValue;
-        if (base.Owner.HasPower<PaybackPower>())
+        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
+        int power_apply = TheMiddleNursefatherOutisCmd.getSwordStagePower(Owner.Creature);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, power_apply, Owner.Creature, this);
+        if (TheMiddleNursefatherOutisCmd.getSwordStage(Owner.Creature) is LaevateinnPower)
         {
-            _hitAmount++;
+            await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, power_apply, Owner.Creature, this);
+            await CardCmd.Exhaust(choiceContext, this);
         }
-        await CommonActions.CardAttack(this, play.Target)
-            .WithHitCount(_hitAmount)
-            .Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

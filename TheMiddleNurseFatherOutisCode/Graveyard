@@ -82,5 +82,23 @@ Write sins discard from draw pile
             }
     
         }
+
+---
+check for any enemy with bleed
+    protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.HasPower<BleedPower>()) ?? false;
+---
+clone creation of cards in hand 
+  CardModel card = CreateClone();
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand,base.Owner),2.2f);
+---
+
+card tooltips
+
+    //protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    //[
+        //HoverTipFactory.FromCard<Kicking>()
+    //];
+    
 ---
     
+ 

@@ -23,8 +23,8 @@
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.title": "Stomping!",
 
-  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times.\nAdd a copy of this card into your [gold]Hand[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Kicking!",
+  "THEMIDDLENURSEFATHEROUTIS-KICKING.description": "Deal {Damage:diff()} damage twice.\nConsume {GrudgeConsume:diff()} to gain {Block:diff()} [gold]Block[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-KICKING.title": "Checking The Book",
 
   "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
   "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat",
@@ -74,13 +74,13 @@
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.description": "Deal {Damage:diff()} damage.\nGain {PaybackGained:diff()} [gold]Payback[/gold].\nThis turn, apply {VunPower:diff()} [gold]Vulnerable[/gold] After activating [gold]Payback[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS.title": "Write Sins",
 
-  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nHit an additional time if you have [gold]Payback[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Mean Kick",
+  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.description": "Deal {Damage:diff()} damage.\nApply 1 [gold]Vulnerable[/gold] for each Seal removed.\n[gold]Lævateinn[/gold]: Apply equal amounts [gold]Weak[/gold] and [gold]Exhaust[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-MEAN_KICK.title": "Don’t Break Now!",
 
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times. Apply {BleedPower:diff()} [gold]Bleed[/gold] each hit.\n[gold]Lævateinn[/gold]: Hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
-  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nActivate [gold]Bleed[/gold] on enemy.",
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to apply {BleedPower:diff()} [gold]Bleed[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush",
 
   "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.description": "Gain {TotalBlock:diff()} [gold]Block[/gold].\nReduce [gold]Block[/gold] gained by {ReducedBlockGain:diff()} every use this combat.",

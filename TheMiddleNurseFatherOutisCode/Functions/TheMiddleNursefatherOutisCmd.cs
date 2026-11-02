@@ -359,6 +359,26 @@ public static class TheMiddleNursefatherOutisCmd
 
         return null;
     }
+    
+    public static int getSwordStagePower(Creature creature)
+    {
+        foreach (PowerModel power in creature.Powers)
+        {
+            switch (power)
+            {
+                case SealedSwordPower:
+                    return 0;
+                case FirstSealRemovedPower:
+                    return 1;
+                case SecondSealRemovedPower:
+                    return 2;
+                case LaevateinnPower:
+                    return 3;
+
+            }
+        }
+        return 0;
+    }
 
     /// <summary>
     /// Converts Grudge to tattoos based on the conversion rate that is set in the relic.PS: change how this works so it is friendly with cards instead of relying on a relic

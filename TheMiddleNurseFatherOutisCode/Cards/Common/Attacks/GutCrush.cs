@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -19,21 +20,30 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class GutCrush() : TheMiddleNurseFatherOutisCard(
-    3, CardType.Attack, CardRarity.Common,
-    TargetType.AnyEnemy)
+    2, CardType.Attack, CardRarity.Common,
+    TargetType.AllEnemies)
 {
     
-    protected override bool ShouldGlowGoldInternal => base.CombatState?.HittableEnemies.Any((Creature e) => e.HasPower<BleedPower>()) ?? false;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(24m,ValueProp.Move),
+        new DamageVar(12m,ValueProp.Move),
+        new DynamicVar("BleedPower", 4m),
+        new DynamicVar("GrudgeConsume", 4m),
+
+
     ];
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        TheMiddleNurseFatherOutisKeywords.Punch
+    ];
         
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<BleedPower>()
+        HoverTipFactory.FromPower<BleedPower>(),
+        HoverTipFactory.FromPower<GrudgePower>()
+
     ];
 
     
@@ -41,29 +51,20 @@ public class GutCrush() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
-        if (play.Target.IsAlive && play.Target.HasPower<BleedPower>())
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this,play).TargetingAllOpponents(base.CombatState).Execute(choiceContext);
+        if (GrudgeResource.GetGrudge(Owner) >= DynamicVars["GrudgeConsume"].BaseValue)
         {
-            int _enemyBleed = play.Target.GetPowerAmount<BleedPower>();
-            await TheMiddleNursefatherOutisCmd.ActivateBleed(choiceContext, play.Target, _enemyBleed);
-            
+            await GrudgeResource.LoseGrudge(DynamicVars["GrudgeConsume"].IntValue,Owner);
+            foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<BleedPower>(choiceContext, hittableEnemy, base.DynamicVars["BleedPower"].BaseValue, base.Owner.Creature, this);
+            }
         }
     }
     
-    public decimal CalculateBleedLost(decimal BleedAmount) //bleedamount is for the amount of bleed that we currently have
-    {
-        if (BleedAmount <= 1)
-        {
-            return  1m;
-        }
-
-        return ((decimal)Math.Round((decimal)(BleedAmount * (1m / 2m))));
-
-    }
-
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(7m);
-
+        base.DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars["BleedPower"].UpgradeValueBy(2m);
     }
 }
