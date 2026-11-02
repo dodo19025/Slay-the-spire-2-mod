@@ -6,10 +6,10 @@ TheMiddleNurseFatherOutis.json::JSON::-1::1786638561::0::1::::<><><>0<>0<><>::
 ::res://bin/::1793639105
 ::res://bin/ExportRelease/::1793639105
 ::res://bin/ExportRelease/net9.0/::1793639105
-::res://bin/ExportRelease/net9.0/publish/::1793651166
+::res://bin/ExportRelease/net9.0/publish/::1793652324
 TheMiddleNurseFatherOutis.deps.json::JSON::-1::1793644366::0::1::::<><><>0<>0<><>::
-::res://sfx/::1793650717
-glasses.wav::AudioStreamWAV::2106530649997649347::1786638562::1793651187::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
+::res://sfx/::1793652186
+glasses.wav::AudioStreamWAV::2106530649997649347::1786638562::1793652333::1::::<><><>0<>0<>4dc8c05df20c1d5aef78bb01f96b2cc5<>res://.godot/imported/glasses.wav-066d92622ee6068b9323ca2741be1866.sample::
 Stomp.ogg::AudioStreamOggVorbis::1429060084455492414::1786638562::1786638562::1::::<><><>0<>0<>c5eb6f9b8c4dd9030ae163a6aba8ec12<>res://.godot/imported/Stomp.ogg-148b5feb91c4fbd59a72493f4433c020.oggvorbisstr::
 sunglasses.ogg::AudioStreamOggVorbis::7666231165303828520::1786638562::1786638562::1::::<><><>0<>0<>c0457d046f429a22653f27b855889e55<>res://.godot/imported/sunglasses.ogg-7712b5996c33a0cc2cad1097148e319d.oggvorbisstr::
 sword.ogg::AudioStreamOggVorbis::4604329011211897290::1786638562::1786638562::1::::<><><>0<>0<>d991b5f413187540abe4a8f8564ffbd5<>res://.godot/imported/sword.ogg-3e1cd0b37cd6ff40a19d0680387857cb.oggvorbisstr::
@@ -117,9 +117,9 @@ h_os_book_of_vengeance.png::CompressedTexture2D::3740196598674155551::1786638561
 relic.png::CompressedTexture2D::8663117661599846571::1786638548::1786638548::1::::<><><>0<>0<>6fe809b34bfc782e63d96117a76af902<>res://.godot/imported/relic.png-e75261016069bd5c6bb9c4b27d0a2568.ctex::
 sealed_sword.png::CompressedTexture2D::4817897136256058049::1786638561::1786638561::1::::<><><>0<>0<>893698c768fc3fa545469bbe6d1b09d6<>res://.godot/imported/sealed_sword.png-d5c99eeeb206dbb29504df98e2c6ba25.ctex::
 ::res://TheMiddleNurseFatherOutis/localization/::1786638599
-::res://TheMiddleNurseFatherOutis/localization/eng/::1793651164
+::res://TheMiddleNurseFatherOutis/localization/eng/::1793651417
 ancients.json::JSON::-1::1786638561::0::1::::<><><>0<>0<><>::
-cards.json::JSON::-1::1793651164::0::1::::<><><>0<>0<><>::
+cards.json::JSON::-1::1793651417::0::1::::<><><>0<>0<><>::
 card_keywords.json::JSON::-1::1786638561::0::1::::<><><>0<>0<><>::
 characters.json::JSON::-1::1786638561::0::1::::<><><>0<>0<><>::
 powers.json::JSON::-1::1793644361::0::1::::<><><>0<>0<><>::
@@ -396,7 +396,7 @@ Unpacking2.cs::CSharpScript::3824694981228028742::1786638562::0::1::::<><><>0<>0
 Unpacking3.cs::CSharpScript::2897486427328422845::1786638562::0::1::::<><><>0<>0<><>::
 Unpacking.cs::CSharpScript::5152278334762232571::1786638562::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Cards/Common/::1786638614
-::res://TheMiddleNurseFatherOutisCode/Cards/Common/Attacks/::1793651164
+::res://TheMiddleNurseFatherOutisCode/Cards/Common/Attacks/::1793652328
 BadAssAssKicking.cs::CSharpScript::4268399785495106317::1786638562::0::1::::<><><>0<>0<><>::
 CheckTheBook.cs::CSharpScript::8581863033330639031::1793651164::0::1::::<><><>0<>0<><>::
 CripplingBlow.cs::CSharpScript::8888382605376964245::1793645911::0::1::::<><><>0<>0<><>::
@@ -406,7 +406,7 @@ GutCrush.cs::CSharpScript::5650314421740943560::1793648296::0::1::::<><><>0<>0<>
 MildIncon.cs::CSharpScript::5011346733814729354::1793651038::0::1::::<><><>0<>0<><>::
 Punting.cs::CSharpScript::1726986781571388872::1793640433::0::1::::<><><>0<>0<><>::
 RightPlexus.cs::CSharpScript::5581307303454938952::1793645051::0::1::::<><><>0<>0<><>::
-WeRememeber.cs::CSharpScript::5093369000072831691::1793651038::0::1::::<><><>0<>0<><>::
+WeRememeber.cs::CSharpScript::5093369000072831691::1793652328::0::1::::<><><>0<>0<><>::
 WildFlailing.cs::CSharpScript::4270047470849447811::1786638562::0::1::::<><><>0<>0<><>::
 WriteSins.cs::CSharpScript::2602792539786680339::1793638312::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Cards/Common/Skills/::1786638614
@@ -439,8 +439,8 @@ Bg_animation.ogv::VideoStreamTheora::5206376047491458244::1786638562::0::1::::<>
 The_House_of_Spiders_The_Middle_Nursefather_Outis_Uptie_III_Animation.ogv::VideoStreamTheora::4958797013204321239::1786638562::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Console/::1786638613
 AncientVisitConsoleCmd.cs::CSharpScript::6436034783134476380::1786638562::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Extensions/::1786638599
-DamageTakenHook.cs::CSharpScript::7050731373187035145::1786638562::0::1::::<><><>0<>0<><>::
+::res://TheMiddleNurseFatherOutisCode/Extensions/::1793651876
+DamageTakenHook.cs::CSharpScript::7050731373187035145::1793651876::0::1::::<><><>0<>0<><>::
 StringExtensions.cs::CSharpScript::4900159974993874380::1786638548::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Functions/::1793647062
 AnimationPlayerCmd.cs::CSharpScript::4444720152221452739::1786638562::0::1::::<><><>0<>0<><>::
@@ -461,10 +461,10 @@ ForceVisitIndexConsolePatch.cs::CSharpScript::7552937092944143196::1786638562::0
 TheMiddleNurseFatherOutisPotion.cs::CSharpScript::5195854931568897929::1786638548::0::1::::<><><>0<>0<><>::
 ::res://TheMiddleNurseFatherOutisCode/Powers/::1786638599
 TheMiddleNurseFatherOutisPower.cs::CSharpScript::9187379787938785095::1786638548::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Powers/Card Powers/::1793643873
+::res://TheMiddleNurseFatherOutisCode/Powers/Card Powers/::1793652061
 BleedNextAttackPower.cs::CSharpScript::5787277589046241910::1786638562::0::1::::<><><>0<>0<><>::
 GrudgePower.cs::CSharpScript::3017144688881290400::1786638562::0::1::::<><><>0<>0<><>::
-PaybackPower.cs::CSharpScript::6314271510800556234::1786638562::0::1::::<><><>0<>0<><>::
+PaybackPower.cs::CSharpScript::6314271510800556234::1793652061::0::1::::<><><>0<>0<><>::
 StompingUnseal.cs::CSharpScript::5839213955199324632::1786638562::0::1::::<><><>0<>0<><>::
 SwatPower.cs::CSharpScript::3941949876943888470::1786638562::0::1::::<><><>0<>0<><>::
 VengeanceTattoo.cs::CSharpScript::1642794042124324491::1786638562::0::1::::<><><>0<>0<><>::
@@ -484,6 +484,6 @@ RisingFeverPower.cs::CSharpScript::5510309105554054230::1786638562::0::1::::<><>
 SealedSwordPower.cs::CSharpScript::1171115322555191321::1786638562::0::1::::<><><>0<>0<><>::
 SecondSealRemovedPower.cs::CSharpScript::9083415500331521664::1786638562::0::1::::<><><>0<>0<><>::
 UnsealedSearingBlade.cs::CSharpScript::7722194016177815604::1786638562::0::1::::<><><>0<>0<><>::
-::res://TheMiddleNurseFatherOutisCode/Relics/::1786638599
-HOSBookOfVengeance.cs::CSharpScript::4746811683842282374::1786638562::0::1::::<><><>0<>0<><>::
+::res://TheMiddleNurseFatherOutisCode/Relics/::1793651639
+HOSBookOfVengeance.cs::CSharpScript::4746811683842282374::1793651639::0::1::::<><><>0<>0<><>::
 TheMiddleNurseFatherOutisRelic.cs::CSharpScript::194360154058807062::1786638548::0::1::::<><><>0<>0<><>::

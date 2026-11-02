@@ -21,10 +21,14 @@ public class WeRememeber() : TheMiddleNurseFatherOutisCard(
     1, CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
-    {
-        new DamageVar(5m, ValueProp.Move),
-    });
+
+    protected override bool ShouldGlowGoldInternal =>
+        DamageTakenHook.ActivatedPaybackLastTurn[Owner.Creature.Player!.PlayerCombatState!];
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DamageVar(5m, ValueProp.Move)
+    ]);
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
