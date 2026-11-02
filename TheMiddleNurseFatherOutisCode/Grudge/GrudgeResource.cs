@@ -53,6 +53,8 @@ public static partial class GrudgeResource
 		PlayerGrudge[player.PlayerCombatState] = newVar; //basically changes the number to the new one now after losing it
 		GrudgeChanged?.Invoke(player.PlayerCombatState,OldVar,newVar);
 	}
+	
+	
 
 	public class GrudgeCounterController() : CustomSingletonModel(HookType.Combat)
 	{
