@@ -69,6 +69,10 @@
 
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.description": "After Hitting the enemy with [gold]Payback[/gold], apply [gold]Vulnerable[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.smartDescription": "After Hitting the enemy with [gold]Payback[/gold], apply [blue]{Amount}[/blue] [gold]Vulnerable[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.title": "Sins Written"
+  "THEMIDDLENURSEFATHEROUTIS-WRITE_SINS_POWER.title": "Sins Written",
+
+  "THEMIDDLENURSEFATHEROUTIS-PLEXUS_COMBO.description": "If the next card is a [gold]Swing[/gold] gain 1 energy",
+  "THEMIDDLENURSEFATHEROUTIS-PLEXUS_COMBO.smartDescription": "If the next card is a [gold]Swing[/gold] gain {Energy:energyIcons()} energy",
+  "THEMIDDLENURSEFATHEROUTIS-PLEXUS_COMBO.title": "Plexus Combo"
 
 }

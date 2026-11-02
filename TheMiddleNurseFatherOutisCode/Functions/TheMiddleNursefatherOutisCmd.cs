@@ -1,5 +1,6 @@
 ﻿using Godot;
 using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -450,15 +451,12 @@ public static class TheMiddleNursefatherOutisCmd
 
     public static CardModel LastCard(this Creature creature, CardPlay cardPlay)
     {
-        var history = CombatManager.Instance.History.CardPlaysFinished
-            .Where(c => c.CardPlay.Player == cardPlay.Player
-                        && c.HappenedThisTurn(c.CardPlay.Card.CombatState));
-        var lastcard = history.Last();
-        if (history.Count() > 1)
+        CardPlayFinishedEntry? lastcard = CombatManager.Instance.History.CardPlaysFinished
+            .LastOrDefault(e => e.Actor == creature);
+        if (lastcard != null)
         {
             return lastcard.CardPlay.Card;
-
         }
-        return null;
+        else return null;
     }
 }

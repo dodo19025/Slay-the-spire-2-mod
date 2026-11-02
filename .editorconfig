@@ -1,0 +1,3 @@
+[*.cs]
+# CS8604: Possible null reference argument.
+dotnet_diagnostic.CS8604.severity = suggestion
