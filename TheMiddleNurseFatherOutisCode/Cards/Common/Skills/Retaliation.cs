@@ -21,7 +21,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class Retaliation() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.Self)
 {
     
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();

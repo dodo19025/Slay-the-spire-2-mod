@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -16,20 +17,21 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
-public class HypedUp() : TheMiddleNurseFatherOutisCard(
+public class ToweringSilhouette() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
-    {
-        new BlockVar(7m, ValueProp.Move),
-        new DynamicVar("RisingFeverGain", 1m)
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new BlockVar(6m, ValueProp.Move),
+        new DynamicVar("MoreBlock", 7m),
+        new DynamicVar("GrudgeConsume", 3m)
+
+    ]);
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<RisingFeverPower>()
     ];
 
     
@@ -38,13 +40,16 @@ public class HypedUp() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<RisingFeverPower>(choiceContext, base.Owner.Creature, base.DynamicVars["RisingFeverGain"].BaseValue,base.Owner.Creature,this);
-
+        if (GrudgeResource.GetGrudge(Owner.Creature.Player!) >= DynamicVars["GrudgeConsume"].BaseValue)
+        {
+            await CreatureCmd.GainBlock(Owner.Creature, DynamicVars["MoreBlock"].BaseValue,ValueProp.Move, play);
+        }
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(1m);
+        DynamicVars["MoreBlock"].UpgradeValueBy(3m);
 
     }
 }

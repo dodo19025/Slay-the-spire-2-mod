@@ -41,7 +41,7 @@ public class ReadyToWrite()
         if (Owner.Creature.HasPower<PaybackPower>())
         {
             PowerModel? powerModel = Owner.Creature.GetPower<PaybackPower>();
-            powerModel.DynamicVars["MaxActivation"].BaseValue++;
+            powerModel!.DynamicVars["MaxActivation"].BaseValue++;
         }
     }
 

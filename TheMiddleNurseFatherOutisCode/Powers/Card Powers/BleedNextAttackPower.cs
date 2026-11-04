@@ -27,14 +27,15 @@ public class BleedNextAttackPower()
 
     private bool AppliedBleed = false;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
-    {
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
         new DynamicVar("BleedAmount",1m)
-    });
+    ]);
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<BleedPower>()
+        HoverTipFactory.FromPower<BleedPower>(),
+        HoverTipFactory.FromPower<BurnPower>()
     ];
 
     
@@ -46,25 +47,28 @@ public class BleedNextAttackPower()
         if (dealer == base.Owner && target != null && cardSource != null && props.IsPoweredAttack())
         {
             await PowerCmd.Apply<BleedPower>(choiceContext,target,base.Amount, base.Owner,cardSource);
+            if (Owner.HasPower<LaevateinnPower>())
+            {
+                await PowerCmd.Apply<BurnPower>(choiceContext,target,base.Amount, base.Owner,cardSource);
+            }
             AppliedBleed = true;
-
         }
     }
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
-    {
-        if (cardPlay.Card.Type == CardType.Attack && cardPlay.Card.Owner.Creature == base.Owner &&
-            cardPlay.Card.CurrentTarget != null && base.Amount > 0 && AppliedBleed) //will still break somehow btw
-        {
-            await PowerCmd.Remove(this);
-            AppliedBleed = false;
-        }
+    //public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    //{
+    //if (cardPlay.Card.Type == CardType.Attack && cardPlay.Card.Owner.Creature == base.Owner &&
+    //      cardPlay.Card.CurrentTarget != null && base.Amount > 0 && AppliedBleed) //will still break somehow btw
+    //  {
+    //      await PowerCmd.Remove(this);
+    //      AppliedBleed = false;
+    //  }
 
-        if (cardPlay.Card is Swat)
-        {
-            cardPlay.Card.DynamicVars["StrengthPowerDown"].BaseValue++;
-        }
-    }
+    //  if (cardPlay.Card is WeightedChains)
+    //  {
+    //      cardPlay.Card.DynamicVars["StrengthPowerDown"].BaseValue++;
+    //  }
+    //}
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {

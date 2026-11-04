@@ -26,11 +26,11 @@
   "THEMIDDLENURSEFATHEROUTIS-CHECK_THE_BOOK.description": "Deal {Damage:diff()} damage twice.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-CHECK_THE_BOOK.title": "Checking The Book",
 
-  "THEMIDDLENURSEFATHEROUTIS-SWAT.description": "Gain {Block:diff()} [gold]Block[/gold]\nTarget loses {StrengthPowerDown:diff()} [gold]Strength[/gold] this turn.",
-  "THEMIDDLENURSEFATHEROUTIS-SWAT.title": "Swat",
+  "THEMIDDLENURSEFATHEROUTIS-WEIGHTED_CHAINS.description": "Gain {SelfBleedPower:diff()} [gold]Bleed[/gold].\nThis turn, each attack hit applies {BleedPower:diff()} [gold]Bleed[/gold].\n[gold]Lævateinn[/gold]: Also apply that much [gold]Burn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-WEIGHTED_CHAINS.title": "Weighted Chains",
 
-  "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {RisingFeverGain:diff()} [gold]Rising Fever[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
+  "THEMIDDLENURSEFATHEROUTIS-TOWERING_SILHOUETTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {MoreBlock:diff()} [gold]Block[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-TOWERING_SILHOUETTE.title": "Towering Silhouette",
 
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "Gain {Block:diff()} [gold]Block[/gold].\nIncrease the amount of times your [gold]Payback[/gold] can be performed by 1.",
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",

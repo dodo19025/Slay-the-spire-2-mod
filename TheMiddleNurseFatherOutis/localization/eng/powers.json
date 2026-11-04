@@ -76,7 +76,7 @@
   "THEMIDDLENURSEFATHEROUTIS-PLEXUS_COMBO.title": "Plexus Combo",
 
   "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.description": "This turn, [gold]Payback[/gold] applies bleed.",
-  "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.smartDescription": "This turn, [gold]Payback[/gold] applies [blue]{Amount}%[/blue] of damage dealt as [gold]Bleed[gold]{haslae:cond: and [gold]Burn[/gold]|}.",
+  "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.smartDescription": "This turn, [gold]Payback[/gold] applies [blue]{Amount}%[/blue] of damage dealt as [gold]Bleed[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.title": "Retaliate"
 
 }

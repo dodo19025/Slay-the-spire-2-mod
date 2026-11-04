@@ -8,42 +8,39 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
-public class Swat() : TheMiddleNurseFatherOutisCard(
+public class WeightedChains() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
-    TargetType.AnyEnemy)
+    TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[2]
-    {
-        new BlockVar(5m, ValueProp.Move),
-        new DynamicVar("StrengthPowerDown", 2m)
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DynamicVar("BleedPower", 1m),
+        new DynamicVar("SelfBleedPower", 2m),
+    ]);
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.Static(StaticHoverTip.Block),
-        HoverTipFactory.FromPower<StrengthPower>()
+        HoverTipFactory.FromPower<BleedPower>(),
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
-        await PowerCmd.Apply<SwatPower>(choiceContext, play.Target, base.DynamicVars["StrengthPowerDown"].BaseValue,base.Owner.Creature,this);
-        
+        await PowerCmd.Apply<BleedPower>(choiceContext, Owner.Creature, base.DynamicVars["SelfBleedPower"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<BleedNextAttackPower>(choiceContext, Owner.Creature, base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
+
     }
     
     protected override void OnUpgrade()
-    {
-        DynamicVars.Block.UpgradeValueBy(1m);
-        DynamicVars["StrengthPowerDown"].UpgradeValueBy(1m);
+    { 
+        DynamicVars["SelfBleedPower"].UpgradeValueBy(1m);
     }
-
-    
 }

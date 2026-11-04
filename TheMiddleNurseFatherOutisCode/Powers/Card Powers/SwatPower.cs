@@ -10,7 +10,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Po
 
 
 
-public class SwatPower() : CustomTemporaryPowerModelWrapper<Swat,StrengthPower>
+public class SwatPower() : CustomTemporaryPowerModelWrapper<WeightedChains,StrengthPower>
 {
     private CustomTemporaryPowerModel _customTemporaryPowerModelImplementation;
     
