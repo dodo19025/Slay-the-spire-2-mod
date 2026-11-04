@@ -27,7 +27,7 @@ public static class TheMiddleNurseFatherOutisKeywords
     
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
     public static CardKeyword Swing;
-    
+
 }
 
 //handling how the keywords will work using hooks
@@ -41,7 +41,7 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             int grudge = GrudgeResource.GetGrudge(cardPlay.Player);
             if (grudge >= 1) 
             {
-                GrudgeResource.LoseGrudge(1,cardPlay.Player);
+                await GrudgeResource.LoseGrudge(1,cardPlay.Player);
                 await PowerCmd.Apply<PaybackPower>(new BlockingPlayerChoiceContext(), cardPlay.Card.Owner.Creature, 2m,
                     cardPlay.Card.Owner.Creature, cardPlay.Card);
             }
@@ -52,7 +52,7 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             int grudge = GrudgeResource.GetGrudge(cardPlay.Player);
             if (grudge >= 1)
             {
-                GrudgeResource.LoseGrudge(1,cardPlay.Player);
+                await GrudgeResource.LoseGrudge(1,cardPlay.Player);
                 CardModel? cardModel = PileType.Draw.GetPile(cardPlay.Card.Owner).Cards
                     .Where((CardModel c) => c.Type == CardType.Attack && c.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick))
                     .ToList().StableShuffle(cardPlay.Card.Owner.RunState.Rng.Shuffle).FirstOrDefault(); //i am literally confuused but okay
