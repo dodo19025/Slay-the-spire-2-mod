@@ -20,7 +20,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 
 public class Retaliation() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Skill, CardRarity.Common,
+    2, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     

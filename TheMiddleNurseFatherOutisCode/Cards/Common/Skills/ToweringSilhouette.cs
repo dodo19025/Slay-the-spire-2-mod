@@ -18,7 +18,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 public class ToweringSilhouette() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Skill, CardRarity.Common,
+    2, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (
