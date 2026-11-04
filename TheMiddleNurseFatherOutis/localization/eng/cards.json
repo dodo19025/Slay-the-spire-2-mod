@@ -46,19 +46,14 @@
 
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervor[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] to ALL enemies",
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal",
-
-  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.description": "Gain {Block:diff()}[gold] Block[/gold].\nGain {IncreasedBlock:diff()} [gold]Block[/gold] for each enemy attacking.",
-  "THEMIDDLENURSEFATHEROUTIS-RECITE_VENGEANCE.title": "Recite Vengeance",
+  
 
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.description": "Gain {Energy:energyIcons()} for the first {ValidEnergy:diff()} times, you play a [gold]Punch[/gold], [gold]Kick[/gold] or [gold]Swing[/gold] this turn, and add a [gold]Wound[/gold] to your discard pile for each {Energy:energyIcons()} gained this way.",
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.title": "Refreshing Flow",
 
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Paralyze[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain",
-
-  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nIf you have {PaybackThreshold:diff()} [gold]Payback[/gold], gain {Energy:energyIcons()}.",
-  "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
-
+  
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
 

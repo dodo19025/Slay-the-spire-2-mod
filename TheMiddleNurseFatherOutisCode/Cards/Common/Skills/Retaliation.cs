@@ -53,7 +53,8 @@ public class Retaliation() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(3m);
+        //base.DynamicVars["BurnApply"].UpgradeValueBy(3m);
         //base.DynamicVars["SelfBurn"].UpgradeValueBy(-2m);
 
     }

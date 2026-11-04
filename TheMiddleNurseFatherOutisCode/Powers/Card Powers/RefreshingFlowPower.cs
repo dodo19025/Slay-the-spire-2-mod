@@ -67,7 +67,7 @@ public class RefreshingFlowPower()
             Amount--;
             
             gotenergy = false;
-            CardModel card = CombatState.CreateCard<Burn>(Owner.Player);
+            CardModel card = CombatState.CreateCard<Wound>(Owner.Player);
             CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Discard, Owner.Player));
         }
     }

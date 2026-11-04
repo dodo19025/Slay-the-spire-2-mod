@@ -47,7 +47,8 @@ public class ReadyToWrite()
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["PaybackGained"].UpgradeValueBy(2m);
-        base.DynamicVars.Cards.UpgradeValueBy(1m);
+        DynamicVars.Block.UpgradeValueBy(3m);
+        //base.DynamicVars["PaybackGained"].UpgradeValueBy(2m);
+        //base.DynamicVars.Cards.UpgradeValueBy(1m);
     }
 }

@@ -110,6 +110,18 @@ Exhaust a selected card
             await CardCmd.Exhaust(choiceContext, cardModel);
         }
 
---
-    
+---
+
+Gaining block based on enemies attacking
+
+        foreach (Creature HittableEnemy in base.CombatState.HittableEnemies)
+        {
+            if (HittableEnemy.Monster.IntendsToAttack)
+            {
+                await CreatureCmd.GainBlock(Owner.Creature, base.DynamicVars["IncreasedBlock"].BaseValue, ValueProp.Move, play);
+
+            }
+        }
+        
+---
  
