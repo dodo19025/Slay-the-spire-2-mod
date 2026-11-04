@@ -59,8 +59,8 @@
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nIf you have {PaybackThreshold:diff()} [gold]Payback[/gold], gain {Energy:energyIcons()}.",
   "THEMIDDLENURSEFATHEROUTIS-POISED_BREATHING.title": "Poised Breathing",
 
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold]",
-  "THEMIDDLENURSEFATHEROUTIS-BRUTE.title": "Brute",
+  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
 
   "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.description": "Deal {Damage:diff()} damage to a random enemy {HitAmount:diff()} times.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.title": "Wild Flailing",

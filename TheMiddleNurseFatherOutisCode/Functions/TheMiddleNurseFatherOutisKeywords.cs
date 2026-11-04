@@ -19,13 +19,13 @@ public static class TheMiddleNurseFatherOutisKeywords
     [CustomEnum,KeywordProperties(AutoKeywordPosition.After)] 
     public static CardKeyword Fervour;
 
-    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    [CustomEnum]
     public static CardKeyword Kick;
     
-    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    [CustomEnum]
     public static CardKeyword Punch;
     
-    [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)]
+    [CustomEnum]
     public static CardKeyword Swing;
 
 }
@@ -98,7 +98,7 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             {
                 return;
             }
-            await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), cardPlay.Target, bleedApplication,
+            await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), cardPlay.Target!, bleedApplication,
                 cardPlay.Card.Owner.Creature, cardPlay.Card);
         }
     }

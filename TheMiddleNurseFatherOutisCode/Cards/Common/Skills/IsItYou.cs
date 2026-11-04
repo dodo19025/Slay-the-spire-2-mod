@@ -13,23 +13,24 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
-public class Brute() : TheMiddleNurseFatherOutisCard(
-    2, CardType.Skill, CardRarity.Common,
+public class IsItYou() : TheMiddleNurseFatherOutisCard(
+    1, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(10m,ValueProp.Move),
-        new DynamicVar("GrudgeGained",1m)
+        new DynamicVar("GrudgeGained",3m),
+        new DynamicVar("PaybackGained",4m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<GrudgePower>()
-
+        HoverTipFactory.FromPower<GrudgePower>(),
+        HoverTipFactory.FromPower<PaybackPower>()
     ];
 
     protected override async Task OnPlay(
@@ -37,13 +38,14 @@ public class Brute() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await PowerCmd.Apply<GrudgePower>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
-        await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
+        await PowerCmd.Apply<PaybackPower>(choiceContext,base.Owner.Creature,base.DynamicVars["PaybackGained"].BaseValue,base.Owner.Creature,this);
+
 
     }
 
     protected override void OnUpgrade()
     {
         this.DynamicVars["GrudgeGained"].UpgradeValueBy(1m);
-        base.DynamicVars.Block.UpgradeValueBy(3m);
+        this.DynamicVars["PaybackGained"].UpgradeValueBy(3m);
     }
 }
