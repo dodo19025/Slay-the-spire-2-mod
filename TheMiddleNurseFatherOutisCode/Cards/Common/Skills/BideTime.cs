@@ -22,22 +22,22 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
-public class Writeup() : TheMiddleNurseFatherOutisCard(
+public class BideTime() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
     TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("VunNextTurnPower", 1m),
+        new CardsVar(2),
         new EnergyVar(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromPower<VulnerableNextTurn>(),
         base.EnergyHoverTip
     ];
 
@@ -47,30 +47,20 @@ public class Writeup() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,base.Owner.Creature,base.DynamicVars.Energy.BaseValue,base.Owner.Creature, this);
+        for (int i = 0; i < DynamicVars.Cards.BaseValue; i++)
+        {
+            CardPile pile = PileType.Hand.GetPile(Owner);
+            CardModel? cardModel = Owner.RunState.Rng.CombatCardSelection.NextItem(pile.Cards);
+            if (cardModel != null)
+            {
+                await CardCmd.Discard(choiceContext, cardModel);
+            }
+        }
+        await PowerCmd.Apply<BideTimePower>(choiceContext,Owner.Creature,DynamicVars.Cards.BaseValue,Owner.Creature,this);
+        await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext,Owner.Creature,DynamicVars.Energy.BaseValue,Owner.Creature,this);
         
-        foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
-        {
-            await PowerCmd.Apply<VulnerableNextTurn>(choiceContext, hittableEnemy, base.DynamicVars["VunNextTurnPower"].BaseValue, base.Owner.Creature, this);
-        }
     }
 
-    public override  Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
-        Creature? dealer, CardModel? cardSource)
-    {
-        if (dealer == null || dealer.Side == target.Side || !props.IsPoweredAttack() || dealer.IsPlayer ||
-            !target.IsPlayer)
-        {
-            return Task.CompletedTask;
-        }
-
-        if (target.IsPlayer && result.UnblockedDamage > 0)
-        {
-            base.EnergyCost.SetUntilPlayed(0);
-        }
-
-        return Task.CompletedTask;
-    }
 
 
     protected override void OnUpgrade()

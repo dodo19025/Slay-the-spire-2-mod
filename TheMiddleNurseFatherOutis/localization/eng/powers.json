@@ -77,6 +77,12 @@
 
   "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.description": "This turn, [gold]Payback[/gold] applies bleed.",
   "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.smartDescription": "This turn, [gold]Payback[/gold] applies [blue]{Amount}%[/blue] of damage dealt as [gold]Bleed[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.title": "Retaliate"
+  "THEMIDDLENURSEFATHEROUTIS-RETALIATE_POWER.title": "Retaliate",
+
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.description": "Next turn, draw Attack cards.",
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.smartDescription": "Next turn, Draw {Amount} Attack cards",
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.title": "Bide Time",
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.selectionScreenPrompt": "Select {Amount} Attacks."
+
 
 }

@@ -65,8 +65,8 @@
   "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.description": "Deal {Damage:diff()} damage to a random enemy {HitAmount:diff()} times.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-WILD_FLAILING.title": "Wild Flailing",
 
-  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.description": "Apply {VunNextTurnPower:diff()} [gold]Vulnerable Next Turn[/gold] on ALL enemies.\nGain {Energy:energyIcons()} next turn.\nReduce cost to 0 until played if you took damage this combat.",
-  "THEMIDDLENURSEFATHEROUTIS-WRITEUP.title": "Writeup",
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME.description": "Discard {Cards:diff()} random cards.\nNext turn, put {Cards:diff()} Attacks from your [gold]Discard Pile[/gold] to [gold]Hand[/gold] and gain {Energy:energyIcons()}.",
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME.title": "Bide Time",
   
   "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.description": "Deal {Damage:diff()} damage.\nWhen drawn without [gold]Lævateinn[/gold], this card deals {DamageRemoved:diff()} less damage for the rest of combat.\n[gold]Lævateinn[/gold]: When this card is drawn, gain {GrudgeGain:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MILD_INCON.title": "Mild Inconvenience",
