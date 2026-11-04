@@ -6,27 +6,32 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
-public class Traces() : TheMiddleNurseFatherOutisCard(
-    1, CardType.Skill, CardRarity.Common,
+public class RefreshingFlow() : TheMiddleNurseFatherOutisCard(
+    0, CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(4m, ValueProp.Move),
+        new EnergyVar(1),
+        new DynamicVar("ValidEnergy", 2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.FromKeyword(CardKeyword.Exhaust)
+        HoverTipFactory.FromCard<Wound>(),
+        EnergyHoverTip
     ];
 
 
@@ -34,18 +39,11 @@ public class Traces() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
-        CardModel? cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Discard.GetPile(base.Owner),
-            base.Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1))).FirstOrDefault(); //oh my god what
-        if (cardModel != null)
-        {
-            await CardCmd.Exhaust(choiceContext, cardModel);
-        }
-
+        PowerCmd.Apply<RefreshingFlowPower>(choiceContext,Owner.Creature,DynamicVars["ValidEnergy"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(2m);
+        DynamicVars["ValidEnergy"].UpgradeValueBy(1);
     }
 }

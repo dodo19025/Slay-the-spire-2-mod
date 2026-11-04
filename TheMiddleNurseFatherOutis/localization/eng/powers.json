@@ -82,7 +82,11 @@
   "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.description": "Next turn, draw Attack cards.",
   "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.smartDescription": "Next turn, Draw {Amount} Attack cards",
   "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.title": "Bide Time",
-  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.selectionScreenPrompt": "Select {Amount} Attacks."
+  "THEMIDDLENURSEFATHEROUTIS-BIDE_TIME_POWER.selectionScreenPrompt": "Select {Amount} Attacks.",
+
+  "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.description": "Whenever you play a [gold]Punch, Kick or Swing[/gold], gain 1 Energy and 1 [gold]Wound[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.smartDescription": "Whenever you play a [gold]Punch, Kick or Swing[/gold], gain {Energy:energyIcons()}  and 1 [gold]Wound[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.title": "Refreshing Flow"
 
 
 }

@@ -100,5 +100,16 @@ card tooltips
     //];
     
 ---
+
+Exhaust a selected card
+        await CreatureCmd.GainBlock(base.Owner.Creature, DynamicVars.Block, play);
+        CardModel? cardModel = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Discard.GetPile(base.Owner),
+            base.Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1))).FirstOrDefault(); //oh my god what
+        if (cardModel != null)
+        {
+            await CardCmd.Exhaust(choiceContext, cardModel);
+        }
+
+--
     
  
