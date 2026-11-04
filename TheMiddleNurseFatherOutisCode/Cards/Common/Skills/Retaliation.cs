@@ -9,34 +9,34 @@ using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
+
 
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
-public class Ignite() : TheMiddleNurseFatherOutisCard(
+public class Retaliation() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
     TargetType.AnyEnemy)
 {
     
     protected override bool ShouldGlowGoldInternal => Owner.Creature.HasPower<LaevateinnPower>();
-
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-    [
-        TheMiddleNurseFatherOutisKeywords.Fervour
-    ];
+    
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<BurnPower>(),
+        HoverTipFactory.FromPower<BleedPower>(),
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("BurnApply", 9m),
-        new DynamicVar("SelfBurn", 2m)
+        new BlockVar(9, ValueProp.Move),
+        new DynamicVar("RetaliatePower",25)
     ];
 
 
@@ -44,18 +44,12 @@ public class Ignite() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<BurnPower>(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue,
+        await PowerCmd.Apply<RetaliatePower>(choiceContext, Owner.Creature, base.DynamicVars["RetaliatePower"].BaseValue,
             base.Owner.Creature, this);
-        await PowerCmd.Apply<BurnPower>(choiceContext, base.Owner.Creature, base.DynamicVars["SelfBurn"].BaseValue,
-            base.Owner.Creature, this);
-        if (Owner.Creature.HasPower<LaevateinnPower>())
-        {
-            await CreatureCmd.TriggerAnim(base.Owner.Creature, "swordattack", 0.05f); //animation for sword since this is classified as a skill
-            await CreatureCmd.Damage(choiceContext, play.Target, base.DynamicVars["BurnApply"].BaseValue/2, ValueProp.Move,
-                base.Owner.Creature, this, play);
-            
-        }
+        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
+
     }
+    
 
     protected override void OnUpgrade()
     {

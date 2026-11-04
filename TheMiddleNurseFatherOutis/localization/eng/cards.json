@@ -32,7 +32,7 @@
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {RisingFeverGain:diff()} [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-HYPED_UP.title": "Hyped Up",
 
-  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.description": "Gain {Block:diff()} [gold]Block[/gold].\nIncrease the amount of times your [gold]Payback[/gold] can be performed by 1.",
   "THEMIDDLENURSEFATHEROUTIS-READY_TO_WRITE.title": "Ready To Write",
 
   "THEMIDDLENURSEFATHEROUTIS-WE_REMEMEBER.description": "Deal {Damage:diff()} damage.\nIf you performed a [gold]Payback[/gold] last turn, hit an additional time and add 1 [gold]Wound[/gold] to your [gold]Discard Pile[/gold].",
@@ -41,8 +41,8 @@
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.description": "Deal {Damage:diff()} damage.\nApply {BleedPower:diff()} [gold]Bleed[/gold].\nIf this is the first attack played this turn, gain {Energy:energyIcons()} and draw {Cards:diff()} card.",
   "THEMIDDLENURSEFATHEROUTIS-CROSS_UP.title": "Cross Up",
 
-  "THEMIDDLENURSEFATHEROUTIS-IGNITE.description": "[gold]Fervor[/gold]: Deal Damage equal to half of [gold]Burn[/gold] applied.\nApply {BurnApply:diff()} [gold]Burn[/gold] and gain {SelfBurn:diff()} [gold]Burn[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-IGNITE.title": "Ignite",
+  "THEMIDDLENURSEFATHEROUTIS-RETALIATION.description": "Gain {Block:diff()} [gold]Block[/gold].\nThis turn, [gold]Payback[/gold] performed applies [gold]Bleed[/gold] equal to damage dealt.\n[gold]Lævateinn[/gold]: Also apply that much [gold]Burn[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RETALIATION.title": "Retaliation",
 
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervor[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] to ALL enemies",
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal",
