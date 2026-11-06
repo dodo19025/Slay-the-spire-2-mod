@@ -46,7 +46,6 @@
 
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.description": "[gold]Fervor[/gold]: Apply [gold]Burn[/gold] an additional time.\nDeal {Damage:diff()} Damage to ALL enemies.\nApply {BurnApply:diff()} [gold]Burn[/gold] to ALL enemies",
   "THEMIDDLENURSEFATHEROUTIS-WEAK_HORIZONTAL.title": "Weak Horizontal",
-  
 
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.description": "Gain {Energy:energyIcons()} for the first {ValidEnergy:diff()} times, you play a [gold]Punch[/gold], [gold]Kick[/gold] or [gold]Swing[/gold] this turn, and add a [gold]Wound[/gold] to your discard pile for each {Energy:energyIcons()} gained this way.",
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.title": "Refreshing Flow",

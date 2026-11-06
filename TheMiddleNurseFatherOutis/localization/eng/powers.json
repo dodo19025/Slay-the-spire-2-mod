@@ -51,8 +51,8 @@
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Whenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]{GrudgeGainPerDamage:diff()}[/blue] [gold]Grudge[/gold] instead.",
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.title": "Grudge",
 
-  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Whenever you would lose HP, lose [blue]1[/blue] less. Reduced by [blue]1[/blue] at turn end.",
-  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.smartDescription": "Whenever you would lose HP, lose [blue]{DamageReduction:diff()}[/blue] less. Reduced by [blue]1[/blue] at turn end.",
+  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Whenever you would lose HP, lose [blue][5 - Stack][/blue] less.\nTake [blue]25 + [Stack * 10]%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.smartDescription": "Whenever you would lose HP, lose [blue]{CalculatedFReduction:diff()}[/blue] less.\nTake [blue]{CalculatedPReduction:diff()}%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/blue].",
   "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.title": "Vengeance Tattoo",
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",
@@ -86,7 +86,11 @@
 
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.description": "Whenever you play a [gold]Punch, Kick or Swing[/gold], gain 1 Energy and 1 [gold]Wound[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.smartDescription": "Whenever you play a [gold]Punch, Kick or Swing[/gold], gain {Energy:energyIcons()}  and 1 [gold]Wound[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.title": "Refreshing Flow"
+  "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW_POWER.title": "Refreshing Flow",
+
+  "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.description": "At the end of your turn, consume all [gold]Block[/gold] and gain [blue]1[/blue] [gold]Vitality[/gold] for every [blue]X[/blue] [gold]Block[/gold] consumed\nThis effect is not cumulative, gaining it will replace the current value with the lower one.",
+  "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.smartDescription": "At the end of your turn, consume all [gold]Block[/gold] and gain [blue]1[/blue] [gold]Vitality[/gold] for every [blue]{Amount}[/blue] [gold]Block[/gold] consumed\nThis effect is not cumulative, gaining it will replace the current value with the lower one.",
+  "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.title": "Sustain"
 
 
 }

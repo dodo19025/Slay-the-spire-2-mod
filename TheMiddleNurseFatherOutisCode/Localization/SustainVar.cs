@@ -4,12 +4,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 
-public class SeetheVar : DynamicVar
+public class SustainVar : DynamicVar
 {
-    public const string Key = "Seethe";
+    public const string Key = "Sustain";
     
-    public SeetheVar(Decimal SeetheCount) : base(Key, SeetheCount)
+    public SustainVar(Decimal SustainCount) : base(Key, SustainCount)
     {
         this.WithTooltip();
     }
+    
 }

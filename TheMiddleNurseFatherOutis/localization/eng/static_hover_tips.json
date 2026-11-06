@@ -1,6 +1,6 @@
 {
-  "THEMIDDLENURSEFATHEROUTIS-SEETHE.description": "Consume {Seethe} [gold]Block[/gold] to gain equal amounts of [gold]Payback[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-SEETHE.title": "Seethe",
+  "THEMIDDLENURSEFATHEROUTIS-SEETHE.description": "At the end of your turn, consume all [gold]Block[/gold] and gain [blue]1[/blue] [gold]Vitality[/gold] for every [blue]{Amount}[/blue] [gold]Block[/gold] consumed\nThis effect is not cumulative, gaining it will replace the current value with the lower one.",
+  "THEMIDDLENURSEFATHEROUTIS-SEETHE.title": "Sustain",
   
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE.title": "Grudge",
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE.description": "Your Current [gold]Grudge[/gold] Amount.\nWhenever you are attacked, gain [blue]1[/blue].\nIf you take damage, gain [blue]2[/blue] instead."
