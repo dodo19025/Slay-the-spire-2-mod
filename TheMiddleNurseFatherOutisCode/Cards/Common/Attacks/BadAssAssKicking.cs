@@ -17,6 +17,7 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 

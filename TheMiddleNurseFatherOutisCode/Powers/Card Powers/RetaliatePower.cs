@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Hooks;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers.Combo_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -26,6 +27,14 @@ public class RetaliatePower()
         if (Owner.HasPower<LaevateinnPower>())
         {
             await PowerCmd.Apply<BurnPower>(choiceContext, target, amountPayback * multiplier, Owner, null);
+        }
+    }
+    
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (Owner.HasPower<RetaliatePower>())
+        {
+            await PowerCmd.Remove(this);
         }
     }
 }

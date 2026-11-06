@@ -59,7 +59,7 @@ public class VengeanceTattoo()
         {
             return amount;
         }
-        return Math.Max(0m, amount - (5 - Amount));
+        return Math.Max(1m, amount - (5 - Amount));
     }
     
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)

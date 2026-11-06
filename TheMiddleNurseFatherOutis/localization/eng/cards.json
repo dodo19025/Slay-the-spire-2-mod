@@ -83,8 +83,8 @@
   "THEMIDDLENURSEFATHEROUTIS-SHED_THE_BINDINGS.description": "This costs 1 less {Energy:energyIcons()} per [gold]Punch[/gold] or [gold]Kick[/gold] played this turn.\nDeal {Damage:diff()} damage.\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].\nLose 1 [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-SHED_THE_BINDINGS.title": "Shed The Bindings",
 
-  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.description": "Deal {Damage:diff()} damage.\nHit an additional time for every attack containing “Kick” you've used this turn.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
-  "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage",
+  "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nIf the next card played is a [gold]Kick[/gold], gain {GrudgeGain:diff()} [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], lose {HPLost:diff()} HP, gain 1 [gold]Vengeance Tattoo[/gold] and 1 [gold]Strength[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY.title": "Proof Of Loyalty",
 
   "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nAttack cards that consume [gold]Grudge[/gold] deal {AdditionalDamage:diff()} additional damage.",
   "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.title": "Chains of Loyalty",

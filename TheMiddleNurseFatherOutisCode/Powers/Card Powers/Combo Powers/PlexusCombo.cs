@@ -44,7 +44,7 @@ public class PlexusCombo()
     
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (Owner.HasPower<WriteSinsPower>())
+        if (Owner.HasPower<PlexusCombo>())
         {
             await PowerCmd.Remove(this);
         }

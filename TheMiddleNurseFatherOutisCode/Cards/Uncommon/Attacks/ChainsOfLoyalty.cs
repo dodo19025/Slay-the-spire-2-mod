@@ -34,6 +34,7 @@ public class ChainsOfLoyalty()
     [
         TheMiddleNurseFatherOutisKeywords.Punch
     ];
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<GrudgePower>()
