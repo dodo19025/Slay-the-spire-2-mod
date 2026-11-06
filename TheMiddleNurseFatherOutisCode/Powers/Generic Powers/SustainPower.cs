@@ -52,13 +52,13 @@ public class SustainPower() : TheMiddleNurseFatherOutisPower
                 var VitalityGained = (Math.Round((decimal)Owner.Block / Amount));
                 if (VitalityGained <= 0)
                 {
+                    await PowerCmd.Remove(this);
                     return;
                 }
                 await PowerCmd.Apply<ShieldPower>(choiceContext, Owner, VitalityGained, Owner, null);
                 await CreatureCmd.LoseBlock(choiceContext, Owner, Owner.Block, Owner);
-                await PowerCmd.Remove(this);
-
             }
+            await PowerCmd.Remove(this);
         }
     }
 }

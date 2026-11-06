@@ -64,7 +64,7 @@ public class PaybackPower()
             return;
         }
 
-        if (target.IsPlayer && result.UnblockedDamage > 0)
+        if (target.IsPlayer && result.UnblockedDamage > 0 || (target.IsPlayer && target.HasPower<ShieldPower>() && target.Block <= 0))
         {
             if (base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
             {

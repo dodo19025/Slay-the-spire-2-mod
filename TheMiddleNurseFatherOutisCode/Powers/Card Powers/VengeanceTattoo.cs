@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
 
@@ -31,6 +32,7 @@ public class VengeanceTattoo()
         new DynamicVar("DamageReduction",1m),
         new DynamicVar("CalculatedPReduction",0m),
         new DynamicVar("CalculatedFReduction",0m),
+        new SustainVar(3)
 
     ]); //Made for values to be easily changable
 
@@ -79,7 +81,9 @@ public class VengeanceTattoo()
 
     public override async Task BeforeSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-       await PowerCmd.Apply<SustainPower>(choiceContext, Owner, 3m, Owner, null);
-
+        if (participants.Contains(Owner))
+        {
+            await PowerCmd.Apply<SustainPower>(choiceContext, Owner, DynamicVars["Sustain"].BaseValue, Owner, null);
+        }
     }
 }
