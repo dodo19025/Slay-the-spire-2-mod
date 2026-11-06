@@ -150,6 +150,22 @@ applying effects on all enemies
                 await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, DynamicVars["BurnApply"].BaseValue, Owner.Creature, this);
             }
 ---
+calculcated var for amount of hits based on a tag
+        new DamageVar(10m,ValueProp.Move),
+        new RepeatVar(1),
+        new CalculationBaseVar(0),
+        new CalculationExtraVar(1m),
+        new CalculatedVar("CalculatedHits").WithMultiplier((CardModel card, Creature? _) => 1 + CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) => e.HappenedThisTurn(card.CombatState) && e.CardPlay.Card.Type == CardType.Attack && e.CardPlay.Card.Tags.Contains(TheMiddleNurseFatherOutisTags.Kick) && e.CardPlay.Card.Owner == card.Owner))
+        
+   -
+   
+application 
+        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue)
+            .WithHitCount((int)((CalculatedVar)base.DynamicVars["CalculatedHits"]).Calculate(play.Target))
+            .Targeting(play.Target)
+            .FromCard(this, play)
+            .Execute(choiceContext);
+----
 
 
         

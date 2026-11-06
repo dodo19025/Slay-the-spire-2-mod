@@ -86,8 +86,8 @@
   "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.description": "Deal {Damage:diff()} damage.\nHit an additional time for every attack containing “Kick” you've used this turn.\n{InCombat:(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "THEMIDDLENURSEFATHEROUTIS-KICK_BARRAGE.title": "Kick Barrage",
 
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.description": "Deal {Damage:diff()} damage.\nHit an additional time if you took damage Last turn.",
-  "THEMIDDLENURSEFATHEROUTIS-PAYBACK_WITH_INTEREST.title": "Payback With Interest",
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nAttack cards that consume [gold]Grudge[/gold] deal {AdditionalDamage:diff()} additional damage.",
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.title": "Chains of Loyalty",
 
   "THEMIDDLENURSEFATHEROUTIS-RIGHT_PLEXUS.description": "Deal {Damage:diff()} damage.\nIf the last card played was a [gold]Punch[/gold], gain {GrudgeGained:diff()} [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], gain {Energy:energyIcons()}.\n[gold]Lævateinn[/gold]: Apply 1 [gold]Weak[/gold] and {BleedPower:diff()} [gold]Bleed[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RIGHT_PLEXUS.title": "Right In The Solar Plexus!",

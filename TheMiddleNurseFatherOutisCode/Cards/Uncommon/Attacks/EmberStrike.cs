@@ -79,7 +79,7 @@ public class EmberStrike()
 
     protected override void OnUpgrade()
     {
-         base.DynamicVars.Damage.UpgradeValueBy(3m);
-         base.DynamicVars["BurnPower"].UpgradeValueBy(1m);
+         DynamicVars.Damage.UpgradeValueBy(3m);
+         DynamicVars["BurnPower"].UpgradeValueBy(1m);
     }
 }

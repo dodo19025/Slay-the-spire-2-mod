@@ -110,10 +110,10 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             {
                 foreach (Creature Hittable in cardPlay.Card.CombatState!.HittableEnemies)
                 {
-                    
+                    await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), Hittable, bleedApplication,
+                        cardPlay.Card.Owner.Creature, cardPlay.Card);
                 }
             }
-
         }
     }
 }

@@ -33,7 +33,21 @@ public interface IBeforeGrudgeGained
     /// <param name="amountGained"> The amount of grudge that was gained</param>
     /// <returns></returns>
     Task BeforeGrudgeGained(Player player, int amountGained);
-} 
+}
+/// <summary>
+/// Runs when grudge is lost
+/// </summary>
+public interface IAfterGrudgeLost
+{
+    /// <summary>
+    /// Runs after grudge is lost
+    /// </summary>
+    /// <param name="player">The player that lost the grudge</param>
+    /// <param name="amountLost">The amount of grudge that was lost (Positive)</param>
+    /// <returns></returns>
+    Task AfterGrudgeLost(Player player, int amountLost);
+}
+
 /// <summary>
 /// Runs after Payback Power does damage to an enemy 
 /// </summary>
@@ -49,6 +63,7 @@ public interface IAfterPaybackDone
     /// <returns></returns>
     Task AfterPaybackDone(PlayerChoiceContext choiceContext,Player player, int amountPayback, Creature target);
 }
+
 
 
 

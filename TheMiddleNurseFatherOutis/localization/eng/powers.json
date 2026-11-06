@@ -90,7 +90,11 @@
 
   "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.description": "At the end of your turn, consume all [gold]Block[/gold] and gain [blue]1[/blue] [gold]Vitality[/gold] for every [blue]X[/blue] [gold]Block[/gold] consumed\nThis effect is not cumulative, gaining it will replace the current value with the lower one.",
   "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.smartDescription": "At the end of your turn, consume all [gold]Block[/gold] and gain [blue]1[/blue] [gold]Vitality[/gold] for every [blue]{Amount}[/blue] [gold]Block[/gold] consumed\nThis effect is not cumulative, gaining it will replace the current value with the lower one.",
-  "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.title": "Sustain"
+  "THEMIDDLENURSEFATHEROUTIS-SUSTAIN_POWER.title": "Sustain",
+
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY_POWER.description": "This turn, cards that consume [gold]Grudge[/gold] deal additional damage.",
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY_POWER.smartDescription": "This turn, cards that consume [gold]Grudge[/gold] deal additional {Amount} damage.",
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY_POWER.title": "Chains of Loyalty"
 
 
 }

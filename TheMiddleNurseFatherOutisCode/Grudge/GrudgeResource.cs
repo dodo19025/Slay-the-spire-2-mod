@@ -52,6 +52,14 @@ public static partial class GrudgeResource
 		if (newVar == OldVar) return;
 		PlayerGrudge[player.PlayerCombatState] = newVar; //basically changes the number to the new one now after losing it
 		GrudgeChanged?.Invoke(player.PlayerCombatState,OldVar,newVar);
+		
+		foreach (var model in player.Creature.CombatState.IterateHookListeners().ToList())
+		{
+			if (model is IAfterGrudgeLost listener)
+			{
+				await listener.AfterGrudgeLost(player, amount);
+			}
+		}
 	}
 	
 	
