@@ -62,7 +62,7 @@ public class ShedTheBindings() : TheMiddleNurseFatherOutisCard(
         if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick) ||
             cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Punch))
         {
-            EnergyCost.AddThisTurn(1);
+            EnergyCost.AddThisTurn(-1);
         }
     }
 
