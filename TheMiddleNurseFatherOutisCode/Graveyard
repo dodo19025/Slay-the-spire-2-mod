@@ -124,4 +124,32 @@ Gaining block based on enemies attacking
         }
         
 ---
- 
+seeing enemy intent
+        if (play.Target.Monster.IntendsToAttack)
+        {
+            _totalDamage += base.DynamicVars["AdditionalDamage"].BaseValue;
+        }
+        
+                get
+                {
+                    if (base.CombatState == null)
+                    {
+                        return false;
+                    }
+                    return base.CombatState.HittableEnemies.Any((Creature e) => e.Monster?.IntendsToAttack ?? false);
+                {
+---
+attacking all enemies
+        await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).FromCard(this,play).TargetingAllOpponents(base.CombatState).Execute(choiceContext);
+
+---
+
+applying effects on all enemies
+            foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
+            {
+                await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, DynamicVars["BurnApply"].BaseValue, Owner.Creature, this);
+            }
+---
+
+
+        

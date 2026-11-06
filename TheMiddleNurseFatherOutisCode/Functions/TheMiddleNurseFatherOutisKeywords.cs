@@ -1,7 +1,9 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Patches.Content;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
@@ -98,8 +100,20 @@ public class ComboHandler() : CustomSingletonModel(HookType.Combat)
             {
                 return;
             }
-            await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), cardPlay.Target!, bleedApplication,
-                cardPlay.Card.Owner.Creature, cardPlay.Card);
+
+            if (cardPlay.Card.TargetType != TargetType.AllEnemies)
+            {
+                await PowerCmd.Apply<BleedPower>(new BlockingPlayerChoiceContext(), cardPlay.Target!, bleedApplication,
+                    cardPlay.Card.Owner.Creature, cardPlay.Card);
+            }
+            else if (cardPlay.Card.TargetType == TargetType.AllEnemies)
+            {
+                foreach (Creature Hittable in cardPlay.Card.CombatState!.HittableEnemies)
+                {
+                    
+                }
+            }
+
         }
     }
 }

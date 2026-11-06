@@ -51,8 +51,8 @@
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.smartDescription": "Whenever you are attacked, gain [blue]{GrudgeGainPerHit:diff()}[/blue] [gold]Grudge[/gold].\nWhenever you take unblocked damage, gain [blue]{GrudgeGainPerDamage:diff()}[/blue] [gold]Grudge[/gold] instead.",
   "THEMIDDLENURSEFATHEROUTIS-GRUDGE_POWER.title": "Grudge",
 
-  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Whenever you would lose HP, lose [blue][5 - Stack][/blue] less.\nTake [blue]25 + [Stack * 10]%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.smartDescription": "Whenever you would lose HP, lose [blue]{CalculatedFReduction:diff()}[/blue] less.\nTake [blue]{CalculatedPReduction:diff()}%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/blue].",
+  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.description": "Max Stack: 4.\nWhenever you would lose HP, lose [blue][5 - Stack][/blue] less.\nTake [blue]25 + [Stack * 10]%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.smartDescription": "Max Stack: 4.\nWhenever you would lose HP, lose [blue]{CalculatedFReduction:diff()}[/blue] less.\nTake [blue]{CalculatedPReduction:diff()}%[/blue] less damage.\n[gold]Sustain[/gold] [blue]3[/blue].",
   "THEMIDDLENURSEFATHEROUTIS-VENGEANCE_TATTOO.title": "Vengeance Tattoo",
 
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.description": "First Attacks deal [blue]50%[/blue] Less damage, Each attack [red]Paralyze[/red] is reduced by [blue]1[/blue]",

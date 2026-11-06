@@ -43,7 +43,7 @@ public class AttackAnimationChange(): CustomSingletonModel(HookType.Combat)
                 await dealer.PlayAnimation("swordattack",0.2f);
                 return;
             }
-            if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Fervour))
+            if (cardSource.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing))
             {
 
                 if (visualthreeseal.Visible)

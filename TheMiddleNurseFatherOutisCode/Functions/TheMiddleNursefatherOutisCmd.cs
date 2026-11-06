@@ -296,7 +296,7 @@ public static class TheMiddleNursefatherOutisCmd
     /// <param name="RestrictUnpackingThisTurn"> Dictates if unpacking is restricted for this turn. PS: unpacking through rising fever automatically sets this to false for this turn so any powers or skills that unrestrict this will have to manually change the rising fever boolean</param>
     /// <returns></returns>
     public static Task ChangeFeverAmount(PlayerChoiceContext choiceContext, Creature creature, decimal FeverAmount,
-        bool RestrictUnpackingThisTurn)
+        bool RestrictUnpackingThisTurn = false)
     {
         if (!creature.HasPower<RisingFeverPower>()) return Task.CompletedTask;
         PowerModel? risingFever = creature.GetPower<RisingFeverPower>();
