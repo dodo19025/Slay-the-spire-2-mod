@@ -166,6 +166,10 @@ application
             .FromCard(this, play)
             .Execute(choiceContext);
 ----
+select baselib
 
+var cards = await CommonActions.SelectCards(this, new LocString(...), choiceContext, PileType.Hand, 0, PileType.Hand.GetPile(Owner).Cards.Count)
+
+---
 
         

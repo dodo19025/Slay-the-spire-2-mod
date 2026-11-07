@@ -53,17 +53,18 @@ public class ShedTheBindings() : TheMiddleNurseFatherOutisCard(
         await TheMiddleNursefatherOutisCmd.ChangeFeverAmount(choiceContext, Owner.Creature, -1);
     }
 
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != Owner || cardPlay.Card.Type != CardType.Attack)
         {
-            return;
+            return Task.CompletedTask;
         }
         if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Kick) ||
             cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Punch))
         {
             EnergyCost.AddThisTurn(-1);
         }
+        return Task.CompletedTask;
     }
 
     protected override void OnUpgrade()

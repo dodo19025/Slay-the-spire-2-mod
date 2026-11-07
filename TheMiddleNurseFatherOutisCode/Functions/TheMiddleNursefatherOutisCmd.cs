@@ -9,9 +9,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Achievements;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Relics;
@@ -469,7 +471,7 @@ public static class TheMiddleNursefatherOutisCmd
         }
     }
 
-    public static CardModel LastCard(this Creature creature, CardPlay cardPlay)
+    public static CardModel LastCard(this Creature creature)
     {
         CardPlayFinishedEntry? lastcard = CombatManager.Instance.History.CardPlaysFinished
             .LastOrDefault(e => e.Actor == creature);
@@ -477,6 +479,10 @@ public static class TheMiddleNursefatherOutisCmd
         {
             return lastcard.CardPlay.Card;
         }
-        else return null;
+        else
+        {
+            CardModel card = ModelDb.Card<MiddleStrike>();
+            return card;
+        }
     }
 }

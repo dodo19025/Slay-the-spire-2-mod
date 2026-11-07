@@ -50,7 +50,7 @@ public class RightPlexus()
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CardModel lastcard = Owner.Creature.LastCard(play);
+        CardModel lastcard = Owner.Creature.LastCard();
         if (lastcard != null &&lastcard.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Punch))
         {
            await GrudgeResource.GainGrudge(DynamicVars["GrudgeGained"].IntValue, Owner.Creature.Player);
