@@ -17,7 +17,7 @@
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {Damage:diff()} damage to ALL enemies.\nConsume 2 [gold]Grudge[/gold] to increase damage by {DamageIncrease:diff()}.",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {CalculationBase:diff()} damage to ALL enemies.\nConsume 2 [gold]Grudge[/gold] to increase damage by {ExtraDamage:diff()}.{InCombat:\n(Deals {TotalDamage:diff()} damage.|}",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
@@ -103,5 +103,12 @@
 
   "THEMIDDLENURSEFATHEROUTIS-ASSEMBLE.description": "Deal {Damage:diff()} damage.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to draw {Cards:diff()} Skill from the [gold]Draw Pile[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-ASSEMBLE.title": "Assemble!",
-  "THEMIDDLENURSEFATHEROUTIS-ASSEMBLE.selectionScreenPrompt": "Select a Skill."
+  "THEMIDDLENURSEFATHEROUTIS-ASSEMBLE.selectionScreenPrompt": "Select a Skill.",
+
+  "THEMIDDLENURSEFATHEROUTIS-BASH_YER_SKULL_IN.description": "Deal {Damage:diff()} damage.\nIf you have 5 or less [gold]Grudge[/gold], gain {GrudgeGain:diff()} [gold]Grudge[/gold].\nIncrease this card's cost by {Energy:energyIcons()}.",
+  "THEMIDDLENURSEFATHEROUTIS-BASH_YER_SKULL_IN.title": "Bash Yer Skull In",
+
+  "THEMIDDLENURSEFATHEROUTIS-CROSSING_DERVISH.description": "Deal {CalculatedDamage:diff()} damage and apply {CalculatedBleed:diff()} [gold]Bleed[/gold].\nDeal {ExtraDamage:diff()} additional damage and apply {CalculationExtra:diff()} more [gold]Bleed[/gold] for every [gold]Vengeance Tattoo[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-CROSSING_DERVISH.title": "Crossing Dervish"
+  
 }

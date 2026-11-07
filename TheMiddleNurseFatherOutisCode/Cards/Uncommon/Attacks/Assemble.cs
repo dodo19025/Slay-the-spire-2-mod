@@ -37,6 +37,7 @@ public class Assemble() : TheMiddleNurseFatherOutisCard(
         new CardsVar(1),
         new DynamicVar("GrudgeConsume", 3m)
     ];
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -55,7 +56,7 @@ public class Assemble() : TheMiddleNurseFatherOutisCard(
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
-        DynamicVars["GrudgeConsume"].UpgradeValueBy(-1m);
+        EnergyCost.UpgradeBy(-1);
+
     }
 }

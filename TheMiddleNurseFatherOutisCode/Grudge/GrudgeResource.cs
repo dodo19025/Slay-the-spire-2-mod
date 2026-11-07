@@ -74,9 +74,9 @@ public static partial class GrudgeResource
 			
 			parent.AddChildSafely(counter);
 			counter.SetAnchorsPreset(Control.LayoutPreset.Center);
-			counter.Position = new Vector2(110,-50);
+			counter.Position = new Vector2(80,70);
 			counter.Size = new Vector2(94, 94);
-			counter.ZIndex = parent.ZIndex - 1;
+			counter.ZIndex = parent.ZIndex;
 
 			return counter;
 

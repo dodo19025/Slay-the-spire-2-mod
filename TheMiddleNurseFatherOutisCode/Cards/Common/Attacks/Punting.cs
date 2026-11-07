@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
@@ -24,36 +25,53 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
         TheMiddleNurseFatherOutisKeywords.Kick
     ];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[3]
-    {
-        new DamageVar(11m, ValueProp.Move),
-        new DynamicVar("DamageIncrease", 3m),
-        new DynamicVar("GrudgeConsume", 2m)
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DynamicVar("GrudgeConsume", 2m),
+        new DynamicVar("TotalDamage", TotalDamageCalc()),
+        new CalculationBaseVar(7m),
+        new ExtraDamageVar(3m),
+    ]);
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
-        HoverTipFactory.Static(StaticHoverTip.Block),
         HoverTipFactory.FromPower<GrudgePower>()
     ];
 
+    protected override bool ShouldGlowGoldInternal =>  GrudgeResource.GetGrudge(Owner.Creature.Player!) >= DynamicVars["GrudgeConsume"].BaseValue;
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        decimal damage = base.DynamicVars.Damage.BaseValue;
         int grudge = GrudgeResource.GetGrudge(Owner.Creature.Player!);
+        var damage = (TotalDamageCalc());
         if (grudge >= DynamicVars["GrudgeConsume"].BaseValue)
         {
-            damage += DynamicVars["DamageIncrease"].BaseValue;
+            await GrudgeResource.LoseGrudge(DynamicVars["GrudgeConsume"].IntValue, Owner);
         }
-        await DamageCmd.Attack(damage).FromCard(this,play).TargetingAllOpponents(base.CombatState).Execute(choiceContext);
+        await DamageCmd.Attack(damage).FromCard(this,play).TargetingAllOpponents(CombatState!).Execute(choiceContext);
 
+    }
+
+    public decimal TotalDamageCalc()
+    {
+        if (!IsInCombat)
+        {
+            return 7m;
+        }
+        int grudge = GrudgeResource.GetGrudge(Owner.Creature.Player!);
+        var total = DynamicVars.CalculationBase.BaseValue;
+        if (grudge >= DynamicVars["GrudgeConsume"].BaseValue)
+        {
+            total =  DynamicVars.CalculationBase.BaseValue + DynamicVars.ExtraDamage.BaseValue;
+        }
+
+        return total;
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(2m);
-        DynamicVars["DamageIncrease"].UpgradeValueBy(1m);
+        DynamicVars.CalculationBase.UpgradeValueBy(2m);
+        DynamicVars.ExtraDamage.UpgradeValueBy(1m);
     }
 }
