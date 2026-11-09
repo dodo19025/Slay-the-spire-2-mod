@@ -53,6 +53,6 @@ public class BashYerSkullIn()
 
     protected override void OnUpgrade()
     {
-
+        EnergyCost.UpgradeBy(-1);
     }
 }
