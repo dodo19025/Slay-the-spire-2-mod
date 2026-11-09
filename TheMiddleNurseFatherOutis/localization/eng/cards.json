@@ -17,7 +17,7 @@
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.title": "Rule Violation!",
   
-  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {CalculationBase:diff()} damage to ALL enemies.\nConsume 2 [gold]Grudge[/gold] to increase damage by {ExtraDamage:diff()}.{InCombat:\n(Deals {TotalDamage:diff()} damage.|}",
+  "THEMIDDLENURSEFATHEROUTIS-PUNTING.description": "Deal {CalculationBase:diff()} damage to ALL enemies.\nConsume 2 [gold]Grudge[/gold] to increase damage by {ExtraDamage:diff()}.",
   "THEMIDDLENURSEFATHEROUTIS-PUNTING.title": "Punting!",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING.description": "Deal {Damage:diff()} damage.\nIf you have played {AttackThreshold:diff()}+ attacks this turn, lose {RisingFeverLost:diff()} [gold]Rising Fever[/gold].",
@@ -109,6 +109,12 @@
   "THEMIDDLENURSEFATHEROUTIS-BASH_YER_SKULL_IN.title": "Bash Yer Skull In",
 
   "THEMIDDLENURSEFATHEROUTIS-CROSSING_DERVISH.description": "Deal {CalculatedDamage:diff()} damage and apply {CalculatedBleed:diff()} [gold]Bleed[/gold].\nDeal {ExtraDamage:diff()} additional damage and apply {CalculationExtra:diff()} more [gold]Bleed[/gold] for every [gold]Vengeance Tattoo[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-CROSSING_DERVISH.title": "Crossing Dervish"
+  "THEMIDDLENURSEFATHEROUTIS-CROSSING_DERVISH.title": "Crossing Dervish",
+
+  "THEMIDDLENURSEFATHEROUTIS-PROMISED_SUFFERING.description": "Deal {Damage:diff()} damage.\nGain {PaybackGain:diff()} [gold]Payback[/gold].\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to return this card to your hand next turn.",
+  "THEMIDDLENURSEFATHEROUTIS-PROMISED_SUFFERING.title": "Promised Suffering",
+
+  "THEMIDDLENURSEFATHEROUTIS-FIXER_DISEMBOWLING.description": "Deal {Damage:diff()} damage.\nIf the next card played is a [gold]Punch[/gold], gain {Energy:energyIcons()}.\nIf the following card after the [gold]Punch[/gold] is a [gold]Swing[/gold], gain 1 [gold]Vengeance Tattoo[/gold] and 1 [gold]Strength[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-FIXER_DISEMBOWLING.title": "Fixer Disembowling"
   
 }

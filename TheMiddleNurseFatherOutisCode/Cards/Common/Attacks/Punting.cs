@@ -57,7 +57,7 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
     {
         if (!IsInCombat)
         {
-            return 7m;
+            return 0m;
         }
         int grudge = GrudgeResource.GetGrudge(Owner.Creature.Player!);
         var total = DynamicVars.CalculationBase.BaseValue;
@@ -65,7 +65,6 @@ public class Punting() : TheMiddleNurseFatherOutisCard(
         {
             total =  DynamicVars.CalculationBase.BaseValue + DynamicVars.ExtraDamage.BaseValue;
         }
-
         return total;
     }
 

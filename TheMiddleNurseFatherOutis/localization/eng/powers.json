@@ -98,7 +98,11 @@
 
   "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY_COMBO.description": "",
   "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY_COMBO.smartDescription": "If the next card played is a [gold]Kick[/gold], gain [blue]{GrudgeGain:diff()}[/blue] [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], lose [blue]{HPLost:diff()}[/blue] HP, gain [blue]1[/blue] [gold]Vengeance Tattoo[/gold] and [blue]{StrengthPower:diff()}[/blue] [gold]Strength[/gold].",
-  "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY_COMBO.title": "Proof Of Loyalty Combo"
+  "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY_COMBO.title": "Proof Of Loyalty Combo",
+
+  "THEMIDDLENURSEFATHEROUTIS-DISEMBOWL_COMBO.description": "",
+  "THEMIDDLENURSEFATHEROUTIS-DISEMBOWL_COMBO.smartDescription": "If the next card played is a [gold]Punch[/gold], gain [blue]{Amount}[/blue] {Energy:energyIcons}.\nIf the following card after [gold]Punch[/gold] is a [gold]Swing[/gold], gain [blue]1[/blue] [gold]Vengeance Tattoo[/gold] and [gold]Strength[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-DISEMBOWL_COMBO.title": "Disembowl Combo"
 
 
 }
