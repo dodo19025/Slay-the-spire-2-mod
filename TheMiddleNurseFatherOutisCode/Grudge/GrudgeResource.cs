@@ -41,6 +41,11 @@ public static partial class GrudgeResource
 			{
 				await listener.AfterGrudgeGained(player, amount);
 			}
+			
+			if (model is IAfterGrudgeChange listener2)
+			{
+				await listener2.AfterGrudgeChange(player, amount);
+			}
 		}
 	}
 
@@ -58,6 +63,11 @@ public static partial class GrudgeResource
 			if (model is IAfterGrudgeLost listener)
 			{
 				await listener.AfterGrudgeLost(player, amount);
+			}
+
+			if (model is IAfterGrudgeChange listener2)
+			{
+				await listener2.AfterGrudgeChange(player, -amount);
 			}
 		}
 	}

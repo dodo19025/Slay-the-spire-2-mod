@@ -124,6 +124,12 @@
   "THEMIDDLENURSEFATHEROUTIS-SKULL_CRUSHING.title": "Skull Crushing",
 
   "THEMIDDLENURSEFATHEROUTIS-RIGHTINTHE_GUT.description": "Deal {Damage:diff()} damage.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {StrengthPower:diff()} [gold]Strength[/gold] this turn.\nIf this draws a [gold]Kick[/gold], it costs {Energy:energyIcons()} less.",
-  "THEMIDDLENURSEFATHEROUTIS-RIGHTINTHE_GUT.title": "Right in the Gut"
+  "THEMIDDLENURSEFATHEROUTIS-RIGHTINTHE_GUT.title": "Right in the Gut",
+
+  "THEMIDDLENURSEFATHEROUTIS-DUSTING.description": "Consume all [gold]Grudge[/gold], deal damage equal to [gold]Grudge[/gold] Consumed {IfUpgraded:show:X+1|X} times.{InCombat:\n(Deals {TotalDamage:diff()} damage.)|}",
+  "THEMIDDLENURSEFATHEROUTIS-DUSTING.title": "Dusting",
+
+  "THEMIDDLENURSEFATHEROUTIS-ARE_YA_FEELING_THE_HEAT.description": "Deal {Damage:diff()} damage.\nApply {BurnPower:diff()} [gold]Burn[/gold] and add 1 [gold]Burn[/gold] in the [gold]Discard Pile[/gold].\nRepeat for every Seal removed.",
+  "THEMIDDLENURSEFATHEROUTIS-ARE_YA_FEELING_THE_HEAT.title": "Are Ya Feeling The Heat"
   
 }

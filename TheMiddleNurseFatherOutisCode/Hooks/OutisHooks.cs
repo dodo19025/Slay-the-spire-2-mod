@@ -63,7 +63,19 @@ public interface IAfterPaybackDone
     /// <returns></returns>
     Task AfterPaybackDone(PlayerChoiceContext choiceContext,Player player, int amountPayback, Creature target);
 }
-
+/// <summary>
+/// Runs after grudge is changed at all
+/// </summary>
+public interface IAfterGrudgeChange
+{
+    /// <summary>
+    /// Runs after grudge is changed at all
+    /// </summary>
+    /// <param name="player">The player that had its charge charged</param>
+    /// <param name="amountChange">The amount of charged that was changed, losing grudge = negative number</param>
+    /// <returns></returns>
+    Task AfterGrudgeChange(Player player, int amountChange);
+}
 
 
 

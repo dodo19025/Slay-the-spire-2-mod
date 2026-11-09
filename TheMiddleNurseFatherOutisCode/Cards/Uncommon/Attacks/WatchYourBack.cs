@@ -62,6 +62,7 @@ public class WatchYourBack()
     {
         if (cardPlay.Target != null && swinglastcard)
         {
+            await Cmd.Wait(0.5f);
             swinglastcard = false;
             await CardCmd.AutoPlay(choiceContext, this, cardPlay.Target);
         }
