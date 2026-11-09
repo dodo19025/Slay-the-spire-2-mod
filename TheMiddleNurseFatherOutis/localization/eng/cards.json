@@ -95,7 +95,7 @@
   "THEMIDDLENURSEFATHEROUTIS-CRIPPLING_BLOW.description": "Deal {Damage:diff()} damage.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to apply 1 [gold]Weak[/gold] and gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-CRIPPLING_BLOW.title": "Crippling Blow",
 
-  "THEMIDDLENURSEFATHEROUTIS-WATCH_YOUR_BACK.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nIf the last card played was a [gold]Swing[/gold], replay this card.",
+  "THEMIDDLENURSEFATHEROUTIS-WATCH_YOUR_BACK.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold] twice.\nIf the last card played was a [gold]Swing[/gold], replay this card.",
   "THEMIDDLENURSEFATHEROUTIS-WATCH_YOUR_BACK.title": "Watch Your Back!",
 
   "THEMIDDLENURSEFATHEROUTIS-YOU_HALF_PINTS.description": "Deal {Damage:diff()} damage.\nHits an additional time for every [gold]Payback[/gold] performed this combat.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
