@@ -13,8 +13,8 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class FixerDisembowling()
     : TheMiddleNurseFatherOutisCard(2,
-        CardType.Attack, CardRarity.Basic,
-        TargetType.Self)
+        CardType.Attack, CardRarity.Uncommon,
+        TargetType.AnyEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [

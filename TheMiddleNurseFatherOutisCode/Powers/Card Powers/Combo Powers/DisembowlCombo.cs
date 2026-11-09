@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers.Combo_Powers;
@@ -22,7 +23,10 @@ public class DisembowlCombo()
     
     public override PowerInstanceType InstanceType => PowerInstanceType.Instanced;
     
-    
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new EnergyVar(1),
+    ];
 
     private int Nextcard = 0;
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -43,15 +47,11 @@ public class DisembowlCombo()
         if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing) &&
             cardPlay.Card.Owner == Owner.Player && Nextcard == 2)
         {
-            await CommonActions.ApplySelf<VengeanceTattoo>(null, 1m);
-            await CommonActions.ApplySelf<StrengthPower>(null, 1m);
+            await CommonActions.ApplySelf<VengeanceTattoo>(cardPlay.Card, 1m);
+            await CommonActions.ApplySelf<StrengthPower>(cardPlay.Card, 1m);
             Nextcard++;
         }
-
-        if (Nextcard == 2)
-        {
-            return;
-        }
+        
         await PowerCmd.Remove(this);
     }
     

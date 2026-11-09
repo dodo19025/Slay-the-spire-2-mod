@@ -19,10 +19,10 @@ public class UnsealedSearingBlade()
     public override PowerStackType StackType =>
         PowerStackType.Counter;
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => (new DynamicVar[1]
-    {
-        new DynamicVar("AppliedThisTurn", 0m), 
-    });
+    protected override IEnumerable<DynamicVar> CanonicalVars => (
+    [
+        new DynamicVar("AppliedThisTurn", 0m)
+    ]);
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)

@@ -28,7 +28,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class BideTime() : TheMiddleNurseFatherOutisCard(
     1, CardType.Skill, CardRarity.Common,
-    TargetType.AllEnemies)
+    TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

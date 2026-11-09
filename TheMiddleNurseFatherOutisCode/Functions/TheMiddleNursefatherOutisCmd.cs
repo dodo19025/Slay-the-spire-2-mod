@@ -474,7 +474,7 @@ public static class TheMiddleNursefatherOutisCmd
     public static CardModel LastCard(this Creature creature)
     {
         CardPlayFinishedEntry? lastcard = CombatManager.Instance.History.CardPlaysFinished
-            .LastOrDefault(e => e.Actor == creature);
+            .LastOrDefault(e => e.Actor == creature && e.HappenedThisTurn(creature.CombatState));
         if (lastcard != null)
         {
             return lastcard.CardPlay.Card;
