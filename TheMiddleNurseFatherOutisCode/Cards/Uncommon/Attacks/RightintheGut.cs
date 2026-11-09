@@ -31,6 +31,8 @@ public class RightintheGut() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<GrudgePower>(),
+        EnergyHoverTip
+
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 

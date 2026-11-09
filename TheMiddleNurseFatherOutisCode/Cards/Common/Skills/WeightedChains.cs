@@ -28,6 +28,7 @@ public class WeightedChains() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<BleedPower>(),
+        HoverTipFactory.FromPower<BurnPower>()
     ];
     
     protected override async Task OnPlay(

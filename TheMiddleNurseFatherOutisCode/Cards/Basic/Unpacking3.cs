@@ -28,7 +28,9 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     [
         new DamageVar(4m, ValueProp.Move),
         new DynamicVar("BleedPower", 3m),
-        new CardsVar(1)
+        new CardsVar(1),
+        new EnergyVar(1)
+
     ]);
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -40,6 +42,7 @@ public class Unpacking3() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<BleedPower>(),
+        EnergyHoverTip
     ];
     
 

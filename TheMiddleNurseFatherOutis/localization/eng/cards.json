@@ -5,13 +5,13 @@
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-MIDDLE_DEFEND.title": "Defend",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce Card {Energy:energyIcons()} cost by 1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING.title": "Unpacking",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce Card {Energy:energyIcons()} cost by 1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING2.title": "Unpacking+1",
 
-  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nCard cost -1 if in hand at turn end.\nRemove a Sword Seal.",
+  "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.description": "Deal {Damage:diff()} damage and apply {BleedPower:diff()} [gold]Bleed[/gold].\nReduce Card {Energy:energyIcons()} cost by 1 if in hand at turn end.\nRemove a Sword Seal.",
   "THEMIDDLENURSEFATHEROUTIS-UNPACKING3.title": "Unpacking+2",
 
   "THEMIDDLENURSEFATHEROUTIS-RULE_VIOLATION.description": "Consume {GrudgeConsume:diff()} [gold]Grudge[/gold] to gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
@@ -74,7 +74,7 @@
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.description": "Deal {Damage:diff()} damage {HitAmount:diff()} times. Apply {BleedPower:diff()} [gold]Bleed[/gold] each hit.\n[gold]Lævateinn[/gold]: Hit {AdditionalHitAmount:diff()} additional times.",
   "THEMIDDLENURSEFATHEROUTIS-BAD_ASS_ASS_KICKING.title": "Badass Ass-kicking",
 
-  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to apply {BleedPower:diff()} [gold]Bleed[/gold] to ALL enemies.",
+  "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage to ALL enemies.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to apply {BleedPower:diff()} [gold]Bleed[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush",
 
   "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.description": "Gain {TotalBlock:diff()} [gold]Block[/gold].\nReduce [gold]Block[/gold] gained by {ReducedBlockGain:diff()} every use this combat.",
@@ -86,7 +86,7 @@
   "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nIf the next card played is a [gold]Kick[/gold], gain {GrudgeGain:diff()} [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], lose {HPLost:diff()} HP, gain 1 [gold]Vengeance Tattoo[/gold] and 1 [gold]Strength[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PROOF_OF_LOYALTY.title": "Proof Of Loyalty",
 
-  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nAttack cards that consume [gold]Grudge[/gold] deal {AdditionalDamage:diff()} additional damage.",
+  "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.description": "Deal {Damage:diff()} damage.\nThis turn, attack cards that consume [gold]Grudge[/gold] deal {AdditionalDamage:diff()} additional damage.",
   "THEMIDDLENURSEFATHEROUTIS-CHAINS_OF_LOYALTY.title": "Chains of Loyalty",
 
   "THEMIDDLENURSEFATHEROUTIS-RIGHT_PLEXUS.description": "Deal {Damage:diff()} damage.\nIf the last card played was a [gold]Punch[/gold], gain {GrudgeGained:diff()} [gold]Grudge[/gold].\nIf the next card played is a [gold]Swing[/gold], gain {Energy:energyIcons()}.\n[gold]Lævateinn[/gold]: Apply 1 [gold]Weak[/gold] and {BleedPower:diff()} [gold]Bleed[/gold].",

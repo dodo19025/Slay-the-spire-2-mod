@@ -34,7 +34,10 @@ public class WeRememeber() : TheMiddleNurseFatherOutisCard(
     [
         TheMiddleNurseFatherOutisKeywords.Punch
     ];
-
+    protected override IEnumerable<IHoverTip> ExtraHoverTips => 
+    [
+        HoverTipFactory.FromCard<Wound>(),
+    ];
 
 
     protected override async Task OnPlay(

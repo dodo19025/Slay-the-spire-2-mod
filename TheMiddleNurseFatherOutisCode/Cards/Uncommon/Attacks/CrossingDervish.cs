@@ -32,6 +32,7 @@ public class CrossingDervish()
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<BleedPower>(),
+        HoverTipFactory.FromPower<VengeanceTattoo>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 

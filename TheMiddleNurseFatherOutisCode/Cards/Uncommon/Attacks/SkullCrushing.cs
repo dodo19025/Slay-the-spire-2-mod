@@ -30,6 +30,7 @@ public class SkullCrushing() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [
         HoverTipFactory.FromPower<GrudgePower>(),
+        HoverTipFactory.FromPower<PaybackPower>()
     ];
 
     protected override IEnumerable<DynamicVar> CanonicalVars => 

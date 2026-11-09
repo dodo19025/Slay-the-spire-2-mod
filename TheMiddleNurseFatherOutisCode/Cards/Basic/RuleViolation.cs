@@ -24,6 +24,7 @@ public class Rule_Violation()
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PaybackPower>(),
+        HoverTipFactory.FromPower<GrudgePower>(),
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
