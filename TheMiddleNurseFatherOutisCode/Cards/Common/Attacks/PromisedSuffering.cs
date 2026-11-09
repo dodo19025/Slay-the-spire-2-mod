@@ -18,7 +18,7 @@ namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
 public class PromisedSuffering()
     : TheMiddleNurseFatherOutisCard(2,
-        CardType.Attack, CardRarity.Uncommon,
+        CardType.Attack, CardRarity.Common,
         TargetType.AnyEnemy)
 
 
@@ -48,7 +48,7 @@ public class PromisedSuffering()
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await CommonActions.ApplySelf<PaybackPower>(this, DynamicVars["PaybackGain"].BaseValue);
-        if (GrudgeResource.GetGrudge(Owner) <= DynamicVars["GrudgeConsume"].BaseValue)
+        if (GrudgeResource.GetGrudge(Owner) >= DynamicVars["GrudgeConsume"].BaseValue)
         {
             GrudgeResource.LoseGrudge(DynamicVars["GrudgeConsume"].IntValue,Owner);
             ReturnCard = true;
@@ -58,7 +58,7 @@ public class PromisedSuffering()
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (Pile.Type == PileType.Discard && ReturnCard)
+        if ((Pile.Type == PileType.Discard || Pile.Type == PileType.Exhaust) && ReturnCard)
         {
             ReturnCard = false;
             CardPileCmd.Add(this, PileType.Hand);

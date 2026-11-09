@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -6,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
@@ -36,17 +38,14 @@ public class SecondSealRemovedPower()
         HoverTipFactory.FromPower<BleedPower>()
     ];
     
-    public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
-        // this next part is for applying both burn on self an the TARGET if you play an attack
-
-        if (cardPlay.Card.Type == CardType.Attack && cardPlay.Target != null)
+        foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
-            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
-                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
-            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Card.Owner.Creature,
-                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
+            await PowerCmd.Apply<Powers.BurnPower>(new ThrowingPlayerChoiceContext(), hittableEnemy,
+                base.DynamicVars["BurnApplicationValue"].BaseValue, base.Owner, null);
         }
+
     }
 
 

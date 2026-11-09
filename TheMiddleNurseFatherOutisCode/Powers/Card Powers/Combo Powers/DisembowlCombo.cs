@@ -33,7 +33,7 @@ public class DisembowlCombo()
             return;
         }
         
-        if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing) && cardPlay.Card.Owner == Owner.Player && Nextcard == 1)
+        if (cardPlay.Card.Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Punch) && cardPlay.Card.Owner == Owner.Player && Nextcard == 1)
         {
             await PlayerCmd.GainEnergy(Amount, cardPlay.Card.Owner);
             Nextcard++;
@@ -45,6 +45,7 @@ public class DisembowlCombo()
         {
             await CommonActions.ApplySelf<VengeanceTattoo>(null, 1m);
             await CommonActions.ApplySelf<StrengthPower>(null, 1m);
+            Nextcard++;
         }
 
         if (Nextcard == 2)

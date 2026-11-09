@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
@@ -49,8 +50,9 @@ public class LaevateinnPower()
         }
         Flash();
         await Cmd.CustomScaledWait(0.2f, 0.4f);
-        await PowerCmd.Apply<Powers.BurnPower>(new ThrowingPlayerChoiceContext(), base.Owner,
-            base.DynamicVars["SelfBurn"].BaseValue, base.Owner, null);
+        CardModel card = CombatState.CreateCard<Burn>(Owner.Player);
+        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, Owner.Player));
+        await Cmd.Wait(0.5f);
         foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
         {
             await PowerCmd.Apply<Powers.BurnPower>(new ThrowingPlayerChoiceContext(), hittableEnemy,
@@ -67,10 +69,7 @@ public class LaevateinnPower()
 
         if (cardPlay.Card.Type == CardType.Attack && cardPlay.Target != null)
         {
-            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Target,
-                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
-            await PowerCmd.Apply<BurnPower>(choiceContext, cardPlay.Card.Owner.Creature,
-                1m, cardPlay.Card.Owner.Creature, cardPlay.Card);
+
         }
     }
 

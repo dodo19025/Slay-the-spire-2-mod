@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Grudge;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Localization;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
@@ -37,7 +38,7 @@ public class IsItYou() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<GrudgePower>(choiceContext,base.Owner.Creature,base.DynamicVars["GrudgeGained"].BaseValue,base.Owner.Creature,this);
+        await GrudgeResource.GainGrudge(DynamicVars["GrudgeGained"].IntValue, Owner);
         await PowerCmd.Apply<PaybackPower>(choiceContext,base.Owner.Creature,base.DynamicVars["PaybackGained"].BaseValue,base.Owner.Creature,this);
 
 
