@@ -63,7 +63,7 @@ public class BadAssAssKicking()
         for (int i = 0; i < hitAmount; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext,Owner.Creature,DynamicVars.Power<BurnPower>().BaseValue,play.Target,this);
+            await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext,Owner.Creature,DynamicVars.Power<BleedPower>().BaseValue,play.Target,this);
         }
     }
     

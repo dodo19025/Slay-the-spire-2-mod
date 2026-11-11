@@ -50,7 +50,8 @@ public class WatchYourBack()
         for (int i = 0; i < 2; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await CommonActions.Apply<BleedPower>(play.Target, this, DynamicVars.Power<BurnPower>().BaseValue);
+            await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,DynamicVars.Power<BleedPower>().BaseValue,
+                play.Target, this);
         }
 
         if (Owner.Creature.LastCard().Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing))

@@ -62,7 +62,7 @@ public class RightPlexus()
         if (TheMiddleNursefatherOutisCmd.getSwordStage(Owner.Creature) is LaevateinnPower)
         {
             await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
-                DynamicVars.Power<BurnPower>().BaseValue, play.Target, this);
+                DynamicVars.Power<BleedPower>().BaseValue, play.Target, this);
         }
         await PowerCmd.Apply<PlexusCombo>(choiceContext, Owner.Creature, 1 , Owner.Creature, this);
 

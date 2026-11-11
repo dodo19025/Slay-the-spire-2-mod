@@ -145,7 +145,10 @@
   
   "THEMIDDLENURSEFATHEROUTIS-IGNITE_ALL.description": "Add 1 [gold]Burn[/gold] into your [gold]Draw Pile[/gold].\nDiscard up to 3 cards from your [gold]Draw Pile[/gold].\nGain {GrudgeGain:diff()} [gold]Grudge[/gold] for each [gold]Burn[/gold] Discarded this way.",
   "THEMIDDLENURSEFATHEROUTIS-IGNITE_ALL.title": "Ignite All",
-  "THEMIDDLENURSEFATHEROUTIS-IGNITE_ALL.selectionScreenPrompt": "Select {Cards:plural:a card|{Cards:diff()} cards}."
+  "THEMIDDLENURSEFATHEROUTIS-IGNITE_ALL.selectionScreenPrompt": "Select {Cards:plural:a card|{Cards:diff()} cards}.",
+
+  "THEMIDDLENURSEFATHEROUTIS-WARM_UP_IN_THE_EAST.description": "Gain {Block:diff()} [gold]Block[/gold].\nGain {PaybackPower:diff()} [gold]Payback[/gold[ for every missing 2 HP.{InCombat:\n(Gain {MissingHP:diff()} [gold]Payback[/gold].)}",
+  "THEMIDDLENURSEFATHEROUTIS-WARM_UP_IN_THE_EAST.title": "Warm Up In The East"
 
 
 }
