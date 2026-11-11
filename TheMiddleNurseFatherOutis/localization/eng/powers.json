@@ -59,9 +59,9 @@
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.smartDescription": "Whenever [gold]{OwnerName}[/gold] attacks, {OnPlayer:you deal|it deals} [blue]{ReducedDamagePresen:diff()}%[/blue] less damage and loses [blue]1[/blue] [gold]Paralyze[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-PARALYZE_POWER.title": "Paralyze",
   
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.description": "Creatures with [gold]Shield[/gold] Take reduced damage equal to [gold]Shield[/gold] Amounts. Every time [gold]Shield[/gold] is activated, reduce its amounts by the amount of damage negated.",
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.smartDescription": "This turn, the next time [gold]{OwnerName}[/gold] would take damage, take [blue]{Amount}[/blue] less damage and reduce [gold]Shield[/gold] by damage negated.",
-  "THEMIDDLENURSEFATHEROUTIS-SHIELD_POWER.title": "Shield",
+  "THEMIDDLENURSEFATHEROUTIS-VITALITY_POWER.description": "Creatures with [gold]Vitality[/gold] Take reduced damage equal to [gold]Vitality[/gold] Amounts. Every time [gold]Vitality[/gold] is activated, reduce its amounts by the amount of damage negated.",
+  "THEMIDDLENURSEFATHEROUTIS-VITALITY_POWER.smartDescription": "This turn, the next time [gold]{OwnerName}[/gold] would take damage, take [blue]{Amount}[/blue] less damage and reduce [gold]Vitality[/gold] by damage negated.",
+  "THEMIDDLENURSEFATHEROUTIS-VITALITY_POWER.title": "Vitality",
 
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.description": "After Attacking a certain amount, lose [blue]1[/blue] [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-STOMPING_UNSEAL.smartDescription": "After [blue]{Amount}[/blue] attacks, lose [blue]{RisingFeverLost:diff()}[/blue] [gold]Rising Fever[/gold].",
@@ -110,8 +110,20 @@
 
 
   "THEMIDDLENURSEFATHEROUTIS-RIGHT_IN_THE_GUT_POWER.description": "",
-  "THEMIDDLENURSEFATHEROUTIS-RIGHT_IN_THE_GUT_POWER.smartDescription": "",
-  "THEMIDDLENURSEFATHEROUTIS-RIGHT_IN_THE_GUT_POWER.title": "Right In The Gut Strength"
+  "THEMIDDLENURSEFATHEROUTIS-RIGHT_IN_THE_GUT_POWER.smartDescription": "This turn, gain [blue]{Amount}[/blue] [gold]Strength[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-RIGHT_IN_THE_GUT_POWER.title": "Right In The Gut Strength",
+
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_POWER.description": "Gain additional [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_POWER.smartDescription": "Gain [blue]{Amount}[/blue] additional [gold]Payback[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_POWER.title": "Grit",
+
+  "THEMIDDLENURSEFATHEROUTIS-ALPHA_COUNTER_POWER.description": "",
+  "THEMIDDLENURSEFATHEROUTIS-ALPHA_COUNTER_POWER.smartDescription": "This turn, gain [blue]{Amount}[/blue] [gold]Grit[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-ALPHA_COUNTER_POWER.title": "Alpha Counter Grit",
+
+  "THEMIDDLENURSEFATHEROUTIS-TOO_HOT_POWER.description": "",
+  "THEMIDDLENURSEFATHEROUTIS-TOO_HOT_POWER.smartDescription": "At the end of your turn, gain [blue]{Amount}[/blue] [gold]Vitality[/gold] for every [gold]Burn[/gold] in your [gold]Hand[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-TOO_HOT_POWER.title": "Too Hot Vitality"
 
 
 }

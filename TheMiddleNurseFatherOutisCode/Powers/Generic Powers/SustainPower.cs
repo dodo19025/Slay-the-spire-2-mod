@@ -55,7 +55,7 @@ public class SustainPower() : TheMiddleNurseFatherOutisPower
                     await PowerCmd.Remove(this);
                     return;
                 }
-                await PowerCmd.Apply<ShieldPower>(choiceContext, Owner, VitalityGained, Owner, null);
+                await PowerCmd.Apply<VitalityPower>(choiceContext, Owner, VitalityGained, Owner, null);
                 await CreatureCmd.LoseBlock(choiceContext, Owner, Owner.Block, Owner);
             }
             await PowerCmd.Remove(this);

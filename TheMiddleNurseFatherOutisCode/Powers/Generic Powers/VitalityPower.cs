@@ -13,7 +13,7 @@ using Color = Godot.Color;
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers;
 
 
-public class ShieldPower()
+public class VitalityPower()
     : TheMiddleNurseFatherOutisPower
 {
     public override PowerType Type =>
@@ -93,7 +93,7 @@ public class ShieldPower()
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (Owner.HasPower<ShieldPower>())
+        if (Owner.HasPower<VitalityPower>())
         {
             await PowerCmd.Remove(this);
         }

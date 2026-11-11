@@ -6,35 +6,39 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards;
 using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Character;
+using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers;
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
   
+
 [Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
-public class StandGround()
+public class AlphaCounter()
     : TheMiddleNurseFatherOutisCard(0,
-        CardType.Skill, CardRarity.Uncommon,
+        CardType.Skill, CardRarity.Common,
         TargetType.Self)
 {
-    private decimal _totalreduceblock = 0;
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DynamicVar("ReducedBlockGain", 2m),
-        new DynamicVar("TotalBlock", 8m)
+        new DynamicVar("GritPower", 3m),
     ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
+    ];
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        decimal _totalblock = base.DynamicVars["TotalBlock"].BaseValue - _totalreduceblock;
-        await CreatureCmd.GainBlock(base.Owner.Creature, _totalblock,ValueProp.Move, play);
-        _totalreduceblock += base.DynamicVars["ReducedBlockGain"].BaseValue;
+        await CommonActions.ApplySelf<AlphaCounterPower>(this, DynamicVars["GritPower"].BaseValue);
     }
 
     protected override void OnUpgrade()
     {
-        base.DynamicVars["TotalBlock"].UpgradeValueBy(2m);
+        RemoveKeyword(CardKeyword.Exhaust);
+        
     }
 }

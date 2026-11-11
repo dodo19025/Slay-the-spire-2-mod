@@ -50,8 +50,8 @@
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.description": "Gain {Energy:energyIcons()} for the first {ValidEnergy:diff()} times, you play a [gold]Punch[/gold], [gold]Kick[/gold] or [gold]Swing[/gold] this turn, and add a [gold]Wound[/gold] to your discard pile for each {Energy:energyIcons()} gained this way.",
   "THEMIDDLENURSEFATHEROUTIS-REFRESHING_FLOW.title": "Refreshing Flow",
 
-  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.description": "Gain {Block:diff()} [gold]Block[/gold].\nApply {WeakPower:diff()} [gold]Paralyze[/gold] to ALL enemies.",
-  "THEMIDDLENURSEFATHEROUTIS-DISTAIN.title": "Disdain",
+  "THEMIDDLENURSEFATHEROUTIS-INTIMIDATING_PRESENCE.description": "Increase [gold]Payback[/gold] by {PaybackPowerIncrease:diff()}% and it doesn't expire this turn.\nGain [gold]Block[/gold] equal to {PaybackToBlockConversion:diff()}% of [gold]Payback[/gold].\nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-INTIMIDATING_PRESENCE.title": "Intimidating Presence",
   
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.description": "Gain {PaybackGained:diff()} [gold]Payback[/gold].\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-IS_IT_YOU.title": "Is It You?!",
@@ -77,8 +77,8 @@
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.description": "Deal {Damage:diff()} damage to ALL enemies.\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to apply {BleedPower:diff()} [gold]Bleed[/gold] to ALL enemies.",
   "THEMIDDLENURSEFATHEROUTIS-GUT_CRUSH.title": "Gut Crush",
 
-  "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.description": "Gain {TotalBlock:diff()} [gold]Block[/gold].\nReduce [gold]Block[/gold] gained by {ReducedBlockGain:diff()} every use this combat.",
-  "THEMIDDLENURSEFATHEROUTIS-STAND_GROUND.title": "Stand Ground",
+  "THEMIDDLENURSEFATHEROUTIS-ALPHA_COUNTER.description": "Gain {GritPower:diff()} [gold]Grit[/gold] this turn.",
+  "THEMIDDLENURSEFATHEROUTIS-ALPHA_COUNTER.title": "Alpha Counter",
 
   "THEMIDDLENURSEFATHEROUTIS-SHED_THE_BINDINGS.description": "This costs 1 less {Energy:energyIcons()} per [gold]Punch[/gold] or [gold]Kick[/gold] played this turn.\nDeal {Damage:diff()} damage.\nGain {GrudgeGained:diff()} [gold]Grudge[/gold].\nLose 1 [gold]Rising Fever[/gold].",
   "THEMIDDLENURSEFATHEROUTIS-SHED_THE_BINDINGS.title": "Shed The Bindings",
@@ -130,6 +130,19 @@
   "THEMIDDLENURSEFATHEROUTIS-DUSTING.title": "Dusting",
 
   "THEMIDDLENURSEFATHEROUTIS-ARE_YA_FEELING_THE_HEAT.description": "Deal {Damage:diff()} damage.\nApply {BurnPower:diff()} [gold]Burn[/gold] and add 1 [gold]Burn[/gold] in the [gold]Discard Pile[/gold].\nRepeat for every Seal removed.",
-  "THEMIDDLENURSEFATHEROUTIS-ARE_YA_FEELING_THE_HEAT.title": "Are Ya Feeling The Heat"
-  
+  "THEMIDDLENURSEFATHEROUTIS-ARE_YA_FEELING_THE_HEAT.title": "Are Ya Feeling The Heat",
+
+  "THEMIDDLENURSEFATHEROUTIS-RECOMMIT.description": "Draw 1 card.\nPut a card from your [gold]Discard Pile[/gold] on top of your [gold]Draw Pile[/gold].\nConsume {GrudgeConsume:diff()} [gold]Grudge[/gold] to draw {Cards:diff()} more {Cards:plural:cards|card}.\nIncrease this card cost by {Energy:energyIcons()}.",
+  "THEMIDDLENURSEFATHEROUTIS-RECOMMIT.title": "Recommit",
+  "THEMIDDLENURSEFATHEROUTIS-RECOMMIT.selectionScreenPrompt": "Add a card to the top of Draw Pile.",
+
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_YOUR_TEETH.description": "Gain {Block:diff()} [gold]Block[/gold].\nDiscard up to {Cards:diff()} {Cards:plural:cards|cards} from you [gold]Draw Pile[/gold].\nLose {HPLost:diff()} HP, gain 1 [gold]Strength[/gold] and 1 [gold]Vengeance Tatto[/gold] for each [gold]Status[/gold] or [gold]Curse[/gold] card Discarded this way.",
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_YOUR_TEETH.title": "Grit Your Teeth",
+  "THEMIDDLENURSEFATHEROUTIS-GRIT_YOUR_TEETH.selectionScreenPrompt": "Select {Cards:plural:{Cards:diff()} cards| a card}.",
+
+
+  "THEMIDDLENURSEFATHEROUTIS-TOO_HOT.description": "Add 1 [gold]Burn[/gold] into your [gold]Hand[/gold]\nApply {BurnPower:diff()} to ALL enemies for every Seal removed.\nAt the end of your turn, gain {VitalityPower:diff()} [gold]Vitality[/gold] for every [gold]Burn[/gold] in your [gold]Hand[/gold].",
+  "THEMIDDLENURSEFATHEROUTIS-TOO_HOT.title": "Too Hot?!"
+
+
 }

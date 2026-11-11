@@ -22,7 +22,6 @@ public class SwatPower() : CustomTemporaryPowerModelWrapper<WeightedChains,Stren
 
     public override LocString Description => new LocString("powers","THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.description");
     public override LocString Title => new LocString("powers","THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.title");
-
     protected override string SmartDescriptionLocKey => "THEMIDDLENURSEFATHEROUTIS-SWAT_POWER.smartDescription";
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
     [

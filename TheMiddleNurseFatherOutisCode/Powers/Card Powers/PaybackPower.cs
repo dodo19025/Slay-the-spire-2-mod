@@ -41,7 +41,8 @@ public class PaybackPower()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("MaxActivation",1m),
-        new DynamicVar("CurrentActivation",0m)
+        new DynamicVar("CurrentActivation",0m),
+        new BoolVar("LosePayback", true)
     ];
 
     //public static readonly SavedSpireField<PlayerCombatState, int> PaybackAcitvated = new(() => 0,"Payback_Acitvated");
@@ -64,7 +65,7 @@ public class PaybackPower()
             return;
         }
 
-        if (target.IsPlayer && result.UnblockedDamage > 0 || (target.IsPlayer && target.HasPower<ShieldPower>() && target.Block <= 0))
+        if (target.IsPlayer && result.UnblockedDamage > 0 || (target.IsPlayer && target.HasPower<VitalityPower>() && target.Block <= 0))
         {
             if (base.Owner.Player?.Character is Character.TheMiddleNurseFatherOutis)
             {
@@ -111,7 +112,15 @@ public class PaybackPower()
         {
             DamageTakenHook.ActivatedPaybackLastTurn[playerCombatState!] = false;
         }
-        await PowerCmd.Remove(this);
+
+        if (((BoolVar)DynamicVars["LosePayback"]).BoolVal)
+        {
+            await PowerCmd.Remove(this);
+        }
+        else if (!((BoolVar)DynamicVars["LosePayback"]).BoolVal)
+        {
+            (((BoolVar)DynamicVars["LosePayback"]).BoolVal) = true;
+        }
         _didPayback = false;
     }
 

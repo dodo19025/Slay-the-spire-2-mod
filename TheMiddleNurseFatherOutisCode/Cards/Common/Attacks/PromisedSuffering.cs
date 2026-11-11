@@ -13,12 +13,12 @@ using TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Powers.Card_Powers
 
 namespace TheMiddleNurseFatherOutis.TheMiddleNurseFatherOutisCode.Cards.Common;
 
-[Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
+//[Pool(typeof(TheMiddleNurseFatherOutisCardPool))]
 
 
 public class PromisedSuffering()
     : TheMiddleNurseFatherOutisCard(2,
-        CardType.Attack, CardRarity.Common,
+        CardType.Attack, CardRarity.None,
         TargetType.AnyEnemy)
 
 
