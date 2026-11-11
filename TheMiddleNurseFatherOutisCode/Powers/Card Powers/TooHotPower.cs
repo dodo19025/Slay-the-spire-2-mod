@@ -35,13 +35,9 @@ public class TooHotPower()
         }   
         foreach (var card in CardPile.GetCards(Owner.Player, PileType.Hand))
         {
-            MainFile.Logger.Info("Going through cards" + card.ToString());
-
             if (card is Burn)
             {
                 await PowerCmd.Apply<VitalityPower>(choiceContext, Owner, Amount, Owner, null);
-
-                MainFile.Logger.Info("Applying Vitality"); 
             }
         }
         PowerCmd.Remove(this);

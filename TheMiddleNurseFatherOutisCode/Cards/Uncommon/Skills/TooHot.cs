@@ -31,7 +31,7 @@ public class TooHot() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new SustainVar(3m),
-        new DynamicVar("BurnPower",2m),
+        new PowerVar<BurnPower>(2m),
         new DynamicVar("VitalityPower",4m),
         new CardsVar(1)
     ];
@@ -55,7 +55,7 @@ public class TooHot() : TheMiddleNurseFatherOutisCard(
         int Burnapply = TheMiddleNursefatherOutisCmd.getSwordStagePower(Owner.Creature);
         foreach (Creature HittableEnemy in CombatState.HittableEnemies)
         {
-            CommonActions.Apply<BurnPower>(HittableEnemy,this,(1 + Burnapply) * DynamicVars["BurnPower"].BaseValue);
+            CommonActions.Apply<BurnPower>(HittableEnemy,this,(1 + Burnapply) * DynamicVars.Power<BurnPower>().BaseValue);
         }
         CommonActions.Apply<TooHotPower>(Owner.Creature,this,DynamicVars["VitalityPower"].BaseValue);
         CommonActions.Apply<SustainPower>(Owner.Creature,this,DynamicVars["Sustain"].BaseValue);

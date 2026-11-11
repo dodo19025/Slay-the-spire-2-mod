@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -38,7 +39,7 @@ public class AreYaFeelingTheHeat() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(7m, ValueProp.Move),
-        new DynamicVar("BurnPower",4m)
+        new PowerVar<BurnPower>(4m)
     ];
     
     protected override async Task OnPlay(
@@ -49,7 +50,7 @@ public class AreYaFeelingTheHeat() : TheMiddleNurseFatherOutisCard(
         int swordStagePower = TheMiddleNursefatherOutisCmd.getSwordStagePower(Owner.Creature) + 1;
         for (int i = 0; i < swordStagePower; i++)
         {
-            CommonActions.Apply<BurnPower>(play.Target,this ,DynamicVars["BurnPower"].BaseValue);
+            CommonActions.Apply<BurnPower>(play.Target,this ,DynamicVars.Power<BurnPower>().BaseValue);
             CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Burn>(Owner), PileType.Discard, Owner));
             await Cmd.Wait(0.5f);
         }

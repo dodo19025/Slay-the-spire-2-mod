@@ -25,7 +25,7 @@ public class IsItYou() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("GrudgeGained",3m),
-        new DynamicVar("PaybackGained",4m)
+        new PowerVar<PaybackPower>(4m)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -39,7 +39,7 @@ public class IsItYou() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await GrudgeResource.GainGrudge(DynamicVars["GrudgeGained"].IntValue, Owner);
-        await PowerCmd.Apply<PaybackPower>(choiceContext,base.Owner.Creature,base.DynamicVars["PaybackGained"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<PaybackPower>(choiceContext,base.Owner.Creature,DynamicVars.Power<PaybackPower>().BaseValue,base.Owner.Creature,this);
 
 
     }
@@ -47,6 +47,6 @@ public class IsItYou() : TheMiddleNurseFatherOutisCard(
     protected override void OnUpgrade()
     {
         this.DynamicVars["GrudgeGained"].UpgradeValueBy(1m);
-        this.DynamicVars["PaybackGained"].UpgradeValueBy(3m);
+        this.DynamicVars["PaybackPower"].UpgradeValueBy(3m);
     }
 }

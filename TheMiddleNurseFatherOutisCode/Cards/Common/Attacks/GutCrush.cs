@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -28,7 +29,7 @@ public class GutCrush() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(12m,ValueProp.Move),
-        new DynamicVar("BleedPower", 4m),
+        new PowerVar<BleedPower>(4m),
         new DynamicVar("GrudgeConsume", 4m),
 
 
@@ -57,14 +58,14 @@ public class GutCrush() : TheMiddleNurseFatherOutisCard(
             await GrudgeResource.LoseGrudge(DynamicVars["GrudgeConsume"].IntValue,Owner);
             foreach (Creature hittableEnemy in base.CombatState.HittableEnemies)
             {
-                await PowerCmd.Apply<BleedPower>(choiceContext, hittableEnemy, base.DynamicVars["BleedPower"].BaseValue, base.Owner.Creature, this);
+                await PowerCmd.Apply<BleedPower>(choiceContext, hittableEnemy, base.DynamicVars.Power<BurnPower>().BaseValue, base.Owner.Creature, this);
             }
         }
     }
     
     protected override void OnUpgrade()
     {
-        base.DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
         DynamicVars["BleedPower"].UpgradeValueBy(2m);
     }
 }

@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -36,8 +37,8 @@ public class SkullCrushing() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(7m, ValueProp.Move), 
-        new DynamicVar("PaybackGain", 4m),
-        new DynamicVar("ExtraPayback", 2m),
+        new PowerVar<PaybackPower>("BasePayback",4m),
+        new PowerVar<PaybackPower>("ExtraPayback",2m)
     ];
     
     protected override async Task OnPlay(
@@ -45,14 +46,14 @@ public class SkullCrushing() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await CommonActions.ApplySelf<PaybackPower>(this, DynamicVars["PaybackGain"].BaseValue);
+        await CommonActions.ApplySelf<PaybackPower>(this, DynamicVars["BasePayback"].BaseValue);
         await CommonActions.Apply<SkullCrushingPower>(play.Target,this,DynamicVars["ExtraPayback"].BaseValue);
     }
     
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackGain"].UpgradeValueBy(1m);
+        DynamicVars["BasePayback"].UpgradeValueBy(1m);
         DynamicVars["ExtraPayback"].UpgradeValueBy(1m);
     }
 }

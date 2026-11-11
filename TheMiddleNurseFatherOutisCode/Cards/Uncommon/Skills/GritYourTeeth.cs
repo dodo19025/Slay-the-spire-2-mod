@@ -48,7 +48,7 @@ public class GritYourTeeth() : TheMiddleNurseFatherOutisCard(
     {
         CommonActions.CardBlock(this, play);
         var Cards = await  CommonActions.SelectCards(this, SelectionScreenPrompt,
-            choiceContext, PileType.Draw, DynamicVars.Cards.IntValue);
+            choiceContext, PileType.Draw, 0,DynamicVars.Cards.IntValue);
         if (Cards != null)
         {
             foreach (var card in Cards)

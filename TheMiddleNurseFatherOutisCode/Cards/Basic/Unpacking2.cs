@@ -27,7 +27,7 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
         new DamageVar(4m, ValueProp.Move),
-        new DynamicVar("BleedPower", 3m),
+        new PowerVar<BleedPower>(3m),
         new CardsVar(1),
         new EnergyVar(1)
 
@@ -53,7 +53,7 @@ public class Unpacking2() : TheMiddleNurseFatherOutisCard(
         
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
-            DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
+            DynamicVars.Power<BurnPower>().BaseValue, play.Target, play.Card);
 
         if (play.Card.Owner.Creature.Player?.Character is Character.TheMiddleNurseFatherOutis)
         {

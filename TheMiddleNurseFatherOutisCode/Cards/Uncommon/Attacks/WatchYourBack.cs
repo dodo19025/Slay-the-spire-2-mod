@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -24,7 +25,7 @@ public class WatchYourBack()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(5m, ValueProp.Move),
-        new DynamicVar("BleedPower", 2m),
+        new PowerVar<BleedPower>(2m),
     ];
 
     protected override bool ShouldGlowGoldInternal =>
@@ -49,7 +50,7 @@ public class WatchYourBack()
         for (int i = 0; i < 2; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await CommonActions.Apply<BleedPower>(play.Target, this, DynamicVars["BleedPower"].BaseValue);
+            await CommonActions.Apply<BleedPower>(play.Target, this, DynamicVars.Power<BurnPower>().BaseValue);
         }
 
         if (Owner.Creature.LastCard().Keywords.Contains(TheMiddleNurseFatherOutisKeywords.Swing))
@@ -62,7 +63,6 @@ public class WatchYourBack()
     {
         if (cardPlay.Target != null && swinglastcard)
         {
-
             swinglastcard = false;
             await CardCmd.AutoPlay(choiceContext, this, cardPlay.Target);
         }

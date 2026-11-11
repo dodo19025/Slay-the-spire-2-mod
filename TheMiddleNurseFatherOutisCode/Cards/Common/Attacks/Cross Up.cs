@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -41,7 +42,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
             new DamageVar(4m, ValueProp.Move),
-            new DynamicVar("BleedPower",2m),
+            new PowerVar<BleedPower>(2m),
             new EnergyVar(1),
             new CardsVar(1),
         ];
@@ -53,7 +54,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
     {
         await CommonActions.CardAttack(this,play.Target).Execute(choiceContext);
         await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
-            DynamicVars["BleedPower"].BaseValue, play.Target, play.Card);
+            DynamicVars.Power<BleedPower>().BaseValue, play.Target, play.Card);
         if (FirstAttackPlayed())
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
@@ -74,7 +75,7 @@ public class CrossUp() : TheMiddleNurseFatherOutisCard(
         if (NumberOfCardsPlayed <= 0)
         {
                 return true;
-            }
+        }
         return false;
     }
 }

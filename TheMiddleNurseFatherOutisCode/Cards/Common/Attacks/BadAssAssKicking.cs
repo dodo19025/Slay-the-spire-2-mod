@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -44,7 +45,7 @@ public class BadAssAssKicking()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(7m,ValueProp.Move),
-        new DynamicVar("BleedPower", 1m),
+        new PowerVar<BleedPower>(1m),
         new DynamicVar("HitAmount",2m),
         new DynamicVar("AdditionalHitAmount",2m)
     ];
@@ -62,7 +63,7 @@ public class BadAssAssKicking()
         for (int i = 0; i < hitAmount; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext,Owner.Creature,DynamicVars["BleedPower"].BaseValue,play.Target,this);
+            await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext,Owner.Creature,DynamicVars.Power<BurnPower>().BaseValue,play.Target,this);
         }
     }
     

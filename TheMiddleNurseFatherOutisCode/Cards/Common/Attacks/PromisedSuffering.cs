@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -37,7 +38,7 @@ public class PromisedSuffering()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(14m, ValueProp.Move),
-        new DynamicVar("PaybackGain",5m),
+        new PowerVar<PaybackPower>(5m),
         new DynamicVar("GrudgeConsume", 3m)
     ];
 
@@ -47,7 +48,7 @@ public class PromisedSuffering()
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await CommonActions.ApplySelf<PaybackPower>(this, DynamicVars["PaybackGain"].BaseValue);
+        await CommonActions.ApplySelf<PaybackPower>(this, DynamicVars.Power<PaybackPower>().BaseValue);
         if (GrudgeResource.GetGrudge(Owner) >= DynamicVars["GrudgeConsume"].BaseValue)
         {
             GrudgeResource.LoseGrudge(DynamicVars["GrudgeConsume"].IntValue,Owner);
@@ -67,7 +68,7 @@ public class PromisedSuffering()
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackGain"].UpgradeValueBy(3m);
+        DynamicVars["PaybackPower"].UpgradeValueBy(3m);
         DynamicVars["GrudgeConsume"].UpgradeValueBy(-1m);
     }
 }

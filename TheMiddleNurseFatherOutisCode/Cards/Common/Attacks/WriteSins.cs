@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.CardSelection;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -27,7 +28,7 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
     [
         new DamageVar(5m,ValueProp.Move),
         new DynamicVar("VunPower", 1m),
-        new DynamicVar("PaybackGained",4m)
+        new PowerVar<PaybackPower>(4m)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => (
@@ -47,13 +48,13 @@ public class WriteSins() : TheMiddleNurseFatherOutisCard(
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<PaybackPower>(choiceContext, Owner.Creature,DynamicVars["PaybackGained"].BaseValue,Owner.Creature,this);
+        await PowerCmd.Apply<PaybackPower>(choiceContext, Owner.Creature,DynamicVars.Power<PaybackPower>().BaseValue,Owner.Creature,this);
         await PowerCmd.Apply<WriteSinsPower>(choiceContext, Owner.Creature,DynamicVars["VunPower"].BaseValue,Owner.Creature,this);
     }
 
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackGained"].UpgradeValueBy(3m);
+        DynamicVars["PaybackPower"].UpgradeValueBy(3m);
     }
 }

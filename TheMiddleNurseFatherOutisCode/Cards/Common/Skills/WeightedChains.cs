@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -21,8 +22,8 @@ public class WeightedChains() : TheMiddleNurseFatherOutisCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => (
     [
-        new DynamicVar("BleedPower", 1m),
-        new DynamicVar("SelfBleedPower", 2m),
+        new PowerVar<BleedPower>("BaseBleed",1m),
+        new PowerVar<BleedPower>("SelfBleedPower", 2m),
     ]);
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips => 
@@ -35,8 +36,8 @@ public class WeightedChains() : TheMiddleNurseFatherOutisCard(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<BleedPower>(choiceContext, Owner.Creature, base.DynamicVars["SelfBleedPower"].BaseValue,base.Owner.Creature,this);
-        await PowerCmd.Apply<BleedNextAttackPower>(choiceContext, Owner.Creature, base.DynamicVars["BleedPower"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<BleedPower>(choiceContext, Owner.Creature, DynamicVars["SelfBleedPower"].BaseValue,base.Owner.Creature,this);
+        await PowerCmd.Apply<BleedNextAttackPower>(choiceContext, Owner.Creature, DynamicVars["BaseBleed"].BaseValue,base.Owner.Creature,this);
 
     }
     

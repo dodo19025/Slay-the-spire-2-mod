@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
@@ -45,7 +46,7 @@ public class RightPlexus()
     [
         new DamageVar(12m, ValueProp.Move),
         new DynamicVar("GrudgeGained", 3m),
-        new DynamicVar("BleedPower", 2m),
+        new PowerVar<BleedPower>(2m),
         new EnergyVar(1)
     ]);
     protected override async Task OnPlay(
@@ -61,7 +62,7 @@ public class RightPlexus()
         if (TheMiddleNursefatherOutisCmd.getSwordStage(Owner.Creature) is LaevateinnPower)
         {
             await TheMiddleNursefatherOutisCmd.CardApplyBleed(choiceContext, Owner.Creature,
-                DynamicVars["BleedPower"].BaseValue, play.Target, this);
+                DynamicVars.Power<BurnPower>().BaseValue, play.Target, this);
         }
         await PowerCmd.Apply<PlexusCombo>(choiceContext, Owner.Creature, 1 , Owner.Creature, this);
 

@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -36,7 +37,7 @@ public class EmberStrike()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(10m,ValueProp.Move),
-        new DynamicVar("BurnPower", 2m),
+        new PowerVar<BurnPower>(2m),
         new EnergyVar(1)
 
     ];
@@ -51,7 +52,7 @@ public class EmberStrike()
         var burnMulti = TheMiddleNursefatherOutisCmd.getSwordStagePower(Owner.Creature);
         foreach (Creature hittableEnemy in CombatState!.HittableEnemies)
         {
-            await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, DynamicVars["BurnPower"].BaseValue * burnMulti, Owner.Creature, this);
+            await PowerCmd.Apply<BurnPower>(choiceContext, hittableEnemy, DynamicVars.Power<BurnPower>().BaseValue * burnMulti, Owner.Creature, this);
         }
 
         var totalBurn = 0;

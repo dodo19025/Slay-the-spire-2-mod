@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -30,7 +31,7 @@ public class Rule_Violation()
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DynamicVar("GrudgeConsume",2m),
-        new DynamicVar("PaybackGained",4m),
+        new PowerVar<PaybackPower>(4m),
         new DynamicVar("GrudgeGained",3m),
     ];
 
@@ -42,14 +43,14 @@ public class Rule_Violation()
         if (grudge >= DynamicVars["GrudgeConsume"].BaseValue)
         {
             await GrudgeResource.LoseGrudge((int)DynamicVars["GrudgeConsume"].BaseValue, Owner.Creature.Player!);
-            await PowerCmd.Apply<PaybackPower>(choiceContext, Owner.Creature,DynamicVars["PaybackGained"].BaseValue,Owner.Creature,this);
+            await PowerCmd.Apply<PaybackPower>(choiceContext, Owner.Creature,DynamicVars.Power<PaybackPower>().BaseValue,Owner.Creature,this);
         }
         await GrudgeResource.GainGrudge((int)DynamicVars["GrudgeGained"].BaseValue, Owner.Creature.Player!);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["PaybackGained"].UpgradeValueBy(2m);
+        DynamicVars["PaybackPower"].UpgradeValueBy(2m);
         DynamicVars["GrudgeGained"].UpgradeValueBy(2m);
 
     }
